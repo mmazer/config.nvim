@@ -1,0 +1,7 @@
+data
+var
+*.taskpaper
+.cache
+.netrwhist
+bundle
+

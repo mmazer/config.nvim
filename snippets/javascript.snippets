@@ -1,0 +1,36 @@
+snippet def
+	define('${1:module_id}',[${2:dependencies}], function(${3:params}) {
+		${4}
+	});
+snippet strict
+	'use strict';
+snippet closr
+	(function() {
+		${1:// code}
+	})();
+# qunit
+snippet test
+	test('${1:test_name}', function() {
+		${2:// body}
+	});
+snippet equal
+	equal(${1:actual_value}, ${2:expected_value}, ${3:message});
+snippet iife
+	(function(${1:params}) {
+		${3:// body}
+	}(${2:args}));
+# jasmine
+snippet describe
+	describe('${1}', function() {
+		${2}
+	});
+snippet it
+	it('${1}', function() {
+		${2}
+	});
+snippet beforeEach
+	beforeEach(function() {
+		${1}
+	});
+snippet jspy
+	jasmine.createSpy('${1}');
