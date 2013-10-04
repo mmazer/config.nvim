@@ -8,6 +8,9 @@ syntax off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'benmills/vimux'
+Bundle 'bling/vim-airline'
 Bundle 'gmarik/vundle'
 Bundle 'epeli/slimux'
 Bundle 'kien/ctrlp.vim'
@@ -21,7 +24,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-dispatch'
 Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'mattn/emmet-vim'
-Bundle 'mmazer/vim-statusline'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'groenewege/vim-less'
@@ -36,6 +38,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'mmazer/vim-indent-anything'
 Bundle 'mmazer/vim-railscasts'
 Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'Shougo/neocomplcache.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
@@ -100,6 +103,8 @@ set tags+=.tags
 " Reduce delays when running in tmux
 " tmux needs `set -s escape-time 0` for these to work
 set ttimeout timeout ttimeoutlen=10 
+" reduce time  waiting for user input on multi-key mapping
+set timeoutlen=500
 
 " Search {{{1
 set incsearch
@@ -132,10 +137,9 @@ nnoremap ,z zMzvzz
 set foldtext=CustomFoldText()
 
 " GUI {{{1
-set background=dark
 if has("gui_running")
     if has('mac')
-        set guifont=Panic\ Sans:h14
+        set guifont=Literation\ Mono\ Powerline:h12
         set antialias
         "set clipboard=unnamedplus "use + register for system clipboard
     elseif has('win32')
@@ -149,13 +153,14 @@ if has("gui_running")
 else
     set t_Co=256
     let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
 endif
-
-colorscheme xoria256
+set background=dark
+colorscheme solarized
 
 " Status Line {{{1
-" Status line handled by vim-statusline
-" set laststatus=2
+" Status line handled by vim-airline
+ set laststatus=2
 " set statusline=\ %{fugitive#statusline()}\|
 " set statusline+=\ %f\|
 " set statusline+=\ %{Fenc()}\ \|
@@ -184,7 +189,7 @@ noremap ;; ;
 nnoremap ; :
 
 " for toggling paste mode in terminal
-set pastetoggle=<C-P>
+set pastetoggle=<C-]>
 
 " For wrapped lines, navigate normally
 noremap  <buffer> <silent> k gk
@@ -198,9 +203,9 @@ noremap <Leader>q :q!<CR>
 noremap W :w!<CR>
 noremap <silent> Q :q!<CR>
 
-" Quick edit of this file
-nmap <silent> <Leader>ev :e ~/.vimrc<CR>
-nmap <silent> <Leader>rv :so ~/.vimrc<CR>
+" Quick edit of this file - path only supported in 7.4+
+nmap <silent> <Leader>ev :e ~/.vim/vimrc<CR>
+nmap <silent> <Leader>rv :so ~/.vim/vimrc<CR>
 
 " Buffer shortcuts
 nmap <leader>d :bd<CR>
@@ -222,6 +227,7 @@ map <leader>bp :bp<CR>
 
 " Re-map omnicompletion
 inoremap <F5> <C-X><C-O>
+inoremap <C-p> <C-x><C-o>
 
 " Avoid the escape key - remember <C-[> also maps to Esc
 inoremap jj <ESC>`^
@@ -342,6 +348,7 @@ autocmd FileType css,groovy,java,javascript,less,php,scala autocmd BufWritePre <
 
 augroup javascript_files
     autocmd FileType javascript setlocal foldmethod=syntax
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 augroup end
 
 augroup vim_files
@@ -373,11 +380,11 @@ augroup java_files
 augroup end
 
 augroup css_files
-    autocmd filetype css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType css setlocal  omnifunc=csscomplete#CompleteCSS
 augroup end
 
 augroup less_files
-    autocmd filetype less set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType less setlocal omnifunc=csscomplete#CompleteCSS
 augroup end
 
 augroup json_files
@@ -423,7 +430,7 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  'target\|node_modules\|.settings'
     \ }
 
-" zencoding {{{2
+" emmet {{{2
 let g:user_emmet_leader_key = '\'
 let g:user_emmet_expandabbr_key = '<C-e>'
 let g:user_emmet_settings = {
@@ -464,6 +471,12 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_always_populate_loc_list=1
 
 let g:syntastic_stl_format = '[Syntax: %E{Errors: %fe #%e}%B{, }%W{Warnings: %fw #%w}]'
+
+let g:syntastic_mode_map = { 'mode': 'active',
+            \ 'passive_filetypes': ['html'] }
+
+" Neocomplcache {{{2
+let g:neocomplcache_enable_at_startup = 1
 
 " Commands {{{1
 command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
@@ -606,6 +619,7 @@ function! Setcwd()
     exe 'lc!' fnameescape(wd == '' ? cph : substitute(wd, mkr.'$', '.', ''))
 endfunction
 command! Setcwd :silent call Setcwd() | pwd
+command! Cd :silent call Setcwd() | pwd
 
 " http://stackoverflow.com/questions/2158305/is-it-possible-to-display-indentation-guides-in-vim
 function! ToggleIndentGuides()
