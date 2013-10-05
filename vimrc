@@ -489,7 +489,7 @@ if !exists(":Gdiffoff")
   command Gdiffoff diffoff | q | Gedit
 endif
 
-" Macros
+command! StripWh :call StripTrailingWhitespace()
 
 " Functions {{{1
 
