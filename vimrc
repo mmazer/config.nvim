@@ -52,6 +52,7 @@ syntax on
 " Basic Settings {{{1
 set ruler
 set number "see augroup linenumber
+set cursorline " highlight current line
 
 " indentation: use 4 spaces and replace tabs
 set expandtab
@@ -191,7 +192,7 @@ noremap ;; ;
 nnoremap ; :
 
 " for toggling paste mode in terminal
-set pastetoggle=<C-]>
+set pastetoggle=<C-p>
 
 " For wrapped lines, navigate normally
 noremap  <buffer> <silent> k gk
