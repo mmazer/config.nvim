@@ -11,6 +11,8 @@ call vundle#rc()
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'benmills/vimux'
 Bundle 'bling/vim-airline'
+Bundle 'gregsexton/Gravity'
+Bundle 'gregsexton/Atom'
 Bundle 'gmarik/vundle'
 Bundle 'epeli/slimux'
 Bundle 'kien/ctrlp.vim'
