@@ -333,9 +333,12 @@ inoremap vv ^vg_
 " set current working directory
 nmap <leader>cd :call Setcwd()<cr>
 
-" close quick fix window
-nmap <Leader>qc :cclose<CR>
-nmap <Leader>qo :copen<CR>
+" quick fix window
+nnoremap gq :copen<CR>
+nnoremap cq :cclose<CR>
+
+nnoremap gl :llist<CR>
+nnoremap cl :lclose<CR>
 
 " Slimux keys
 map <Leader>s :SlimuxREPLSendLine<CR>
