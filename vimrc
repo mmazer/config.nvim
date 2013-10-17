@@ -197,6 +197,9 @@ let g:mapleader = ","
 noremap ;; ;
 nnoremap ; :
 
+" Better mark jumping (line + col)
+nnoremap ' `
+
 " for toggling paste mode in terminal
 set pastetoggle=<C-p>
 
