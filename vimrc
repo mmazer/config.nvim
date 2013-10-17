@@ -123,6 +123,12 @@ if executable('ag')
     set grepformat=%f:%l:%c:%m
 endif
 
+" start scrolling 2 lines from bottom
+set scrolloff=2
+
+" Tweak various messages and disable startup screen
+set shortmess=aTItoO
+
 " Folding {{{1
 set foldmethod=syntax                   "fold based on indent
 set foldnestmax=2                       "deepest fold is 10 levels
