@@ -30,17 +30,16 @@ Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
+Bundle 'Yggdroot/indentLine'
 Bundle 'Raimondi/delimitMate'
-Bundle 'troydm/easybuffer.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
-Bundle 'mmazer/vim-indent-anything'
-Bundle 'mmazer/vim-railscasts'
+Bundle 'dhruvasagar/vim-railscasts-theme'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Shougo/neocomplete.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
@@ -222,6 +221,7 @@ nmap <silent> <Leader>rv :so ~/.vim/vimrc<CR>
 " Buffer shortcuts
 nmap <leader>d :bd<CR>
 noremap \l :ls<CR>:b
+nnoremap gb :buffers<CR>:b
 
 " removing search match highlighting
 nmap <leader><space> :noh<CR>
@@ -501,8 +501,21 @@ let g:syntastic_stl_format = '[Syntax: %E{Errors: %fe #%e}%B{, }%W{Warnings: %fw
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'passive_filetypes': ['html'] }
 
-" Neocomplcache {{{2
-let g:neocomplcache_enable_at_startup = 1
+" Neocomplete {{{2
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup=1
+let g:neocomplete#disable_auto_complete=0
+let g:neocomplete#enable_auto_select=1
+let g:neocomplete#min_keyword_length=3
+
+function! ToggleComplete()
+    if g:neocomplete#disable_auto_complete == 1
+        let g:neocomplete#disable_auto_complete=0
+    else
+        let g:neocomplete#disable_auto_complete=1
+    endif
+endfunction
+nnoremap tc :call ToggleComplete()<CR>
 
 " Commands {{{1
 command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
