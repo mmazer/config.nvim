@@ -532,17 +532,6 @@ command! StripWh :call StripTrailingWhitespace()
 
 " Functions {{{1
 
-" http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
-function! NumberToggle()
-    if &relativenumber == 1
-        set number
-    else
-        set relativenumber
-    endif
-endfunction
-
-nnoremap <C-N> :call NumberToggle()<CR>
-
 " Taken from http://learnvimscriptthehardway.stevelosh.com/chapters/38.html
 function! FoldColumnToggle()
     if &foldcolumn
