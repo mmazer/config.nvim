@@ -413,13 +413,15 @@ augroup less_files
 augroup end
 
 augroup json_files
+    autocmd FileType json set ft=javascript.json
     autocmd filetype json set foldmethod=syntax
+    autocmd FileType json nnoremap <buffer> <Leader>fj :%!python -m json.tool<CR>
 augroup end
 
 augroup xml_files
     autocmd filetype xml setlocal foldmethod=syntax
 augroup end
-    
+
 augroup taskpaper_files
     autocmd FileType taskpaper setlocal noexpandtab
 augroup end
