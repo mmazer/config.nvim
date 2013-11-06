@@ -346,11 +346,19 @@ nnoremap gq :copen<CR>
 nnoremap cq :cclose<CR>
 
 nnoremap gl :llist<CR>
-nnoremap cl :lclose<CR>
+noremap cl :lclose<CR>
+
+" end lines with semicolons
+inoremap ;; <C-o>A;
+nnoremap <Leader>; A;<esc>
 
 " Slimux keys
 map <Leader>s :SlimuxREPLSendLine<CR>
 vmap <Leader>s :SlimuxREPLSendSelection<CR>
+
+" Custom Slimux commands
+command! GrailsStop :SlimuxShellRun stop-app
+command! GrailsRun :SlimuxShellRun run-app
 
 " Quick and easy scratch pad
 nnoremap <Leader>sc :e ~/.vim/data/vim-scratch.txt<CR>
