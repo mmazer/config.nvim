@@ -294,18 +294,13 @@ nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
-" Toggle show/hide invisible chars
-nnoremap <leader>i :set list!<cr>
-
-" Toggle line numbers
-nnoremap <leader>N :setlocal number!<cr>
+" toggling following vim-unimpaired
+nnoremap [of :setlocal foldcolumn=3<CR>
+nnoremap ]of :setlocal foldcolumn=0<CR>
 
 " Insert lines in normal mode
 nmap <Leader>o i<CR><Esc>k$
 nmap <Leader>O O<Esc>
-
-" insert <CR> and line above when dealing with autoclosed blocks `{}`
-imap <C-y> <CR><ESC>O
 
 " Swapping characters and words
 " http://vim.wikia.com/wiki/Swapping_characters,_words_and_lines
