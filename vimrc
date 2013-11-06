@@ -207,7 +207,7 @@ nnoremap ; :
 nnoremap ' `
 
 " for toggling paste mode in terminal
-set pastetoggle=<C-p>
+set pastetoggle=<F5>
 
 " For wrapped lines, navigate normally
 noremap  <buffer> <silent> k gk
