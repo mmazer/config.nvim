@@ -478,10 +478,7 @@ let NERDTreeShowFiles=1
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=2 "vim current directory follows NERDTree
 
-nmap <silent> <C-T> :NERDTreeToggle<CR>
-nmap <Leader>tf :NERDTreeFind<CR>
-nmap <Leader>tb :NERDTreeFromBookmark<SPACE>
-
+nmap <silent> <C-T> :NERDTreeToggle<CR>;
 let NERDTreeIgnore=['.class$[[file]]', '.DS_Store$[[file]]', 'CVS[[dir]]']
 
 " vim-gist {{{2
