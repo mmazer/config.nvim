@@ -150,6 +150,8 @@ set foldtext=CustomFoldText()
 
 " GUI {{{1
 if has("gui_running")
+    set background=dark
+    colorscheme railscasts
     if has('mac')
         set guifont=Literation\ Mono\ Powerline:h12
         set antialias
@@ -160,15 +162,16 @@ if has("gui_running")
     set guioptions-=T " remove tool bar
     set guioptions-=r " remove right-hand scroll bar
     set guioptions-=L " remove left-hand scroll bar
-    set lines=45
-    set columns=100
+    set lines=90
+    set columns=145
 else
     set t_Co=256
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
+    set background=dark
+    colorscheme railscasts
+
 endif
-set background=dark
-colorscheme solarized
 
 " Status Line {{{1
 " Status line handled by vim-airline
