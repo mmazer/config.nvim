@@ -273,11 +273,10 @@ nnoremap Y y$
 
 " Window navigation
 " use ctrl-h/j/k/l to switch between splits
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-map <C-h> <C-w>h
-map <Leader>1 <C-w>o
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
 
 set splitbelow
 set splitright
