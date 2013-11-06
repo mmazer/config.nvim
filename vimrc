@@ -497,7 +497,7 @@ nmap <Leader>eb :EasyBuffer<cr>
 
 " indentLine {{{2
 let g:indentLine_enabled=0
-nmap <leader>ig :IndentLinesToggle<cr>
+nnoremap ti :IndentLinesToggle<CR>
 
 " Syntastic {{{2
 let g:syntastic_javascript_checkers=['jshint']
