@@ -394,8 +394,8 @@ augroup jsp_files
 augroup end
 
 augroup gsp_files
-    autocmd FileType gsp set ft=gsp.html 
-    autocmd FileType gsp setlocal shiftwidth=2 tabstop=2 foldmethod=syntax
+    autocmd FileType gsp set ft=gsp.html
+    autocmd FileType gsp setlocal shiftwidth=2 tabstop=2 foldmethod=manual
 augroup end
 
 augroup java_files
