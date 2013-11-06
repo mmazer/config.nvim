@@ -526,10 +526,15 @@ command! ShowChars set list listchars=tab:▸–,trail:·,nbsp:¬
 " Simple way to turn off Gdiff splitscreen
 " works only when diff buffer is focused
 " https://gist.github.com/radmen/5048080
-if !exists(":Gdiffoff")
-  command Gdiffoff diffoff | q | Gedit
-endif
+command! Gdoff diffoff | q 
 
+" Show hunks to be committed
+function! GitDiffCached()
+    enew
+    r ! git diff --cached
+    set ft=diff
+endfunction
+command! Gdiffcached :call GitDiffCached()
 command! StripWh :call StripTrailingWhitespace()
 
 " Functions {{{1
