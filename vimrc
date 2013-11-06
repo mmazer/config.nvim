@@ -244,10 +244,6 @@ map <left> :bp<cr>
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
 
-" Re-map omnicompletion
-inoremap <F5> <C-X><C-O>
-inoremap <C-p> <C-x><C-o>
-
 " Avoid the escape key - remember <C-[> also maps to Esc
 inoremap jj <ESC>`^
 inoremap jk <ESC>`^
