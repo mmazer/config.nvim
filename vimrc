@@ -651,19 +651,6 @@ endfunction
 command! Setcwd :silent call Setcwd() | pwd
 command! Cd :silent call Setcwd() | pwd
 
-" http://stackoverflow.com/questions/2158305/is-it-possible-to-display-indentation-guides-in-vim
-function! ToggleIndentGuides()
-    if exists('b:indent_guides')
-        call matchdelete(b:indent_guides)
-        unlet b:indent_guides
-    else
-        let pos = range(1, &l:textwidth, &l:shiftwidth)
-        call map(pos, '"\\%" . v:val . "v"')
-        let pat = '\%(\_^\s*\)\@<=\%(' . join(pos, '\|') . '\)\s'
-        let b:indent_guides = matchadd('CursorLine', pat)
-    endif
-endfunction
-
 "http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
 function! CustomFoldText()
     "get first non-blank line
