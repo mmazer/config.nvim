@@ -556,12 +556,7 @@ function! FoldColumnToggle()
         setlocal foldcolumn=3
     endif
 endfunction
-nnoremap <leader>f :call FoldColumnToggle()<cr>
-
-function! EndSemiColon()
-    normal A;
-endfunction
-nnoremap <Leader>; :call EndSemiColon()<CR>
+nnoremap <Leader>tf :call FoldColumnToggle()<cr>
 
 function! Fenc()
     if &fenc !~ "^$\|utf-8" || &bomb
