@@ -103,14 +103,13 @@ set directory=$HOME/.vim_swp//
 " scripts
 runtime macros/matchit.vim
 
-" ctags
-set tags+=.tags
+" spelling
+set spelllang=en
+set spellfile=~/.vim/spell/spellfile.en.add
 
-" Reduce delays when running in tmux
+" Reduce delays waiting for multi-key combinations when running in tmux
 " tmux needs `set -s escape-time 0` for these to work
-set ttimeout timeout ttimeoutlen=10 
-" reduce time  waiting for user input on multi-key mapping
-set timeoutlen=500
+set ttimeout timeout ttimeoutlen=125
 
 " Search {{{1
 set incsearch
