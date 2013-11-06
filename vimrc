@@ -588,7 +588,7 @@ function! QuickLook()
         echo "Quicklook not supported on this system"
     endif
 endfunction
-map \q :call QuickLook()<CR>
+nnoremap ql :call QuickLook()<CR>
 
 function! OpenCurrentDir()
     if has('mac')
