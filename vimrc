@@ -440,18 +440,21 @@ nnoremap <silent> [ctrlp]b :<C-u>CtrlPBuffer<cr>
 nnoremap <silent> [ctrlp]c :<C-u>CtrlPClearCache<cr>
 nnoremap <silent> [ctrlp]d :<C-u>CtrlPDir<cr>
 nnoremap <silent> [ctrlp]f :<C-u>CtrlP<cr>
-nnoremap <silent> [ctrlp]m :<C-u>CtrlPBookmarkDir<cr>
+nnoremap <silent> [ctrlp]m :<C-u>CtrlPMark<cr>
+nnoremap <silent> [ctrlp]o :<C-u>CtrlPBookmarkDir<cr>
+nnoremap <silent> [ctrlp]r :<C-u>CtrlPRegister<cr>
 nnoremap <silent> [ctrlp]q :<C-u>CtrlPQuickFix<cr>
 nnoremap <silent> [ctrlp]s :<C-u>CtrlPFunky<cr>
 
 
-let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir', 'funky']
+let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir', 'funky', 'mark', 'register']
 let g:ctrlp_match_window_bottom = 1 " Show at top of window
-let g:ctrlp_working_path_mode = 2 " Smart path mode
+let g:ctrlp_working_path_mode = 'ra' " Smart path mode
 let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
 let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 let g:ctrlp_match_window_reversed = 1
-let g:ctrlp_root_markers = ['.project', '.ctrlp']
+let g:ctrlp_root_markers = ['.top', '.project', '.ctrlp']
+let g:ctrlp_follow_symlinks = 1
 
 let g:ctrlp_custom_ignore = {
     \ 'dir':  'target\|node_modules\|.settings'
