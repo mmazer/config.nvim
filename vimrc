@@ -384,7 +384,7 @@ augroup end
 
 augroup html_files
     "autocmd filetype html set ft=xml.html.javascript
-    autocmd FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=syntax
+    autocmd FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
     autocmd FileType setlocal autoindent
 augroup end
 
