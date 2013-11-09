@@ -535,7 +535,7 @@ command! ShowChars set list listchars=tab:▸–,trail:·,nbsp:¬
 " Simple way to turn off Gdiff splitscreen
 " works only when diff buffer is focused
 " https://gist.github.com/radmen/5048080
-command! Gdoff diffoff | q 
+command! Gdoff diffoff | q | Gedit
 
 " Show hunks to be committed
 function! GitDiffCached()
