@@ -257,6 +257,8 @@ nnoremap / /\v
 vnoremap / /\v
 
 " Easier to type, and I never use the default behavior.
+nnoremap K H 
+nnoremap J L 
 noremap H ^
 noremap L $
 vnoremap L g_
