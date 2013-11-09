@@ -322,9 +322,6 @@ nmap <Leader>O O<Esc>
 " Open current buffer in Marked
 :nnoremap <leader>M :silent !open -a Marked.app '%:p'<cr>
 
-" redraw
-nnoremap <silent> <C-l> :nohl<CR><C-l>
-
 " Function mappings see ~/.vim/functions.vim
 noremap <leader>c :call ToggleBackgroundColour()<CR>
 
