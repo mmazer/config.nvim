@@ -256,6 +256,7 @@ inoremap kj <ESC>`^
 nnoremap / /\v
 vnoremap / /\v
 
+nnoremap <Leader>j J
 " Easier to type, and I never use the default behavior.
 nnoremap K H 
 nnoremap J L 
