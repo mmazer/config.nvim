@@ -247,8 +247,8 @@ map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
 
 " Avoid the escape key - remember <C-[> also maps to Esc
-inoremap jj <ESC>`^
-inoremap jk <ESC>`^
+"inoremap jj <ESC>`^
+"inoremap jk <ESC>`^
 inoremap kj <ESC>`^
 
 " Prefer to use Perl/Ruby style regex patterns
