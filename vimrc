@@ -549,7 +549,7 @@ command! Gdoff diffoff | q | Gedit
 " Show hunks to be committed
 function! GitDiffCached()
     enew
-    r ! git diff --cached
+    silent r git diff --cached
     set ft=diff
 endfunction
 command! Gdiffcached :call GitDiffCached()
