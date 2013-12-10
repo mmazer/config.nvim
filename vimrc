@@ -8,15 +8,25 @@ syntax off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Color schemes {{{2
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'junegunn/seoul256.vim'
+Bundle 'sjl/badwolf'
+Bundle 'dhruvasagar/vim-railscasts-theme'
+Bundle 'bilalq/jellybeans.vim'
+
+" Features
 Bundle 'benmills/vimux'
 Bundle 'bling/vim-airline'
-Bundle 'gmarik/vundle'
-Bundle 'elzr/vim-json'
 Bundle 'epeli/slimux'
+Bundle 'gmarik/vundle'
 Bundle 'kablamo/vim-git-log'
+Bundle 'mattn/emmet-vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'mattn/ctrlp-mark'
+Bundle 'mattn/ctrlp-register'
+Bundle 'rking/ag.vim'
+Bundle 'mmazer/ctrlp-funky'
 Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
@@ -24,38 +34,36 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-dispatch'
-Bundle 'nelstrom/vim-markdown-folding'
-Bundle 'mattn/emmet-vim'
-Bundle 'mattn/ctrlp-mark'
-Bundle 'mattn/ctrlp-register'
-Bundle 'mileszs/ack.vim'
-" 2013-10-08 - disabled because it causes serious typing lags in JavaScipt
-" buffers
-"Bundle 'pangloss/vim-javascript'
-Bundle 'groenewege/vim-less'
-Bundle 'ap/vim-css-color'
 Bundle 'Yggdroot/indentLine'
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
-Bundle 'dhruvasagar/vim-railscasts-theme'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+
+" File types
+Bundle 'derekwyatt/vim-scala'
+Bundle 'pangloss/vim-javascript'
+Bundle 'elzr/vim-json'
 Bundle 'davidoc/taskpaper.vim'
+Bundle 'nelstrom/vim-markdown-folding'
+Bundle 'groenewege/vim-less'
+Bundle 'ap/vim-css-color'
 
 filetype plugin indent on
 syntax on
+" try to improve performance
+syntax sync minlines=256
 
 " Basic Settings {{{1
 set ruler
 set number "see augroup linenumber
-set cursorline " highlight current line
+set nocursorline " highlight current line but may cause slowness
 
 " indentation: use 4 spaces and replace tabs
 set expandtab
