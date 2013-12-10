@@ -380,7 +380,7 @@ set ffs=unix,dos,mac "Default file types
 autocmd FileType css,groovy,java,javascript,less,php,scala autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 augroup javascript_files
-    autocmd FileType javascript setlocal foldmethod=syntax
+    autocmd FileType javascript setlocal foldmethod=indent
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 augroup end
 
@@ -396,12 +396,12 @@ augroup end
 
 augroup jsp_files
     autocmd filetype jsp set ft=jsp.html
-    autocmd filetype jsp set foldmethod=syntax
+    autocmd filetype jsp set foldmethod=manual
 augroup end
 
 augroup gsp_files
     autocmd FileType gsp set ft=gsp.html
-    autocmd FileType gsp setlocal shiftwidth=2 tabstop=2 foldmethod=manual
+    autocmd FileType gsp setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
 augroup end
 
 augroup java_files
