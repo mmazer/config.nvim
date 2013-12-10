@@ -20,9 +20,43 @@ snippet mvnpom
 			<finalName>${project.artifactId}-${project.version}-${env}</finalName>
 		</build>
 	</project>
-snippet mvd
+snippet mvndep
 	<dependency>
 	<groupId>${1}</groupId>
 	<artifactId>${2}</artifactId>
 	<version>${3}</version>
 	</dependency>
+snippet mvnsc
+	<scope>${1:compile|test|runtime|provided}</scope>
+snippet web24
+	<?xml version="1.0" encoding="UTF-8"?>
+	<web-app id="WebApp_9" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" 
+	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	    <display-name>${1}</display-name>
+	</web-app>
+snippet web25
+	<?xml version="1.0" encoding="UTF-8"?>
+	<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	    version="2.5">
+	
+	    <display-name>${1}</display-name>l
+	</web-app>
+snippet servlet
+	<servlet>
+	  <servlet-name>${1}</servlet-name>
+	  <servlet-class>${2}</servlet-class>
+	</servlet>
+snippet servletmap
+	<servlet-mapping>
+	    <servlet-name>${1}</servlet-name>
+		<url-pattern>${2}</url-pattern>
+	</servlet-mapping>
+snippet servletinit
+	<init-param>
+	    <param-name>${1:name}</param-name> 
+	    <param-value>${2:value}</param-value> 
+	 </init-param>
