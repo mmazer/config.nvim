@@ -176,7 +176,8 @@ else
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
     set background=dark
-    colorscheme railscasts
+    let g:seoul256_background = 236
+    colorscheme seoul256
 
 endif
 
