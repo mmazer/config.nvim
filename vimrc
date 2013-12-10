@@ -467,6 +467,11 @@ let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
     \ 'dir':  'target\|node_modules\|.settings'
     \ }
+" Use ag for file listing
+" if executable('ag')
+"     let g:ctrlp_user_command = 'ag %s -l --nocolor --follow -g ""'
+"     let g:ctrlp_use_caching = 0
+" endif
 
 " emmet {{{2
 let g:user_emmet_leader_key = '\'
@@ -529,6 +534,10 @@ endfunction
 nnoremap tc :call ToggleComplete()<CR>
 
 " Commands {{{1
+" http://robots.thoughtbot.com/faster-grepping-in-vim/
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<Space>
+
 command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
 command! ShowChars set list listchars=tab:▸–,trail:·,nbsp:¬
 
