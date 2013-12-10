@@ -508,7 +508,7 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_stl_format = '[Syntax: %E{Errors: %fe #%e}%B{, }%W{Warnings: %fw #%w}]'
 
 let g:syntastic_mode_map = { 'mode': 'active',
-            \ 'passive_filetypes': ['html'] }
+            \ 'passive_filetypes': ['xml', 'html', 'java'] }
 
 " Neocomplete {{{2
 let g:acp_enableAtStartup = 0
