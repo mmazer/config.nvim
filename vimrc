@@ -430,8 +430,8 @@ augroup less_files
 augroup end
 
 augroup json_files
-    autocmd FileType json set ft=javascript.json
-    autocmd filetype json set foldmethod=syntax
+    "autocmd FileType json set ft=json
+    "autocmd filetype json set foldmethod=syntax
     autocmd FileType json nnoremap <buffer> <Leader>fj :%!python -m json.tool<CR>
 augroup end
 
