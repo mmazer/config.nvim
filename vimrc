@@ -157,8 +157,6 @@ set foldtext=CustomFoldText()
 
 " GUI {{{1
 if has("gui_running")
-    set background=dark
-    colorscheme railscasts
     if has('mac')
         set guifont=Literation\ Mono\ Powerline:h12
         set antialias
@@ -175,11 +173,10 @@ else
     set t_Co=256
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
-    set background=dark
-    let g:seoul256_background = 236
-    colorscheme seoul256
-
 endif
+set background=dark
+let g:seoul256_background = 235
+colorscheme seoul256
 
 " Status Line {{{1
 " Status line handled by vim-airline
