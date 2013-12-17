@@ -560,9 +560,10 @@ command! Gdoff diffoff | q | Gedit
 
 " Show hunks to be committed
 function! GitDiffCached()
-    enew
-    silent r git diff --cached
-    set ft=diff
+    new
+    r !git diff --cached
+    setlocal ft=diff bt=nofile bh=wipe nobl noswf ro
+    nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gdiffcached :call GitDiffCached()
 command! StripWh :call StripTrailingWhitespace()
