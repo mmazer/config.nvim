@@ -372,6 +372,8 @@ nnoremap <Leader>sc :e ~/.vim/data/vim-scratch.txt<CR>
 " File Types {{{1
 set encoding=utf-8
 set ffs=unix,dos,mac "Default file types
+set ff=unix " set initial buffer file format
+
 
 " Autocommands {{{1
 
