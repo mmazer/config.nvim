@@ -119,6 +119,10 @@ set spellfile=~/.vim/spell/spellfile.en.add
 " tmux needs `set -s escape-time 0` for these to work
 set ttimeout timeout ttimeoutlen=125
 
+" disable bell/visual bell
+set noeb vb t_vb=
+au GUIEnter * set vb t_vb=
+
 " Search {{{1
 set incsearch
 set hlsearch
