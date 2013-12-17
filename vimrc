@@ -572,7 +572,6 @@ function! GitDiffCached()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gdiffcached :call GitDiffCached()
-command! StripWh :call StripTrailingWhitespace()
 
 " Functions {{{1
 
@@ -674,6 +673,7 @@ endfunction
 function! StripTrailingWhitespace()
     call Preserve("%s/\\s\\+$//e")
 endfunction
+command! StripWh :call StripTrailingWhitespace()
 
 " Taken from ctrlp help file
 function! Setcwd()
