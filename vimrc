@@ -104,8 +104,8 @@ set noswapfile
 " Use two path separators so the swap file name will be built from the complete
 " path to the file with all path separators substituted to percent '%' signs.
 " This will ensure file name uniqueness in the preserve directory.
-set backupdir=$HOME/.vim_backup//
-set directory=$HOME/.vim_swp//
+set backupdir=$HOME/.var/vim/backup//
+set directory=$HOME/.var/vim/swp//
 
 " enable '%' command jump to matching HTML tags and if/else/endif in Vim
 " scripts
