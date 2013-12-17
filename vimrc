@@ -212,6 +212,7 @@ nnoremap ; :
 nnoremap ' `
 
 " for toggling paste mode in terminal
+" Can also use `yo` from `unimpaired`
 set pastetoggle=<F5>
 nnoremap <C-p> "+gP
 inoremap <C-v> "+y 
