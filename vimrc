@@ -374,9 +374,6 @@ vmap <Leader>s :SlimuxREPLSendSelection<CR>
 command! GrailsStop :SlimuxShellRun stop-app
 command! GrailsRun :SlimuxShellRun run-app
 
-" Quick and easy scratch pad
-nnoremap <Leader>sc :e ~/.vim/data/vim-scratch.txt<CR>
-
 " File Types {{{1
 set encoding=utf-8
 set ffs=unix,dos,mac "Default file types
