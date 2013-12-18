@@ -560,6 +560,7 @@ command! ShowChars set list listchars=tab:▸–,trail:·,nbsp:¬
 " https://gist.github.com/radmen/5048080
 command! Gdoff diffoff | q | Gedit
 
+" Git
 " Show hunks to be committed
 function! GitDiffCached()
     new
@@ -568,6 +569,22 @@ function! GitDiffCached()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gdiffcached :call GitDiffCached()
+
+function! GitIncoming()
+    new
+    r !git log --pretty=oneline --abbrev-commit --graph ..@{u}
+    setlocal ft=git bt=nofile bh=wipe nobl noswf ro
+    nnoremap <buffer> q :bw<cr>
+endfunction
+command! Gincoming :call GitIncoming()
+
+function! GitOutgoing() 
+    new
+    r !git log --pretty=oneline --abbrev-commit --graph @{u}..
+    setlocal ft=git bt=nofile bh=wipe nobl noswf ro
+    nnoremap <buffer> q :bw<cr>
+endfunction
+command! Goutgoing :call GitOutgoing()
 
 " Functions {{{1
 
