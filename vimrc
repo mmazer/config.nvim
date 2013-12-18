@@ -625,22 +625,6 @@ function! OpenCurrentDir()
 endfunction
 map <leader>F :call OpenCurrentDir()<CR>
 
-" Toggle line wrapping
-" http://www.charlietanksley.net/philtex/my-vimrc-file/
-noremap <silent> <leader>tw :call ToggleWrap()<cr>
-function! ToggleWrap()
-    if &wrap
-        echo "Wrap OFF"
-        setlocal nowrap
-        set virtualedit=all
-    else
-        echo "Wrap ON"
-        setlocal wrap linebreak nolist
-        set virtualedit=
-        setlocal display+=lastline
-    endif
-endfunction
-
 " Toggle background colour
 " http://www.functor.be/wiki/index.php/VIM
 function! ToggleBackgroundColour ()
