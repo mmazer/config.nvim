@@ -201,7 +201,6 @@ colorscheme seoul256
 " set statusline+=\ Col\:%c,     "cursor column
 " set statusline+=\ %P    "percent through file
 
-
 " Key Bindings {{{1
 
 "keep original motion: repeat latest f, t, F or T in opposite direction
@@ -368,6 +367,8 @@ noremap cl :lclose<CR>
 inoremap ;; <C-o>A;
 nnoremap <Leader>; A;<esc>
 
+nnoremap <Leader>rd :redraw!<CR>
+
 " Slimux keys
 map <Leader>s :SlimuxREPLSendLine<CR>
 vmap <Leader>s :SlimuxREPLSendSelection<CR>
@@ -380,7 +381,6 @@ command! GrailsRun :SlimuxShellRun run-app
 set encoding=utf-8
 set ffs=unix,dos,mac "Default file types
 set ff=unix " set initial buffer file format
-
 
 " Autocommands {{{1
 
