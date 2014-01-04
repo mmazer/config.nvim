@@ -62,7 +62,7 @@ syntax sync minlines=256
 " Basic Settings {{{1
 set ruler
 set number "see augroup linenumber
-set nocursorline " highlight current line but may cause slowness
+set nocursorline " no cursor line by default for performance - toggle with unimpaired `coc`
 
 " indentation: use 4 spaces and replace tabs
 set expandtab
