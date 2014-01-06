@@ -191,20 +191,20 @@ colorscheme seoul256
 
 " Status Line {{{1
 " Status line handled by vim-airline
- set laststatus=2
-" set statusline=\ %{fugitive#statusline()}\|
-" set statusline+=\ %f\|
-" set statusline+=\ %{Fenc()}\ \|
-" set statusline+=\ %{&ff}\ \| "file format
-" set statusline+=%=
-" set statusline+=\ %h      "help file flag
-" set statusline+=\ %(\|[%R%M\|%)      "modified flag
-" set statusline+=\ %y      "filetype
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=\ #%n
-" set statusline+=\ %l/%LL   "cursor line/total lines
-" set statusline+=\ Col\:%c,     "cursor column
-" set statusline+=\ %P    "percent through file
+set laststatus=2
+set statusline=%{Mode()}
+set statusline+=%{&paste?'\ (paste)':'\ '}
+set statusline+=\|
+set statusline+=\ %{Branch()}
+set statusline+=\ %f\:%n            "file name and buffer #
+set statusline+=%(\[%R%M\]%)      "modified flag
+set statusline+=\ %{SyntasticStatuslineFlag()}
+set statusline+=%=
+set statusline+=\ %y      "filetype
+set statusline+=\ %{Fenc()} " file encoding
+set statusline+=\[%{&ff}\]  "file format
+set statusline+=\ \|\ LN\:%4.l/%-4.L\:%-3.c   "cursor line/total lines:column
+"set statusline+=\ \|\ COL\:%-3.c     "cursor column
 
 " Key Bindings {{{1
 
