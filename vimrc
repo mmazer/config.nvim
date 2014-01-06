@@ -136,6 +136,9 @@ nnoremap N Nzzzv
 if executable('ag')
     set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
     set grepformat=%f:%l:%c:%m
+    " use ag with ctrlp
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --follow -g ""'
+    let g:ctrlp_use_caching = 0
 endif
 
 " start scrolling 2 lines from bottom
