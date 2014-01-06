@@ -600,6 +600,41 @@ function! FoldColumnToggle()
 endfunction
 nnoremap <Leader>tf :call FoldColumnToggle()<cr>
 
+" Adapted from https://github.com/maciakl/vim-neatstatus 
+function! Mode()
+    "redraw
+    if &ft ==? "help" 
+        return "Help"
+    endif
+
+    if &ft ==? "diff"
+        return "Diff"
+    endif
+
+    let l:mode = mode()
+    
+    if     mode ==# "n"  | return "NORMAL"
+    elseif mode ==# "i"  | return "INSERT"
+    elseif mode ==# "c"  | return "COMMAND"
+    elseif mode ==# "!"  | return "SHELL"
+    elseif mode ==# "R"  | return "REPLACE"
+    elseif mode ==# "v"  | return "VISUAL"
+    elseif mode ==# "V"  | return "V-LINE"
+    elseif mode ==# ""   | return "V-BLOCK"
+    else                 | return l:mode
+    endif
+endfunction
+
+function! Branch()
+    let branch = ''
+    if !exists('*fugitive#head')
+        return branch 
+    endif
+
+    let branch = fugitive#head(7)
+    return empty(branch) ? '' : 'Git:'.branch
+endfunction
+
 function! Fenc()
     if &fenc !~ "^$\|utf-8" || &bomb
         return &fenc . (&bomb ? "-bom" : "" )
