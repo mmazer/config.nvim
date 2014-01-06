@@ -487,12 +487,6 @@ let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
     \ 'dir':  'target\|node_modules\|.settings'
     \ }
-" Use ag for file listing
-" if executable('ag')
-"     let g:ctrlp_user_command = 'ag %s -l --nocolor --follow -g ""'
-"     let g:ctrlp_use_caching = 0
-" endif
-
 " emmet {{{2
 let g:user_emmet_leader_key = '\'
 let g:user_emmet_expandabbr_key = '<C-e>'
@@ -504,15 +498,15 @@ let g:user_emmet_settings = {
 
 " NERDTree {{{2
 
-let NERDTreeWinSize=35
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowBookmarks=0
-let NERDTreeShowFiles=1
-let NERDTreeShowHidden=1
-let NERDTreeChDirMode=2 "vim current directory follows NERDTree
+" let NERDTreeWinSize=35
+" let NERDTreeQuitOnOpen=1
+" let NERDTreeShowBookmarks=0
+" let NERDTreeShowFiles=1
+" let NERDTreeShowHidden=1
+" let NERDTreeChDirMode=2 "vim current directory follows NERDTree
 
-nmap <silent> <C-T> :NERDTreeToggle<CR>;
-let NERDTreeIgnore=['.class$[[file]]', '.DS_Store$[[file]]', 'CVS[[dir]]']
+" nmap <silent> <C-T> :NERDTreeToggle<CR>;
+" let NERDTreeIgnore=['.class$[[file]]', '.DS_Store$[[file]]', 'CVS[[dir]]']
 
 " vim-gist {{{2
 let g:gist_show_privates = 1
