@@ -13,7 +13,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'sjl/badwolf'
 Bundle 'dhruvasagar/vim-railscasts-theme'
-Bundle 'bilalq/jellybeans.vim'
+Bundle 'cocopon/iceberg.vim'
 Bundle 'gregsexton/Gravity'
 
 " Features
