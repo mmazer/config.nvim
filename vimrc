@@ -173,7 +173,7 @@ if has("gui_running")
     elseif has('win32')
         set guioptions-=m " Remove menu bar to save space
         set guioptions+=a " Yank to system clipboard
-        set guifont=DejaVu_Sans_Mono_for_Powerline:h8
+        set guifont=DejaVu_Sans_Mono_for_Powerline:h9
     endif
     set guioptions-=T " remove tool bar
     set guioptions-=r " remove right-hand scroll bar
