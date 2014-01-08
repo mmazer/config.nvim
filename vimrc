@@ -166,14 +166,13 @@ set foldtext=CustomFoldText()
 
 " GUI {{{1
 if has("gui_running")
+    set antialias
     if has('mac')
         set guifont=Literation\ Mono\ Powerline:h12
-        set antialias
         "set clipboard=unnamedplus "use + register for system clipboard
     elseif has('win32')
         set guioptions-=m " Remove menu bar to save space
         set guioptions+=a " Yank to system clipboard
-        set antialias
         set guifont=DejaVu_Sans_Mono_for_Powerline:h8
     endif
     set guioptions-=T " remove tool bar
@@ -183,12 +182,9 @@ if has("gui_running")
     set columns=145
 else
     set t_Co=256
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=256
 endif
 set background=dark
-let g:seoul256_background = 235
-colorscheme seoul256
+colorscheme iceberg
 
 " Status Line {{{1
 " Status line handled by vim-airline
