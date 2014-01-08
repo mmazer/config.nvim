@@ -46,6 +46,7 @@ Bundle 'Shougo/neocomplete.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+Bundle 'justinmk/vim-gtfo.git'
 
 " File types
 Bundle 'derekwyatt/vim-scala'
