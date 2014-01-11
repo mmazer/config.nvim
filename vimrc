@@ -222,8 +222,8 @@ nnoremap ' `
 " Can also use `yo` from `unimpaired`
 set pastetoggle=<F5>
 nnoremap <C-p> "+gP
-inoremap <C-v> "+y 
-vnoremap <C-v> "+y 
+inoremap <C-v> <esc>"+gPi
+vnoremap <C-p> "+gP
 
 " For wrapped lines, navigate normally
 noremap  <buffer> <silent> k gk
