@@ -184,7 +184,7 @@ else
     set t_Co=256
 endif
 set background=dark
-colorscheme iceberg
+colorscheme railscasts
 
 " Status Line {{{1
 " Status line handled by vim-airline
