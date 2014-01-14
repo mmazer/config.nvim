@@ -484,6 +484,16 @@ let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
     \ 'dir':  'target\|node_modules\|.settings'
     \ }
+
+" fugitive
+nnoremap <leader>gs :Gstatus<CR>
+
+" Simple way to turn off Gdiff splitscreen
+" works only when diff buffer is focused
+" https://gist.github.com/radmen/5048080
+command! Gdoff diffoff | q | Gedit
+nnoremap <leader>gdo :Gdoff<CR>
+
 " emmet {{{2
 let g:user_emmet_leader_key = '\'
 let g:user_emmet_expandabbr_key = '<C-e>'
@@ -554,11 +564,6 @@ nnoremap \ :Ag<Space>
 command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
 command! ShowChars set list listchars=tab:▸–,trail:·,nbsp:¬
 
-" Simple way to turn off Gdiff splitscreen
-" works only when diff buffer is focused
-" https://gist.github.com/radmen/5048080
-command! Gdoff diffoff | q | Gedit
-
 " Git
 " Show hunks to be committed
 function! GitDiffCached()
@@ -568,6 +573,7 @@ function! GitDiffCached()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gdiffcached :call GitDiffCached()
+nnoremap <leader>gdc :Gdiffcached<CR>
 
 function! GitIncoming()
     new
@@ -576,6 +582,7 @@ function! GitIncoming()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gincoming :call GitIncoming()
+nnoremap <leader>gi :Gincoming<CR>
 
 function! GitOutgoing() 
     new
@@ -584,6 +591,7 @@ function! GitOutgoing()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Goutgoing :call GitOutgoing()
+nnoremap <leader>go :Goutgoing<CR>
 
 " Functions {{{1
 
