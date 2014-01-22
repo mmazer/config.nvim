@@ -437,6 +437,10 @@ augroup less_files
     autocmd FileType less setlocal omnifunc=csscomplete#CompleteCSS
 augroup end
 
+augroup jmeter_files
+    autocmd! BufRead *.jtl setlocal ft=text
+augroup end
+
 augroup json_files
     "autocmd FileType json set ft=json
     "autocmd filetype json set foldmethod=syntax
