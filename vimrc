@@ -212,7 +212,7 @@ let g:mapleader = ","
 
 " One less key to press for commands
 "keep original motion: repeat latest f, t, F or T
-noremap ;; ;
+noremap <leader>f ;
 nnoremap ; :
 
 " Better mark jumping (line + col)
