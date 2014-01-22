@@ -168,7 +168,7 @@ set foldtext=CustomFoldText()
 if has("gui_running")
     set antialias
     if has('mac')
-        set guifont=Literation\ Mono\ Powerline:h12
+        set guifont=DejaVu\ Sans\ Mono:h12
         "set clipboard=unnamedplus "use + register for system clipboard
     elseif has('win32')
         set guioptions-=m " Remove menu bar to save space
