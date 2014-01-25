@@ -11,9 +11,7 @@ call vundle#rc()
 " Color schemes {{{2
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/seoul256.vim'
-Bundle 'sjl/badwolf'
 Bundle 'dhruvasagar/vim-railscasts-theme'
-Bundle 'cocopon/iceberg.vim'
 Bundle 'gregsexton/Gravity'
 
 " Features
@@ -183,8 +181,10 @@ if has("gui_running")
 else
     set t_Co=256
 endif
-set background=dark
+"set background=dark
 colorscheme railscasts
+command! Light colorscheme gravity
+command! Dark colorscheme railscasts
 
 " Status Line {{{1
 " Status line handled by vim-airline
