@@ -137,7 +137,10 @@ if executable('ag')
     set grepformat=%f:%l:%c:%m
     " use ag with ctrlp
     let g:ctrlp_user_command = 'ag %s -l --nocolor --follow -g ""'
-    let g:ctrlp_use_caching = 0
+    if !has('win32') 
+        let g:ctrlp_use_caching = 0
+    endif
+
 endif
 
 " start scrolling 2 lines from bottom
