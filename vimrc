@@ -190,7 +190,6 @@ command! Light colorscheme gravity
 command! Dark colorscheme railscasts
 
 " Status Line {{{1
-" Status line handled by vim-airline
 set laststatus=2
 set statusline=%{Mode()}
 set statusline+=%{&paste?'\ (paste)':'\ '}
@@ -204,7 +203,6 @@ set statusline+=\ %y      "filetype
 set statusline+=\ %{Fenc()} " file encoding
 set statusline+=\[%{&ff}\]  "file format
 set statusline+=\ \|\ LN\:%4.l/%-4.L\:%-3.c   "cursor line/total lines:column
-"set statusline+=\ \|\ COL\:%-3.c     "cursor column
 
 " Key Bindings {{{1
 
