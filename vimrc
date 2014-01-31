@@ -233,6 +233,8 @@ noremap  <buffer> <silent> $ g$
 " Move to end of line in insert mode
 inoremap <C-]> <C-o>$
 
+inoremap <C-SPACE> <C-o>
+
 " Fast saving and quitting
 noremap <Leader>w :w!<CR>
 noremap <Leader>q :q!<CR>
