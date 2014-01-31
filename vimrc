@@ -34,8 +34,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-dispatch'
 Bundle 'Yggdroot/indentLine'
 Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-vinegar'
-"Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
@@ -508,17 +506,10 @@ let g:user_emmet_settings = {
 \ },
 \}
 
-" NERDTree {{{2
-
-" let NERDTreeWinSize=35
-" let NERDTreeQuitOnOpen=1
-" let NERDTreeShowBookmarks=0
-" let NERDTreeShowFiles=1
-" let NERDTreeShowHidden=1
-" let NERDTreeChDirMode=2 "vim current directory follows NERDTree
-
-" nmap <silent> <C-T> :NERDTreeToggle<CR>;
-" let NERDTreeIgnore=['.class$[[file]]', '.DS_Store$[[file]]', 'CVS[[dir]]']
+" netrw
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_liststyle=3
 
 " vim-gist {{{2
 let g:gist_show_privates = 1
