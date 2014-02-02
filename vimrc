@@ -247,7 +247,7 @@ nmap <silent> <Leader>rv :so ~/.vim/vimrc<CR>
 
 " Buffer shortcuts
 nmap <leader>d :bd<CR>
-noremap \l :ls<CR>:b
+nnoremap \l :ls<CR>:b
 nnoremap gb :buffers<CR>:b
 
 " removing search match highlighting
