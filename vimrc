@@ -258,10 +258,6 @@ nmap <leader><space> :noh<CR>
 vnoremap <leader>S y:execute @@<cr>:echo 'Sourced selection.'<cr>
 nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 
-" Use the arrows to something useful
-map <right> :bn<cr>
-map <left> :bp<cr>
-
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
 
