@@ -246,6 +246,7 @@ nmap <silent> <Leader>ev :e ~/.vim/vimrc<CR>
 nmap <silent> <Leader>rv :so ~/.vim/vimrc<CR>
 
 " Buffer shortcuts
+nnoremap <C-D> :bd<CR>
 nmap <leader>d :bd<CR>
 nnoremap \l :ls<CR>:b
 nnoremap gb :buffers<CR>:b
