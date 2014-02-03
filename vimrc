@@ -488,7 +488,7 @@ let g:ctrlp_custom_ignore = {
     \ }
 
 " fugitive
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap gs :Gstatus<CR>
 
 " Simple way to turn off Gdiff splitscreen
 " works only when diff buffer is focused
