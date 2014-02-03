@@ -514,9 +514,6 @@ nnoremap gd :Vex<CR>
 " vim-gist {{{2
 let g:gist_show_privates = 1
 
-" easybuffer {{{2
-nmap <Leader>eb :EasyBuffer<cr>
-
 " indentLine {{{2
 let g:indentLine_enabled=0
 nnoremap ti :IndentLinesToggle<CR>
