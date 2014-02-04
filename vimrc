@@ -16,7 +16,6 @@ Bundle 'gregsexton/Gravity'
 
 " Features
 Bundle 'benmills/vimux'
-"Bundle 'bling/vim-airline'
 Bundle 'epeli/slimux'
 Bundle 'gmarik/vundle'
 Bundle 'mattn/emmet-vim'
@@ -456,9 +455,6 @@ augroup end
 " Plugins {{{1
 " load man page plugin shipped with Vim
 runtime ftplugin/man.vim
-
-"vim-airline
-let g:airline_powerline_fonts = 1
 
 " ctrlp
 nmap <space> [ctrlp]
