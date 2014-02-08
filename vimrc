@@ -502,7 +502,7 @@ let g:user_emmet_settings = {
 \}
 
 " netrw
-let g:netrw_browse_split = 2
+let g:netrw_browse_split = 4
 let g:netrw_liststyle=3
 let g:netrw_winsize=20
 nnoremap gd :Vex<CR> 
