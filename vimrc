@@ -369,6 +369,8 @@ inoremap ;; <C-o>A;
 nnoremap <Leader>; A;<esc>
 
 nnoremap <Leader>rd :redraw!<CR>
+noremap <C-U> :redraw!<CR>
+command! Rd :redraw!
 
 " Slimux keys
 map <Leader>s :SlimuxREPLSendLine<CR>
