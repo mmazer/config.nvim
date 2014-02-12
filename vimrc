@@ -490,12 +490,15 @@ let g:ctrlp_custom_ignore = {
 
 " fugitive
 nnoremap gs :Gstatus<CR>
+" trying different mapping for fugitive
+noremap Us :Gstatus<CR>
+noremap Ud :Gdiff<CR>
 
 " Simple way to turn off Gdiff splitscreen
 " works only when diff buffer is focused
 " https://gist.github.com/radmen/5048080
 command! Gdoff diffoff | q | Gedit
-nnoremap <leader>gdo :Gdoff<CR>
+nnoremap Uo :Gdoff<CR>
 
 " emmet {{{2
 let g:user_emmet_leader_key = '\'
@@ -567,7 +570,7 @@ function! GitDiffCached()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gdiffcached :call GitDiffCached()
-nnoremap <leader>gdc :Gdiffcached<CR>
+nnoremap Uc :Gdiffcached<CR>
 
 function! GitIncoming()
     new
@@ -576,7 +579,7 @@ function! GitIncoming()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gincoming :call GitIncoming()
-nnoremap <leader>gi :Gincoming<CR>
+nnoremap U[ :Gincoming<CR>
 
 function! GitOutgoing() 
     new
@@ -585,7 +588,7 @@ function! GitOutgoing()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Goutgoing :call GitOutgoing()
-nnoremap <leader>go :Goutgoing<CR>
+nnoremap U] :Goutgoing<CR>
 
 " Functions {{{1
 
