@@ -290,8 +290,10 @@ vnoremap <silent> <leader>d "_d
 " Quick yanking to the end of the line
 nnoremap Y y$
 
-" Window navigation
-" use ctrl-h/j/k/l to switch between splits
+" manage windows
+nnoremap gw <C-w>
+
+" navigation: use ctrl-h/j/k/l to switch between splits
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
