@@ -519,8 +519,8 @@ nnoremap gd :Vex<CR>
 let g:gist_show_privates = 1
 
 " indentLine {{{2
-let g:indentLine_enabled=0
-nnoremap ti :IndentLinesToggle<CR>
+"let g:indentLine_enabled=0
+"nnoremap ti :IndentLinesToggle<CR>
 
 " Syntastic {{{2
 let g:syntastic_javascript_checkers=['jshint']
@@ -541,6 +541,19 @@ let g:neocomplete#enable_auto_select=1
 let g:neocomplete#min_keyword_length=3
 
 inoremap <C-P> <C-X><C-U>
+" http://stackoverflow.com/questions/2158305/is-it-possible-to-display-indentation-guides-in-vim
+function! ToggleIndentGuides()
+    if exists('b:indent_guides')
+        call matchdelete(b:indent_guides)
+        unlet b:indent_guides
+    else
+        let pos = range(1, &l:textwidth, &l:shiftwidth)
+        call map(pos, '"\\%" . v:val . "v"')
+        let pat = '\%(\_^\s*\)\@<=\%(' . join(pos, '\|') . '\)\s'
+        let b:indent_guides = matchadd('CursorLine', pat)
+    endif
+endfunction
+nnoremap ti :call ToggleIndentGuides()<CR>
 
 function! ToggleComplete()
     if g:neocomplete#disable_auto_complete == 1
