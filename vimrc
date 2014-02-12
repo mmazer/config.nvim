@@ -303,8 +303,8 @@ nnoremap <C-h> <C-w>h
 set splitbelow
 set splitright
 
-" Tab navigation
-" http://vim.wikia.com/wiki/Alternative_tab_navigation
+" manage tabs
+" navigation: http://vim.wikia.com/wiki/Alternative_tab_navigation
 nnoremap th  :tabfirst<CR>
 nnoremap tj  :tabnext<CR>
 nnoremap tk  :tabprev<CR>
