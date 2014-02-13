@@ -673,7 +673,7 @@ function! OpenURI()
         echo "No URI found in line."
     endif
 endfunction
-map \u :call OpenURI ()<CR>
+noremap gou :call OpenURI()<CR>
 
 function! QuickLook()
     if has('mac')
