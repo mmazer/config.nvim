@@ -658,14 +658,14 @@ function! Fenc()
     endif
 endfun
 
-function! OpenURI ()
+function! OpenURI()
     " 2011-01-21 removed colon ':' from regexp to allow for port numbers in URLs
     " original regexp: [a-z]*:\/\/[^ >,;:]*
-    let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;\)\"]*')
-    echo s:uri
-    if s:uri != ""
+    let uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;\)\"]*')
+    echo uri
+    if uri != ""
         if has('win32')
-            exec ":silent !start chrome \"" . escape(s:uri,"%") . "\""
+            exec ":silent !cmd /C start /min " . escape(uri,"%")
         elseif has('mac')
             exec ":silent !open \"" . escape(s:uri,"%") . "\""
         endif
