@@ -242,8 +242,8 @@ noremap W :w!<CR>
 noremap <silent> Q :q!<CR>
 
 " Quick edit of this file - path only supported in 7.4+
-nmap <silent> <Leader>ev :e ~/.vim/vimrc<CR>
-nmap <silent> <Leader>rv :so ~/.vim/vimrc<CR>
+noremap Ev :e ~/.vim/vimrc<CR>
+noremap So :so ~/.vim/vimrc<CR>
 
 " Buffer shortcuts
 nnoremap <C-D> :bd<CR>
@@ -566,6 +566,7 @@ nnoremap tc :call ToggleComplete()<CR>
 
 " Commands {{{1
 command! Scratch :silent e ~/.var/vim/vim-scratch.txt 
+nnoremap Es :Scratch<CR>
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim/
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
