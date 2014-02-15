@@ -217,6 +217,10 @@ nnoremap g<space> :
 " Better mark jumping (line + col)
 nnoremap ' `
 
+" preserve original motions that will be remapped below
+nnoremap BB B
+nnoremap EE E
+
 " for toggling paste mode in terminal
 " Can also use `yo` from `unimpaired`
 set pastetoggle=<F5>
