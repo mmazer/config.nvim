@@ -330,19 +330,19 @@ nmap <Leader>O O<Esc>
 " http://vim.wikia.com/wiki/Swapping_characters,_words_and_lines
 
 " swap the current character with the next, without changing the cursor position
-:nnoremap <silent> gc xph
+nnoremap <silent> gc xph
 
 " swap the current word with the next, without changing cursor position
-:nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 
 " swap the current word with the previous, keeping cursor on current word
-:nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 
 " swap the current word with the next, keeping cursor on current word
-:nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
+nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
 
 " Open current buffer in Marked
-:nnoremap <leader>M :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>M :silent !open -a Marked.app '%:p'<cr>
 
 " Function mappings see ~/.vim/functions.vim
 noremap <leader>c :call ToggleBackgroundColour()<CR>
