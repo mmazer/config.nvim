@@ -296,7 +296,7 @@ vnoremap <silent> <leader>d "_d
 nnoremap Y y$
 
 " manage windows
-nnoremap gw <C-w>
+nnoremap W <C-w>
 
 " navigation: use ctrl-h/j/k/l to switch between splits
 nnoremap <C-j> <C-w>j
