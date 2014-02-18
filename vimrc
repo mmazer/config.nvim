@@ -262,11 +262,8 @@ nnoremap gb :ls<CR>:b
 nmap <leader><space> :noh<CR>
 
 " Source lines - from Steve Losh
-vnoremap <leader>S y:execute @@<cr>:echo 'Sourced selection.'<cr>
-nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
-
-map <leader>bn :bn<CR>
-map <leader>bp :bp<CR>
+vnoremap X y:execute @@<cr>:echo 'Sourced selection.'<cr>
+nnoremap X ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 
 " Avoid the escape key - remember <C-[> also maps to Esc
 "inoremap jj <ESC>`^
