@@ -495,8 +495,13 @@ let g:ctrlp_custom_ignore = {
 " fugitive
 nnoremap gs :Gstatus<CR>
 " trying different mapping for fugitive
-noremap Us :Gstatus<CR>
-noremap Ud :Gdiff<CR>
+nnoremap Us :Gstatus<CR>
+nnoremap UC :Gcommit<CR>
+nnoremap Ud :Gdiff<CR>
+nnoremap Udg :diffget<CR>
+nnoremap Udp :diffput<CR>
+nnoremap Ur :Gread<CR>
+nnoremap Uw :Gwrite<CR>
 
 " Simple way to turn off Gdiff splitscreen
 " works only when diff buffer is focused
