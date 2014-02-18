@@ -239,10 +239,6 @@ inoremap <C-]> <C-o>$
 
 inoremap <C-SPACE> <C-o>
 
-" Fast saving and quitting
-noremap <Leader>w :w!<CR>
-noremap <Leader>q :q!<CR>
-noremap W :w!<CR>
 noremap <silent> Q :q!<CR>
 
 " Quick edit of this file - path only supported in 7.4+
@@ -250,10 +246,17 @@ noremap Ev :e ~/.vim/vimrc<CR>
 noremap So :so ~/.vim/vimrc<CR>
 
 " Buffer shortcuts
-nnoremap <C-D> :bd<CR>
-nmap <leader>d :bd<CR>
-nnoremap \l :ls<CR>:b
-nnoremap gb :buffers<CR>:b
+" preserve original B motion
+nnoremap Bd :bd<CR>
+nnoremap Bg :ls<CR>:b
+nnoremap Bl :ls<CR>
+nnoremap Bw :w!<CR>
+nnoremap Bs :w<CR>
+nnoremap Bn :bn<CR>
+nnoremap Bp :bp<CR>
+nnoremap BP :b#<CR>
+
+nnoremap gb :ls<CR>:b
 
 " removing search match highlighting
 nmap <leader><space> :noh<CR>
