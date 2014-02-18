@@ -4,6 +4,8 @@
 
 #### Windows
 
+Alternate Windows build is available [here](http://wyw.dcweb.cn/#download) with Lua support and updates to latest patches.
+
 ##### General
 
  - create `~/vimfile` symlink to `~/.vim/` 
