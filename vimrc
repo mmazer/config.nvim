@@ -250,8 +250,8 @@ noremap So :so ~/.vim/vimrc<CR>
 nnoremap Bd :bd<CR>
 nnoremap Bg :ls<CR>:b
 nnoremap Bl :ls<CR>
-nnoremap Bw :w!<CR>
-nnoremap Bs :w<CR>
+nnoremap Bw :w<CR>
+nnoremap BW :w!<CR>
 nnoremap Bn :bn<CR>
 nnoremap Bp :bp<CR>
 nnoremap BP :b#<CR>
