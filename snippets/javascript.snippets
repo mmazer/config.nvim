@@ -1,3 +1,5 @@
+snippet ppty
+	${1:key}: ${2:value}
 snippet def
 	define('${1:module_id}',[${2:dependencies}], function(${3:params}) {
 		${4}
@@ -40,4 +42,15 @@ snippet jspy
 	jasmine.createSpy('${1}');
 snippet toBeKind
 	toEqual(jasmine.any(${1:type}))
+# React
+snippet jsx
+	/** @jsx React.DOM */
 
+snippet react-class
+	React.createClass({
+		render: function() {
+			return (
+				${1}
+			);
+		}
+	});
