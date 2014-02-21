@@ -42,15 +42,19 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'justinmk/vim-gtfo.git'
+Bundle 'mmazer/syntastic-jsxhint'
+Bundle 'mmazer/vim-caniuse'
 
 " File types
 Bundle 'derekwyatt/vim-scala'
 Bundle 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
 Bundle 'elzr/vim-json'
 Bundle 'davidoc/taskpaper.vim'
 Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
+Bundle 'Shutnik/jshint2.vim'
 
 filetype plugin indent on
 syntax on
@@ -407,6 +411,10 @@ augroup javascript_files
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 augroup end
 
+augroup jsx_files
+    autocmd BufNewFile,BufRead *.jsx set ft=javascript.jsx
+augroup end
+
 augroup vim_files
     autocmd filetype vim set foldmethod=marker
 augroup end
@@ -543,6 +551,7 @@ let g:syntastic_stl_format = '[Syntax: %E{Errors: %fe #%e}%B{, }%W{Warnings: %fw
 
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'passive_filetypes': ['xml', 'html', 'java'] }
+let g:syntastic_filetype_map = { 'javascript.jsx': 'jsx' }
 
 " Neocomplete {{{2
 let g:acp_enableAtStartup = 0
