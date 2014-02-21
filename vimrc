@@ -520,7 +520,6 @@ command! Gdoff diffoff | q | Gedit
 nnoremap Uo :Gdoff<CR>
 
 " emmet {{{2
-let g:user_emmet_leader_key = '\'
 let g:user_emmet_expandabbr_key = '<C-e>'
 let g:user_emmet_settings = {
 \ 'html' : {
