@@ -492,6 +492,8 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  'target\|node_modules\|.settings'
     \ }
 
+let g:ctrlp_funky_syntax_highlight = 1
+
 " fugitive
 nnoremap gs :Gstatus<CR>
 " trying different mapping for fugitive
