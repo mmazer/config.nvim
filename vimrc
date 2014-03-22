@@ -395,6 +395,8 @@ set encoding=utf-8
 set ffs=unix,dos,mac "Default file types
 set ff=unix " set initial buffer file format
 
+let g:html_indent_inctags = "html,body,head,tbody"
+
 " Autocommands {{{1
 
 "augroup LineNumber 
