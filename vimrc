@@ -65,6 +65,7 @@ syntax sync minlines=256
 set ruler
 set number "see augroup linenumber
 set nocursorline " no cursor line by default for performance - toggle with unimpaired `coc`
+set noshowcmd
 
 " indentation: use 4 spaces and replace tabs
 set expandtab
