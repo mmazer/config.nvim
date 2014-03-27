@@ -589,6 +589,7 @@ nnoremap tc :call ToggleComplete()<CR>
 " Commands {{{1
 command! Scratch :silent e ~/.var/vim/vim-scratch.txt 
 nnoremap Es :Scratch<CR>
+command! Dos2Unix :%!dos2unix
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim/
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
