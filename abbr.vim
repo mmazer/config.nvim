@@ -7,9 +7,9 @@ iab seperated separated
 iab negociate negotiate
 
 " Markdown
-iab h1 #
-iab h2 ##
-iab h3 ###
+iab hh1 #
+iab hh2 ##
+iab hh3 ###
 iab hh4 ####
 iab hh5 #####
 
