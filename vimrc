@@ -602,7 +602,7 @@ command! ShowChars set list listchars=tab:▸–,trail:·,nbsp:¬
 " Show hunks to be committed
 function! GitDiffCached()
     new
-    r !git diff --cached
+    r !git diff -w --cached
     setlocal ft=diff bt=nofile bh=wipe nobl noswf ro
     nnoremap <buffer> q :bw<cr>
 endfunction
