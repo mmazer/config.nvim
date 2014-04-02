@@ -58,6 +58,8 @@ Bundle 'Shutnik/jshint2.vim'
 
 filetype plugin indent on
 syntax on
+set encoding=utf-8
+
 " try to improve performance
 syntax sync minlines=256
 
@@ -117,7 +119,7 @@ runtime macros/matchit.vim
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
 
-set listchars=tab:▸–,trail:·,nbsp:¬
+set listchars=tab:▸\ ,trail:·,nbsp:¬
 
 " Reduce delays waiting for multi-key combinations when running in tmux
 " tmux needs `set -s escape-time 0` for these to work
@@ -393,7 +395,6 @@ command! GrailsStop :SlimuxShellRun stop-app
 command! GrailsRun :SlimuxShellRun run-app
 
 " File Types {{{1
-set encoding=utf-8
 set ffs=unix,dos,mac "Default file types
 set ff=unix " set initial buffer file format
 
