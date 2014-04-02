@@ -117,6 +117,8 @@ runtime macros/matchit.vim
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
 
+set listchars=tab:▸–,trail:·,nbsp:¬
+
 " Reduce delays waiting for multi-key combinations when running in tmux
 " tmux needs `set -s escape-time 0` for these to work
 set ttimeout timeout ttimeoutlen=125
@@ -596,7 +598,6 @@ command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<Space>
 
 command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
-command! ShowChars set list listchars=tab:▸–,trail:·,nbsp:¬
 
 " Git
 " Show hunks to be committed
