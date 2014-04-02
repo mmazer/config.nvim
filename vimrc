@@ -11,7 +11,7 @@ call vundle#rc()
 " Color schemes {{{2
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/seoul256.vim'
-Bundle 'dhruvasagar/vim-railscasts-theme'
+Bundle 'mmazer/vim-railscasts-theme'
 Bundle 'gregsexton/Gravity'
 
 " Features
