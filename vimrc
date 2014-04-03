@@ -843,7 +843,10 @@ endfun
 command! Rd :redraw!
 command! Scratch :silent e ~/.var/vim/vim-scratch.txt
 nnoremap Es :Scratch<CR>
-command! Dos2Unix :%!dos2unix
+if executable("dos2unix")
+    command! Dos2Unix :%!dos2unix
+endif
+
 " http://robots.thoughtbot.com/faster-grepping-in-vim/
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<Space>
