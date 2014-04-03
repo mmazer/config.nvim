@@ -1,20 +1,24 @@
+" 1: important {{{
 set nocompatible
-
 " disable before calling vundle
 filetype off
-syntax off
 
-" Bundles {{{1
+" set this here because of unicode chars in listchars below
+set encoding=utf-8
+
+" bundles {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" Color schemes {{{2
+" color schemes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'mmazer/vim-railscasts-theme'
 Bundle 'gregsexton/Gravity'
 
-" Features
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-fugitive'
+
 Bundle 'benmills/vimux'
 Bundle 'epeli/slimux'
 Bundle 'gmarik/vundle'
@@ -26,14 +30,10 @@ Bundle 'rking/ag.vim'
 Bundle 'mmazer/ctrlp-funky'
 Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-vinegar'
 Bundle 'Raimondi/delimitMate'
-Bundle 'scrooloose/syntastic'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -42,10 +42,14 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'justinmk/vim-gtfo.git'
-Bundle 'mmazer/syntastic-jsxhint'
 Bundle 'mmazer/vim-caniuse'
+Bundle 'scrooloose/nerdtree'
+Bundle 'nathanaelkane/vim-indent-guides'
 
-" File types
+" file types
+Bundle 'tpope/vim-markdown'
+Bundle 'scrooloose/syntastic'
+Bundle 'mmazer/syntastic-jsxhint'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
@@ -54,129 +58,179 @@ Bundle 'davidoc/taskpaper.vim'
 Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
-Bundle 'Shutnik/jshint2.vim'
+Bundle 'Shutnik/jshint2.vim' 
+"}}}
 
-filetype plugin indent on
-syntax on
-set encoding=utf-8
+"}}}
 
-" try to improve performance
-syntax sync minlines=256
+" 2: moving around, searching and patterns {{{
 
-" Basic Settings {{{1
-set ruler
-set number "see augroup linenumber
-set nocursorline " no cursor line by default for performance - toggle with unimpaired `coc`
-set noshowcmd
-
-" indentation: use 4 spaces and replace tabs
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-
-" soft wrapping
-set wrap linebreak textwidth=0
-
-" make managing multiple buffers easier:
-"  - current buffer (with unsaved modifications) can be placed in the
-"    background without saving;
-"  - when a background buffer becomes current again, marks and undo-history are
-"    remembered.
-set hidden
-
-" reload files modified externally
-set autoread
-
-" completion
-set completeopt=longest,menuone,preview
-
-" wildmenu completion
-set wildmenu
-set wildmode=longest,list
-
-set wildignore+=.hg,.git,.svn,CVS,target,.settings
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
-set wildignore+=*.class,*.jar,*.war,*.o,*.obj,*.exe,*.dll
-set wildignore+=*.DS_Store
-set wildignore+=*.orig      " merge resolution files
-
-" backups
-" 2012-09-26 - let's try no backups and no swaps
-set nobackup
-set noswapfile
-
-" Use two path separators so the swap file name will be built from the complete
-" path to the file with all path separators substituted to percent '%' signs.
-" This will ensure file name uniqueness in the preserve directory.
-set backupdir=$HOME/.var/vim/backup//
-set directory=$HOME/.var/vim/swp//
-
-" enable '%' command jump to matching HTML tags and if/else/endif in Vim
-" scripts
-runtime macros/matchit.vim
-
-" spelling
-set spelllang=en
-set spellfile=~/.vim/spell/spellfile.en.add
-
-set listchars=tab:▸\ ,trail:·,nbsp:¬
-
-" Reduce delays waiting for multi-key combinations when running in tmux
-" tmux needs `set -s escape-time 0` for these to work
-set ttimeout timeout ttimeoutlen=125
-
-" disable bell/visual bell
-set noeb vb t_vb=
-au GUIEnter * set vb t_vb=
-
-" Search {{{1
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase   "case sensitive if search term contains upppecase letter
 
-" Keep search matches in the middle of the window.
 nnoremap n nzzzv
 nnoremap N Nzzzv
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
-    set grepformat=%f:%l:%c:%m
-    " use ag with ctrlp
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --follow -g ""'
-    if !has('win32') 
-        let g:ctrlp_use_caching = 0
+
+" }}}
+
+" 3: tags {{{
+" }}}
+
+" 4: displaying text {{{
+set scrolloff=2
+set listchars=tab:▸\ ,trail:·,nbsp:¬
+set wrap linebreak textwidth=0
+set number
+
+" }}}
+
+" 5: syntax, highligthing and spelling {{{1
+filetype plugin indent on
+syntax on
+syntax sync minlines=256
+set nocursorline
+colorscheme railscasts
+let g:seoul256_background=234
+set spelllang=en
+set spellfile=~/.vim/spell/spellfile.en.add
+" }}}
+
+" 6: multiple windows {{{1
+set hidden
+set splitbelow
+set splitright
+
+" status line
+set laststatus=2
+set statusline=%{Mode()}
+set statusline+=%{&paste?'\ (paste)':'\ '}
+set statusline+=\|
+set statusline+=\ %{Branch()}
+set statusline+=\ %f\:\#%n            "file name and buffer #
+set statusline+=%(\[%R%M\]%)      "modified flag
+set statusline+=\ %{SyntasticStatuslineFlag()}
+set statusline+=%=
+set statusline+=\ %{StatuslineWhitespace()}
+set statusline+=\ %y      "filetype
+set statusline+=\ %{Fenc()} " file encoding
+set statusline+=\[%{&ff}\]  "file format
+set statusline+=\ \|\ LN\:%4.l/%-4.L\:%-3.c   "cursor line/total lines:column
+
+" Adapted from https://github.com/maciakl/vim-neatstatus
+function! Mode()
+    "redraw
+    if &ft ==? "help"
+        return "Help"
     endif
 
-endif
+    if &ft ==? "diff"
+        return "Diff"
+    endif
 
-" start scrolling 2 lines from bottom
-set scrolloff=2
+    let l:mode = mode()
 
-" Tweak various messages and disable startup screen
-set shortmess=aTItoO
+    if     mode ==# "n"  | return "NORMAL"
+    elseif mode ==# "i"  | return "INSERT"
+    elseif mode ==# "c"  | return "COMMAND"
+    elseif mode ==# "!"  | return "SHELL"
+    elseif mode ==# "R"  | return "REPLACE"
+    elseif mode ==# "v"  | return "VISUAL"
+    elseif mode ==# "V"  | return "V-LINE"
+    elseif mode ==# ""   | return "V-BLOCK"
+    else                 | return l:mode
+    endif
+endfunction
 
-" Folding {{{1
-set foldmethod=syntax                   "fold based on indent
-set foldnestmax=2                       "deepest fold is 10 levels
-set nofoldenable                        "don't fold by default
-let g:xml_syntax_folding=1              "enable xml folding
-"
-" Space to toggle folds.
-nnoremap <Space>z za
-vnoremap <Space>z za
+function! Branch()
+    let branch = ''
+    if !exists('*fugitive#head')
+        return branch
+    endif
 
-" Refocus fold under cursor
-" From Steve Losh
-nnoremap ,z zMzvzz
+    let branch = fugitive#head(7)
+    return empty(branch) ? '' : 'Git:'.branch
+endfunction
 
-set foldtext=CustomFoldText()
+function! Fenc()
+    if &fenc !~ "^$\|utf-8" || &bomb
+        return &fenc . (&bomb ? "-bom" : "" )
+    else
+        return "none"
+    endif
+endfun
 
-" GUI {{{1
+" Detect trailing whitespace and mixed indentation
+" Based on http://got-ravings.blogspot.ca/2008/10/vim-pr0n-statusline-whitespace-flags.html
+function! StatuslineWhitespace()
+    if &readonly || !&modifiable
+        return ''
+    endif
+
+    if exists("b:statusline_whitespace")
+        return b:statusline_whitespace
+    endif
+
+    let trailing = search('\s\+$', 'nw') != 0
+    if trailing
+        let trailing_warning = 'trailing'
+     else
+        let trailing_warning = ''
+     endif
+
+     " check indents
+    let tabs = search('^\t', 'nw') != 0
+    let spaces = search('^ ', 'nw') != 0
+    let mixed = tabs && spaces
+
+    if mixed
+        let tab_warning = 'mixed-indenting'
+    elseif (spaces && !&et) || (tabs && &et)
+        let tab_warning = '&et'
+    else
+        let tab_warning = ''
+    endif
+
+    if trailing || mixed
+        let whitespace_warning = '['.trailing_warning
+        if trailing && mixed
+            let whitespace_warning.=':'
+        endif
+        let whitespace_warning.=tab_warning.']'
+        let b:statusline_whitespace = whitespace_warning
+    else
+        let b:statusline_whitespace = ''
+    endif
+
+    return b:statusline_whitespace
+endfunction
+
+"recalculate the trailing whitespace warning when idle, and after saving
+augroup statusline_whitespace
+    autocmd CursorHold,BufWritePost * unlet! b:statusline_whitespace
+augroup END
+
+" }}}
+
+" 7: multiple tab pages {{{1
+" }}}
+
+" 8: terminal {{{1
+
+set t_Co=256
+
+" }}}
+
+" 9: using the mouse {{{1
+" }}}
+
+" 10: GUI {{{1
+
 if has("gui_running")
     set antialias
     if has('mac')
         set guifont=DejaVu\ Sans\ Mono:h12
-        "set clipboard=unnamedplus "use + register for system clipboard
     elseif has('win32')
         set guioptions-=m " Remove menu bar to save space
         set guioptions+=a " Yank to system clipboard
@@ -187,48 +241,104 @@ if has("gui_running")
     set guioptions-=L " remove left-hand scroll bar
     set lines=90
     set columns=145
-else
-    set t_Co=256
 endif
-"set background=dark
-colorscheme railscasts
-command! Light colorscheme gravity
-command! Dark colorscheme railscasts
 
-" Status Line {{{1
-set laststatus=2
-set statusline=%{Mode()}
-set statusline+=%{&paste?'\ (paste)':'\ '}
-set statusline+=\|
-set statusline+=\ %{Branch()}
-set statusline+=\ %f\:%n            "file name and buffer #
-set statusline+=%(\[%R%M\]%)      "modified flag
-set statusline+=\ %{SyntasticStatuslineFlag()}
-set statusline+=%=
-set statusline+=\ %y      "filetype
-set statusline+=\ %{Fenc()} " file encoding
-set statusline+=\[%{&ff}\]  "file format
-set statusline+=\ \|\ LN\:%4.l/%-4.L\:%-3.c   "cursor line/total lines:column
+" }}}
 
-" Key Bindings {{{1
+" 11: printing {{{1
+" }}}
+
+" 12: messages and info {{{1
+
+set shortmess=aTItoO
+set ruler
+set noshowcmd
+" disable bell/visual bell
+set noeb vb t_vb=
+augroup visual_bell
+    autocmd GUIEnter * set vb t_vb=
+augroup end
+
+" }}}
+
+" 13: selecting text {{{1
+" }}}
+
+" 14: editing text {{{1
+
+set completeopt=longest,menuone,preview
+set showmatch
+runtime macros/matchit.vim
+
+" }}}
+
+" 15: tabs and indenting {{{1
+
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+let g:html_indent_inctags = "html,body,head,tbody"
+
+" }}}
+
+" 16: folding {{{1
+
+set foldmethod=syntax                   "fold based on indent
+set foldnestmax=2                       "deepest fold is 10 levels
+set nofoldenable                        "don't fold by default
+let g:xml_syntax_folding=1              "enable xml folding
+
+nnoremap <Space>z za
+vnoremap <Space>z za
+
+" refocus fold under cursor - from Steve Losh
+nnoremap ,z zMzvzz
+
+"http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
+function! CustomFoldText()
+    "get first non-blank line
+    let fs = v:foldstart
+    while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
+    endwhile
+    if fs > v:foldend
+        let line = getline(v:foldstart)
+    else
+        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+    endif
+
+    let w = winwidth(0) - &foldcolumn - (&numberend ? 8 : 0)
+    let foldSize = 1 + v:foldend - v:foldstart
+    let foldSizeStr = " (" . foldSize . " lines) "
+    let foldLevelStr = repeat("+--", v:foldlevel)
+    let lineCount = line("$")
+    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
+    let marker = "» "
+    let expansionString = repeat(".", w - strwidth(marker.foldSizeStr.line.foldLevelStr.foldPercentage))
+    "return marker . line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+    return marker . line . foldSizeStr
+endfunction
+set foldtext=CustomFoldText()
+
+" }}}
+
+" 17: diff mode {{{1
+" }}}
+
+" 18: mapping {{{1
+
+" try to reduce delays waiting for multi-key combinations in tmux
+" tmux needs `set -s escape-time 0` for these to work
+set ttimeout timeout ttimeoutlen=125
 
 "keep original motion: repeat latest f, t, F or T in opposite direction
 noremap ,, ,
 let mapleader = ","
 let g:mapleader = ","
 
-" One less key to press for commands
-"keep original motion: repeat latest f, t, F or T
-"noremap <leader>f ;
-"nnoremap ; :
 nnoremap g<space> :
 
 " Better mark jumping (line + col)
 nnoremap ' `
-
-" preserve original motions that will be remapped below
-nnoremap BB B
-nnoremap EE E
 
 " for toggling paste mode in terminal
 " Can also use `yo` from `unimpaired`
@@ -243,40 +353,23 @@ noremap  <buffer> <silent> j gj
 noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
 
-" Move to end of line in insert mode
 inoremap <C-]> <C-o>$
-
-inoremap <C-SPACE> <C-o>
-
 noremap <silent> Q :q!<CR>
-
-" Quick edit of this file - path only supported in 7.4+
 noremap Ev :e ~/.vim/vimrc<CR>
 noremap So :so ~/.vim/vimrc<CR>
 
-" Buffer shortcuts
-" preserve original B motion
-nnoremap Bd :bd<CR>
-nnoremap Bg :ls<CR>:b
-nnoremap Bl :ls<CR>
-nnoremap Bw :w<CR>
-nnoremap BW :w!<CR>
-nnoremap Bn :bn<CR>
-nnoremap Bp :bp<CR>
-nnoremap BP :b#<CR>
+nnoremap <space>W :w!<CR>
+nnoremap <space>B :b#<CR>
+nnoremap <space>d :bd<CR>
+nnoremap <space>b :ls<CR>:b
 
-nnoremap gb :ls<CR>:b
-
-" removing search match highlighting
-nmap <leader><space> :noh<CR>
+nmap <space><space> :noh<CR>
 
 " Source lines - from Steve Losh
 vnoremap X y:execute @@<cr>:echo 'Sourced selection.'<cr>
 nnoremap X ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 
 " Avoid the escape key - remember <C-[> also maps to Esc
-"inoremap jj <ESC>`^
-"inoremap jk <ESC>`^
 inoremap kj <ESC>`^
 
 " Prefer to use Perl/Ruby style regex patterns
@@ -284,10 +377,10 @@ inoremap kj <ESC>`^
 nnoremap / /\v
 vnoremap / /\v
 
-nnoremap <Leader>j J
-" Easier to type, and I never use the default behavior.
-nnoremap K H 
-nnoremap J L 
+nnoremap <space>j J
+
+nnoremap K H
+nnoremap J L
 noremap H ^
 noremap L $
 vnoremap L g_
@@ -307,57 +400,33 @@ nnoremap Y y$
 " manage windows
 nnoremap W <C-w>
 
-" navigation: use ctrl-h/j/k/l to switch between splits
+" window navigation: use ctrl-h/j/k/l to switch between splits
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
-set splitbelow
-set splitright
-
-" manage tabs
-" navigation: http://vim.wikia.com/wiki/Alternative_tab_navigation
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnext<Space>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+" tab navigation: http://vim.wikia.com/wiki/Alternative_tab_navigation
+nnoremap <space>th  :tabfirst<CR>
+nnoremap <space>tj  :tabnext<CR>
+nnoremap <space>tk  :tabprev<CR>
+nnoremap <space>tl  :tablast<CR>
+nnoremap <space>tt  :tabedit<Space>
+nnoremap <space>tn  :tabnext<Space>
+nnoremap <space>tm  :tabm<Space>
+nnoremap <space>td  :tabclose<CR>
 
 " toggling following vim-unimpaired
 nnoremap [of :setlocal foldcolumn=3<CR>
 nnoremap ]of :setlocal foldcolumn=0<CR>
 
-" Insert lines in normal mode
-nmap <Leader>o i<CR><Esc>k$
-nmap <Leader>O O<Esc>
-
-" Swapping characters and words
-" http://vim.wikia.com/wiki/Swapping_characters,_words_and_lines
-
-" swap the current character with the next, without changing the cursor position
-nnoremap <silent> gc xph
-
-" swap the current word with the next, without changing cursor position
-nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
-
-" swap the current word with the previous, keeping cursor on current word
-nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
-
-" swap the current word with the next, keeping cursor on current word
-nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
-
-" Open current buffer in Marked
-nnoremap <leader>M :silent !open -a Marked.app '%:p'<cr>
+nnoremap <space>h :h<space>
 
 " Function mappings see ~/.vim/functions.vim
 noremap <leader>c :call ToggleBackgroundColour()<CR>
 
 " indent the whole file and return to original position
-nmap <leader>if gg=G``
+nmap <space>if gg=G``
 
 " Remove trailing space
 nmap _$ :call StripTrailingWhitespace()<CR>
@@ -369,7 +438,7 @@ nmap _= :call Preserve("normal gg=G")<CR>
 inoremap vv ^vg_
 
 " set current working directory
-nmap <leader>cd :call Setcwd()<cr>
+nnoremap <space>cd :call Setcwd()<cr>
 
 " quick fix window
 nnoremap gq :copen<CR>
@@ -379,105 +448,152 @@ nnoremap gl :llist<CR>
 noremap cl :lclose<CR>
 
 " end lines with semicolons
-inoremap ;; <C-o>A;
-nnoremap <Leader>; A;<esc>
+inoremap ;] <C-o>A;
+nnoremap <space>; A;<esc>
 
-nnoremap <Leader>rd :redraw!<CR>
+nnoremap <space>rd :redraw!<CR>
 noremap <C-U> :redraw!<CR>
-command! Rd :redraw!
 
 " Slimux keys
 map <Leader>s :SlimuxREPLSendLine<CR>
 vmap <Leader>s :SlimuxREPLSendSelection<CR>
 
-" Custom Slimux commands
-command! GrailsStop :SlimuxShellRun stop-app
-command! GrailsRun :SlimuxShellRun run-app
+inoremap <C-P> <C-X><C-U>
 
-" File Types {{{1
+" }}}
+
+" 19: reading and writing files {{{1
+
+set modeline
 set ffs=unix,dos,mac "Default file types
 set ff=unix " set initial buffer file format
+set nobackup
+set backupdir=$HOME/.var/vim/backup//
+set autoread
 
-let g:html_indent_inctags = "html,body,head,tbody"
+" }}}
 
-" Autocommands {{{1
+" 20: swap file {{{1
 
-"augroup LineNumber 
-"    autocmd FocusLost * :set number
-"    autocmd InsertEnter * :set number
-"    autocmd InsertLeave * :set relativenumber
-"    autocmd CursorMoved * :set relativenumber
-"augroup END
+set noswapfile
+set directory=$HOME/.var/vim/swp//
 
-" Remove trailing whitespace
-autocmd FileType css,groovy,java,javascript,less,php,scala autocmd BufWritePre <buffer> :%s/\s\+$//e
+"}}}
 
-augroup javascript_files
-    autocmd FileType javascript setlocal foldmethod=indent
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-augroup end
+" 21: command line editing {{{1
+set wildmenu
+set wildmode=longest,list
 
-augroup jsx_files
-    autocmd BufNewFile,BufRead *.jsx set ft=javascript.jsx
-augroup end
+set wildignore+=.hg,.git,.svn,CVS,target,.settings
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
+set wildignore+=*.class,*.jar,*.war,*.o,*.obj,*.exe,*.dll
+set wildignore+=*.DS_Store
+set wildignore+=*.orig      " merge resolution files
 
-augroup vim_files
-    autocmd filetype vim set foldmethod=marker
-augroup end
+" }}}
 
-augroup html_files
-    "autocmd filetype html set ft=xml.html.javascript
-    autocmd FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
-    autocmd FileType setlocal autoindent
-augroup end
+" 22: executing external commands {{{1
+" }}}
 
-augroup jsp_files
-    autocmd filetype jsp set ft=jsp.html
-    autocmd filetype jsp set foldmethod=manual
-augroup end
+" 23: running make and jumping to errors {{{1
 
-augroup gsp_files
-    autocmd FileType gsp set ft=gsp.html
-    autocmd FileType gsp setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
-augroup end
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+    set grepformat=%f:%l:%c:%m
+endif
 
-augroup java_files
-    autocmd filetype java compiler maven
-    autocmd FileType java setlocal foldmethod=syntax
-    autocmd FileType java setlocal comments=sl:/**,mb:\ *,exl:\ */,sr:/*,mb:*,exl:*/,://
-    " hide completion scatch window when using eclim
-    autocmd FileType java setlocal completeopt-=preview
-augroup end
+" }}}
 
-augroup css_files
-    autocmd FileType css setlocal  omnifunc=csscomplete#CompleteCSS
-augroup end
+" 24: system specific {{{1
+" }}}
 
-augroup less_files
-    autocmd FileType less setlocal omnifunc=csscomplete#CompleteCSS
-augroup end
+" 25: language specific {{{1
 
-augroup jmeter_files
-    autocmd! BufRead *.jtl setlocal ft=text
-augroup end
+" }}}
 
-augroup json_files
-    "autocmd FileType json set ft=json
-    "autocmd filetype json set foldmethod=syntax
-    autocmd FileType json nnoremap <buffer> <Leader>fj :%!python -m json.tool<CR>
-augroup end
+" 26: multi-byte characters {{{1
 
-augroup xml_files
-    autocmd filetype xml setlocal foldmethod=syntax
-augroup end
+" }}}
 
-augroup taskpaper_files
-    autocmd FileType taskpaper setlocal noexpandtab
-augroup end
+" 27: various {{{
 
-" Plugins {{{1
-" load man page plugin shipped with Vim
-runtime ftplugin/man.vim
+" autocommands {{{
+if has("autocmd")
+    " remove trailing whitespace
+    autocmd FileType css,groovy,java,javascript,less,php,scala autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+    augroup javascript_files
+        autocmd FileType javascript setlocal foldmethod=indent
+        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    augroup END
+
+    augroup jsx_files
+        autocmd BufNewFile,BufRead *.jsx set ft=javascript.jsx
+    augroup END
+
+    augroup vim_files
+        autocmd filetype vim set foldmethod=marker
+    augroup END
+
+    augroup html_files
+        "autocmd filetype html set ft=xml.html.javascript
+        autocmd FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
+        autocmd FileType setlocal autoindent
+    augroup END
+
+    augroup jsp_files
+        autocmd filetype jsp set ft=jsp.html
+        autocmd filetype jsp set foldmethod=manual
+    augroup END
+
+    augroup gsp_files
+        autocmd FileType gsp set ft=gsp.html
+        autocmd FileType gsp setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
+    augroup END
+
+    augroup java_files
+        autocmd filetype java compiler maven
+        autocmd FileType java setlocal foldmethod=syntax
+        autocmd FileType java setlocal comments=sl:/**,mb:\ *,exl:\ */,sr:/*,mb:*,exl:*/,://
+        " hide completion scatch window when using eclim
+        autocmd FileType java setlocal completeopt-=preview
+    augroup END
+
+    augroup css_files
+        autocmd FileType css setlocal  omnifunc=csscomplete#CompleteCSS
+    augroup END
+
+    augroup less_files
+        autocmd FileType less setlocal omnifunc=csscomplete#CompleteCSS
+    augroup END
+
+    augroup jmeter_files
+        autocmd! BufRead *.jtl setlocal ft=text
+    augroup END
+
+    augroup json_files
+        autocmd FileType json nnoremap <buffer> <Leader>fj :%!python -m json.tool<CR>
+    augroup END
+
+    augroup xml_files
+        autocmd filetype xml setlocal foldmethod=syntax
+    augroup END
+
+    augroup taskpaper_files
+        autocmd FileType taskpaper setlocal noexpandtab
+    augroup END
+
+    augroup fugitive_buffers
+        autocmd BufRead fugitive\:* xnoremap <buffer> dp :diffput<CR>|xnoremap <buffer> do :diffget<CR>
+    augroup END
+
+    augroup markdown_files
+        autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown setlocal formatoptions=ant textwidth=80 wrapmargin=0
+    augroup END
+endif "}}}
+" }}}
+
+" 28 plugin settings {{{1
 
 " ctrlp
 nmap <space> [ctrlp]
@@ -507,25 +623,62 @@ let g:ctrlp_custom_ignore = {
     \ }
 
 let g:ctrlp_funky_syntax_highlight = 1
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --follow -g ""'
+    if !has('win32')
+        let g:ctrlp_use_caching = 0
+    endif
+endif
 
 " fugitive
-nnoremap gs :Gstatus<CR>
-" trying different mapping for fugitive
-nnoremap Us :Gstatus<CR>
-nnoremap UC :Gcommit<CR>
-nnoremap Ud :Gdiff<CR>
-nnoremap Udg :diffget<CR>
-nnoremap Udp :diffput<CR>
-nnoremap Ur :Gread<CR>
-nnoremap Uw :Gwrite<CR>
+nnoremap <space>gb :Gblame<CR>
+nnoremap <space>gC :Gcommit<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gr :Gread<CR>
+nnoremap <space>gw :Gwrite<CR>
 
 " Simple way to turn off Gdiff splitscreen
 " works only when diff buffer is focused
 " https://gist.github.com/radmen/5048080
 command! Gdoff diffoff | q | Gedit
-nnoremap Uo :Gdoff<CR>
+nnoremap <space>go :Gdoff<CR>
 
-" emmet {{{2
+function! GitDiffCached()
+    new
+    r !git diff -w --cached
+    setlocal ft=diff bt=nofile bh=wipe nobl noswf ro
+    nnoremap <buffer> q :bw<cr>
+endfunction
+command! Gdiffcached :call GitDiffCached()
+nnoremap <space>gc :Gdiffcached<CR>
+
+function! GitIncoming()
+    new
+    r !git log --pretty=oneline --abbrev-commit --graph ..@{u}
+    setlocal ft=git bt=nofile bh=wipe nobl noswf ro
+    nnoremap <buffer> q :bw<cr>
+endfunction
+command! Gincoming :call GitIncoming()
+nnoremap <space>g[ :Gincoming<CR>
+
+function! GitOutgoing()
+    new
+    r !git log --pretty=oneline --abbrev-commit --graph @{u}..
+    setlocal ft=git bt=nofile bh=wipe nobl noswf ro
+    nnoremap <buffer> q :bw<cr>
+endfunction
+command! Goutgoing :call GitOutgoing()
+nnoremap <space>g] :Goutgoing<CR>
+
+" gitgutter
+let g:gitgutter_diff_args = '-w'
+" follow vim-unimpaired conventions
+nnoremap [og :GitGutterEnable<CR>
+nnoremap ]og :GitGutterDisable<CR>
+nnoremap cog :GitGutterToggle<CR>
+
+" emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
 let g:user_emmet_settings = {
 \ 'html' : {
@@ -533,20 +686,25 @@ let g:user_emmet_settings = {
 \ },
 \}
 
+" NERDTree
+let NERDChristmasTree=1
+let NERDTreeWinSize=35
+noremap <silent> <C-T> :NERDTreeToggle<CR>
+
 " netrw
 let g:netrw_browse_split = 4
 let g:netrw_liststyle=3
 let g:netrw_winsize=20
-nnoremap gd :Vex<CR> 
+nnoremap gd :Vex<CR>
 
-" vim-gist {{{2
+" vim-gist
 let g:gist_show_privates = 1
 
-" indentLine {{{2
-"let g:indentLine_enabled=0
-"nnoremap ti :IndentLinesToggle<CR>
+" indent guides
+let g:indent_guides_guide_size = 1
+nmap <silent> ti <Plug>IndentGuidesToggle
 
-" Syntastic {{{2
+" syntastic
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -558,27 +716,12 @@ let g:syntastic_mode_map = { 'mode': 'active',
             \ 'passive_filetypes': ['xml', 'html', 'java'] }
 let g:syntastic_filetype_map = { 'javascript.jsx': 'jsx' }
 
-" Neocomplete {{{2
+" neocomplete
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup=1
 let g:neocomplete#disable_auto_complete=1
 let g:neocomplete#enable_auto_select=1
 let g:neocomplete#min_keyword_length=3
-
-inoremap <C-P> <C-X><C-U>
-" http://stackoverflow.com/questions/2158305/is-it-possible-to-display-indentation-guides-in-vim
-function! ToggleIndentGuides()
-    if exists('b:indent_guides')
-        call matchdelete(b:indent_guides)
-        unlet b:indent_guides
-    else
-        let pos = range(1, &l:textwidth, &l:shiftwidth)
-        call map(pos, '"\\%" . v:val . "v"')
-        let pat = '\%(\_^\s*\)\@<=\%(' . join(pos, '\|') . '\)\s'
-        let b:indent_guides = matchadd('CursorLine', pat)
-    endif
-endfunction
-nnoremap ti :call ToggleIndentGuides()<CR>
 
 function! ToggleComplete()
     if g:neocomplete#disable_auto_complete == 1
@@ -589,47 +732,9 @@ function! ToggleComplete()
 endfunction
 nnoremap tc :call ToggleComplete()<CR>
 
-" Commands {{{1
-command! Scratch :silent e ~/.var/vim/vim-scratch.txt 
-nnoremap Es :Scratch<CR>
-command! Dos2Unix :%!dos2unix
+"}}}
 
-" http://robots.thoughtbot.com/faster-grepping-in-vim/
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<Space>
-
-command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
-
-" Git
-" Show hunks to be committed
-function! GitDiffCached()
-    new
-    r !git diff -w --cached
-    setlocal ft=diff bt=nofile bh=wipe nobl noswf ro
-    nnoremap <buffer> q :bw<cr>
-endfunction
-command! Gdiffcached :call GitDiffCached()
-nnoremap Uc :Gdiffcached<CR>
-
-function! GitIncoming()
-    new
-    r !git log --pretty=oneline --abbrev-commit --graph ..@{u}
-    setlocal ft=git bt=nofile bh=wipe nobl noswf ro
-    nnoremap <buffer> q :bw<cr>
-endfunction
-command! Gincoming :call GitIncoming()
-nnoremap U[ :Gincoming<CR>
-
-function! GitOutgoing() 
-    new
-    r !git log --pretty=oneline --abbrev-commit --graph @{u}..
-    setlocal ft=git bt=nofile bh=wipe nobl noswf ro
-    nnoremap <buffer> q :bw<cr>
-endfunction
-command! Goutgoing :call GitOutgoing()
-nnoremap U] :Goutgoing<CR>
-
-" Functions {{{1
+" 29: functions {{{
 
 " Taken from http://learnvimscriptthehardway.stevelosh.com/chapters/38.html
 function! FoldColumnToggle()
@@ -641,48 +746,6 @@ function! FoldColumnToggle()
 endfunction
 nnoremap <Leader>tf :call FoldColumnToggle()<cr>
 
-" Adapted from https://github.com/maciakl/vim-neatstatus 
-function! Mode()
-    "redraw
-    if &ft ==? "help" 
-        return "Help"
-    endif
-
-    if &ft ==? "diff"
-        return "Diff"
-    endif
-
-    let l:mode = mode()
-    
-    if     mode ==# "n"  | return "NORMAL"
-    elseif mode ==# "i"  | return "INSERT"
-    elseif mode ==# "c"  | return "COMMAND"
-    elseif mode ==# "!"  | return "SHELL"
-    elseif mode ==# "R"  | return "REPLACE"
-    elseif mode ==# "v"  | return "VISUAL"
-    elseif mode ==# "V"  | return "V-LINE"
-    elseif mode ==# ""   | return "V-BLOCK"
-    else                 | return l:mode
-    endif
-endfunction
-
-function! Branch()
-    let branch = ''
-    if !exists('*fugitive#head')
-        return branch 
-    endif
-
-    let branch = fugitive#head(7)
-    return empty(branch) ? '' : 'Git:'.branch
-endfunction
-
-function! Fenc()
-    if &fenc !~ "^$\|utf-8" || &bomb
-        return &fenc . (&bomb ? "-bom" : "" )
-    else
-        return "none"
-    endif
-endfun
 
 function! OpenURI()
     " 2011-01-21 removed colon ':' from regexp to allow for port numbers in URLs
@@ -694,6 +757,8 @@ function! OpenURI()
             exec ":silent !cmd /C start /min " . escape(uri,"%")
         elseif has('mac')
             exec ":silent !open \"" . escape(s:uri,"%") . "\""
+        else
+            echo "OpenURI not supported on this system"
         endif
     else
         echo "No URI found in line."
@@ -761,30 +826,6 @@ function! Setcwd()
     exe 'lc!' fnameescape(wd == '' ? cph : substitute(wd, mkr.'$', '.', ''))
 endfunction
 command! Setcwd :silent call Setcwd() | pwd
-command! Cd :silent call Setcwd() | pwd
-
-"http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
-function! CustomFoldText()
-    "get first non-blank line
-    let fs = v:foldstart
-    while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
-    endwhile
-    if fs > v:foldend
-        let line = getline(v:foldstart)
-    else
-        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
-    endif
-
-    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    let foldSize = 1 + v:foldend - v:foldstart
-    let foldSizeStr = " " . foldSize . " lines "
-    let foldLevelStr = repeat("+--", v:foldlevel)
-    let lineCount = line("$")
-    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
-    let marker = "»  "
-    let expansionString = repeat(".", w - strwidth(marker.foldSizeStr.line.foldLevelStr.foldPercentage))
-    return marker . line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
-endfunction
 
 " TODO replace with simple iab <expr>
 function! DateTimeStamp()
@@ -795,7 +836,30 @@ function! ShortDate()
     return strftime("%Y-%m-%d")
 endfun
 
-" Abbreviations {{{1
+"}}}
+
+" 30: user commands {{{
+
+command! Rd :redraw!
+command! Scratch :silent e ~/.var/vim/vim-scratch.txt
+nnoremap Es :Scratch<CR>
+command! Dos2Unix :%!dos2unix
+" http://robots.thoughtbot.com/faster-grepping-in-vim/
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<Space>
+
+if has("mac")
+    command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
+    nnoremap <space>M :Marked<CR>
+endif
+
+command! GrailsStop :SlimuxShellRun stop-app
+command! GrailsRun :SlimuxShellRun run-app
+
+" }}}
+
+" 31 abbreviations {{{
+
 :iab dts <c-r>=DateTimeStamp()<cr><esc>
 :iab ddt <c-r>=ShortDate()<cr><esc>
 
@@ -803,8 +867,5 @@ if filereadable(glob("~/.vim/abbr.vim"))
     source ~/.vim/abbr.vim
 endif
 
-" Custom Colors {{{1
-if filereadable(glob("~/.vim/addcolors.vim"))
-  source ~/.vim/addcolors.vim
-endif
+"}}}
 
