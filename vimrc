@@ -429,7 +429,7 @@ noremap <leader>c :call ToggleBackgroundColour()<CR>
 nmap <space>if gg=G``
 
 " Remove trailing space
-nmap _$ :call StripTrailingWhitespace()<CR>
+nnoremap <space>sw :call StripTrailingWhitespace()<CR>
 
 nmap _= :call Preserve("normal gg=G")<CR>
 
@@ -520,7 +520,9 @@ endif
 " autocommands {{{
 if has("autocmd")
     " remove trailing whitespace
-    autocmd FileType css,groovy,java,javascript,less,php,scala autocmd BufWritePre <buffer> :%s/\s\+$//e
+    augroup trailing_whitespace
+        autocmd FileType vim,css,groovy,java,javascript,less,php,scala autocmd BufWritePre <buffer> :%s/\s\+$//e
+    augroup END
 
     augroup javascript_files
         autocmd FileType javascript setlocal foldmethod=indent
