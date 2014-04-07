@@ -1,8 +1,22 @@
 snippet ppty
 	${1:key}: ${2:value}
+snippet proto:fn
+	${1:name}: function(${2:params}) {
+	    ${3:body}
+	},
+snippet ret-obj
+	return {
+	    ${1}
+	};
 snippet def
 	define('${1:module_id}',[${2:dependencies}], function(${3:params}) {
 		${4}
+	});
+snippet req
+	require('${1:name}');
+snippet reqc
+	require('${1:name}', function() {
+	    ${3}
 	});
 snippet strict
 	'use strict';
@@ -46,7 +60,7 @@ snippet toBeKind
 snippet jsx
 	/** @jsx React.DOM */
 
-snippet react-class
+snippet rclass
 	React.createClass({
 		render: function() {
 			return (
@@ -54,3 +68,5 @@ snippet react-class
 			);
 		}
 	});
+snippet r:input
+	React.DOM.input(${1})
