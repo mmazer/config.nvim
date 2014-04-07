@@ -58,7 +58,7 @@ Bundle 'davidoc/taskpaper.vim'
 Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
-Bundle 'Shutnik/jshint2.vim' 
+Bundle 'Shutnik/jshint2.vim'
 "}}}
 
 "}}}
@@ -359,9 +359,9 @@ noremap Ev :e ~/.vim/vimrc<CR>
 noremap So :so ~/.vim/vimrc<CR>
 
 nnoremap <space>W :w!<CR>
+nnoremap <space>w :w<CR>
 nnoremap <space>B :b#<CR>
 nnoremap <space>d :bd<CR>
-nnoremap <space>b :ls<CR>:b
 
 nmap <space><space> :noh<CR>
 
@@ -595,7 +595,7 @@ if has("autocmd")
 endif "}}}
 " }}}
 
-" 28 plugin settings {{{1
+" 28: plugin settings {{{1
 
 " ctrlp
 nmap <space> [ctrlp]
