@@ -362,6 +362,9 @@ nnoremap <space>W :w!<CR>
 nnoremap <space>w :w<CR>
 nnoremap <space>B :b#<CR>
 nnoremap <space>d :bd<CR>
+nnoremap <space>l :ls<CR>
+" goto buffer
+nnoremap gob :ls<CR>:b<space>
 
 nmap <space><space> :noh<CR>
 
