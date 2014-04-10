@@ -189,7 +189,7 @@ function! StatuslineWhitespace()
     let mixed = tabs && spaces
 
     if mixed
-        let tab_warning = 'mixed-indenting'
+        let tab_warning = 'mixed-indent'
     elseif (spaces && !&et) || (tabs && &et)
         let tab_warning = '&et'
     else
