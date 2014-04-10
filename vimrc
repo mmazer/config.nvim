@@ -91,8 +91,12 @@ filetype plugin indent on
 syntax on
 syntax sync minlines=256
 set nocursorline
-let g:seoul256_background=252
-colorscheme gravity
+if has("gui_running")
+    let g:seoul256_background=252
+    colorscheme gravity
+else
+    colorscheme railscasts
+endif
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
 " }}}
