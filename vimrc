@@ -91,8 +91,8 @@ filetype plugin indent on
 syntax on
 syntax sync minlines=256
 set nocursorline
-colorscheme railscasts
-let g:seoul256_background=234
+let g:seoul256_background=252
+colorscheme gravity
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
 " }}}
@@ -687,6 +687,10 @@ nnoremap ]og :GitGutterDisable<CR>
 nnoremap cog :GitGutterToggle<CR>
 nnoremap ]gg :GitGutterNextHunk<CR>
 nnoremap [gg :GitGutterPrevHun<CR>
+
+highlight GitGutterAdd guifg=NONE guibg=#b4de85
+highlight GitGutterChange guifg=NONE guibg=#87c5dc
+highlight GitGutterDelete guifg=NONE guibg=#7c7c7c
 
 " emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
