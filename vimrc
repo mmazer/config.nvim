@@ -678,10 +678,15 @@ nnoremap <space>g] :Goutgoing<CR>
 
 " gitgutter
 let g:gitgutter_diff_args = '-w'
+let g:gitgutter_sign_added = '++'
+let g:gitgutter_sign_modified = '||'
+let g:gitgutter_sign_removed = '--'
 " follow vim-unimpaired conventions
 nnoremap [og :GitGutterEnable<CR>
 nnoremap ]og :GitGutterDisable<CR>
 nnoremap cog :GitGutterToggle<CR>
+nnoremap ]gg :GitGutterNextHunk<CR>
+nnoremap [gg :GitGutterPrevHun<CR>
 
 " emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
