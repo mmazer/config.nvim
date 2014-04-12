@@ -427,6 +427,16 @@ nnoremap <space>td  :tabclose<CR>
 nnoremap [of :setlocal foldcolumn=3<CR>
 nnoremap ]of :setlocal foldcolumn=0<CR>
 
+" make it easier to work with some text objects
+vnoremap ir i]
+vnoremap ar a]
+vnoremap ia i>
+vnoremap aa a>
+onoremap ir i]
+onoremap ar a]
+onoremap ia i>
+onoremap aa a>
+
 nnoremap <space>h :h<space>
 
 " Function mappings see ~/.vim/functions.vim
