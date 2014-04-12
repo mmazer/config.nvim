@@ -368,7 +368,7 @@ nnoremap <space>B :b#<CR>
 nnoremap <space>d :bd<CR>
 nnoremap <space>l :ls<CR>
 " goto buffer
-nnoremap gob :ls<CR>:b<space>
+nnoremap gob :ls<CR>:b
 
 nmap <space><space> :noh<CR>
 
