@@ -692,10 +692,10 @@ nnoremap <space>g] :Goutgoing<CR>
 
 " gitgutter
 let g:gitgutter_diff_args = '-w'
-let g:gitgutter_sign_added = '++'
-let g:gitgutter_sign_modified = '||'
-let g:gitgutter_sign_removed = '--'
-" follow vim-unimpaired conventions
+let g:gitgutter_sign_added = '+ '
+let g:gitgutter_sign_modified = '= '
+let g:gitgutter_sign_removed = '- '
+let g:gitgutter_sign_modified_removed = '~ '
 nnoremap [og :GitGutterEnable<CR>
 nnoremap ]og :GitGutterDisable<CR>
 nnoremap cog :GitGutterToggle<CR>
@@ -705,6 +705,7 @@ nnoremap [gg :GitGutterPrevHun<CR>
 highlight GitGutterAdd guifg=NONE guibg=#b4de85
 highlight GitGutterChange guifg=NONE guibg=#87c5dc
 highlight GitGutterDelete guifg=NONE guibg=#7c7c7c
+highlight GitGutterChangeDelete guifg=NONE guibg=#7c7c7c
 
 " emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
