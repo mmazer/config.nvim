@@ -468,7 +468,7 @@ noremap cl :lclose<CR>
 inoremap ;] <C-o>A;
 nnoremap <space>; A;<esc>
 
-nnoremap <space>rd :redraw!<CR>
+nnoremap <space>r :redraw!<CR>
 noremap <C-U> :redraw!<CR>
 
 " Slimux keys
