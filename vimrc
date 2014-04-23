@@ -761,6 +761,8 @@ noremap [ot :TagbarOpen fg<CR>
 noremap ]ot :TagbarClose<CR>
 noremap cot :TagbarToggle<CR>
 
+" vim-json
+let g:vim_json_syntax_conceal = 0
 "}}}
 
 " 29: functions {{{
