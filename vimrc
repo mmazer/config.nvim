@@ -619,6 +619,7 @@ nnoremap <silent> [ctrlp]o :<C-u>CtrlPBookmarkDir<cr>
 nnoremap <silent> [ctrlp]r :<C-u>CtrlPRegister<cr>
 nnoremap <silent> [ctrlp]q :<C-u>CtrlPQuickFix<cr>
 nnoremap <silent> [ctrlp]s :<C-u>CtrlPFunky<cr>
+nnoremap <silent> [ctrlp]t :<C-u>CtrlPBufTag<cr>
 
 
 let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir', 'funky', 'mark', 'register']
