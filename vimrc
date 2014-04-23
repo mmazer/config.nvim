@@ -601,7 +601,7 @@ if has("autocmd")
     augroup END
 
     augroup markdown_files
-        autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown setlocal formatoptions=ant textwidth=80 wrapmargin=0
+        autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown setlocal textwidth=80 linebreak
     augroup END
 endif "}}}
 " }}}
