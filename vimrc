@@ -45,17 +45,16 @@ Bundle 'justinmk/vim-gtfo.git'
 Bundle 'mmazer/vim-caniuse'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'majutsushi/tagbar'
 
 " file types
 Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/syntastic'
 Bundle 'mmazer/syntastic-jsxhint'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Bundle 'elzr/vim-json'
 Bundle 'davidoc/taskpaper.vim'
-Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
 Bundle 'Shutnik/jshint2.vim'
@@ -755,6 +754,11 @@ function! ToggleComplete()
     endif
 endfunction
 nnoremap tc :call ToggleComplete()<CR>
+
+" tagbar
+noremap [ot :TagbarOpen fg<CR>
+noremap ]ot :TagbarClose<CR>
+noremap cot :TagbarToggle<CR>
 
 "}}}
 
