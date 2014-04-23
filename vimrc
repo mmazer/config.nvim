@@ -638,8 +638,8 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_funky_syntax_highlight = 1
 if executable('ag')
     let g:ctrlp_user_command = 'ag -l --nocolor --follow -g "" %s'
-        let g:ctrlp_use_caching = 0
-    endif
+    let g:ctrlp_use_caching = 0
+endif
 
 " fugitive
 nnoremap <space>gb :Gblame<CR>
