@@ -153,7 +153,7 @@ function! Branch()
     endif
 
     let branch = fugitive#head(7)
-    return empty(branch) ? '' : 'Git:'.branch
+    return empty(branch) ? '' : 'Git:'.branch.' | '
 endfunction
 
 function! Fenc()
