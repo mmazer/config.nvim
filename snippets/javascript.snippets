@@ -54,6 +54,12 @@ snippet afterEach
 	});
 snippet jspy
 	jasmine.createSpy('${1}');
+snippet spy:new
+	jasmine.createSpy('${1}') 
+snippet spy:c
+	${1:spy}.calls.count()
+snippet spy:args
+	${1:spy}.calls.argsFor(${2})
 snippet toBeKind
 	toEqual(jasmine.any(${1:type}))
 # React
