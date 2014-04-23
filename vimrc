@@ -588,6 +588,10 @@ if has("autocmd")
         autocmd filetype xml setlocal foldmethod=syntax
     augroup END
 
+    augroup wsdl_files
+        autocmd! BufRead *.wsdl setlocal ft=xml
+    augroup END
+
     augroup taskpaper_files
         autocmd FileType taskpaper setlocal noexpandtab
     augroup END
