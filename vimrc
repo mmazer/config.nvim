@@ -413,16 +413,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
-" tab navigation: http://vim.wikia.com/wiki/Alternative_tab_navigation
-nnoremap <space>th  :tabfirst<CR>
-nnoremap <space>tj  :tabnext<CR>
-nnoremap <space>tk  :tabprev<CR>
-nnoremap <space>tl  :tablast<CR>
-nnoremap <space>tt  :tabedit<Space>
-nnoremap <space>tn  :tabnext<Space>
-nnoremap <space>tm  :tabm<Space>
-nnoremap <space>td  :tabclose<CR>
-
 " toggling following vim-unimpaired
 nnoremap [of :setlocal foldcolumn=3<CR>
 nnoremap ]of :setlocal foldcolumn=0<CR>
