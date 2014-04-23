@@ -521,7 +521,7 @@ endif
 
 " }}}
 
-" 27: various {{{
+" 27: various: autocmd {{{
 
 " autocommands {{{
 if has("autocmd")
