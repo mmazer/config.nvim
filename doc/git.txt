@@ -22,3 +22,7 @@ Delete last commit (not pushed to remote):
 
     `git reset --soft HEAD~1`
 
+List file changes between 2 commits:
+
+   `git diff --name-status HEAD@{3} HEAD@{0}` 
+
