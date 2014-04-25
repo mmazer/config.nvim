@@ -1,0 +1,17 @@
+*Quotes*                                            Quotes
+*quote*
+
+CONTENTS
+                                                    *quotecontents*
+=============================================================================
+Programming                                         *prog-quotes*
+
+=============================================================================
+
+Programming:
+
+All non-trivial abstractations, to some degree are leaky.
+ - Joel Spolsky
+
+Simplicity is prerequisite for reliability.
+ - Edsger Dijkstra
