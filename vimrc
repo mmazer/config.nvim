@@ -369,7 +369,7 @@ nnoremap <space>l :ls<CR>
 " goto buffer
 nnoremap gob :ls<CR>:b
 
-nmap <space><space> :noh<CR>
+nmap <space><space> :
 
 " Source lines - from Steve Losh
 vnoremap X y:execute @@<cr>:echo 'Sourced selection.'<cr>
