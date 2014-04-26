@@ -460,10 +460,6 @@ nnoremap <space>; A;<esc>
 nnoremap <space>r :redraw!<CR>
 noremap <C-U> :redraw!<CR>
 
-" Slimux keys
-map <Leader>s :SlimuxREPLSendLine<CR>
-vmap <Leader>s :SlimuxREPLSendSelection<CR>
-
 inoremap <C-P> <C-X><C-U>
 
 " }}}
@@ -761,6 +757,12 @@ noremap [ot :TagbarOpen fg<CR>
 noremap ]ot :TagbarClose<CR>
 noremap cot :TagbarToggle<CR>
 
+"slimux
+command! GrailsStop :SlimuxShellRun stop-app
+command! GrailsRun :SlimuxShellRun run-app
+nnoremap <space>sd :SlimuxSchemeEvalDefun<CR>
+nnoremap <space>sb :SlimuxSchemeEvalBuf<CR>
+
 " vim-json
 let g:vim_json_syntax_conceal = 0
 "}}}
@@ -886,9 +888,6 @@ if has("mac")
     command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
     nnoremap <space>M :Marked<CR>
 endif
-
-command! GrailsStop :SlimuxShellRun stop-app
-command! GrailsRun :SlimuxShellRun run-app
 
 " }}}
 
