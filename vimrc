@@ -58,6 +58,7 @@ Bundle 'davidoc/taskpaper.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
 Bundle 'Shutnik/jshint2.vim'
+Bundle 'vim-scripts/paredit.vim'
 "}}}
 
 "}}}
