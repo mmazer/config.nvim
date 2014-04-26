@@ -14,7 +14,7 @@ call vundle#rc()
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'mmazer/vim-railscasts-theme'
-Bundle 'gregsexton/Gravity'
+Bundle 'mmazer/Gravity'
 
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
