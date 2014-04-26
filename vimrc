@@ -787,7 +787,7 @@ function! OpenURI()
         if has('win32')
             exec ":silent !cmd /C start /min " . escape(uri,"%")
         elseif has('mac')
-            exec ":silent !open \"" . escape(s:uri,"%") . "\""
+            exec ":silent !open \"" . escape(uri,"%") . "\""
         else
             echo "OpenURI not supported on this system"
         endif
