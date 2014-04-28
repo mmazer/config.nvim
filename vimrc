@@ -14,7 +14,8 @@ call vundle#rc()
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'mmazer/vim-railscasts-theme'
-Bundle 'mmazer/Gravity'
+Bundle 'gregsexton/Gravity'
+Bundle 'jonathanfilip/vim-lucius'
 
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
@@ -87,6 +88,9 @@ set number
 " }}}
 
 " 5: syntax, highligthing and spelling {{{1
+" lucius colorscheme settings
+let g:lucius_use_bold=0
+
 filetype plugin indent on
 syntax on
 syntax sync minlines=256
@@ -95,7 +99,7 @@ if has("gui_running")
     let g:seoul256_background=252
     colorscheme gravity
 else
-    colorscheme railscasts
+    colorscheme lucius
 endif
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
