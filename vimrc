@@ -747,6 +747,8 @@ let g:neocomplete#enable_at_startup=1
 let g:neocomplete#disable_auto_complete=1
 let g:neocomplete#enable_auto_select=1
 let g:neocomplete#min_keyword_length=3
+inoremap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
 
 function! ToggleComplete()
     if g:neocomplete#disable_auto_complete == 1
