@@ -51,7 +51,6 @@ Plugin 'majutsushi/tagbar'
 " file types
 Plugin 'tpope/vim-markdown'
 Plugin 'scrooloose/syntastic'
-Plugin 'mmazer/syntastic-jsxhint'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
@@ -740,8 +739,7 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_stl_format = '[Syntax: %E{Errors: %fe #%e}%B{, }%W{Warnings: %fw #%w}]'
 
 let g:syntastic_mode_map = { 'mode': 'active',
-            \ 'passive_filetypes': ['xml', 'html', 'java'] }
-let g:syntastic_filetype_map = { 'javascript.jsx': 'jsx' }
+            \ 'passive_filetypes': ['xml', 'html', 'java', 'jsx'] }
 
 " neocomplete
 let g:acp_enableAtStartup = 0
