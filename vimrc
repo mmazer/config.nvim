@@ -557,7 +557,7 @@ if has("autocmd")
     augroup END
 
     augroup gsp_files
-        autocmd FileType gsp set ft=gsp.html
+        autocmd FileType gsp set ft=html.gsp
         autocmd FileType gsp setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
     augroup END
 
