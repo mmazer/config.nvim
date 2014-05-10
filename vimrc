@@ -468,6 +468,11 @@ noremap <C-U> :redraw!<CR>
 
 inoremap <C-P> <C-X><C-U>
 
+" Insert new lines in normal mode
+" Also available through vim-unimpaired [<space> and ]<space>
+nnoremap <S-Enter> O<ESC>j
+nnoremap <Enter> o<ESC>k
+
 " }}}
 
 " 19: reading and writing files {{{1
