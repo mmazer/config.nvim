@@ -434,9 +434,6 @@ onoremap aa a>
 
 nnoremap <space>h :h<space>
 
-" Function mappings see ~/.vim/functions.vim
-noremap <leader>c :call ToggleBackgroundColour()<CR>
-
 " indent the whole file and return to original position
 nmap <space>if gg=G``
 
@@ -828,18 +825,6 @@ function! OpenCurrentDir()
     endif
 endfunction
 map <leader>F :call OpenCurrentDir()<CR>
-
-" Toggle background colour
-" http://www.functor.be/wiki/index.php/VIM
-function! ToggleBackgroundColour ()
-    if (&background == 'light')
-        set background=dark
-        echo "background -> dark"
-    else
-        set background=light
-        echo "background -> light"
-    endif
-endfunction
 
 " Save last search and cursor position before executing a command
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
