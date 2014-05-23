@@ -418,6 +418,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
+" center window when moving to next search match
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
 " toggling following vim-unimpaired
 nnoremap [of :setlocal foldcolumn=3<CR>
 nnoremap ]of :setlocal foldcolumn=0<CR>
