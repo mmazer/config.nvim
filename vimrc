@@ -458,11 +458,8 @@ inoremap vv ^vg_
 nnoremap <space>cd :call Setcwd()<cr>
 
 " quick fix window
-nnoremap gq :copen<CR>
-nnoremap cq :cclose<CR>
-
-nnoremap gl :llist<CR>
-noremap cl :lclose<CR>
+nnoremap [oq :copen<CR>
+nnoremap ]oq :cclose<CR>
 
 " end lines with semicolons
 inoremap ;] <C-o>A;
