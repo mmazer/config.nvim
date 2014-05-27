@@ -363,7 +363,7 @@ noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
 
 inoremap <C-]> <C-o>$
-noremap <silent> Q :q!<CR>
+noremap <silent> Q :qa!<CR>
 noremap Ev :e ~/.vim/vimrc<CR>
 noremap So :so ~/.vim/vimrc<CR>
 
@@ -371,6 +371,8 @@ nnoremap <space>W :w!<CR>
 nnoremap <space>w :w<CR>
 nnoremap <space>B :b#<CR>
 nnoremap <space>d :bd<CR>
+" use bufkill BD command to close buffer but not window
+nnoremap <space>D :BD<CR>
 nnoremap <space>l :ls<CR>
 " goto buffer
 nnoremap gob :ls<CR>:b
@@ -820,7 +822,7 @@ function! QuickLook()
         echo "Quicklook not supported on this system"
     endif
 endfunction
-nnoremap ql :call QuickLook()<CR>
+nnoremap gol :call QuickLook()<CR>
 
 function! OpenCurrentDir()
     if has('mac')
