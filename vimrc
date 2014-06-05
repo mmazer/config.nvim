@@ -785,6 +785,11 @@ let g:vim_json_syntax_conceal = 0
 
 " 29: functions {{{
 
+function! ShowTime()
+    echo strftime('%a %d %b %H:%M')
+endfunction
+nnoremap T :call ShowTime()<CR>
+
 " Taken from http://learnvimscriptthehardway.stevelosh.com/chapters/38.html
 function! FoldColumnToggle()
     if &foldcolumn
