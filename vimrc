@@ -791,17 +791,6 @@ function! ShowTime()
 endfunction
 nnoremap T :call ShowTime()<CR>
 
-" Taken from http://learnvimscriptthehardway.stevelosh.com/chapters/38.html
-function! FoldColumnToggle()
-    if &foldcolumn
-        setlocal foldcolumn=0
-    else
-        setlocal foldcolumn=3
-    endif
-endfunction
-nnoremap <Leader>tf :call FoldColumnToggle()<cr>
-
-
 function! OpenURI()
     " 2011-01-21 removed colon ':' from regexp to allow for port numbers in URLs
     " original regexp: [a-z]*:\/\/[^ >,;:]*
