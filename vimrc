@@ -704,10 +704,10 @@ nnoremap cog :GitGutterToggle<CR>
 nnoremap ]gg :GitGutterNextHunk<CR>
 nnoremap [gg :GitGutterPrevHun<CR>
 
-highlight GitGutterAdd guifg=NONE guibg=#b4de85
-highlight GitGutterChange guifg=NONE guibg=#87c5dc
-highlight GitGutterDelete guifg=NONE guibg=#7c7c7c
-highlight GitGutterChangeDelete guifg=NONE guibg=#7c7c7c
+highlight GitGutterAdd guifg=NONE guibg=NONE
+highlight GitGutterChange guifg=NONE guibg=NONE
+highlight GitGutterDelete guifg=NONE guibg=NONE
+highlight GitGutterChangeDelete guifg=NONE guibg=NONE
 
 " emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
