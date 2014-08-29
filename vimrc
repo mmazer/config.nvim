@@ -11,9 +11,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " color schemes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'mmazer/vim-railscasts-theme'
+Plugin 'dhruvasagar/vim-railscasts-theme'
 Plugin 'gregsexton/Gravity'
 Plugin 'jonathanfilip/vim-lucius'
 
@@ -89,19 +87,12 @@ set number
 " }}}
 
 " 5: syntax, highligthing and spelling {{{1
-" lucius colorscheme settings
-let g:lucius_use_bold=0
 
 filetype plugin indent on
 syntax on
 syntax sync minlines=256
 set nocursorline
-if has("gui_running")
-    let g:seoul256_background=252
-    colorscheme gravity
-else
-    colorscheme lucius
-endif
+colorscheme railscasts
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
 " }}}
@@ -244,7 +235,7 @@ if has("gui_running")
     elseif has('win32')
         set guioptions-=m " Remove menu bar to save space
         set guioptions+=a " Yank to system clipboard
-        set guifont=DejaVu_Sans_Mono:h9
+        set guifont=DejaVu_Sans_Mono:h8
     endif
     set guioptions-=T " remove tool bar
     set guioptions-=r " remove right-hand scroll bar
