@@ -452,12 +452,19 @@ inoremap vv ^vg_
 nnoremap <space>cd :call Setcwd()<cr>
 
 " quick fix window
-nnoremap [oq :copen<CR>
-nnoremap ]oq :cclose<CR>
+nnoremap oq :copen<CR>
+nnoremap qq :cclose<CR>
+
+nnoremap ol :lopen<CR>
+nnoremap ql :lclose<CR>
 
 " end lines with semicolons
 inoremap ;] <C-o>A;
 nnoremap <space>; A;<esc>
+
+" end lines with comma
+inoremap ,] <C-o>A,
+nnoremap <space>, A,<esc>
 
 nnoremap <space>r :redraw!<CR>
 noremap <C-U> :redraw!<CR>
