@@ -772,6 +772,20 @@ noremap [ot :TagbarOpen fg<CR>
 noremap ]ot :TagbarClose<CR>
 noremap cot :TagbarToggle<CR>
 
+let g:tagbar_type_javascript = {
+    \ 'ctagstype'   :'js',
+    \ 'kinds'       : [
+        \ 'o:objects',
+        \ 'f:functions'
+    \ ]
+\ }
+
+let g:tagbar_type_html = {
+    \ 'ctagstype'   :'xml',
+    \ 'kinds'       : [
+        \ 'e:elements'
+    \ ]
+\ }
 "slimux
 command! GrailsStop :SlimuxShellRun stop-app
 command! GrailsRun :SlimuxShellRun run-app
