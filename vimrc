@@ -483,7 +483,7 @@ nnoremap <Enter> o<ESC>k
 set modeline
 set ffs=unix,dos,mac "Default file types
 set ff=unix " set initial buffer file format
-set nobackup
+set backup
 set backupdir=$HOME/.var/vim/backup//
 set autoread
 
