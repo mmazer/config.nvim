@@ -590,7 +590,7 @@ if has("autocmd")
     augroup END
 
     augroup json_files
-        autocmd FileType json nnoremap <buffer> <Leader>fj :%!python -m json.tool<CR>
+        autocmd FileType json command! Format :%!python -m json.tool<CR>
     augroup END
 
     augroup xml_files
