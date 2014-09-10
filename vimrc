@@ -366,8 +366,9 @@ nnoremap <space>d :bd<CR>
 " use bufkill BD command to close buffer but not window
 nnoremap <space>D :BD<CR>
 nnoremap <space>l :ls<CR>
+
 " goto buffer
-nnoremap gob :ls<CR>:b
+nnoremap gb :ls<CR>:b
 
 nmap <space><space> :
 
