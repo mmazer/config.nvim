@@ -628,7 +628,7 @@ nnoremap <silent> [ctrlp]f :<C-u>CtrlP<cr>
 nnoremap <silent> [ctrlp]m :<C-u>CtrlPMark<cr>
 nnoremap <silent> [ctrlp]o :<C-u>CtrlPBookmarkDir<cr>
 nnoremap <silent> [ctrlp]r :<C-u>CtrlPRegister<cr>
-nnoremap <silent> [ctrlp]q :<C-u>CtrlPQuickFix<cr>
+nnoremap <silent> [ctrlp]q :<C-u>CtrlPQuickfix<cr>
 nnoremap <silent> [ctrlp]s :<C-u>CtrlPFunky<cr>
 nnoremap <silent> [ctrlp]t :<C-u>CtrlPBufTag<cr>
 
