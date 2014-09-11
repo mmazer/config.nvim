@@ -339,7 +339,7 @@ let g:mapleader = ","
 nnoremap g<space> :
 
 " Better mark jumping (line + col)
-nnoremap ' `
+nnoremap <expr> ' printf('`%c zz', getchar())
 
 " for toggling paste mode in terminal
 " Can also use `yo` from `unimpaired`
