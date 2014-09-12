@@ -771,9 +771,9 @@ endfunction
 nnoremap tc :call ToggleComplete()<CR>
 
 " tagbar
-noremap [ot :TagbarOpen fg<CR>
-noremap ]ot :TagbarClose<CR>
-noremap cot :TagbarToggle<CR>
+noremap <silent> [ot :TagbarOpen fg<CR>
+noremap <silent> ]ot :TagbarClose<CR>
+noremap <silent> cot :TagbarToggle<CR>
 
 let g:tagbar_type_javascript = {
     \ 'ctagstype'   :'js',
