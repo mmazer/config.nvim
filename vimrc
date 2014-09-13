@@ -872,7 +872,7 @@ function! Setcwd()
     endfo
     exe 'lc!' fnameescape(wd == '' ? cph : substitute(wd, mkr.'$', '.', ''))
 endfunction
-command! Setcwd :silent call Setcwd() | pwd
+command! Cd :silent call Setcwd() | pwd
 
 " TODO replace with simple iab <expr>
 function! DateTimeStamp()
@@ -887,12 +887,13 @@ endfun
 
 " 30: user commands {{{
 
-command! Rd :redraw!
+command! R :redraw!
 command! Scratch :silent e ~/.var/vim/vim-scratch.txt
 nnoremap Es :Scratch<CR>
 if executable("dos2unix")
     command! Dos2Unix :%!dos2unix
 endif
+command! Todo :e TODO.taskpaper
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim/
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
