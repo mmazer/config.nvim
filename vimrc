@@ -801,6 +801,11 @@ let g:vim_json_syntax_conceal = 0
 
 " 29: functions {{{
 
+function! SyntaxItem()
+  return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
+command! Syntax :echo SyntaxItem()
+
 function! ShowTime()
     echo strftime('%a %d %b %H:%M')
 endfunction
