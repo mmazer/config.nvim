@@ -636,7 +636,7 @@ nnoremap <silent> [ctrlp]s :<C-u>CtrlPFunky<cr>
 nnoremap <silent> [ctrlp]t :<C-u>CtrlPBufTag<cr>
 
 
-let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir', 'funky', 'mark', 'register']
+let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'buffertag', 'bookmarkdir', 'funky', 'mark', 'register']
 let g:ctrlp_match_window_bottom = 1 " Show at top of window
 let g:ctrlp_working_path_mode = 'ra' " Smart path mode
 let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
@@ -654,6 +654,11 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag -l --nocolor --follow -g "" %s'
     let g:ctrlp_use_caching = 0
 endif
+
+" ctrlp_buftag
+let g:ctrlp_buftag_types = {
+    \ 'javascript' : '--language-force=js',
+    \ }
 
 " fugitive
 nnoremap <space>gb :Gblame<CR>
