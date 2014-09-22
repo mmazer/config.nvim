@@ -338,6 +338,9 @@ let g:mapleader = ","
 
 nnoremap g<space> :
 
+nnoremap g[ gg
+nnoremap g] G
+
 " Better mark jumping (line + col)
 nnoremap <expr> ' printf('`%c zz', getchar())
 
