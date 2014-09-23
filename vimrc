@@ -12,7 +12,6 @@ call vundle#begin()
 
 " color schemes
 Plugin 'dhruvasagar/vim-railscasts-theme'
-Plugin 'gregsexton/Gravity'
 Plugin 'jonathanfilip/vim-lucius'
 
 Plugin 'airblade/vim-gitgutter'
@@ -45,6 +44,7 @@ Plugin 'mmazer/vim-caniuse'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
+Plugin 'mattn/calendar-vim'
 
 " file types
 Plugin 'tpope/vim-markdown'
