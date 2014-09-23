@@ -665,18 +665,17 @@ let g:ctrlp_buftag_types = {
     \ }
 
 " fugitive
-nnoremap <space>gb :Gblame<CR>
-nnoremap <space>gC :Gcommit<CR>
-nnoremap <space>gd :Gdiff<CR>
-nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gr :Gread<CR>
-nnoremap <space>gw :Gwrite<CR>
+nnoremap Gb :Gblame<CR>
+nnoremap GC :Gcommit<CR>
+nnoremap Gd :Gdiff<CR>
+nnoremap Gs :Gstatus<CR>
+nnoremap Gr :Gread<CR>
+nnoremap Gw :Gwrite<CR>
 
 " Simple way to turn off Gdiff splitscreen
 " works only when diff buffer is focused
 " https://gist.github.com/radmen/5048080
 command! Gdoff diffoff | q | Gedit
-nnoremap <space>go :Gdoff<CR>
 
 function! GitDiffCached()
     new
@@ -685,7 +684,7 @@ function! GitDiffCached()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gdiffcached :call GitDiffCached()
-nnoremap <space>gc :Gdiffcached<CR>
+nnoremap Gc :Gdiffcached<CR>
 
 function! GitIncoming()
     new
