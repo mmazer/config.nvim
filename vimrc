@@ -616,6 +616,10 @@ if has("autocmd")
     augroup markdown_files
         autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown setlocal textwidth=80 linebreak
     augroup END
+
+    augroup diff_mode
+        autocmd FilterWritePre * if &diff | nnoremap <buffer> dc :Gdoff<CR> | endif
+    augroup
 endif "}}}
 " }}}
 
