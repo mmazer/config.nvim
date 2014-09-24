@@ -625,7 +625,7 @@ endif "}}}
 
 " 28: plugin settings {{{1
 
-" ctrlp
+" ctrlp:
 nmap <space> [ctrlp]
 nnoremap <silent> [ctrlp]a :<C-u>CtrlPBookmarkDirAdd<cr>
 nnoremap <silent> [ctrlp]b :<C-u>CtrlPBuffer<cr>
@@ -661,7 +661,8 @@ endif
 
 " ctrlp_buftag
 let g:ctrlp_buftag_types = {
-    \ 'javascript' : '--language-force=js',
+    \ 'javascript'  : '--language-force=js',
+    \ 'css'         : '--language-force=css',
     \ }
 
 " fugitive
