@@ -850,15 +850,6 @@ function! QuickLook()
 endfunction
 nnoremap gol :call QuickLook()<CR>
 
-function! OpenCurrentDir()
-    if has('mac')
-        exec ":silent !open \"" . expand("%:p:h") . "\""
-    else
-        echo "OpenCurrentDir not supported on this system"
-    endif
-endfunction
-map <leader>F :call OpenCurrentDir()<CR>
-
 " Save last search and cursor position before executing a command
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
 function! Preserve(command)
