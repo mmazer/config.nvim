@@ -819,7 +819,7 @@ endfunction
 command! Syntax :echo SyntaxItem()
 
 function! ShowTime()
-    echo strftime('%a %d %b %H:%M')
+    echo strftime('%a %d %b %H:%M:%S')
 endfunction
 nnoremap T :call ShowTime()<CR>
 
