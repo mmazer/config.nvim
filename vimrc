@@ -611,6 +611,7 @@ if has("autocmd")
 
     augroup fugitive_buffers
         autocmd BufRead fugitive\:* xnoremap <buffer> dp :diffput<CR>|xnoremap <buffer> do :diffget<CR>
+        autocmd FileType gitcommit setlocal cursorline
     augroup END
 
     augroup markdown_files
