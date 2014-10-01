@@ -727,6 +727,9 @@ highlight GitGutterChange guifg=NONE guibg=NONE
 highlight GitGutterDelete guifg=NONE guibg=NONE
 highlight GitGutterChangeDelete guifg=NONE guibg=NONE
 
+nmap <space>hs <Plug>GitGutterStageHunk
+nmap <space>hr <Plug>GitGutterRevertHunk
+
 " emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
 let g:user_emmet_settings = {
