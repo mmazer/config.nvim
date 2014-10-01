@@ -109,6 +109,7 @@ set statusline+=%{&paste?'\ (paste)':'\ '}
 set statusline+=\|
 set statusline+=\ %{Branch()}
 set statusline+=\ %f
+set statusline+=\ \[\#%n\]
 set statusline+=%(\[%R%M\]%)      "modified flag
 set statusline+=\ %{SyntasticStatuslineFlag()}
 set statusline+=%=
@@ -116,7 +117,6 @@ set statusline+=\ %{StatuslineWhitespace()}
 set statusline+=\ %y      "filetype
 set statusline+=\ %{Fenc()} " file encoding
 set statusline+=\[%{&ff}\]  "file format
-set statusline+=\ \#%n
 set statusline+=\ %5.l/%L\:%c\    "cursor line/total lines:column
 
 " Adapted from https://github.com/maciakl/vim-neatstatus
