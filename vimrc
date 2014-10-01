@@ -560,6 +560,10 @@ if has("autocmd")
     augroup html_files
         "autocmd filetype html set ft=xml.html.javascript
         autocmd FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
+    augroup help_files
+        autocmd FileType help nnoremap <buffer> <space>q <C-W>q
+    augroup END
+
         autocmd FileType setlocal autoindent
     augroup END
 
