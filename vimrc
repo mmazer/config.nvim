@@ -357,8 +357,11 @@ noremap  <buffer> <silent> j gj
 noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
 
-inoremap <C-]> <C-o>$
-noremap <silent> Q :qa!<CR>
+inoremap <C-A> <C-o>^
+inoremap <C-E> <C-o>$
+
+nnoremap <silent> Q :qa!<CR>
+
 noremap Ev :e ~/.vim/vimrc<CR>
 noremap So :so ~/.vim/vimrc<CR>
 
