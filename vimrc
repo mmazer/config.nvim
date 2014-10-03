@@ -641,7 +641,8 @@ nnoremap <silent> [ctrlp]b :<C-u>CtrlPBuffer<cr>
 nnoremap <silent> [ctrlp]c :<C-u>CtrlPClearCache<cr>
 nnoremap <silent> [ctrlp]d :<C-u>CtrlPDir<cr>
 nnoremap <silent> [ctrlp]f :<C-u>CtrlP<cr>
-nnoremap <silent> [ctrlp]m :<C-u>CtrlPMark<cr>
+nnoremap <silent> [ctrlp]k :<C-u>CtrlPMark<cr>
+nnoremap <silent> [ctrlp]m :<C-u>CtrlPMixed<cr>
 nnoremap <silent> [ctrlp]o :<C-u>CtrlPBookmarkDir<cr>
 nnoremap <silent> [ctrlp]r :<C-u>CtrlPRegister<cr>
 nnoremap <silent> [ctrlp]q :<C-u>CtrlPQuickfix<cr>
