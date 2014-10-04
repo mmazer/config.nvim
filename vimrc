@@ -814,6 +814,10 @@ nnoremap <space>sb :SlimuxSchemeEvalBuf<CR>
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+" calendar:
+command! -nargs=* Cal call calendar#show(1, <f-args>)
+
 "}}}
 
 " 29: functions {{{
