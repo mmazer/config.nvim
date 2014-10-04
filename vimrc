@@ -32,19 +32,17 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-dispatch'
 Plugin 'Raimondi/delimitMate'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
 Plugin 'justinmk/vim-gtfo.git'
 Plugin 'mmazer/vim-caniuse'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/calendar-vim'
+
+" git
+Plugin 'int3/vim-extradite'
 
 " file types
 Plugin 'tpope/vim-markdown'
@@ -756,9 +754,6 @@ let g:netrw_browse_split = 4
 let g:netrw_liststyle=3
 let g:netrw_winsize=20
 nnoremap gd :Vex<CR>
-
-" vim-gist
-let g:gist_show_privates = 1
 
 " indent guides
 let g:indent_guides_guide_size = 1
