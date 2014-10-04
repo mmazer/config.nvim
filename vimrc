@@ -585,6 +585,7 @@ if has("autocmd")
 
     augroup css_files
         autocmd FileType css setlocal  omnifunc=csscomplete#CompleteCSS
+        autocmd FileType css setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=syntax
     augroup END
 
     augroup less_files
