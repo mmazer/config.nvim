@@ -736,7 +736,7 @@ nmap <space>hs <Plug>GitGutterStageHunk
 nmap <space>hr <Plug>GitGutterRevertHunk
 
 " emmet
-let g:user_emmet_expandabbr_key = '<C-e>'
+let g:user_emmet_expandabbr_key = '<C-x>'
 let g:user_emmet_settings = {
 \ 'html' : {
 \    'indentation' : '  '
