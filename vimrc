@@ -472,7 +472,7 @@ inoremap ,] <C-o>A,
 nnoremap <space>, A,<esc>
 
 nnoremap <space>r :redraw!<CR>
-noremap <C-U> :redraw!<CR>
+noremap <C-U> i<ESC>:redraw!<CR>
 inoremap <C-U> <ESC>:redraw!<CR>i
 
 inoremap <C-P> <C-X><C-U>
