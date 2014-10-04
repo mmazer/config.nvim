@@ -877,7 +877,7 @@ endfunction
 function! StripTrailingWhitespace()
     call Preserve("%s/\\s\\+$//e")
 endfunction
-command! StripWh :call StripTrailingWhitespace()
+command! Swhite :call StripTrailingWhitespace()
 
 " Taken from ctrlp help file
 function! Setcwd()
