@@ -23,10 +23,6 @@ hi Cursor       guibg=fg
 "hi CursorColumn
 hi CursorLine   guibg=#3E3D32
 hi Directory    guifg=#66D9EF gui=none
-hi DiffAdd      guifg=bg guibg=#A6E22E
-hi DiffChange   guifg=bg guibg=#E6DB74
-hi DiffDelete   guifg=bg guibg=#F92672
-hi DiffText     guifg=bg guibg=#E6DB74
 hi ErrorMsg     guifg=#F92672 guibg=bg gui=none
 hi VertSplit    guifg=#3B3A32 guibg=bg gui=none
 hi Folded       guifg=#75715E guibg=bg gui=none
@@ -56,6 +52,13 @@ hi TabLineFill  guifg=fg guibg=#3E3D32 gui=none
 hi TabLineSel   guifg=fg guibg=#3E3D32 gui=none
 hi Title        guifg=#F92672 gui=none
 hi Visual       guibg=#49483E gui=none
+
+" Diff
+hi DiffAdd                   guifg=#e4e4e4 guibg=#519F50 ctermfg=254 ctermbg=22
+hi DiffDelete                guifg=#000000 guibg=#660000 gui=bold ctermfg=16 ctermbg=52 cterm=bold
+hi DiffChange                guifg=#FFFFFF guibg=#870087 ctermfg=15 ctermbg=90
+hi DiffText                  guifg=#FFFFFF guibg=#FF0000 gui=bold ctermfg=15 ctermbg=9 cterm=bold
+
 "hi VisualNOS
 hi WarningMsg   guifg=#F92672 gui=none
 "hi WildMenu
