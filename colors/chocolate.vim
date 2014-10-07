@@ -67,11 +67,6 @@ hi WarningMsg   guifg=#F92672 gui=none
 "hi ScrollBar
 "hi Tooltip
 
-
-" Plugin specific highlight groups
-hi MyTagListFileName guifg=#FD971F guibg=bg gui=none
-
-
 " Color groups
 hi Blue    guifg=#66D9EF gui=none
 hi Green   guifg=#A6E22E gui=none
@@ -86,7 +81,6 @@ hi BlueU   guifg=#66D9EF gui=underline
 
 hi RedR    guifg=fg guibg=#F92672 gui=none
 hi YellowR guifg=bg guibg=#FD971F gui=none
-
 
 " Syntax highligh groups
 hi! link Comment      Grey
