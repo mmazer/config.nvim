@@ -27,7 +27,7 @@ hi ErrorMsg     guifg=#F92672 guibg=bg gui=none
 hi VertSplit    guifg=#3B3A32 guibg=bg gui=none
 hi Folded       guifg=#75715E guibg=bg gui=none
 hi FoldColumn   guifg=#75715E guibg=#3E3D32 gui=none
-hi SignColum    guifg=#75715E guibg=#3E3D32
+hi SignColumn   guifg=#FFFFFF guibg=NONE gui=bold
 hi IncSearch    guifg=bg guibg=#E6DB74 gui=none
 hi LineNr       guifg=#75715E guibg=#3E3D32 gui=none
 hi MatchParen   guifg=fg guibg=bg gui=bold
