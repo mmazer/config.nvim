@@ -712,20 +712,15 @@ nnoremap <space>g] :Goutgoing<CR>
 
 " gitgutter
 let g:gitgutter_diff_args = '-w'
-let g:gitgutter_sign_added = '+ '
-let g:gitgutter_sign_modified = '= '
-let g:gitgutter_sign_removed = '- '
-let g:gitgutter_sign_modified_removed = '~ '
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '='
+let g:gitgutter_sign_removed = '--'
+let g:gitgutter_sign_modified_removed = '~'
 nnoremap [og :GitGutterEnable<CR>
 nnoremap ]og :GitGutterDisable<CR>
 nnoremap cog :GitGutterToggle<CR>
 nnoremap ]gg :GitGutterNextHunk<CR>
 nnoremap [gg :GitGutterPrevHun<CR>
-
-highlight GitGutterAdd guifg=NONE guibg=NONE
-highlight GitGutterChange guifg=NONE guibg=NONE
-highlight GitGutterDelete guifg=NONE guibg=NONE
-highlight GitGutterChangeDelete guifg=NONE guibg=NONE
 
 nmap <space>hs <Plug>GitGutterStageHunk
 nmap <space>hr <Plug>GitGutterRevertHunk
