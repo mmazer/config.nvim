@@ -719,8 +719,8 @@ let g:gitgutter_sign_modified_removed = '~'
 nnoremap [og :GitGutterEnable<CR>
 nnoremap ]og :GitGutterDisable<CR>
 nnoremap cog :GitGutterToggle<CR>
-nnoremap ]gg :GitGutterNextHunk<CR>
-nnoremap [gg :GitGutterPrevHun<CR>
+nnoremap ]gg :GitGutterNextHunk<CR>zz
+nnoremap [gg :GitGutterPrevHun<CR>zz
 
 nmap <space>hs <Plug>GitGutterStageHunk
 nmap <space>hr <Plug>GitGutterRevertHunk
