@@ -614,6 +614,7 @@ if has("autocmd")
 
     augroup fugitive_buffers
         autocmd BufRead fugitive\:* xnoremap <buffer> dp :diffput<CR>|xnoremap <buffer> do :diffget<CR>
+        autocmd BufReadPost fugitive://* set bufhidden=delete
         autocmd FileType gitcommit setlocal cursorline
     augroup END
 
@@ -674,6 +675,8 @@ let g:ctrlp_buftag_types = {
 nnoremap Gb :Gblame<CR>
 nnoremap GC :Gcommit<CR>
 nnoremap Gd :Gdiff<CR>
+nnoremap Ge :Gedit<CR>
+nnoremap Gl :Glog<CR>
 nnoremap Gs :Gstatus<CR>
 nnoremap Gr :Gread<CR>
 nnoremap Gw :Gwrite<CR>
