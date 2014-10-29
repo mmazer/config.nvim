@@ -4,7 +4,16 @@
 
 #### Windows
 
-Alternate Windows build is available [here](http://wyw.dcweb.cn/#download) with Lua support and updates to latest patches.
+Alternate Windows builds are available here:
+ - <http://wyw.dcweb.cn/#download> with Lua support and updates to latest patches.
+ - <http://tuxproject.de/projects/vim/>
+ - [Vim for Windows](https://bitbucket.org/Haroogan/vim-for-windows/src) 
+
+
+#### Python
+
+The version of Python must match that compiled into Vim. Run `:version` to see
+the name of the Python DLL it will look for at runtime.
 
 ##### General
 
@@ -20,4 +29,10 @@ Alternate Windows build is available [here](http://wyw.dcweb.cn/#download) with 
 ##### Neocomplete
 
  - download [Lua binaries](http://luabinaries.sourceforge.net/) (.dll and exe) for the version that Vim was compiled against, see `:version`; install in same folder as Vim exe's 
+
+##### Using ag for grepprg
+
+A Windows build of ag can be downloaded from [here](http://blog.kowalczyk.info/software/the-silver-searcher-for-windows.html)
+
+It's also available via [chocolatey](http://chocolatey.org/)
 
