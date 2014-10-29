@@ -5,6 +5,7 @@ iab seperate separate
 iab seperately separately
 iab seperated separated
 iab negociate negotiate
+iab postion position
 
 " Markdown
 iab hh1 #
