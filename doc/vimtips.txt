@@ -7,6 +7,7 @@ CONTENTS ~
 2. Substitution                             |vimtips-substitution|
 3. Global Commands                          |vimtips-global-command|
 4. Changing Case                            |vimtips-changing-case|
+5. Windows                                  |vimtips-windows|
 
 
 ==============================================================================
@@ -1002,5 +1003,14 @@ endif
 " *Just Another Vim Hacker JAVH*
 vim -c ":%s%s*%Cyrnfr)fcbafbe[Oenz(Zbbyranne%|:%s)[[()])-)Ig|norm Vg?"
 ----------------------------------------
+
+=======================================================
+WINDOWS                              *vimtips-windows*
+
+Working with splits
+
+Change 2 horizontally split windows to vertical split: <C-W>t <C-W>H
+Change 2 vertically split windows to horizontal split: <C-W>t <C-W>K
+
 vim:tw=78:ts=8:ft=help:norl:
 
