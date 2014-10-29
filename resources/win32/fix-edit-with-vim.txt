@@ -1,0 +1,9 @@
+Run `regedit` and set following values to correct paths:
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Vim\Gvim]
+path=C:\Users\maz8913\Applications\Vim\vim74\gvim.exe
+
+[HKEY_CLASSES_ROOT\CLSID\{51EEE242-AD87-11d3-9C1E-0090278BBD99}\InProcServer32]
+(Default) = C:\Users\maz8913\Applications\Vim\vim74\gvimext.dll
+
+These are the registry locations used by the Vim installer and install.exe program.
