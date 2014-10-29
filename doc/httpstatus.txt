@@ -53,7 +53,10 @@ CLIENT ERROR 4xx                            *http-error*
 405 Method Not Allowed
 406 Not Acceptable
 407 Proxy Authentication Required
+
 408 Request Timeout
+The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time.
+
 409 Conflict
 410 Gone
 411 Length Required
