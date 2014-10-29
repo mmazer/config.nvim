@@ -1,20 +1,36 @@
-snippet ppty
+snippet kv
 	${1:key}: ${2:value}
-snippet proto:fn
+snippet proto:m
+	${1:class_name}.prototype.${2:method_name} = function(${3:params}) {
+	    ${4:body}
+	};
+snippet :fn
 	${1:name}: function(${2:params}) {
 	    ${3:body}
 	},
-snippet ret-obj
+snippet retobj
 	return {
 	    ${1}
 	};
-snippet def
+snippet defdeps
 	define('${1:module_id}',[${2:dependencies}], function(${3:params}) {
+
+		var exports = {};
 		${4}
+		return exports;
+	});
+snippet def
+	define('${1:module_id}', function() {
+
+		var exports = {};
+		${2}
+		return exports;
 	});
 snippet req
 	require('${1:name}');
-snippet reqc
+snippet reqvar
+	var ${1} = require('$1');
+snippet reqcb
 	require('${1:name}', function() {
 	    ${3}
 	});
@@ -38,7 +54,7 @@ snippet iife
 # jasmine
 snippet describe
 	describe('${1}', function() {
-		${2}
+	    ${2}
 	});
 snippet it
 	it('${1}', function() {
@@ -76,3 +92,30 @@ snippet rclass
 	});
 snippet r:input
 	React.DOM.input(${1})
+snippet r:vlink
+	valueLink={this.linkState('${1}')}
+snippet cname
+	className='${1}'
+snippet inits
+	getInitialState: function() {
+	    return {
+	        ${1}
+	    };
+	}
+snippet defs
+	getDefaultProps: function() {
+	    return {
+	        ${1}
+	    };
+	}
+# Quartermaster
+snippet rqm
+	var QM = require('quartermaster');
+snippet rqmobj
+	var Objects = QM.Objects;
+snippet rqmcol
+	var Collections = QM.Collections;
+snippet rqmarr
+	var Arrays = QM.Arrays;
+snippet getorelse
+	Objects.getOrElse('${1:key}', ${2:else_value}, ${3:object});
