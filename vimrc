@@ -725,6 +725,7 @@ nnoremap cog :GitGutterToggle<CR>
 nnoremap ]gg :GitGutterNextHunk<CR>zz
 nnoremap [gg :GitGutterPrevHun<CR>zz
 
+nnoremap Gh :GitGutterStageHunk<CR>
 nmap <space>hs <Plug>GitGutterStageHunk
 nmap <space>hr <Plug>GitGutterRevertHunk
 
