@@ -598,6 +598,8 @@ if has("autocmd")
 
     augroup json_files
         autocmd FileType json command! Format :%!python -m json.tool<CR>
+        autocmd FileType json setlocal foldmethod=syntax
+        autocmd FileType json setlocal foldnestmax=10
     augroup END
 
     augroup xml_files
