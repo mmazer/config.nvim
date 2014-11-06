@@ -12,7 +12,6 @@ call vundle#begin()
 
 " color schemes
 Plugin 'dhruvasagar/vim-railscasts-theme'
-Plugin 'jonathanfilip/vim-lucius'
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
