@@ -90,7 +90,7 @@ filetype plugin indent on
 syntax on
 syntax sync minlines=256
 set nocursorline
-colorscheme chocolate
+colorscheme railscasts
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
 " }}}
