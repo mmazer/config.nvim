@@ -545,6 +545,10 @@ if has("autocmd")
         autocmd FileType vim,css,groovy,java,javascript,less,php,scala,taskpaper autocmd BufWritePre <buffer> :%s/\s\+$//e
     augroup END
 
+    augroup keyword
+        autocmd FileType html,css,javascript setlocal iskeyword+=-
+    augroup END
+
     augroup javascript_files
         autocmd FileType javascript setlocal foldmethod=indent
         autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
