@@ -788,7 +788,7 @@ function! ToggleComplete()
         let g:neocomplete#disable_auto_complete=1
     endif
 
-    echo (g:neocomplete#disable_auto_complete ? 'off' : 'on')
+    echo (g:neocomplete#disable_auto_complete ? 'completion off' : 'completion on')
 endfunction
 nnoremap tc :call ToggleComplete()<CR>
 
