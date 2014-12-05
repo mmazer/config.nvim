@@ -755,6 +755,9 @@ let g:netrw_browse_split = 4
 let g:netrw_liststyle=3
 let g:netrw_winsize=20
 nnoremap gd :Vex<CR>
+augroup Netrw
+    autocmd FileType netrw nnoremap <buffer> q :bd<cr>
+augroup END
 
 " indent guides
 let g:indent_guides_guide_size = 1
