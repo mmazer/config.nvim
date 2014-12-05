@@ -129,14 +129,14 @@ function! Mode()
 
     let l:mode = mode()
 
-    if     mode ==# "n"  | return "NORMAL"
-    elseif mode ==# "i"  | return "INSERT"
-    elseif mode ==# "c"  | return "COMMAND"
-    elseif mode ==# "!"  | return "SHELL"
-    elseif mode ==# "R"  | return "REPLACE"
-    elseif mode ==# "v"  | return "VISUAL"
-    elseif mode ==# "V"  | return "V-LINE"
-    elseif mode ==# ""   | return "V-BLOCK"
+    if     mode ==# "n"  | return "NOR"
+    elseif mode ==# "i"  | return "INS"
+    elseif mode ==# "c"  | return "COM"
+    elseif mode ==# "!"  | return "SHE"
+    elseif mode ==# "R"  | return "REP"
+    elseif mode ==# "v"  | return "VIS"
+    elseif mode ==# "V"  | return "V-L"
+    elseif mode ==# ""   | return "V-B"
     else                 | return l:mode
     endif
 endfunction
