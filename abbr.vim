@@ -1,11 +1,12 @@
 " auto corrections
-iab teh the
+iab iterm item
+iab negociate negotiate
 iab otpion option
+iab postion position
 iab seperate separate
 iab seperately separately
 iab seperated separated
-iab negociate negotiate
-iab postion position
+iab teh the
 
 " Markdown
 iab hh1 #
