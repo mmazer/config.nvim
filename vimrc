@@ -843,12 +843,14 @@ function! OpenURI()
     " 2011-01-21 removed colon ':' from regexp to allow for port numbers in URLs
     " original regexp: [a-z]*:\/\/[^ >,;:]*
     let uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;\)\"]*')
-    echo uri
     if uri != ""
+        let uri = escape(uri, "#%?&;")
+        echo uri
+
         if has('win32')
-            exec ":silent !cmd /C start /min " . escape(uri,"%")
+            exec ":silent !cmd /C start /min " . uri
         elseif has('mac')
-            exec ":silent !open \"" . escape(uri,"%") . "\""
+            exec ":silent !open \"" . printf("%s", uri) . "\""
         else
             echo "OpenURI not supported on this system"
         endif
