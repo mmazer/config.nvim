@@ -39,6 +39,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/calendar-vim'
+Plugin 'jeetsukumaran/vim-filebeagle'
 
 " git
 Plugin 'int3/vim-extradite'
