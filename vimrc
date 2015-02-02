@@ -916,8 +916,12 @@ endfun
 " 30: user commands {{{
 
 command! R :redraw!
-command! Scratch :silent e ~/.var/vim/vim-scratch.txt
+command! Scratch :silent e ~/.var/scratch.txt
 nnoremap Es :Scratch<CR>
+command! Journal :silent e ~/.var/journal.txt
+nnoremap Ej :Journal<CR>
+nnoremap Et :silent e ~/.var/TODO.taskpaper<CR>
+
 if executable("dos2unix")
     command! Dos2Unix :%!dos2unix
 endif
