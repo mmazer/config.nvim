@@ -649,6 +649,7 @@ nnoremap <silent> [ctrlp]r :<C-u>CtrlPRegister<cr>
 nnoremap <silent> [ctrlp]q :<C-u>CtrlPQuickfix<cr>
 nnoremap <silent> [ctrlp]s :<C-u>CtrlPFunky<cr>
 nnoremap <silent> [ctrlp]t :<C-u>CtrlPBufTag<cr>
+nnoremap <silent> [ctrlp]u :<C-u>CtrlPMRUFiles<cr>
 
 
 let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'buffertag', 'bookmarkdir', 'funky', 'mark', 'register']
