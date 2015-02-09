@@ -853,9 +853,12 @@ function! OpenURI()
             exec ":silent !cmd /C start /min " . uri
         elseif has('mac')
             exec ":silent !open \"" . printf("%s", uri) . "\""
+        elseif has('unix')
+            exec ":silent !firefox \"" . printf("%s", uri) . "\""
         else
             echo "OpenURI not supported on this system"
         endif
+        exec ":redraw!"
     else
         echo "No URI found in line."
     endif
