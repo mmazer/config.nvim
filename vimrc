@@ -573,7 +573,6 @@ if has("autocmd")
     augroup END
 
     augroup gsp_files
-        autocmd FileType gsp set ft=html.gsp
         autocmd FileType gsp setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
     augroup END
 
@@ -674,6 +673,7 @@ endif
 let g:ctrlp_buftag_types = {
     \ 'javascript'  : '--language-force=js',
     \ 'css'         : '--language-force=css',
+    \ 'gsp'         : '--language-force=xml',
     \ }
 
 " fugitive
