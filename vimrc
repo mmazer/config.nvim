@@ -345,9 +345,6 @@ nnoremap <expr> ' printf('`%c zz', getchar())
 " for toggling paste mode in terminal
 " Can also use `yo` from `unimpaired`
 set pastetoggle=<F5>
-nnoremap <C-p> "+gP
-inoremap <C-v> <C-o>"+gP
-vnoremap <C-p> "+gP
 
 " For wrapped lines, navigate normally
 noremap  <buffer> <silent> k gk
