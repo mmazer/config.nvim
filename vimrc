@@ -548,7 +548,7 @@ if has("autocmd")
     augroup END
 
     augroup javascript_files
-        autocmd FileType javascript setlocal foldmethod=indent
+        autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=indent
         autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     augroup END
 
