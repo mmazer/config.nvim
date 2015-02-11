@@ -55,6 +55,8 @@ Plugin 'groenewege/vim-less'
 Plugin 'ap/vim-css-color'
 Plugin 'Shutnik/jshint2.vim'
 Plugin 'vim-scripts/paredit.vim'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 call vundle#end()
 "}}}
