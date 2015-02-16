@@ -1,13 +1,13 @@
 snippet kv
 	${1:key}: ${2:value}
-snippet proto:m
-	${1:class_name}.prototype.${2:method_name} = function(${3:params}) {
-	    ${4:body}
-	};
-snippet :fn
+snippet fn
 	${1:name}: function(${2:params}) {
 	    ${3:body}
 	},
+snippet method
+	${1:class}.prototype.${2:name}: function(${3:...}) {
+	    ${4:body}
+	};
 snippet retobj
 	return {
 	    ${1}
@@ -119,3 +119,12 @@ snippet rqmarr
 	var Arrays = QM.Arrays;
 snippet getorelse
 	Objects.getOrElse('${1:key}', ${2:else_value}, ${3:object});
+# Inline optimization
+snippet sliceargs
+	// OPT: inline slice(arguments)
+	var ${1:var} = [];
+	for (var _$i = 0, _$l = arguments.length; _$i < _$l; _$i++) { $1[_$i] = arguments[_$i]; }
+snippet dropargs 
+	// OPT: inline drop($2, arguments) 
+	var ${1:var} = []; 
+	for (var _$i = 0, _$j = ${2:drop}, _$l = arguments.length; _$j < _$l; _$i++, _$j++) { $1[_$i] = arguments[_$j]; }
