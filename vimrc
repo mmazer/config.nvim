@@ -561,7 +561,6 @@ if has("autocmd")
     augroup END
 
     augroup html_files
-        "autocmd filetype html set ft=xml.html.javascript
         autocmd FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
         autocmd FileType setlocal autoindent
     augroup END
@@ -768,7 +767,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers=['jsxhint', 'jscs']
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='!!'
-let g:syntastic_always_populate_loc_list=1
+let g:syntastic_always_populate_loc_list= 1
 
 let g:syntastic_stl_format = '| ✗ Syntax: %E{Errors: %fe #%e}%B{, }%W{Warnings: %fw #%w} | '
 
