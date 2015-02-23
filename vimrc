@@ -678,7 +678,7 @@ let g:ctrlp_buftag_types = {
     \ }
 
 " fugitive
-nnoremap Gb :Gblame<CR>
+nnoremap GB :Gblame<CR>
 nnoremap GC :Gcommit<CR>
 nnoremap Gd :Gdiff<CR>
 nnoremap Ge :Gedit<CR>
