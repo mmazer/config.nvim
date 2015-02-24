@@ -6,4 +6,5 @@ var
 .netrwhist
 bundle
 doc/tags
+*.spl
 
