@@ -15,9 +15,9 @@ snippet retobj
 snippet defdeps
 	define('${1:module_id}',[${2:dependencies}], function(${3:params}) {
 
-		var exports = {};
-		${4}
-		return exports;
+	  var exports = {};
+	  ${4}
+	  return exports;
 	});
 snippet def
 	define('${1:module_id}', function() {
@@ -54,11 +54,11 @@ snippet iife
 # jasmine
 snippet describe
 	describe('${1}', function() {
-	    ${2}
+	  ${2}
 	});
 snippet it
 	it('${1}', function() {
-		${2}
+	  ${2}
 	});
 snippet beforeEach
 	beforeEach(function() {
@@ -123,8 +123,8 @@ snippet getorelse
 snippet sliceargs
 	// OPT: inline slice(arguments)
 	var ${1:var} = [];
-	for (var _$i = 0, _$l = arguments.length; _$i < _$l; _$i++) { $1[_$i] = arguments[_$i]; }
+	for (var _i = 0, _l = arguments.length; _i < _l; _i++) { $1[_i] = arguments[_i]; }
 snippet dropargs 
 	// OPT: inline drop($2, arguments) 
 	var ${1:var} = []; 
-	for (var _$i = 0, _$j = ${2:drop}, _$l = arguments.length; _$j < _$l; _$i++, _$j++) { $1[_$i] = arguments[_$j]; }
+	for (var _i = 0, _j = ${2:count}, _l = arguments.length; _j < _l; _i++, _j++) { $1[_i] = arguments[_j]; }
