@@ -941,15 +941,16 @@ endfun
 
 command! R :redraw!
 command! Scratch :silent e ~/.var/scratch.txt
-nnoremap Es :Scratch<CR>
+nnoremap gs :Scratch<CR>
 command! Journal :silent e ~/.var/journal.txt
-nnoremap Ej :Journal<CR>
-nnoremap Et :silent e ~/.var/TODO.taskpaper<CR>
+nnoremap gj :Journal<CR>
+nnoremap gt :silent e ~/.todo/todo.txt<CR>
 
 if executable("dos2unix")
     command! Dos2Unix :%!dos2unix
 endif
 command! Todo :e TODO.taskpaper
+nnoremap gT :Todo<CR>
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim/
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
