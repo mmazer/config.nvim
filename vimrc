@@ -448,6 +448,7 @@ onoremap ia i>
 onoremap aa a>
 
 nnoremap <space>h :h<space>
+nnoremap gh :h<space>
 
 " indent the whole file and return to original position
 nmap <space>if gg=G``
@@ -500,6 +501,7 @@ set backup
 set backupdir=$HOME/.var/vim/backup//
 set autoread
 
+nnoremap rf :e!<CR>
 " }}}
 
 " 20: swap file {{{1
@@ -715,7 +717,7 @@ function! GitIncoming()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Gincoming :call GitIncoming()
-nnoremap <space>g[ :Gincoming<CR>
+nnoremap Gi :Gincoming<CR>
 
 function! GitOutgoing()
     new
@@ -724,7 +726,7 @@ function! GitOutgoing()
     nnoremap <buffer> q :bw<cr>
 endfunction
 command! Goutgoing :call GitOutgoing()
-nnoremap <space>g] :Goutgoing<CR>
+nnoremap Go :Goutgoing<CR>
 
 " gitgutter
 let g:gitgutter_diff_args = '-w'
