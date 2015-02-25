@@ -501,7 +501,7 @@ set backup
 set backupdir=$HOME/.var/vim/backup//
 set autoread
 
-nnoremap rf :e!<CR>
+nnoremap g! :e!<CR>
 " }}}
 
 " 20: swap file {{{1
