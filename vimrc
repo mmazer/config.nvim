@@ -925,6 +925,7 @@ function! Setcwd()
     exe 'lc!' fnameescape(wd == '' ? cph : substitute(wd, mkr.'$', '.', ''))
 endfunction
 command! Cd :silent call Setcwd() | pwd
+nnoremap gp :Cd<CR>
 
 " TODO replace with simple iab <expr>
 function! DateTimeStamp()
