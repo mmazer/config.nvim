@@ -41,6 +41,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/calendar-vim'
 Plugin 'jeetsukumaran/vim-filebeagle'
+Plugin 'freitass/todo.txt-vim'
 
 " git
 Plugin 'int3/vim-extradite'
