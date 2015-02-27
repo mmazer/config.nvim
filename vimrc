@@ -474,12 +474,12 @@ nnoremap ol :lopen<CR>
 nnoremap ql :lclose<CR>
 
 " end lines with semicolons
-inoremap ;] <C-o>A;
-nnoremap <space>; A;<esc>
+inoremap ;] <C-o>:s/\s*$/;/<CR>
+nnoremap <space>; :call Preserve("s/\\s\*$/;/")<CR>
 
 " end lines with comma
-inoremap ,] <C-o>A,
-nnoremap <space>, A,<esc>
+inoremap ,] <C-o>:s/\s*$/,/<CR>
+nnoremap <space>, :call Preserve("s/\\s\*$/,/")<CR>
 
 noremap <C-U> i<ESC>:redraw!<CR>
 inoremap <C-U> <ESC>:redraw!<CR>i
