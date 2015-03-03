@@ -708,6 +708,7 @@ command! Gdoff diffoff | q | Gedit
 function! GitDiffCached()
     new
     r !git diff -w --cached
+    :normal ggdd
     setlocal ft=diff bt=nofile bh=wipe nobl noswf ro
     nnoremap <buffer> q :bw<cr>
 endfunction
