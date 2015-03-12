@@ -477,7 +477,7 @@ nnoremap ol :lopen<CR>
 nnoremap ql :lclose<CR>
 
 " end lines with semicolons
-inoremap ;] <C-o>:s/\s*$/;/<CR>
+inoremap ;] <C-o>:call Preserve("s/\\s\*$/;/")<CR>
 nnoremap <space>; :call Preserve("s/\\s\*$/;/")<CR>
 
 " end lines with comma
