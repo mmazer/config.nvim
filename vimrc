@@ -95,7 +95,7 @@ set number
 filetype plugin indent on
 syntax on
 syntax sync minlines=256
-set nocursorline
+set cursorline
 colorscheme github
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
