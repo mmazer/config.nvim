@@ -41,7 +41,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/calendar-vim'
 Plugin 'jeetsukumaran/vim-filebeagle'
-Plugin 'freitass/todo.txt-vim'
+Plugin 'sgur/ctrlp-extensions.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
 
 " git
 Plugin 'int3/vim-extradite'
@@ -651,7 +652,8 @@ endif "}}}
 nmap <space> [ctrlp]
 nnoremap <silent> [ctrlp]a :<C-u>CtrlPBookmarkDirAdd<cr>
 nnoremap <silent> [ctrlp]b :<C-u>CtrlPBuffer<cr>
-nnoremap <silent> [ctrlp]c :<C-u>CtrlPClearCache<cr>
+nnoremap <silent> [ctrlp]c :<C-u>CtrlPCmdline<cr>
+nnoremap <silent> [ctrlp]C :<C-u>CtrlPClearCache<cr>
 nnoremap <silent> [ctrlp]d :<C-u>CtrlPDir<cr>
 nnoremap <silent> [ctrlp]f :<C-u>CtrlP<cr>
 nnoremap <silent> [ctrlp]k :<C-u>CtrlPMark<cr>
@@ -662,6 +664,7 @@ nnoremap <silent> [ctrlp]q :<C-u>CtrlPQuickfix<cr>
 nnoremap <silent> [ctrlp]s :<C-u>CtrlPFunky<cr>
 nnoremap <silent> [ctrlp]t :<C-u>CtrlPBufTag<cr>
 nnoremap <silent> [ctrlp]u :<C-u>CtrlPMRUFiles<cr>
+nnoremap <silent> [ctrlp]y :<C-u>CtrlPYankring<cr>
 
 
 let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'buffertag', 'bookmarkdir', 'funky', 'mark', 'register']
@@ -672,7 +675,7 @@ let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_root_markers = ['.top', '.project', '.ctrlp']
 let g:ctrlp_follow_symlinks = 1
-
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_custom_ignore = {
     \ 'dir':  'target\|node_modules\|.settings'
     \ }
