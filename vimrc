@@ -13,6 +13,7 @@ call vundle#begin()
 " color schemes
 Plugin 'dhruvasagar/vim-railscasts-theme'
 Plugin 'mmazer/vim-github-colorscheme'
+Plugin 'ajh17/Spacegray.vim'
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -43,6 +44,7 @@ Plugin 'mattn/calendar-vim'
 Plugin 'jeetsukumaran/vim-filebeagle'
 Plugin 'sgur/ctrlp-extensions.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
+Plugin 'chrisbra/vim-diff-enhanced'
 
 " git
 Plugin 'int3/vim-extradite'
