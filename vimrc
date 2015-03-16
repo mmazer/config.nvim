@@ -962,7 +962,7 @@ command! Scratch :silent e ~/.var/scratch.txt
 nnoremap gs :Scratch<CR>
 command! Journal :silent e ~/.var/journal.txt
 nnoremap gj :Journal<CR>
-nnoremap gt :silent e ~/.todo/todo.txt<CR>
+nnoremap gt :silent e ~/00INFOBASE/00INBOX/01TODO.taskpaper<CR>
 
 if executable("dos2unix")
     command! Dos2Unix :%!dos2unix
