@@ -98,7 +98,10 @@ filetype plugin indent on
 syntax on
 syntax sync minlines=256
 set cursorline
-colorscheme github
+
+set t_Co=256
+colorscheme railscasts
+
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
 " }}}
@@ -224,8 +227,6 @@ augroup END
 " }}}
 
 " 8: terminal {{{1
-
-set t_Co=256
 
 " }}}
 
@@ -969,8 +970,6 @@ nnoremap gt :silent e ~/00INFOBASE/00INBOX/01TODO.taskpaper<CR>
 if executable("dos2unix")
     command! Dos2Unix :%!dos2unix
 endif
-command! Todo :e TODO.taskpaper
-nnoremap gT :Todo<CR>
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim/
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -991,6 +990,4 @@ endif
 if filereadable(glob("~/.vim/abbr.vim"))
     source ~/.vim/abbr.vim
 endif
-
-"}}}
 
