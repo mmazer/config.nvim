@@ -750,6 +750,8 @@ command! Goutgoing :call GitOutgoing()
 nnoremap Go :Goutgoing<CR>
 
 " gitgutter
+
+let g:gitgutter_enabled = 0
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '='
