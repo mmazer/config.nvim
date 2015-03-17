@@ -159,8 +159,8 @@ function! Branch()
         return branch
     endif
 
-    let branch = fugitive#head(7)
-    return empty(branch) ? '' : 'Git:'.branch.' | '
+    let branch = fugitive#statusline()
+    return branch
 endfunction
 
 function! Fenc()
