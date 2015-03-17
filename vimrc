@@ -762,8 +762,7 @@ nnoremap ]gg :GitGutterNextHunk<CR>zz
 nnoremap [gg :GitGutterPrevHun<CR>zz
 
 nnoremap Gh :GitGutterStageHunk<CR>
-nmap <space>hs <Plug>GitGutterStageHunk
-nmap <space>hr <Plug>GitGutterRevertHunk
+nnoremap GR :GitGutterRevertHunk<CR>
 
 " emmet
 let g:user_emmet_expandabbr_key = '<C-x>'
