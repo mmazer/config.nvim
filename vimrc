@@ -96,7 +96,7 @@ syntax sync minlines=256
 set cursorline
 
 set t_Co=256
-colorscheme railscasts
+colorscheme spacegray
 
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
@@ -674,15 +674,19 @@ let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_root_markers = ['.top', '.project', '.ctrlp']
 let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  'target\|node_modules\|.settings'
+    \ 'dir':  '.git\|.svn\|target\|node_modules\|.settings'
     \ }
 
 let g:ctrlp_funky_syntax_highlight = 1
 if executable('ag')
     let g:ctrlp_user_command = 'ag -l --nocolor --follow -g "" %s'
-    let g:ctrlp_use_caching = 0
+    if has('win32')
+        let g:ctrlp_use_caching = 1
+    elseif
+        let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+        let g:ctrlp_use_caching = 0
+    endif
 endif
 
 " ctrlp_buftag
