@@ -847,11 +847,17 @@ let g:tagbar_type_html = {
         \ 'e:elements'
     \ ]
 \ }
-"slimux
-command! GrailsStop :SlimuxShellRun stop-app
-command! GrailsRun :SlimuxShellRun run-app
-nnoremap <space>sd :SlimuxSchemeEvalDefun<CR>
-nnoremap <space>sb :SlimuxSchemeEvalBuf<CR>
+
+" pandoc:
+let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+let g:pandoc#filetypes#pandoc_markdown = 0
+
+" eclim:
+let g:EclimJavascriptValidate=0
+let g:EclimFileTypeValidate=0
+let g:EclimJavascriptLintEnabled=0
+let g:EclimCompletionMethod='omnifunc'
+
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
