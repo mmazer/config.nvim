@@ -697,6 +697,8 @@ let g:ctrlp_buftag_types = {
     \ 'javascript'  : '--language-force=js',
     \ 'css'         : '--language-force=css',
     \ 'gsp'         : '--language-force=xml',
+    \ 'jsp'         : '--language-force=xml',
+    \ 'html'        : '--language-force=xml'
     \ }
 
 " fugitive
