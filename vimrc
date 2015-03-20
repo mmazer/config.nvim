@@ -822,6 +822,11 @@ let g:neocomplete#min_keyword_length=3
 inoremap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
 
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
+
 function! ToggleComplete()
     if g:neocomplete#disable_auto_complete == 1
         let g:neocomplete#disable_auto_complete=0
@@ -862,7 +867,6 @@ let g:EclimJavascriptValidate=0
 let g:EclimFileTypeValidate=0
 let g:EclimJavascriptLintEnabled=0
 let g:EclimCompletionMethod='omnifunc'
-
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
