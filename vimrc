@@ -182,7 +182,7 @@ function! StatuslineWhitespace()
 
     let trailing = search('\s\+$', 'nw') != 0
     if trailing
-        let trailing_warning = 'trailing'
+        let trailing_warning = 'trail'
      else
         let trailing_warning = ''
      endif
@@ -193,7 +193,7 @@ function! StatuslineWhitespace()
     let mixed = tabs && spaces
 
     if mixed
-        let tab_warning = 'mixed-indent'
+        let tab_warning = 'mixed'
     elseif (spaces && !&et) || (tabs && &et)
         let tab_warning = '&et'
     else
