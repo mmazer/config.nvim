@@ -685,6 +685,7 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag -l --nocolor --follow -g "" %s'
     if has('win32')
         let g:ctrlp_use_caching = 1
+        let g:ctrlp_clear_cache_on_exit = 0
     elseif
         let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
         let g:ctrlp_use_caching = 0
