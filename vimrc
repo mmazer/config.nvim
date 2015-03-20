@@ -808,7 +808,7 @@ let g:syntastic_error_symbol='E:'
 let g:syntastic_warning_symbol='W:'
 let g:syntastic_always_populate_loc_list= 1
 
-let g:syntastic_stl_format = '| ✗ Syntax: %E{Errors: %fe #%e}%B{, }%W{Warnings: %fw #%w} | '
+let g:syntastic_stl_format = '| ✗ %E{E: %fe #%e}%B{, }%W{W: %fw #%w} | '
 
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'passive_filetypes': ['xml', 'html', 'java'] }
