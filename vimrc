@@ -1000,8 +1000,8 @@ endif
 
 " 31 abbreviations {{{
 
-:iab dts <c-r>=DateTimeStamp()<cr><esc>
-:iab ddt <c-r>=ShortDate()<cr><esc>
+:iab dts <c-r>=DateTimeStamp()<esc>
+:iab ddt <c-r>=ShortDate()<esc>
 
 if filereadable(glob("~/.vim/abbr.vim"))
     source ~/.vim/abbr.vim
