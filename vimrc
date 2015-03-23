@@ -643,7 +643,7 @@ if has("autocmd")
 
     augroup diff_mode
         autocmd FilterWritePre * if &diff | nnoremap <buffer> dc :Gdoff<CR> | nnoremap <buffer> du :diffupdate<CR> | endif
-    augroup
+    augroup END
 endif "}}}
 " }}}
 
