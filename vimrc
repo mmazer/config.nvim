@@ -84,7 +84,10 @@ set scrolloff=2
 set listchars=tab:▸\ ,trail:·,nbsp:¬
 set wrap linebreak textwidth=0
 set number
-
+augroup insert_number
+    autocmd InsertEnter * set norelativenumber
+    autocmd InsertLeave * set relativenumber
+augroup END
 " }}}
 
 " 5: syntax, highligthing and spelling {{{1
