@@ -97,9 +97,6 @@ syntax on
 syntax sync minlines=256
 set cursorline
 
-set t_Co=256
-colorscheme spacegray
-
 set spelllang=en
 set spellfile=~/.vim/spell/spellfile.en.add
 " }}}
@@ -234,6 +231,7 @@ augroup END
 " 10: GUI {{{1
 
 if has("gui_running")
+    colorscheme spacegray
     set antialias
     if has('mac')
         set guifont=DejaVu\ Sans\ Mono:h12
@@ -249,6 +247,9 @@ if has("gui_running")
     set guioptions-=L " remove left-hand scroll bar
     set lines=90
     set columns=145
+else
+    set t_Co=256
+    colorscheme railscasts
 endif
 
 " }}}
