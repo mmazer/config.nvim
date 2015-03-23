@@ -74,9 +74,6 @@ set hlsearch
 set ignorecase
 set smartcase   "case sensitive if search term contains upppecase letter
 
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
 " }}}
 
 " 3: tags {{{
@@ -432,8 +429,8 @@ nnoremap tl  :tablast<CR>
 nnoremap td  :tabclose<CR>
 
 " center window when moving to next search match
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap n nzzzv
+nnoremap N Nzzzv
 nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
