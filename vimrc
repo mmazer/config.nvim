@@ -489,6 +489,7 @@ nnoremap <space>, :call Preserve("s/\\s\*$/,/")<CR>
 
 noremap <C-U> i<ESC>:redraw!<CR>
 inoremap <C-U> <ESC>:redraw!<CR>i
+command! Rd :redraw!
 
 inoremap <C-P> <C-X><C-U>
 
@@ -697,9 +698,12 @@ endif
 let g:ctrlp_buftag_types = {
     \ 'javascript'  : '--language-force=js',
     \ 'css'         : '--language-force=css',
-    \ 'gsp'         : '--language-force=xml',
-    \ 'jsp'         : '--language-force=xml',
-    \ 'html'        : '--language-force=xml'
+    \ 'gsp'         : '--language-force=XML',
+    \ 'xml'         : '--language-force=XML',
+    \ 'spring'      : '--language-force=XML',
+    \ 'jsp'         : '--language-force=XML',
+    \ 'html'        : '--language-force=XML',
+    \ 'taskpaper'   : '--language-force=Taskpaper'
     \ }
 
 " fugitive
