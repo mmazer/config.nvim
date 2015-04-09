@@ -29,3 +29,12 @@ snippet vreq "var require"
 var ${1} = require('${2}')$0;
 endsnippet
 
+snippet err "throw Error"
+throw new Error('${1:reason}');
+endsnippet
+
+snippet typerr "throw TypeError"
+throw new TypeError('${1:reason}');
+endsnippet
+
+
