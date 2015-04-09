@@ -869,6 +869,7 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 
 " eclim:
 let g:EclimJavascriptValidate=0
+let g:EclimJavascriptIndentDisabled=1
 let g:EclimFileTypeValidate=0
 let g:EclimJavascriptLintEnabled=0
 let g:EclimCompletionMethod='omnifunc'
