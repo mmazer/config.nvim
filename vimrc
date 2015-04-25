@@ -503,6 +503,12 @@ inoremap <C-P> <C-X><C-U>
 nnoremap <S-Enter> O<ESC>j
 nnoremap <Enter> o<ESC>k
 
+" toggle case of words
+nnoremap [w gUiw
+nnoremap ]w guiw
+
+" http://vim.wikia.com/wiki/Show_the_length_of_the_current_word
+nnoremap <C-_> :echo 'length of' expand('<cword>') 'is' strlen(substitute(expand('<cword>'), '.', 'x', 'g'))<CR>
 " }}}
 
 " 19: reading and writing files {{{1
