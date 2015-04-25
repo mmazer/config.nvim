@@ -827,7 +827,12 @@ let g:syntastic_always_populate_loc_list= 1
 let g:syntastic_stl_format = '| ✗ %E{E: %fe #%e}%B{, }%W{W: %fw #%w} | '
 
 let g:syntastic_mode_map = { 'mode': 'active',
-            \ 'passive_filetypes': ['xml', 'html', 'java'] }
+            \ 'passive_filetypes': ['xml', 'java'] }
+
+let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_html_tidy_ignore_errors = [
+    \ " proprietary attribute "
+    \ ]
 
 " neocomplete
 let g:acp_enableAtStartup = 0
