@@ -494,7 +494,7 @@ nnoremap <space>, :call Preserve("s/\\s\*$/,/")<CR>
 
 noremap <C-U> i<ESC>:redraw!<CR>
 inoremap <C-U> <ESC>:redraw!<CR>i
-command! Rd :redraw!
+command! RR :redraw!
 
 inoremap <C-P> <C-X><C-U>
 
