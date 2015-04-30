@@ -976,7 +976,6 @@ endfunction
 command! Cd :silent call Setcwd() | pwd
 nnoremap \\cd :Cd<CR>
 
-" TODO replace with simple iab <expr>
 function! DateTimeStamp()
     return strftime("%H:%M-%m.%d.%Y")
 endfun
