@@ -8,6 +8,7 @@ Alternate Windows builds are available here:
  - <http://wyw.dcweb.cn/#download> with Lua support and updates to latest patches.
  - <http://tuxproject.de/projects/vim/>
  - [Vim for Windows](https://bitbucket.org/Haroogan/vim-for-windows/src) 
+ - [VIM for Windows, single drop](https://bitbucket.org/kybu/vim-for-windows-single-drop) - bundled with all 3rd party dependencies, e.g. python, lua
 
 
 #### Python
