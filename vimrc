@@ -367,8 +367,8 @@ inoremap <C-E> <C-o>$
 
 nnoremap <silent> Q :qa!<CR>
 
-noremap Ev :e ~/.vim/vimrc<CR>
-noremap So :so ~/.vim/vimrc<CR>
+noremap \\v :e ~/.vim/vimrc<CR>
+noremap \\sv :so ~/.vim/vimrc<CR>
 
 nnoremap <space>W :w!<CR>
 " for use in terminal - c-s must be disabled using stty -ixon
@@ -973,7 +973,7 @@ function! Setcwd()
     exe 'lc!' fnameescape(wd == '' ? cph : substitute(wd, mkr.'$', '.', ''))
 endfunction
 command! Cd :silent call Setcwd() | pwd
-nnoremap gp :Cd<CR>
+nnoremap \\cd :Cd<CR>
 
 " TODO replace with simple iab <expr>
 function! DateTimeStamp()
@@ -1000,10 +1000,11 @@ endfunction
 
 command! R :redraw!
 command! Scratch :silent e ~/.var/scratch.txt
-nnoremap gs :Scratch<CR>
+nnoremap \\s :Scratch<CR>
 command! Journal :silent e ~/.var/journal.txt
-nnoremap gj :Journal<CR>
-nnoremap gt :silent e ~/00INFOBASE/00INBOX/01TODO.taskpaper<CR>
+nnoremap \\j :Journal<CR>
+nnoremap \\t :silent e ~/00INFOBASE/00INBOX/01TODO.taskpaper<CR>
+nnoremap \\ssh :silent e ~/.ssh/config<CR>
 
 if executable("dos2unix")
     command! Dos2Unix :%!dos2unix
@@ -1011,7 +1012,7 @@ endif
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim/
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<Space>
+nnoremap \s :Ag<Space>
 
 if has("mac")
     command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
