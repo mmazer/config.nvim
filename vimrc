@@ -714,7 +714,8 @@ let g:ctrlp_buftag_types = {
     \ 'spring'      : '--language-force=XML',
     \ 'jsp'         : '--language-force=XML',
     \ 'html'        : '--language-force=XML',
-    \ 'taskpaper'   : '--language-force=Taskpaper'
+    \ 'taskpaper'   : '--language-force=Taskpaper',
+    \ 'wsdl'        : '--language-force=wsdl'
     \ }
 
 " fugitive
