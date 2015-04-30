@@ -579,12 +579,13 @@ if has("autocmd")
     augroup END
 
     augroup javascript_files
-        autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=indent
+        autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 foldmethod=indent
         autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     augroup END
 
     augroup jsx_files
-        autocmd BufNewFile,BufRead *.jsx set ft=javascript.jsx
+        autocmd FileType jsx setlocal shiftwidth=2 softtabstop=2 foldmethod=indent
+        autocmd FileType jsx setlocal omnifunc=javascriptcomplete#CompleteJS
     augroup END
 
     augroup vim_files
@@ -597,8 +598,7 @@ if has("autocmd")
     augroup END
 
     augroup jsp_files
-        autocmd filetype jsp set ft=jsp.html
-        autocmd filetype jsp set foldmethod=manual
+        autocmd FileType jsp setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual autoindent
     augroup END
 
     augroup gsp_files
@@ -633,7 +633,7 @@ if has("autocmd")
     augroup END
 
     augroup xml_files
-        autocmd filetype xml setlocal foldmethod=syntax
+        autocmd FileType xml setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=syntax
     augroup END
 
     augroup wsdl_files
