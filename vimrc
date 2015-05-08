@@ -1002,12 +1002,13 @@ endfunction
 " 30: user commands {{{
 
 command! R :redraw!
-command! Scratch :silent e ~/.var/scratch.txt
+command! Scratch :silent e ~/00INFOBASE/00INBOX/SCRATCH.txt
 nnoremap \\s :Scratch<CR>
-command! Journal :silent e ~/.var/journal.txt
+command! Journal :silent e ~/00INFOBASE/00INBOX/JOURNAL.txt
 nnoremap \\j :Journal<CR>
 nnoremap \\t :silent e ~/00INFOBASE/00INBOX/01TODO.taskpaper<CR>
-nnoremap \\ssh :silent e ~/.ssh/config<CR>
+command! Ssh :silent e ~/.ssh/config
+nnoremap \\h :Ssh<CR>
 
 if executable("dos2unix")
     command! Dos2Unix :%!dos2unix
