@@ -59,8 +59,9 @@ Plugin 'vim-scripts/paredit.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'mmazer/groovyindent'
+Plugin 'chrisbra/csv.vim'
 
-Plugin 'eclim'
+"Plugin 'eclim', {'pinned': 1}
 
 call vundle#end()
 "}}}
@@ -373,6 +374,7 @@ noremap \\sv :so ~/.vim/vimrc<CR>
 nnoremap <space>W :w!<CR>
 " for use in terminal - c-s must be disabled using stty -ixon
 nnoremap <C-s> :w!<CR>
+inoremap <C-s> <C-o>:w!<CR>
 nnoremap <space>w :w<CR>
 nnoremap <space>B :b#<CR>
 nnoremap <space>d :bd<CR>
