@@ -654,7 +654,7 @@ if has("autocmd")
     augroup END
 
     augroup markdown_files
-        autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown setlocal textwidth=80 linebreak
+        autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown setlocal wrap linebreak nolist
     augroup END
 
     augroup diff_mode
