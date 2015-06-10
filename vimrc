@@ -598,7 +598,7 @@ if has("autocmd")
 
     augroup html_files
         autocmd FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual
-        autocmd FileType setlocal autoindent
+        autocmd FileType html setlocal autoindent
     augroup END
 
     augroup jsp_files
