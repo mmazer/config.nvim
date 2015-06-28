@@ -1,13 +1,14 @@
 " auto corrections
+iab collander colander
 iab iterm item
 iab negociate negotiate
 iab otpion option
 iab postion position
+iab saavy savvy
 iab seperate separate
 iab seperately separately
 iab seperated separated
 iab teh the
-iab saavy savvy
 
 " Markdown
 iab hh1 #
