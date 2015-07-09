@@ -661,6 +661,11 @@ if has("autocmd")
     augroup diff_mode
         autocmd FilterWritePre * if &diff | nnoremap <buffer> dc :Gdoff<CR> | nnoremap <buffer> du :diffupdate<CR> | endif
     augroup END
+
+    augroup conf_files
+        autocmd! BufRead *.conf setlocal ft=conf
+        autocmd FileType conf setlocal shiftwidth=2 softtabstop=2 tabstop=2 foldmethod=manual autoindent
+    augroup END
 endif "}}}
 " }}}
 
