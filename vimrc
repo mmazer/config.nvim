@@ -13,7 +13,6 @@ call vundle#begin()
 " color schemes
 Plugin 'dhruvasagar/vim-railscasts-theme'
 Plugin 'mmazer/vim-github-colorscheme'
-Plugin 'ajh17/Spacegray.vim'
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -59,7 +58,6 @@ Plugin 'vim-scripts/paredit.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'mmazer/groovyindent'
-Plugin 'chrisbra/csv.vim'
 
 "Plugin 'eclim', {'pinned': 1}
 
