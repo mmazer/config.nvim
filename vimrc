@@ -229,7 +229,7 @@ augroup END
 " 10: GUI {{{1
 
 if has("gui_running")
-    colorscheme spacegray
+    colorscheme railscasts
     set antialias
     if has('mac')
         set guifont=DejaVu\ Sans\ Mono:h12
