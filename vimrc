@@ -921,6 +921,7 @@ function! ShowTime()
     echo strftime('%a %d %b %H:%M:%S')
 endfunction
 nnoremap got :call ShowTime()<CR>
+command! Date :call ShowTime()
 
 function! OpenURI()
     " 2011-01-21 removed colon ':' from regexp to allow for port numbers in URLs
