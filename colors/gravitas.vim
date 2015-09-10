@@ -15,7 +15,7 @@ let colors_name = "gravitas"
 
 " General colors
 hi Normal       guifg=#404040   guibg=#f0f0f0 gui=NONE
-hi NonText      guifg=#f0f0f0   guibg=#f0f0f0 gui=NONE
+hi NonText      guifg=#767676 gui=NONE cterm=NONE ctermfg=243
 hi Cursor       guifg=white     guibg=black   gui=NONE
 hi LineNr       guifg=#ffffff   guibg=#c0d0e0 gui=NONE
 hi VertSplit    guifg=#4b5e81   guibg=#4b5e81 gui=NONE
