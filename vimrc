@@ -826,7 +826,7 @@ nmap <silent> ti <Plug>IndentGuidesToggle
 
 " syntastic
 let g:syntastic_check_on_open = 1
-let g:syntastic_javascript_checkers=['jsxhint']
+let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_error_symbol='E:'
 let g:syntastic_warning_symbol='W:'
 let g:syntastic_always_populate_loc_list= 1
