@@ -893,6 +893,7 @@ let g:tagbar_type_html = {
 " pandoc:
 let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
 let g:pandoc#filetypes#pandoc_markdown = 0
+let g:pandoc#spell#enabled = 0
 
 " eclim:
 let g:EclimJavascriptValidate=0
