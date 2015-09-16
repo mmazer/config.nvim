@@ -867,9 +867,6 @@ function! ToggleComplete()
 endfunction
 nnoremap tc :call ToggleComplete()<CR>
 
-" ultisnips
-let g:UltiSnipsExpandTrigger="<c-tab>"
-
 " tagbar
 noremap <silent> [ot :TagbarOpen fg<CR>
 noremap <silent> ]ot :TagbarClose<CR>
