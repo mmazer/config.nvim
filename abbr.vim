@@ -2,6 +2,7 @@
 iab collander colander
 iab iterm item
 iab negociate negotiate
+iab onself oneself
 iab otpion option
 iab postion position
 iab saavy savvy
