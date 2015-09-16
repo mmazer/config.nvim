@@ -1025,7 +1025,7 @@ command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \s :Ag<Space>
 
 if has("mac")
-    command! Marked :silent exe "!open -a Marked.app '%:p'" |  redraw!
+    command! Marked :silent exe "!marked '%:p'" |  redraw!
     nnoremap <space>M :Marked<CR>
 endif
 
