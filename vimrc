@@ -370,6 +370,8 @@ noremap \\v :e ~/.vim/vimrc<CR>
 noremap \\sv :so ~/.vim/vimrc<CR>
 
 nnoremap <space>W :w!<CR>
+command! W :w!
+
 " for use in terminal - c-s must be disabled using stty -ixon
 nnoremap <C-s> :w!<CR>
 inoremap <C-s> <C-o>:w!<CR>
