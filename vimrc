@@ -721,7 +721,8 @@ let g:ctrlp_buftag_types = {
     \ 'jsp'         : '--language-force=XML',
     \ 'html'        : '--language-force=XML',
     \ 'taskpaper'   : '--language-force=Taskpaper',
-    \ 'wsdl'        : '--language-force=wsdl'
+    \ 'wsdl'        : '--language-force=wsdl',
+    \ 'markdown'    : '--language-force=markdown'
     \ }
 
 " fugitive
