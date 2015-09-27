@@ -248,6 +248,7 @@ if has("gui_running")
 else
     set t_Co=256
     colorscheme railscasts
+    set clipboard=unnamed
 endif
 
 " }}}
