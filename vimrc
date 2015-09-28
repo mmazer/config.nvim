@@ -236,7 +236,7 @@ if has("gui_running")
     elseif has('win32')
         set guioptions-=m " Remove menu bar to save space
         set guioptions+=a " Yank to system clipboard
-        set guifont=DejaVu_Sans_Mono:h8:cANSI
+        set guifont=Hack:h9:cANSI
         set renderoptions=type:directx,gamma:1.0,contrast:0.2,level:1.0,geom:1,renmode:5,taamode:1
         set ttyscroll=3 " Fix gvim display corruption on Windows
     endif
