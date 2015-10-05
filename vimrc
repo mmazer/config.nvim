@@ -58,7 +58,7 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'mmazer/groovyindent'
 
-"Plugin 'eclim', {'pinned': 1}
+Plugin 'eclim', {'pinned': 1}
 
 call vundle#end()
 "}}}
@@ -512,7 +512,9 @@ nnoremap [w gUiw
 nnoremap ]w guiw
 
 " http://vim.wikia.com/wiki/Show_the_length_of_the_current_word
-nnoremap <C-_> :echo 'length of' expand('<cword>') 'is' strlen(substitute(expand('<cword>'), '.', 'x', 'g'))<CR>
+command! Cw :echo 'length of' expand('<cword>') 'is' strlen(substitute(expand('<cword>'), '.', 'x', 'g'))
+nnoremap <C-_> :Cw<CR>
+
 " }}}
 
 " 19: reading and writing files {{{1
