@@ -1,4 +1,6 @@
 " auto corrections
+
+iab becuase because
 iab collander colander
 iab iterm item
 iab negociate negotiate
