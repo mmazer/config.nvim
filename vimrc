@@ -575,6 +575,10 @@ endif
 
 " autocommands {{{
 if has("autocmd")
+    augroup preview
+        autocmd CompleteDone * pclose
+    augroup END
+
     " remove trailing whitespace
     augroup trailing_whitespace
         autocmd! FileType vim,css,groovy,java,javascript,less,php,scala,taskpaper autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -615,8 +619,6 @@ if has("autocmd")
         autocmd filetype java compiler maven
         autocmd FileType java setlocal foldmethod=syntax
         autocmd FileType java setlocal comments=sl:/**,mb:\ *,exl:\ */,sr:/*,mb:*,exl:*/,://
-        " hide completion scatch window when using eclim
-        autocmd FileType java setlocal completeopt-=preview
     augroup END
 
     augroup css_files
