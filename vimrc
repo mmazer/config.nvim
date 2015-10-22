@@ -230,8 +230,11 @@ augroup END
 
 " 10: GUI {{{1
 
+set t_Co=256
+set background=dark
+colorscheme seoul256
+
 if has("gui_running")
-    colorscheme railscasts
     set antialias
     if has('mac')
         set guifont=DejaVu\ Sans\ Mono:h12
@@ -248,8 +251,6 @@ if has("gui_running")
     set lines=90
     set columns=145
 else
-    set t_Co=256
-    colorscheme railscasts
     set clipboard=unnamed
 endif
 
