@@ -584,7 +584,7 @@ if has("autocmd")
 
     " remove trailing whitespace
     augroup trailing_whitespace
-        autocmd! FileType vim,css,groovy,java,javascript,less,php,scala,taskpaper autocmd BufWritePre <buffer> :%s/\s\+$//e
+        autocmd! FileType vim,css,groovy,java,javascript,less,php,scala,taskpaper,python autocmd BufWritePre <buffer> :%s/\s\+$//e
     augroup END
 
     augroup keyword
