@@ -11,11 +11,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " color schemes
-Plugin 'dhruvasagar/vim-railscasts-theme'
 Plugin 'mmazer/vim-github-colorscheme'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'ajh17/Spacegray.vim'
-
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
@@ -232,7 +228,7 @@ augroup END
 
 set t_Co=256
 set background=dark
-colorscheme seoul256
+colorscheme monokai
 
 if has("gui_running")
     set antialias

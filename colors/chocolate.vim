@@ -15,52 +15,52 @@ endif
 
 let colors_name = "chocolate"
 
-hi Normal       guifg=#F8F8F2 guibg=#272822
+hi Normal guifg=#F8F8F2 guibg=#272822  gui=NONE ctermfg=231 ctermbg=16 cterm=NONE
 
 " Main highlight groups
-hi Cursor       guibg=fg
+hi Cursor guifg=NONE guibg=fg gui=NONE ctermfg=NONE ctermbg=fg cterm=NONE
 "hi CursorIM
 "hi CursorColumn
-hi CursorLine   guibg=#3E3D32
-hi Directory    guifg=#66D9EF gui=none
-hi ErrorMsg     guifg=#F92672 guibg=bg gui=none
-hi VertSplit    guifg=#3B3A32 guibg=bg gui=none
-hi Folded       guifg=#75715E guibg=bg gui=none
-hi FoldColumn   guifg=#75715E guibg=#3E3D32 gui=none
-hi SignColumn   guifg=#FFFFFF guibg=NONE gui=bold
-hi IncSearch    guifg=bg guibg=#E6DB74 gui=none
-hi LineNr       guifg=#75715E guibg=#3E3D32 gui=none
-hi MatchParen   guifg=fg guibg=bg gui=bold
-hi ModeMsg      gui=none
-hi MoreMsg      guifg=#66D9EF gui=none
-hi NonText      guifg=#3B3A32 gui=none
-hi Pmenu        guifg=fg guibg=#3E3D32
-hi PmenuSel     guifg=fg guibg=bg
-hi PmenuSbar    guibg=bg
-hi PmenuThumb   guifg=fg
-hi Question     guifg=#A6E22E gui=none
-hi Search       guifg=bg guibg=#E6DB74 gui=none
-hi SpecialKey   guifg=#3B3A32 gui=none
-hi SpellBad     guisp=#F92672
-hi SpellCap     guisp=#65D9EF
+hi CursorLine guifg=NONE guibg=#3E3D32 gui=NONE ctermfg=NONE ctermbg=59 cterm=NONE
+hi Directory guifg=#66D9EF guibg=NONE         gui=none ctermfg=81 ctermbg=NONE cterm=none
+hi ErrorMsg guifg=#F92672 guibg=bg         gui=none ctermfg=197 ctermbg=bg cterm=none
+hi VertSplit guifg=#3B3A32 guibg=bg         gui=none ctermfg=59 ctermbg=bg cterm=none
+hi Folded guifg=#75715E guibg=bg         gui=none ctermfg=95 ctermbg=bg cterm=none
+hi FoldColumn guifg=#75715E guibg=#3E3D32         gui=none ctermfg=95 ctermbg=59 cterm=none
+hi SignColumn guifg=#FFFFFF guibg=NONE         gui=bold ctermfg=231 ctermbg=NONE cterm=bold
+hi IncSearch guifg=bg guibg=#E6DB74         gui=none ctermfg=bg ctermbg=186 cterm=none
+hi LineNr guifg=#75715E guibg=#3E3D32         gui=none ctermfg=95 ctermbg=59 cterm=none
+hi MatchParen guifg=fg guibg=bg         gui=bold ctermfg=fg ctermbg=bg cterm=bold
+hi ModeMsg guifg=NONE guibg=NONE         gui=none ctermfg=NONE ctermbg=NONE cterm=none
+hi MoreMsg guifg=#66D9EF guibg=NONE         gui=none ctermfg=81 ctermbg=NONE cterm=none
+hi NonText guifg=#3B3A32 guibg=NONE         gui=none ctermfg=59 ctermbg=NONE cterm=none
+hi Pmenu guifg=fg guibg=#3E3D32         gui=NONE ctermfg=fg ctermbg=59 cterm=NONE
+hi PmenuSel guifg=fg guibg=bg         gui=NONE ctermfg=fg ctermbg=bg cterm=NONE
+hi PmenuSbar guifg=NONE guibg=bg         gui=NONE ctermfg=NONE ctermbg=bg cterm=NONE
+hi PmenuThumb guifg=fg guibg=NONE         gui=NONE ctermfg=fg ctermbg=NONE cterm=NONE
+hi Question guifg=#A6E22E guibg=NONE         gui=none ctermfg=148 ctermbg=NONE cterm=none
+hi Search guifg=bg guibg=#E6DB74         gui=none ctermfg=bg ctermbg=186 cterm=none
+hi SpecialKey guifg=#3B3A32 guibg=NONE         gui=none ctermfg=59 ctermbg=NONE cterm=none
+hi SpellBad guifg=NONE guibg=NONE         gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi SpellCap guifg=NONE guibg=NONE         gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi SpellLocal
-hi SpellRare    guisp=#AE81FF
-hi StatusLine   guifg=fg guibg=#3E3D32 gui=none
-hi StatusLineNC guifg=#75715E guibg=#3E3D32 gui=none
-hi TabLine      guifg=#75715E guibg=#3E3D32 gui=none
-hi TabLineFill  guifg=fg guibg=#3E3D32 gui=none
-hi TabLineSel   guifg=fg guibg=#3E3D32 gui=none
-hi Title        guifg=#F92672 gui=none
-hi Visual       guibg=#49483E gui=none
+hi SpellRare guifg=NONE guibg=NONE         gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi StatusLine guifg=fg guibg=#3E3D32         gui=none ctermfg=fg ctermbg=59 cterm=none
+hi StatusLineNC guifg=#75715E guibg=#3E3D32         gui=none ctermfg=95 ctermbg=59 cterm=none
+hi TabLine guifg=#75715E guibg=#3E3D32         gui=none ctermfg=95 ctermbg=59 cterm=none
+hi TabLineFill guifg=fg guibg=#3E3D32         gui=none ctermfg=fg ctermbg=59 cterm=none
+hi TabLineSel guifg=fg guibg=#3E3D32         gui=none ctermfg=fg ctermbg=59 cterm=none
+hi Title guifg=#F92672 guibg=NONE         gui=none ctermfg=197 ctermbg=NONE cterm=none
+hi Visual guifg=NONE guibg=#49483E         gui=none ctermfg=NONE ctermbg=59 cterm=none
 
 " Diff
-hi DiffAdd                   guifg=#e4e4e4 guibg=#519F50 ctermfg=254 ctermbg=22
-hi DiffDelete                guifg=#000000 guibg=#660000 gui=bold ctermfg=16 ctermbg=52 cterm=bold
-hi DiffChange                guifg=#FFFFFF guibg=#870087 ctermfg=15 ctermbg=90
-hi DiffText                  guifg=#FFFFFF guibg=#FF0000 gui=bold ctermfg=15 ctermbg=9 cterm=bold
+hi DiffAdd guifg=#e4e4e4 guibg=#519F50         gui=NONE ctermfg=188 ctermbg=71 cterm=NONE
+hi DiffDelete guifg=#000000 guibg=#660000         gui=bold ctermfg=16 ctermbg=52 cterm=bold
+hi DiffChange guifg=#FFFFFF guibg=#870087         gui=NONE ctermfg=231 ctermbg=90 cterm=NONE
+hi DiffText guifg=#FFFFFF guibg=#FF0000         gui=bold ctermfg=231 ctermbg=196 cterm=bold
 
 "hi VisualNOS
-hi WarningMsg   guifg=#F92672 gui=none
+hi WarningMsg guifg=#F92672 guibg=NONE         gui=none ctermfg=197 ctermbg=NONE cterm=none
 "hi WildMenu
 
 "hi Menu
@@ -68,25 +68,25 @@ hi WarningMsg   guifg=#F92672 gui=none
 "hi Tooltip
 
 " Color groups
-hi Blue    guifg=#66D9EF gui=none
-hi Green   guifg=#A6E22E gui=none
-hi Grey    guifg=#75715E gui=none
-hi Orange  guifg=#FD971F gui=none
-hi Purple  guifg=#AE81FF gui=none
-hi Red     guifg=#F92672 gui=none
-hi White   guifg=#F8F8F2 gui=none
-hi Yellow  guifg=#E6DB74 gui=none
+hi Blue guifg=#66D9EF guibg=NONE         gui=none ctermfg=81 ctermbg=NONE cterm=none
+hi Green guifg=#A6E22E guibg=NONE         gui=none ctermfg=148 ctermbg=NONE cterm=none
+hi Grey guifg=#75715E guibg=NONE         gui=none ctermfg=95 ctermbg=NONE cterm=none
+hi Orange guifg=#FD971F guibg=NONE         gui=none ctermfg=208 ctermbg=NONE cterm=none
+hi Purple guifg=#AE81FF guibg=NONE         gui=none ctermfg=141 ctermbg=NONE cterm=none
+hi Red guifg=#F92672 guibg=NONE         gui=none ctermfg=197 ctermbg=NONE cterm=none
+hi White guifg=#F8F8F2 guibg=NONE         gui=none ctermfg=231 ctermbg=NONE cterm=none
+hi Yellow guifg=#E6DB74 guibg=NONE         gui=none ctermfg=186 ctermbg=NONE cterm=none
 
-hi BlueU   guifg=#66D9EF gui=underline
+hi BlueU guifg=#66D9EF guibg=NONE         gui=underline ctermfg=81 ctermbg=NONE cterm=underline
 
-hi RedR    guifg=fg guibg=#F92672 gui=none
-hi YellowR guifg=bg guibg=#FD971F gui=none
+hi RedR guifg=fg guibg=#F92672         gui=none ctermfg=fg ctermbg=197 cterm=none
+hi YellowR guifg=bg guibg=#FD971F         gui=none ctermfg=bg ctermbg=208 cterm=none
 
 " Syntax highligh groups
-hi! link Comment      Grey
+hi! link Comment Grey
 "
-hi! link Constant     Purple
-hi! link String       Yellow
+hi! link Constant Purple
+hi! link String Yellow
 hi! link Character    Yellow
 "hi Number
 "hi Boolean
