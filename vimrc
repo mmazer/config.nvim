@@ -1,60 +1,56 @@
 " 1: important {{{
 set nocompatible
-" disable before calling vundle
-filetype off
+let g:vim_config="~/.vim"
 
 " set this here because of unicode chars in listchars below
 set encoding=utf-8
 
 " bundles {{{
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+call plug#begin(g:vim_config . "/bundle")
 
 " color schemes
-Plugin 'mmazer/vim-github-colorscheme'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
+Plug 'mmazer/vim-github-colorscheme'
 
-Plugin 'gmarik/vundle'
-Plugin 'mattn/emmet-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mattn/ctrlp-mark'
-Plugin 'mattn/ctrlp-register'
-Plugin 'rking/ag.vim'
-Plugin 'tpope/vim-characterize'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-dispatch'
-Plugin 'Raimondi/delimitMate'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'scrooloose/nerdtree'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'majutsushi/tagbar'
-Plugin 'mattn/calendar-vim'
-Plugin 'jeetsukumaran/vim-filebeagle'
-Plugin 'sgur/ctrlp-extensions.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
+" ctrlp
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/ctrlp-mark'
+Plug 'mattn/ctrlp-register'
+Plug 'sgur/ctrlp-extensions.vim'
+
+Plug 'mattn/emmet-vim'
+Plug 'rking/ag.vim'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-dispatch'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/neocomplete.vim'
+Plug 'SirVer/ultisnips'
+Plug 'scrooloose/nerdtree'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'majutsushi/tagbar'
+Plug 'mattn/calendar-vim'
+Plug 'jeetsukumaran/vim-filebeagle'
+Plug 'FelikZ/ctrlp-py-matcher'
 
 " git
-Plugin 'int3/vim-extradite'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'int3/vim-extradite'
 
 " file types
-Plugin 'tpope/vim-markdown'
-Plugin 'scrooloose/syntastic'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'davidoc/taskpaper.vim'
-Plugin 'groenewege/vim-less'
-Plugin 'ap/vim-css-color'
-Plugin 'vim-scripts/paredit.vim'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plug 'tpope/vim-markdown'
+Plug 'scrooloose/syntastic'
+Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
+Plug 'davidoc/taskpaper.vim'
+Plug 'groenewege/vim-less'
+Plug 'ap/vim-css-color'
+Plug 'vim-scripts/paredit.vim'
 
-Plugin 'eclim', {'pinned': 1}
+call plug#end()
 
-call vundle#end()
 "}}}
 
 "}}}
@@ -1036,7 +1032,7 @@ endif
 :iab dts <c-r>=DateTimeStamp()<esc>
 :iab ddt <c-r>=ShortDate()<esc>
 
-if filereadable(glob("~/.vim/abbr.vim"))
+if filereadable(glob(g:vim_config . "/abbr.vim"))
     source ~/.vim/abbr.vim
 endif
 
