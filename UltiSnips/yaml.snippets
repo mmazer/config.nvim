@@ -1,0 +1,35 @@
+snippet book
+- name: ${1}
+  url: ${2}
+  date: `!v datetime#short_date()`
+  comments: ${3}
+endsnippet
+
+snippet done
+!done(`!v datetime#short_date()`)
+endsnippet
+
+snippet wait
+!wait(`!v datetime#short_date()`)
+endsnippet
+
+snippet task
+- task: ${1}
+  description: ${2}
+  priority: ${3}
+  created: `!v datetime#short_date()`
+endsnippet
+
+snippet month
+- month: ${1}
+  cal: |
+    ${2}
+  recurring: ${3}
+  events:
+    ${4}
+endsnippet
+
+snippet event
+- date: ${1}
+  title: ${2}
+endsnippet

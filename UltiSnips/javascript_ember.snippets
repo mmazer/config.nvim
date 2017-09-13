@@ -1,0 +1,81 @@
+snippet iem
+import Ember from 'ember';
+endsnippet
+
+snippet emds
+import DS from 'ember-data';
+endsnippet
+
+snippet emm
+Model.extend({
+  $0
+});
+endsnippet
+
+snippet emo
+Ember.Object.extend({
+  $0
+});
+endsnippet
+
+snippet ext "extend" w
+extend({
+  $0
+});
+endsnippet
+
+snippet emfor
+${1}.forEach(${2}) {
+  $0
+};
+endsnippet
+
+snippet emg "ember get" w
+${1}.get('${2}')${0}
+endsnippet
+
+snippet i18n
+Ember.I18n.t($0)
+endsnippet
+
+snippet runsco
+run.scheduleOnce('${1:afterRender}', ${2:this}, () => {
+  ${0}
+});
+endsnippet
+
+snippet run
+run(${1:this}, () => {
+  ${0}
+});
+endsnippet
+
+snippet runex
+run.next(${1:this}, () => {
+  ${0}
+});
+endsnippet
+
+snippet comp
+${1}: computed(${2}, function() {
+  ${0}
+})
+endsnippet
+
+snippet eml
+const { ${0} } = Ember;
+endsnippet
+
+snippet rex
+export { ${1:default} } from '${2}';
+endsnippet
+
+snippet super
+this._super(...arguments);
+endsnippet
+
+snippet emcomp
+export default Component.extend({
+  ${0}
+});
+endsnippet

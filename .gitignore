@@ -4,7 +4,7 @@ var
 *.taskpaper
 .cache
 .netrwhist
-bundle
+plugged
 doc/tags
 *.spl
 

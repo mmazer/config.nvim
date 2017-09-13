@@ -1,10 +1,12 @@
-snippet meta 
-Title: ${1}
-Date: `!v ShortDate()`
-Source: ${2}
-Author: ${3}
-Tags: ${4}
+extends taskpaper
 
+snippet ffm 
+---
+title: ${1}
+created: `!v datetime#timestamp()`
+modified: `!v datetime#timestamp()`
+tags: [${2}]
+---
 
 $0
 endsnippet

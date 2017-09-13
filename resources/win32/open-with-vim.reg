@@ -1,5 +1,0 @@
-REGEDIT4
-[HKEY_CLASSES_ROOT\*\shell\vim]
-@="Open with &Vim"
-[HKEY_CLASSES_ROOT\*\shell\vim\command]
-@="c:\\Users\\maz8913\\Applications\\Vim\\vim74\\gvim.exe \"%1\""
