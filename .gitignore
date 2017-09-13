@@ -1,10 +1,7 @@
 .DS_Store
-data
-var
-*.taskpaper
 .cache
 .netrwhist
-plugged
 doc/tags
 *.spl
+*.sug
 
