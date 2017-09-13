@@ -83,6 +83,8 @@ set laststatus=2
 set encoding=utf-8
 set listchars=tab:▸\ ,trail:·,nbsp:¬,extends:›,precedes:‹
 set wrap linebreak textwidth=0
+set noshowcmd
+set ruler
 
 filetype plugin indent on
 syntax on
@@ -162,6 +164,14 @@ nnoremap <C-o> <C-o>zz
 vnoremap < <gv
 vnoremap > >gv
 
+" Use ,d (or ,dd or ,dj or 20,dd) to delete a line without adding it to the
+" yanked stack (also, in visual mode)
+nnoremap <silent> ,d "_d
+vnoremap <silent> ,d "_d
+
+" Quick yanking to the end of the line
+nnoremap Y y$
+
 "}}}
 "
 " Windows and buffers: {{{
@@ -174,7 +184,6 @@ set splitright
 
 set completeopt=longest,menuone,preview
 set showmatch
-set pastetoggle=<C-p>
 
 " avoid the escape key - remember <C-[> also maps to Esc
 inoremap kj <ESC>`^
@@ -187,6 +196,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap td  :tabclose<CR>
 
 nnoremap <space>B :b#<CR>
 nnoremap <space>d :bp \| bd #<CR>
@@ -226,6 +241,21 @@ nnoremap ]w guiw
 " Source lines - from Steve Losh
 vnoremap X y:execute @@<cr>:echo 'Sourced selection.'<cr>
 nnoremap X ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
+
+" end lines with semicolons
+inoremap ;]       <C-\><C-O>:call vimutils#preserve("s/\\s\*$/;/")<CR>
+nnoremap <space>; :call vimutils#preserve("s/\\s\*$/;/")<CR>
+
+" end lines with commas
+inoremap ,]       <C-\><C-O>:call vimutils#preserve("s/\\s\*$/,/")<CR>
+nnoremap <space>, :call vimutils#preserve("s/\\s\*$/,/")<CR>
+
+nnoremap <leader>T :Dispatch! ctags --extra=+f -R<CR>
+
+nnoremap <C-c> "+y
+vnoremap <C-c> "+y
+nnoremap <C-p> "+p
+
 
 " === Settings ===
 runtime! settings/*.vim
