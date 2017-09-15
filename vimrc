@@ -14,18 +14,13 @@ if empty($XDG_DATA_HOME)
     let $XDG_DATA_HOME='$HOME/.local/share'
 endif
 
-if has('nvim')
-    set directory=$XDG_CACHE_HOME/nvim/swap,~/,/tmp
-    set backupdir=$XDG_CACHE_HOME/nvim/backup,~/,/tmp
-    set undodir=$XDG_CACHE_HOME/nvim/undo,~/,/tmp
-else
-    set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
-    set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
-    set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
+set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
+set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
+if !has('nvim')
     " Using $XDG_CACHE_HOME home for viminfo doesn't work in vim 8
     set viminfo+=n$HOME/.cache/vim/viminfo
 endif
-
 
 set runtimepath+=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
 let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
