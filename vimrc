@@ -85,6 +85,10 @@ set wrap linebreak textwidth=0
 set noshowcmd
 set ruler
 
+if exists('&inccommand')
+  set inccommand=split
+endif
+
 filetype plugin indent on
 syntax on
 
