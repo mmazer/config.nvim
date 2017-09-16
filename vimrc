@@ -66,6 +66,7 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 
 Plug 'davidhalter/jedi-vim'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 "}}}
