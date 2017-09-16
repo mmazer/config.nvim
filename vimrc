@@ -55,7 +55,7 @@ Plug 'tpope/vim-commentary'
 
 Plug 'SirVer/ultisnips'
 
-Plug 'ajh17/Spacegray.vim'
+Plug 'majutsushi/tagbar'
 
 Plug 'ap/vim-buftabline'
 
