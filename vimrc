@@ -65,6 +65,7 @@ Plug 'w0rp/ale'
 
 Plug 'scrooloose/nerdtree'
 
+Plug 'airblade/vim-gitgutter'
 Plug 'davidhalter/jedi-vim'
 Plug 'hashivim/vim-terraform'
 
