@@ -93,9 +93,7 @@ filetype plugin indent on
 syntax on
 
 " === GUI === {{{
-
-if has("gui_running")
-    set antialias
+if has('gui_running')
     if has('mac')
         set guifont=Monaco:h12
     endif
@@ -104,8 +102,6 @@ if has("gui_running")
     set guioptions-=L " remove left-hand scroll bar
     set lines=90
     set columns=145
-else
-    set clipboard=unnamed
 endif
 
 " }}}
@@ -174,6 +170,12 @@ vnoremap <silent> ,d "_d
 
 " Quick yanking to the end of the line
 nnoremap Y y$
+
+" Copy and paste to system clipboard
+vnoremap <C-c> "+yi
+vnoremap <C-x> "+c
+vnoremap <C-v> c<ESC>"+p
+inoremap <C-v> <ESC>"+pa
 
 "}}}
 "
@@ -254,11 +256,6 @@ inoremap ,]       <C-\><C-O>:call vimutils#preserve("s/\\s\*$/,/")<CR>
 nnoremap <space>, :call vimutils#preserve("s/\\s\*$/,/")<CR>
 
 nnoremap <leader>T :Dispatch! ctags --extra=+f -R<CR>
-
-nnoremap <C-c> "+y
-vnoremap <C-c> "+y
-nnoremap <C-p> "+p
-
 
 " === Settings ===
 runtime! settings/*.vim
