@@ -14,3 +14,6 @@ command! Cdr :silent call vimutils#cd_rootdir()
 nnoremap gto       :Cdr<CR>:pwd<CR>
 nnoremap coe       :call vimutils#toggle_et()<CR>
 
+command! -complete=shellcmd -nargs=+ Shell call vimutils#run_shell_command(<q-args>)
+cab shell Shell
+nnoremap <leader>r :Shell<space>

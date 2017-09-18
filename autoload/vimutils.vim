@@ -64,3 +64,29 @@ function! vimutils#toggle_et()
   endif
 endfunction
 
+" Quick way to run shell commands and capture output in split
+" See http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+function! vimutils#run_shell_command(cmdline)
+    let isfirst = 1
+    let words = []
+    for word in split(a:cmdline)
+        if isfirst
+            let isfirst = 0  " don't change first word (shell command)
+        else
+            if word[0] =~ '\v[%#<]'
+                let word = expand(word)
+            endif
+            let word = shellescape(word, 1)
+        endif
+        call add(words, word)
+    endfor
+    let expanded_cmdline = join(words)
+    botright new
+    setlocal buftype=nofile noswapfile nowrap
+    call setline(1, 'Ran shell command:  ' . a:cmdline . ' => ' . expanded_cmdline)
+    call append(line('$'), '<<EOF')
+    silent execute '$read !'. expanded_cmdline
+    call append(line('$'), 'EOF')
+    exec 'file ' . a:cmdline
+    1
+endfunction
