@@ -69,6 +69,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'davidhalter/jedi-vim'
 Plug 'hashivim/vim-terraform'
 
+" colors
+Plug 'ajh17/Spacegray.vim'
+Plug 'gregsexton/Gravity'
+
 call plug#end()
 "}}}
 
