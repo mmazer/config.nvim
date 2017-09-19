@@ -36,7 +36,7 @@ function! qfpreview#open(bufnr, line)
     silent! wincmd P
     setlocal cursorline
     if !buflisted
-        setlocal bufhidden=delete
+        setlocal bufhidden=delete   " delete buffer when preview window closed
         setlocal nobuflisted        " don't list this buffer
         setlocal noswapfile         " don't create swap file for this buffer
         setlocal readonly           " make this buffer readonly
