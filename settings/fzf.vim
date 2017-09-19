@@ -11,8 +11,13 @@ command! Bookmarks call fzf#run({
             \ 'sink':    function('s:bookmarks_sink')
             \ })
 
+command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>),
+            \ 1,
+            \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'),
+            \ <bang>0)
+cab rg Rg
+
 nmap <space> [fzf]
-nnoremap <silent> [fzf]a :Ag<CR>
 nnoremap <silent> [fzf]b :Buffers<cr>
 nnoremap <silent> [fzf]c :BCommits<CR>
 nnoremap <silent> [fzf]C :Commits<CR>
