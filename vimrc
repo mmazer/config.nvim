@@ -35,13 +35,13 @@ let g:scratch_file                = $XDG_DATA_HOME.'/scratch.txt'
 " === Plugins === {{{
 call plug#begin($XDG_DATA_HOME.'/vim/plugged')
 
-Plug 'mileszs/ack.vim'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'junegunn/fzf.vim'
 
 Plug 'dyng/ctrlsf.vim'
+
+Plug 'mhinz/vim-grepper'
 
 Plug 'maralla/completor.vim'
 
