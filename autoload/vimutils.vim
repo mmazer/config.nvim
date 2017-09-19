@@ -90,3 +90,27 @@ function! vimutils#run_shell_command(cmdline)
     exec 'file ' . a:cmdline
     1
 endfunction
+
+function! vimutils#browse(...)
+    if a:0 < 1
+        let uri = shellescape(matchstr(getline("."), '[a-z]*:\/\/[^ >,;\)\"]*'), 1)
+    else
+        let uri = a:1
+    endif
+    if uri != ""
+        echo uri
+
+        if has('win32')
+            silent exec "!cmd /C start /min ".uri
+        elseif has('mac')
+            silent exec "!open ".uri
+        elseif has('unix')
+            silent "!firefox ".uri
+        else
+            echo "OpenURI not supported on this system"
+        endif
+        exec ":redraw!"
+    else
+        echo "No URI found in line."
+    endif
+endfunction

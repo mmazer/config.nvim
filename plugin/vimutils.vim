@@ -17,3 +17,5 @@ nnoremap coe       :call vimutils#toggle_et()<CR>
 command! -complete=shellcmd -nargs=+ Shell call vimutils#run_shell_command(<q-args>)
 cab shell Shell
 nnoremap <leader>r :Shell<space>
+
+noremap gou :call vimutils#browse()<CR>
