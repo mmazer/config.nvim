@@ -59,17 +59,17 @@ Plug 'SirVer/ultisnips'
 
 Plug 'majutsushi/tagbar'
 
-Plug 'ap/vim-buftabline'
-
 Plug 'w0rp/ale'
 
 Plug 'scrooloose/nerdtree'
 
 Plug 'airblade/vim-gitgutter'
+
+" Languages
 Plug 'davidhalter/jedi-vim'
 Plug 'hashivim/vim-terraform'
 
-" colors
+" Colors
 Plug 'ajh17/Spacegray.vim'
 Plug 'gregsexton/Gravity'
 
@@ -99,7 +99,7 @@ syntax on
 " === GUI === {{{
 if has('gui_running')
     if has('mac')
-        set guifont=Monaco:h12
+        set guifont=Cousine:h13
     endif
     set guioptions-=T " remove tool bar
     set guioptions-=r " remove right-hand scroll bar
@@ -160,7 +160,6 @@ nnoremap #  #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
-" center moving when jumping bac
 nnoremap <C-o> <C-o>zz
 
 " reselect visual block after indent
@@ -212,12 +211,13 @@ nnoremap tk  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap td  :tabclose<CR>
 
-nnoremap <space>B :b#<CR>
+nnoremap <C-p> :b#<CR>
+nnoremap <leader>d :bd<cr>
 nnoremap <space>d :bp \| bd #<CR>
-nnoremap <space>D :bd<CR>
 
 " goto buffer
 nnoremap gob :ls<CR>:b
+nnoremap B :ls<CR>:b
 
 nnoremap goe :enew<CR>
 
@@ -259,7 +259,10 @@ nnoremap <space>; :call vimutils#preserve("s/\\s\*$/;/")<CR>
 inoremap ,]       <C-\><C-O>:call vimutils#preserve("s/\\s\*$/,/")<CR>
 nnoremap <space>, :call vimutils#preserve("s/\\s\*$/,/")<CR>
 
-nnoremap <leader>T :Dispatch! ctags --extra=+f -R<CR>
+command! Rtags :Dispatch! ctags --extra=+f -R
+cab rtags Rtags
+nnoremap <leader>T :Rtags<cr>
 
 " === Settings ===
 runtime! settings/*.vim
+
