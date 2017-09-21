@@ -83,10 +83,7 @@ function! vimutils#run_shell_command(cmdline)
     let expanded_cmdline = join(words)
     botright new
     setlocal buftype=nofile noswapfile nowrap
-    call setline(1, 'Ran shell command:  ' . a:cmdline . ' => ' . expanded_cmdline)
-    call append(line('$'), '<<EOF')
     silent execute '$read !'. expanded_cmdline
-    call append(line('$'), 'EOF')
     exec 'file shell:' . fnameescape(a:cmdline)
     1
 endfunction
