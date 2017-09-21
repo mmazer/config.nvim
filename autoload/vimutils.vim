@@ -87,7 +87,7 @@ function! vimutils#run_shell_command(cmdline)
     call append(line('$'), '<<EOF')
     silent execute '$read !'. expanded_cmdline
     call append(line('$'), 'EOF')
-    exec 'file ' . a:cmdline
+    exec 'file shell:' . fnameescape(a:cmdline)
     1
 endfunction
 
