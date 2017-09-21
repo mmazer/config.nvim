@@ -180,7 +180,18 @@ vnoremap <C-v> c<ESC>"+p
 inoremap <C-v> <ESC>"+pa
 
 "}}}
-"
+
+" Writing/Reading files {{{
+
+nnoremap g!       :e!<CR>
+nnoremap <space>w :w<CR>
+nnoremap <space>W :w!<CR>
+
+" :W sudo saves the file
+command W w !sudo tee % > /dev/null
+
+"}}}
+
 " Windows and buffers: {{{
 
 set title
@@ -210,7 +221,6 @@ nnoremap tk  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 nnoremap td  :tabclose<CR>
 
-nnoremap <C-p> :b#<CR>
 nnoremap <leader>d :bd<cr>
 nnoremap <space>d :bp \| bd #<CR>
 
@@ -227,7 +237,6 @@ nnoremap qp :pclose<CR>
 
 "}}}
 
-nmap <space><space> :
 nnoremap q: <nop>
 nnoremap Q :qa<CR>
 
@@ -257,6 +266,17 @@ command! Rtags :Dispatch! ctags --extra=+f -R
 cab rtags Rtags
 nnoremap <leader>T :Rtags<cr>
 
+" Command Mode {{{
+nmap <space><space> :
+
+cnoremap <C-A>  <Home>
+cnoremap <C-E>  <End>
+cnoremap <C-K>  <C-U>
+
+cnoremap <C-P> <Up>
+cnoremap <C-N> <Down>
+
+" }}}
 " === Settings ===
 runtime! settings/*.vim
 
