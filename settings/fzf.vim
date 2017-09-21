@@ -25,8 +25,8 @@ nnoremap <silent> [fzf]f :Files<CR>
 nnoremap <silent> [fzf]g :GitFiles<CR>
 nnoremap <silent> [fzf]h :History:<CR>
 nnoremap <silent> [fzf]/ :History/<CR>
-nnoremap <silent> [fzf]l :BLines<CR>
-nnoremap <silent> [fzf]L :Lines<CR>
+nnoremap <silent> [fzf]l :Lines<CR>
+nnoremap <silent> [fzf]L :BLines<CR>
 nnoremap <silent> [fzf]m :Marks<CR>
 nnoremap <silent> [fzf]o :Bookmarks<cr>
 nnoremap <silent> [fzf]r :History<CR>
