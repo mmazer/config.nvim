@@ -28,8 +28,7 @@ let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 " }}}
 
 " === Variables === {{{
-let g:scratch_file                = $XDG_DATA_HOME.'/scratch.txt'
-
+"
 " }}}
 
 " === Plugins === {{{
@@ -232,13 +231,8 @@ nmap <space><space> :
 nnoremap q: <nop>
 nnoremap Q :qa<CR>
 
-nnoremap gov          :exec 'edit' $MYVIMRC<CR>
-nnoremap gos          :exec 'edit' g:scratch_file<CR>
-
-" Saving files
-nnoremap g!       :e!<CR>
-nnoremap <space>w :w<CR>
-nnoremap <space>W :w!<CR>
+command! Rc     :exec 'edit' $MYVIMRC
+nnoremap gov    :Rc<CR>
 
 " For quick one line expressions
 nnoremap <space>x   :<C-R>=
