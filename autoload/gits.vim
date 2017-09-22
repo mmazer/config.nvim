@@ -3,7 +3,7 @@ if exists('g:autoloaded_gits')
 endif
 let g:autoloaded_gits= 1
 
-function! gits#diff_buff()
+function! gits#diff_buf()
     let fname = expand('%')
     new
     exec "r! git diff ".printf('%s', fname)
