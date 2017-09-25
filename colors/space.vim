@@ -9,6 +9,9 @@ runtime colors/spacegray.vim
 set background=dark
 let g:colors_name = "space"
 
+" Overrides
+hi Normal          ctermbg=233  ctermfg=250    guibg=#1a1a1a  guifg=#B3B8C4  cterm=NONE      gui=NONE
+
 hi MatchParen      ctermbg=NONE ctermfg=11      guibg=NONE     guifg=#E5C078  cterm=bold,underline  gui=bold,underline
 
 hi Pmenu           ctermbg=0    ctermfg=NONE    guibg=#171717  guifg=#E8A973  cterm=none      gui=NONE
@@ -26,3 +29,7 @@ hi link  markdownH3 markdownHeadingDelimiter
 hi link  markdownH4 markdownHeadingDelimiter
 hi link  markdownH5 markdownHeadingDelimiter
 
+" Ensure lint errors and warnings use correct bg
+" See https://github.com/w0rp/ale/issues/249
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
