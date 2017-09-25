@@ -23,6 +23,7 @@ nnoremap <silent> [fzf]c :BCommits<CR>
 nnoremap <silent> [fzf]C :Commits<CR>
 nnoremap <silent> [fzf]f :Files<CR>
 nnoremap <silent> [fzf]g :GitFiles<CR>
+nnoremap <silent> [fzf]G :GitFiles?<CR>
 nnoremap <silent> [fzf]h :History:<CR>
 nnoremap <silent> [fzf]/ :History/<CR>
 nnoremap <silent> [fzf]l :Lines<CR>
