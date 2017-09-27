@@ -226,7 +226,7 @@ nnoremap <space>d :bp \| bd #<CR>
 
 " goto buffer
 nnoremap gob :ls<CR>:b
-nnoremap B :ls<CR>:b
+nnoremap <space>B :b#<CR>
 
 nnoremap goe :enew<CR>
 
