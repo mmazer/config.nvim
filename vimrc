@@ -98,7 +98,7 @@ syntax on
 " === GUI === {{{
 if has('gui_running')
     if has('mac')
-        set guifont=Cousine:h13
+        set guifont=Cousine:h14
     endif
     set guioptions-=T " remove tool bar
     set guioptions-=r " remove right-hand scroll bar
@@ -121,7 +121,6 @@ set noswapfile
 set backup
 
 set cursorline
-let &colorcolumn="110"
 
 " === Moving === {{{
 
