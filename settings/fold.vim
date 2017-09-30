@@ -9,8 +9,6 @@ vnoremap <Space>z za
 " refocus fold under cursor - from Steve Losh
 nnoremap ,z zMzvzz
 
-set foldtext=ufold#fold_text()
-
 " toggling following vim-unimpaired
 nnoremap [of :setlocal foldcolumn=3<CR>
 nnoremap ]of :setlocal foldcolumn=0<CR>
