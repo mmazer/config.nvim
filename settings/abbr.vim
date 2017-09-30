@@ -17,6 +17,7 @@ iab seperately separately
 iab seperated separated
 iab subscritpion subscription
 iab teh the
+iab vaccuum vacuum
 iab wiat wait
 
 " Markdown
