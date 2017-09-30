@@ -1,2 +1,2 @@
 set termguicolors
-colorscheme space
+colorscheme easy
