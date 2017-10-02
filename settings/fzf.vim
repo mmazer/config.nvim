@@ -21,10 +21,10 @@ function! s:bookmarks_sink(line)
   execute 'silent e' parts[1]
 endfunction
 
-command! Bookmarks call fzf#run({
+command! Bookmarks call fzf#run(fzf#wrap({
             \ 'source': 'cat '.g:fzf_bookmarks,
             \ 'sink':    function('s:bookmarks_sink')
-            \ })
+            \ }))
 
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>),
             \ 1,
