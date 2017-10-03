@@ -279,3 +279,6 @@ cnoremap <C-N> <Down>
 " === Settings ===
 runtime! settings/*.vim
 
+if filereadable($XDG_DATA_HOME.'/vim/site.vim')
+    source $XDG_DATA_HOME/vim/site.vim
+endif
