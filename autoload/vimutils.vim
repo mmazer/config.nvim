@@ -111,3 +111,13 @@ function! vimutils#browse(...)
         echo "No URI found in line."
     endif
 endfunction
+
+"trip trailing empty newlines
+function vimutils#trim_trailing_lines()
+  let last_line = line('$')
+  let last_nonblank = prevnonblank(last_line)
+  if last_line > 0 && last_nonblank != last_line
+    silent! execute last_nonblank + 1 . ',$delete _'
+  endif
+endfunction
+
