@@ -64,6 +64,9 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'airblade/vim-gitgutter'
 
+if has('nvim')
+    Plug 'kassio/neoterm'
+endif
 " Languages
 Plug 'davidhalter/jedi-vim'
 Plug 'hashivim/vim-terraform'
