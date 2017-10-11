@@ -1,17 +1,16 @@
-if empty($INFOBASE_HOME)
-    let $INFOBASE_HOME='$XDG_DATA_HOME/infobase'
+if empty($NOTESDIR)
+    let $NOTESDIR='$XDG_DATA_HOME/notes'
 endif
-
 if empty($MY_TODO)
-    let $MY_TODO='$INFOBASE_HOME/todo.txt'
+    let $MY_TODO='$NOTESDIR/todo.txt'
 endif
 
 if empty($MY_NOTES)
-    let $MY_NOTES='$INFOBASE_HOME/note.txt'
+    let $MY_NOTES='$NOTESDIR/note.txt'
 endif
 
 if empty($MY_TIL)
-    let $MY_TIL='$INFOBASE_HOME/til.txt'
+    let $MY_TIL='$NOTESDIR/til.txt'
 endif
 
 command! Notes  :exec 'edit' $MY_NOTES
