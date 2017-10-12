@@ -11,7 +11,7 @@ set background=light
 let g:colors_name = 'easy'
 
 " Basic styling
-hi Normal     guifg=#000000 guibg=#f0f0f0 ctermfg=0   ctermbg=NONE
+hi Normal     guifg=#000000 guibg=#f1f1f1 ctermfg=0   ctermbg=241
 
 hi Identifier guifg=#000000 guibg=NONE    gui=BOLD    ctermfg=0     ctermbg=NONE
 hi Constant   guifg=#000000 guibg=NONE    ctermfg=0   ctermbg=NONE
