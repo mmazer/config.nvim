@@ -86,7 +86,7 @@ set wildmode=list:longest
 set shortmess=aTIoO
 set laststatus=2
 set encoding=utf-8
-set listchars=tab:▸\ ,trail:·,nbsp:¬,extends:›,precedes:‹
+set listchars=tab:┆\ ,trail:·,nbsp:¬,extends:›,precedes:‹
 set wrap linebreak textwidth=0
 set noshowcmd
 set ruler
