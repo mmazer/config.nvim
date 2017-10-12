@@ -1,23 +1,26 @@
+" Basic indent guides
+" Use conceal chars based on https://github.com/thaerkh/vim-indentguides
+"
 if exists("g:autoloaded_indent_guide")
   finish
 endif
 
 let g:autoloaded_indent_guide = 1
 
-if !exists('g:indent_guide_higroup')
-  let g:indent_guide_higroup = 'CursorLine'
-endif
+let g:indentguide_char = get(g:, 'indentguide_char', '┆')
 
-" http://stackoverflow.com/questions/2158305/is-it-possible-to-display-indentation-guides-in-vim
 function! indent_guide#toggle()
     if exists('b:indent_guides')
-        call matchdelete(b:indent_guides)
         unlet b:indent_guides
+        silent! syntax clear IndentGuideSpace
+        silent! syntax clear IndentGuide
     else
-        let pos = range(1, &l:textwidth, &l:shiftwidth)
-        call map(pos, '"\\%" . v:val . "v"')
-        let pat = '\%(\_^\s*\)\@<=\%(' . join(pos, '\|') . '\)\s'
-        let b:indent_guides = matchadd(g:indent_guide_higroup, pat)
+        exe 'syntax match IndentGuideSpace /^\ \+/ containedin=ALL contains=IndentGuide keepend'
+        exe printf('syntax match IndentGuide /\ \{%i}\zs \ze/ contained conceal cchar=', &l:shiftwidth - 1) . g:indentguide_char
+        setlocal concealcursor=inc
+        setlocal conceallevel=1
+        hi! link Conceal Normal
+        let b:indent_guides = 1
     endif
 endfunction
 
