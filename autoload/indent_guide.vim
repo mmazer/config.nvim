@@ -19,7 +19,7 @@ function! indent_guide#toggle()
         exe printf('syntax match IndentGuide /\ \{%i}\zs \ze/ contained conceal cchar=', &l:shiftwidth - 1) . g:indentguide_char
         setlocal concealcursor=inc
         setlocal conceallevel=1
-        hi! link Conceal Normal
+        hi! link Conceal Special
         let b:indent_guides = 1
     endif
 endfunction
