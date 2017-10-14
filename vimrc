@@ -71,10 +71,6 @@ endif
 Plug 'davidhalter/jedi-vim'
 Plug 'hashivim/vim-terraform'
 
-" Colors
-Plug 'ajh17/Spacegray.vim'
-Plug 'gregsexton/Gravity'
-
 call plug#end()
 "}}}
 
