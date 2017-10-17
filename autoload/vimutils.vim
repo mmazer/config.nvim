@@ -112,7 +112,6 @@ function! vimutils#browse(...)
     endif
 endfunction
 
-"trip trailing empty newlines
 function vimutils#trim_trailing_lines()
   let last_line = line('$')
   let last_nonblank = prevnonblank(last_line)
@@ -121,3 +120,12 @@ function vimutils#trim_trailing_lines()
   endif
 endfunction
 
+function vimutils#has_gui()
+    if has('gui_running')
+        return 1
+    elseif has('gui_vimr')
+        return 1
+    else
+        return 0
+    endif
+endfunction
