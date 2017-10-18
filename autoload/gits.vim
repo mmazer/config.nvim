@@ -12,7 +12,7 @@ function! gits#diff_buf()
     nnoremap <buffer> qw :bw<cr>
 endfunction
 
-function! gits#diff_staged()
+function! gits#diff_index()
     new
     r !git diff -w --cached
     :normal ggdd
@@ -20,7 +20,7 @@ function! gits#diff_staged()
     nnoremap <buffer> qw :bw<cr>
 endfunction
 
-function! gits#diff_unstaged()
+function! gits#diff_working()
     new
     r !git diff -w
     :normal ggdd

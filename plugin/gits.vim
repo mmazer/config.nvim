@@ -6,9 +6,9 @@ let g:loaded_gits= 1
 
 command! GdiffBuf :call gits#diff_buf()
 
-command! Gdiffstaged :call gits#diff_staged()
+command! Gindex :call gits#diff_index()
 
-command! GdiffUnstaged :call gits#diff_unstaged()
+command! Gworking :call gits#diff_working()
 
 command! Gincoming :call gits#incoming()
 
