@@ -41,10 +41,9 @@ nnoremap <silent> <space>G :GitFiles?<CR>
 nnoremap <silent> <space>h :History:<CR>
 nnoremap <silent> <space>/ :History/<CR>
 nnoremap <silent> <space>l :Lines<CR>
-nnoremap <silent> <space>L :BLines<CR>
 nnoremap <silent> <space>m :Marks<CR>
 nnoremap <silent> <space>o :Bookmarks<cr>
 nnoremap <silent> <space>r :History<CR>
-nnoremap <silent> <space>s :Snippets<CR>
+nnoremap <silent> <space>s :BLines<CR>
 nnoremap <silent> <space>t :BTags<cr>
 nnoremap <silent> <space>T :Tags<CR>
