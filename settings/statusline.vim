@@ -12,7 +12,7 @@ set statusline+=\ %y      "filetype
 set statusline+=\ %{&ff}  "file format
 set statusline+=%{status#fenc()} " file encoding
 set statusline+=\ %{&expandtab?'spaces':'tabs'}
-set statusline+=\ %5.l/%L\:%-3.c\    "cursor line/total lines:column
+set statusline+=\ %5.l,%-3.c\    "cursor line/total lines:column
 set statusline+=\ #%n
 
 command! ToggleCurrentTag :call status#toggle_current_tag()
