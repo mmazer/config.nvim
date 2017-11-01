@@ -1,5 +1,5 @@
 set termguicolors
-if !vimutils#has_gui() && !empty($TERM_BG)
+if !vlib#has_gui() && !empty($TERM_BG)
     let g:terminal_bg = 1
 endif
 

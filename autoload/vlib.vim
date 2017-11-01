@@ -1,12 +1,12 @@
-if exists("g:autoloaded_vimutils")
+if exists("g:autoloaded_vlib")
   finish
 endif
 
-let g:autoloaded_vimutils = 1
+let g:autoloaded_vlib = 1
 
 " Save last search and cursor position before executing a command
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
-function! vimutils#preserve(command)
+function! vlib#preserve(command)
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
@@ -19,7 +19,7 @@ function! vimutils#preserve(command)
 endfunction
 
 " Same as preserve but wraps function ref
-function! vimutils#preserve_wrapper(funcref)
+function! vlib#preserve_wrapper(funcref)
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
@@ -32,7 +32,7 @@ function! vimutils#preserve_wrapper(funcref)
 endfunction
 
 " Taken from ctrlp help file
-function! vimutils#root_dir()
+function! vlib#root_dir()
     let cph = expand('%:p:h', 1)
     if cph =~ '^.\+://' | retu | en
     for mkr in g:root_dir_markers
@@ -42,15 +42,15 @@ function! vimutils#root_dir()
     return fnameescape(wd == '' ? cph : substitute(wd, mkr.'$', '.', ''))
 endfunction
 
-function! vimutils#cd_rootdir()
-    exe ':lcd '.vimutils#root_dir()
+function! vlib#cd_rootdir()
+    exe ':lcd '.vlib#root_dir()
 endfunction
 
-function! vimutils#syntax()
+function! vlib#syntax()
     return synIDattr(synID(line("."),col("."),1),"name")
 endfunction
 
-function! vimutils#toggle_et()
+function! vlib#toggle_et()
   if &expandtab
     set shiftwidth=8
     set softtabstop=0
@@ -66,7 +66,7 @@ endfunction
 
 " Quick way to run shell commands and capture output in split
 " See http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
-function! vimutils#run_shell_command(cmdline)
+function! vlib#run_shell_command(cmdline)
     let isfirst = 1
     let words = []
     for word in split(a:cmdline)
@@ -88,7 +88,7 @@ function! vimutils#run_shell_command(cmdline)
     1
 endfunction
 
-function! vimutils#browse(...)
+function! vlib#browse(...)
     if a:0 < 1
         let uri = shellescape(matchstr(getline("."), '[a-z]*:\/\/[^ >,;\)\"]*'), 1)
     else
@@ -112,7 +112,7 @@ function! vimutils#browse(...)
     endif
 endfunction
 
-function vimutils#trim_trailing_lines()
+function vlib#trim_trailing_lines()
   let last_line = line('$')
   let last_nonblank = prevnonblank(last_line)
   if last_line > 0 && last_nonblank != last_line
@@ -120,7 +120,7 @@ function vimutils#trim_trailing_lines()
   endif
 endfunction
 
-function vimutils#has_gui()
+function vlib#has_gui()
     if has('gui_running')
         return 1
     elseif has('gui_vimr')

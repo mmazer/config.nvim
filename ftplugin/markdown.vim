@@ -25,5 +25,5 @@ function! UpdateModifiedTimestamp()
 endfunction
 
 autocmd BufWritePre * if &filetype == 'markdown'
-                      \ | call vimutils#preserve_wrapper(function('UpdateModifiedTimestamp'))
+                      \ | call vlib#preserve_wrapper(function('UpdateModifiedTimestamp'))
                       \ |
