@@ -256,12 +256,12 @@ vnoremap X y:execute @@<cr>:echo 'Sourced selection.'<cr>
 nnoremap X ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 
 " end lines with semicolons
-inoremap ;]       <C-\><C-O>:call vimutils#preserve("s/\\s\*$/;/")<CR>
-nnoremap <space>; :call vimutils#preserve("s/\\s\*$/;/")<CR>
+inoremap ;]       <C-\><C-O>:call vlib#preserve("s/\\s\*$/;/")<CR>
+nnoremap <space>; :call vlib#preserve("s/\\s\*$/;/")<CR>
 
 " end lines with commas
-inoremap ,]       <C-\><C-O>:call vimutils#preserve("s/\\s\*$/,/")<CR>
-nnoremap <space>, :call vimutils#preserve("s/\\s\*$/,/")<CR>
+inoremap ,]       <C-\><C-O>:call vlib#preserve("s/\\s\*$/,/")<CR>
+nnoremap <space>, :call vlib#preserve("s/\\s\*$/,/")<CR>
 
 command! Rtags :Dispatch! ctags --extra=+f -R
 cab rtags Rtags
