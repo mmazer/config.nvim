@@ -177,6 +177,9 @@ vnoremap <C-x> "+c
 vnoremap <C-v> c<ESC>"+p
 inoremap <C-v> <ESC>"+pa
 
+command! Strip :call vlib#preserve("%s/\\s\\+$//e")
+nnoremap =S :Strip<CR>
+
 "}}}
 
 " Writing/Reading files {{{
