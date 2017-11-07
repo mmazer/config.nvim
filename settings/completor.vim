@@ -1,16 +1,15 @@
-if !exists('g:auto_completion_enabled')
-    let g:auto_completion_enabled = 1
-endif
+let g:completor_auto_trigger = 0
+
+inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
 
 function! ToggleAutoComplete()
-    if g:auto_completion_enabled == 1
-        call completor#disable()
-        let g:auto_completion_enabled = 0
+    if g:completor_auto_trigger == 1
+        let g:completor_auto_trigger = 0
     else
-        call completor#enable()
-        let g:auto_completion_enabled = 1
+        let g:completor_auto_trigger = 1
     endif
 
-    echo 'auto-completion '.(g:auto_completion_enabled ? 'on' : 'off')
+    echo 'auto-completion '.(g:completor_auto_trigger ? 'on' : 'off')
 endfunction
+
 nnoremap <silent> coa :call ToggleAutoComplete()<CR>
