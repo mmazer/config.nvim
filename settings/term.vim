@@ -16,7 +16,7 @@ nnoremap <silent> tph :Tpos horizontal<CR>
 nnoremap <silent> tn :Tnew<CR>
 nnoremap <silent> to :Topen<CR>
 nnoremap <silent> tc :Tclose<CR>
-nnoremap <silent> tl :TREPLSendLine<CR>
-vnoremap <silent> tl :TREPLSendSelection<CR>
+nnoremap <silent> <leader>l :TREPLSendLine<CR>
+vnoremap <silent> <leader>l :TREPLSendSelection<CR>
 nnoremap tt :T<space>
 
