@@ -64,12 +64,16 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'ericpruitt/tmux.vim', { 'rtp': 'vim'}
+
 if has('nvim')
     Plug 'kassio/neoterm'
 endif
+
 " Languages
 Plug 'davidhalter/jedi-vim'
 Plug 'hashivim/vim-terraform'
+Plug 'fatih/vim-go/'
 
 call plug#end()
 "}}}
