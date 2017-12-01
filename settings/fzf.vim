@@ -30,6 +30,16 @@ command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-hea
             \ 1,
             \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'),
             \ <bang>0)
+
+function! s:git_branch_sink(line)
+  let parts = split(a:line, '\s\+')
+  execute '!git checkout '.parts[0]
+endfunction
+
+command! Branches call fzf#run(fzf#wrap({
+            \ 'source': 'git branch -vv',
+            \ 'sink':    function('s:git_branch_sink')
+            \ }))
 cab rg Rg
 
 nnoremap <silent> <space>b :Buffers<cr>
@@ -40,10 +50,9 @@ nnoremap <silent> <space>g :GitFiles<CR>
 nnoremap <silent> <space>G :GitFiles?<CR>
 nnoremap <silent> <space>h :History:<CR>
 nnoremap <silent> <space>/ :History/<CR>
-nnoremap <silent> <space>l :Lines<CR>
+nnoremap <silent> <space>l :BLines<CR>
 nnoremap <silent> <space>m :Marks<CR>
 nnoremap <silent> <space>o :Bookmarks<cr>
 nnoremap <silent> <space>r :History<CR>
-nnoremap <silent> <space>s :BLines<CR>
 nnoremap <silent> <space>t :BTags<cr>
 nnoremap <silent> <space>T :Tags<CR>
