@@ -207,6 +207,7 @@ set splitright
 
 set completeopt=longest,menuone,preview
 set showmatch
+set previewheight=20
 
 " avoid the escape key - remember <C-[> also maps to Esc
 inoremap kj <ESC>`^
