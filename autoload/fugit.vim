@@ -3,9 +3,21 @@ if exists('g:autoloaded_fugit')
 endif
 let g:autoloaded_fugit= 1
 
+if !exists('g:fugit_split')
+  let g:fugit_split = 'vert'
+endif
+
+function! s:fugit_win()
+    if g:fugit_split ==? 'vert'
+        vnew
+    else
+        new
+    endif
+endfunction
+
 function! fugit#diff_buf()
     let fname = expand('%')
-    new
+    call s:fugit_win()
     exec "r! git diff ".printf('%s', fname)
     :normal ggdd
     setlocal ft=diff bt=nofile bh=wipe nobl noswf ro
@@ -13,7 +25,7 @@ function! fugit#diff_buf()
 endfunction
 
 function! fugit#diff_index()
-    new
+    call s:fugit_win()
     r !git diff -w --cached
     :normal ggdd
     setlocal ft=diff bt=nofile bh=wipe nobl noswf ro
@@ -21,7 +33,8 @@ function! fugit#diff_index()
 endfunction
 
 function! fugit#diff_working()
-    new
+    call s:fugit_win()
+    r !git diff -w --cached
     r !git diff -w
     :normal ggdd
     setlocal ft=diff bt=nofile bh=wipe nobl noswf ro
@@ -29,21 +42,21 @@ function! fugit#diff_working()
 endfunction
 
 function! fugit#incoming()
-    new
+    call s:fugit_win()
     r !git log --pretty=oneline --abbrev-commit --graph ..@{u}
     setlocal ft=git bt=nofile bh=wipe nobl noswf ro
     nnoremap <buffer> qw :bw<cr>
 endfunction
 
 function! fugit#outgoing()
-    new
+    call s:fugit_win()
     r !git log --pretty=oneline --abbrev-commit --graph @{u}..
     setlocal ft=git bt=nofile bh=wipe nobl noswf ro
     nnoremap <buffer> qw :bw<cr>
 endfunction
 
 function! fugit#tags()
-    new
+    call s:fugit_win()
     r !git log --oneline --decorate --tags --no-walk
     :normal ggdd
     setlocal ft=git bt=nofile bh=wipe nobl noswf ro
@@ -51,7 +64,7 @@ function! fugit#tags()
 endfunction
 
 function! fugit#show(object)
-    new
+    call s:fugit_win()
     execute "r !git show ".a:object
     :normal ggdd
     setlocal ft=git bt=nofile bh=wipe nobl noswf ro
@@ -59,7 +72,7 @@ function! fugit#show(object)
 endfunction
 
 function! fugit#help(command)
-    new
+    call s:fugit_win()
     execute "r !git help " . a:command
     :normal ggdd
     setlocal ft=man bt=nofile bh=wipe nobl noswf ro
