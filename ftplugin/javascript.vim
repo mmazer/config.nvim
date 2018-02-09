@@ -3,3 +3,4 @@ setlocal sts=2
 setlocal fdm=indent
 setlocal omnifunc=javascriptcomplete#CompleteJS
 setlocal iskeyword+=-
+setlocal suffixesadd=.js,.json
