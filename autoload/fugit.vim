@@ -4,12 +4,14 @@ endif
 let g:autoloaded_fugit= 1
 
 if !exists('g:fugit_split')
-  let g:fugit_split = 'vert'
+  let g:fugit_split = 'buf'
 endif
 
 function! s:fugit_win()
     if g:fugit_split ==? 'vert'
         vnew
+    elseif g:fugit_split ==? 'buf'
+        enew
     else
         new
     endif
