@@ -35,11 +35,20 @@ function! status#mode()
 endfunction
 
 function! status#lint()
-    if !exists('*ALEGetStatusLine')
-        return ''
-    endif
+    try
+        let l:counts = ale#statusline#Count(bufnr('%'))
+    catch
+        return '[no-ale]'
+    endtry
 
-    return ALEGetStatusLine() 
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    let l:status = l:counts.total == 0 ? '✓' : printf(
+    \   '✗ W:%d E:%d',
+    \   all_non_errors,
+    \   all_errors
+    \)
+    return l:status
 endfunction
 
 function! status#branch()
