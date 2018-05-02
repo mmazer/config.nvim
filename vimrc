@@ -246,8 +246,7 @@ nnoremap qp :pclose<CR>
 nnoremap q: <nop>
 nnoremap Q :qa<CR>
 
-command! Rc     :exec 'edit' $MYVIMRC
-nnoremap gov    :Rc<CR>
+nnoremap gov    :e $MYVIMRC<CR>
 
 " For quick one line expressions
 nnoremap <space>x   :<C-R>=
