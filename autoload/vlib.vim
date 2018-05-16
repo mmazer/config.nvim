@@ -81,10 +81,18 @@ function! vlib#run_shell_command(cmdline)
         call add(words, word)
     endfor
     let expanded_cmdline = join(words)
-    botright new
-    setlocal buftype=nofile noswapfile nowrap
-    silent execute '$read !'. expanded_cmdline
-    exec 'file shell:' . fnameescape(a:cmdline)
+    let bufname = 'shell:'.fnameescape(a:cmdline)
+    let bufnum = bufnr(bufname)
+    if bufnum == -1
+        enew
+        setlocal buftype=nofile noswapfile nowrap
+        " Add mapping to re-run shell command using existing buffer
+        exec 'map <buffer> <silent> <C-r> :%!'.expanded_cmdline.'<CR>'
+        exec 'file '.bufname
+    else
+        exec ':buffer '.bufnum
+    endif
+    silent execute '%! '. expanded_cmdline
     1
 endfunction
 
