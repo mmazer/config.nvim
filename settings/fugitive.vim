@@ -8,12 +8,15 @@ nnoremap <space>gr :Gread<CR>
 nnoremap <space>gw :Gwrite<CR>
 nnoremap <space>gp :Ggrep<CR>
 
+cab glog Glog
+
 " Simple way to turn off Gdiff splitscreen
 " works only when diff buffer is focused
 " https://gist.github.com/radmen/5048080
 command! Gdoff diffoff | q | Gedit
 
 command! Glast :Glog -n 8 --
+cab glast Glast
 
 augroup Fugitive
     autocmd!
