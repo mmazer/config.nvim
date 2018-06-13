@@ -12,18 +12,6 @@ endfunction
 map <buffer> <leader>p :call PreviewMarkdown()<CR>
 command! Marked :call PreviewMarkdown()
 
-function! UpdateModifiedTimestamp()
-    let lines = line('$')
-    if lines < 10
-        return
-    endif
-
-    try
-        :1,10s/^\<[Mm]odified\>\:\s\zs.*/\=datetime#timestamp()/ge
-    catch
-    endtry
-endfunction
-
 autocmd BufWritePre * if &filetype == 'markdown'
-                      \ | call vlib#preserve_wrapper(function('UpdateModifiedTimestamp'))
+                      \ | call vlib#preserve_wrapper(function('datetime#update_modified_time'))
                       \ |

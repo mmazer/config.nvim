@@ -38,3 +38,15 @@ function! datetime#cal(month)
     setlocal bt=nofile bh=wipe nobl noswf ro
     nnoremap <buffer> q :bw<cr>
 endfunction
+
+function! datetime#update_modified_time()
+    let lines = line('$')
+    if lines < 10
+        return
+    endif
+
+    try
+        :1,10s/^\<[Mm]odified\>\:\s\zs.*/\=datetime#timestamp()/ge
+    catch
+    endtry
+endfunction
