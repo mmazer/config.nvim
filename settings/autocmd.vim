@@ -28,4 +28,5 @@ if has("autocmd")
         autocmd BufNewfile,BufRead *.tf set filetype=terraform
     augroup END
 
+    autocmd BufWritePre * call vlib#preserve_wrapper(function('datetime#update_modified_time'))
 endif
