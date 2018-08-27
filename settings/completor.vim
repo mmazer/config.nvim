@@ -1,4 +1,5 @@
 let g:completor_auto_trigger = 0
+let g:completor_gocode_binary = '~/go/bin/gocode'
 
 inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
 
