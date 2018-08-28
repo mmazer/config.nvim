@@ -66,6 +66,8 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'ericpruitt/tmux.vim', { 'rtp': 'vim'}
 
+Plug 'mattn/calendar-vim'
+
 if has('nvim')
     Plug 'kassio/neoterm'
 endif
