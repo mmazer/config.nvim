@@ -1,1 +1,1 @@
-map  <C-i> :call indent_guide#toggle()<CR>
+map  <C-g> :call indent_guide#toggle()<CR>
