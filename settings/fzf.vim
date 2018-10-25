@@ -1,5 +1,5 @@
 let g:fzf_tags_command = 'ctags --extra=+f -R'
-let g:fzf_bookmarks = $XDG_DATA_HOME.'/fzf/vim_bookmarks'
+let g:fzf_bookmarks = $XDG_DATA_HOME.'/bookmarks/vim'
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
