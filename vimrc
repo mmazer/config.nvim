@@ -106,7 +106,7 @@ syntax on
 " === GUI === {{{
 if has('gui_running')
     if has('mac')
-        set guifont=Monaco:h14
+        set guifont=Hack:h14
     endif
     set guioptions-=T " remove tool bar
     set guioptions-=r " remove right-hand scroll bar
