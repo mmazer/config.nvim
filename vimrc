@@ -42,7 +42,7 @@ Plug 'dyng/ctrlsf.vim'
 
 Plug 'mhinz/vim-grepper'
 
-Plug 'maralla/completor.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'tpope/vim-fugitive'
 
