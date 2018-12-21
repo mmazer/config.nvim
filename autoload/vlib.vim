@@ -110,7 +110,7 @@ function! vlib#browse(...)
         elseif has('mac')
             silent exec "!open ".uri
         elseif has('unix')
-            silent "!firefox ".uri
+            silent exec "!xdg-open ".uri
         else
             echo "OpenURI not supported on this system"
         endif
