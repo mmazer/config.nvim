@@ -16,7 +16,6 @@ noremap  <buffer> <silent> j gj
 noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
 
-nnoremap K H
 " preserve J - join lines
 nnoremap <space>j J
 nnoremap J        L

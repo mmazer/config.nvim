@@ -75,7 +75,10 @@ if has('nvim')
 endif
 
 " Languages
-Plug 'davidhalter/jedi-vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go/'
 Plug 'pearofducks/ansible-vim'
