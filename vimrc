@@ -83,7 +83,6 @@ Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go/'
 Plug 'pearofducks/ansible-vim'
 Plug 'avakhov/vim-yaml'
-Plug 'hashivim/vim-vagrant'
 
 call plug#end()
 "}}}
