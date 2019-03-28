@@ -46,6 +46,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'junegunn/gv.vim'
+
 Plug 'tpope/vim-unimpaired'
 
 Plug 'tpope/vim-dispatch'
