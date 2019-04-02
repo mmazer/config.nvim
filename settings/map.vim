@@ -121,6 +121,7 @@ inoremap ,]       <C-\><C-O>:call vlib#preserve("s/\\s\*$/,/")<CR>
 nnoremap <space>, :call vlib#preserve("s/\\s\*$/,/")<CR>
 
 nnoremap <leader>d :bd<cr>
+nnoremap <leader>D :bd!<cr>
 nnoremap <space>d :bp \| bd #<CR>
 
 " For quick one line expressions in command mode
