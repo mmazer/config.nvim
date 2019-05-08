@@ -11,12 +11,15 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 
 " neoterm
 let g:neoterm_size=''
-nnoremap <silent> tpv :Tpos vertical<CR>
-nnoremap <silent> tph :Tpos horizontal<CR>
 nnoremap <silent> tn :Tnew<CR>
+nnoremap <silent> tv :vertical Tnew<CR>
+nnoremap <silent> ts :belowright Tnew<CR>
 nnoremap <silent> to :Topen<CR>
 nnoremap <silent> tc :Tclose<CR>
 nnoremap <silent> <leader>l :TREPLSendLine<CR>
 vnoremap <silent> <leader>l :TREPLSendSelection<CR>
 nnoremap tt :T<space>
+
+command! VTnew :vertical Tnew
+command! HTnew :belowright Tnew
 
