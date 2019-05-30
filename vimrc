@@ -76,6 +76,8 @@ if has('nvim')
     Plug 'kassio/neoterm'
 endif
 
+Plug 'lambdalisue/suda.vim'
+
 " Languages
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',

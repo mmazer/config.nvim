@@ -82,7 +82,6 @@ nnoremap Y y$
 nnoremap g!       :e!<CR>
 nnoremap <space>w :w<CR>
 nnoremap <space>W :w!<CR>
-command W w !sudo tee % > /dev/null
 
 " close quick fix and location list
 nnoremap qq :cclose<CR>
