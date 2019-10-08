@@ -1,3 +1,3 @@
-command! Rtags :Dispatch! ctags --extra=+f -R
+command! Rtags :Dispatch! /usr/local/bin/ctags --extra=+f -R
 cab rtags Rtags
 nnoremap <leader>T :Rtags<cr>
