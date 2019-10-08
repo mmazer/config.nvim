@@ -87,6 +87,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go/'
 Plug 'pearofducks/ansible-vim'
 Plug 'avakhov/vim-yaml'
+Plug 'psf/black'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 "}}}
