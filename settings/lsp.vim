@@ -3,8 +3,8 @@ let g:LanguageClient_serverCommands = {
     \ 'sh': ['bash-language-server', 'start'],
     \ 'dockerfile': ['docker-langserver','--stdio'],
     \ 'ruby': ['solargraph', 'stdio'],
-    \ 'javascript': ['/home/mmazer/.yarn/bin/javascript-typescript-stdio'],
-    \ 'typescript': ['/home/mmazer/.yarn/bin/javascript-typescript-stdio']
+    \ 'javascript': [ '~/.yarn/bin/javascript-typescript-stdio'],
+    \ 'typescript': [ '~/.yarn/bin/javascript-typescript-stdio']
     \ }
 
 nnoremap <silent> gol :call LanguageClient_contextMenu()<CR>
