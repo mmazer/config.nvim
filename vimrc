@@ -60,7 +60,7 @@ Plug 'SirVer/ultisnips'
 
 Plug 'majutsushi/tagbar'
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 Plug 'scrooloose/nerdtree'
 
@@ -79,10 +79,6 @@ endif
 Plug 'lambdalisue/suda.vim'
 
 " Languages
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go/'
 Plug 'pearofducks/ansible-vim'

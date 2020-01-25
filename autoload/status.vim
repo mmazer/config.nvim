@@ -42,10 +42,10 @@ function! status#lint()
     endtry
 
     let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
+    let l:all_warnings = l:counts.warning + l:counts.style_warning
     let l:status = l:counts.total == 0 ? '✓' : printf(
     \   '✗ W:%d E:%d',
-    \   all_non_errors,
+    \   all_warnings,
     \   all_errors
     \)
     return l:status
