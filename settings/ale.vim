@@ -13,7 +13,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_python_black_options = '-l 120 -t py37'
 
-nmap <silent> <]e> <Plug>(ale_next_wrap)
-nmap <silent> <[e> <Plug>(ale_previous_wrap)
+nnoremap <silent> <C-]> :ALENextWrap<CR>
+nnoremap <silent> <C-[> :ALEPreviousWrap<CR>
 nnoremap <silent> K :ALEHover<CR>
 nnoremap <silent> <C-d> :ALEGoToDefinition<CR>
