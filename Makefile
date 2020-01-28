@@ -1,15 +1,5 @@
-.PHONY: install
+.PHONY: install-plug
 
-install: nvim linters
-
-nvim:
-	brew install neovim
-	pip2 install neovim
-	pip3 install neovim
-
-linters: 
-	npm install -g eslint
-	npm install -g jsonlint
-	pip2 install flake8
-	pip3 install flake8
-
+install-plug:
+	curl -fLo autoload/plug.vim \
+	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
