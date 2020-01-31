@@ -1,7 +1,7 @@
 nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gb :Gblame<CR>
 nnoremap <space>gc :Gcommit -v -q <CR>
-nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>gd :Gdiffsplit<CR>
 nnoremap <space>ge :Gedit<CR>
 nnoremap <space>gl :Glog<CR>
 nnoremap <space>gr :Gread<CR>
