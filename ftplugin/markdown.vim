@@ -2,13 +2,11 @@ setlocal sw=2
 setlocal sts=2
 setlocal suffixesadd=.txt,.md
 
-function! PreviewMarkdown()
-    if executable("marked")
-        exec ":silent !marked \"%\"" | redraw!
-    else
-        echo "Marked application not found"
-    endif
-endfunction
-map <buffer> <leader>p :call PreviewMarkdown()<CR>
-command! Marked :call PreviewMarkdown()
+if executable("retext")
+    command! Marked :call vlib#start_async("retext", expand("%"))
+else
+    command! Marked :echo "No suitable application found to preview Markdown"
+endif
+
+map <buffer> <leader>p :Marked<CR>
 
