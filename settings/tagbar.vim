@@ -1,11 +1,6 @@
 " Sort by order in file
 let g:tagbar_sort=0
-let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:Headings'
-    \ ]
-\ }
+
 let g:tagbar_type_typescript = {
     \ 'ctagstype' : 'typescript',
     \ 'kinds' : [
