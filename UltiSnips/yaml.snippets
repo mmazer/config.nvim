@@ -15,8 +15,10 @@ endsnippet
 
 snippet todo
 - action: ${1}
-  description: ${2}
-  priority: ${3}
+  tags: ${2}
+  description: |
+    ${3}
+  priority: ${4}
   created: `!v datetime#short_date()`
 endsnippet
 
