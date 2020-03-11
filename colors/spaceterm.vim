@@ -56,8 +56,8 @@ hi DiffText        ctermbg=60   ctermfg=251    guibg=#5F5F87   guifg=#D0D0D0 cte
 hi helpLeadBlank   ctermbg=NONE ctermfg=NONE   guibg=NONE     guifg=NONE     cterm=NONE      gui=NONE
 hi helpNormal      ctermbg=NONE ctermfg=NONE   guibg=NONE     guifg=NONE     cterm=NONE      gui=NONE
 
-hi LineNr          ctermbg=NONE ctermfg=8      guibg=#111314  guifg=#414d5a  cterm=NONE      gui=NONE
-hi CursorLineNr    ctermbg=NONE ctermfg=243    guibg=NONE     guifg=#808080  cterm=NONE      gui=NONE
+hi LineNr          ctermbg=NONE ctermfg=8      guibg=#111314  guifg=#808080
+hi CursorLineNr    ctermbg=NONE ctermfg=243    guibg=NONE     guifg=#d9d9d9  cterm=NONE      gui=NONE
 
 hi WildMenu        ctermbg=110  ctermfg=235    guibg=#8FAFD7  guifg=#141617  cterm=bold      gui=bold
 
