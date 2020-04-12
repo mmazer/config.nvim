@@ -22,8 +22,8 @@ if !has('nvim')
     set viminfo+=n$HOME/.cache/vim/viminfo
 endif
 
-set runtimepath+=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
-let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+set runtimepath+=$XDG_CONFIG_HOME/nvim,$XDG_CONFIG_HOME/nvim/after,$VIM,$VIMRUNTIME
+let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
 
 " }}}
 
@@ -32,7 +32,7 @@ let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 " }}}
 
 " === Plugins === {{{
-call plug#begin($XDG_DATA_HOME.'/vim/plugged')
+call plug#begin($XDG_DATA_HOME.'/nvim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
@@ -150,6 +150,6 @@ set previewheight=20
 " === Settings ===
 runtime! settings/*.vim
 
-if filereadable($XDG_DATA_HOME.'/vim/site.vim')
-    source $XDG_DATA_HOME/vim/site.vim
+if filereadable($XDG_DATA_HOME.'/nvim/site.vim')
+    source $XDG_DATA_HOME/nvim/site.vim
 endif
