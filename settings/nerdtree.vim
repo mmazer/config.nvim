@@ -4,6 +4,7 @@ let NERDTreeDirArrows=1
 let NERDTreeIgnore=['\.pyc$']
 let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
+let NERDTreeHijackNetrw=0
 
 nnoremap <silent> <space>nc :NERDTreeCWD<CR>
 nnoremap <silent> <space>nr :exe 'NERDTree '.vutils#root_dir() \| wincmd w<CR>
