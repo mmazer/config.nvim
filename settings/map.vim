@@ -80,6 +80,7 @@ nnoremap Y y$
 
 " writing files
 nnoremap g!       :e!<CR>
+nnoremap ;w :w<CR>
 nnoremap <space>w :w<CR>
 nnoremap <space>W :w!<CR>
 
