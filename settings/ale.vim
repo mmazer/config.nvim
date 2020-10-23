@@ -1,5 +1,5 @@
 let g:ale_linters = {
-    \   'javascript':   ['eslint'],
+    \   'javascript':   ['eslint', 'tsserver'],
     \   'ruby':         ['rubocop'],
     \   'sh':           ['shellcheck'],
     \   'python':       ['pyls'],
