@@ -72,6 +72,7 @@ The client did not produce a request within the time that the server was prepare
 424 Failed Dependency
 425 Unordered Collection
 426 Upgrade Required
+429 Too Many Requests https://tools.ietf.org/html/rfc6585#section-4
 444 No Response
 449 Retry With
 450 Blocked by Windows Parental Controls
