@@ -1,0 +1,17 @@
+*vimgists*               Vim Gists
+*vim*
+
+CONTENTS
+                                                    *vimgists-contents*
+=============================================================================
+Delete blank lines                                  |delete-blank-lines|
+Count matches in buffer                             |count-matches-buffer|
+
+=============================================================================
+
+Delete blank lines:                                    *delete-blank-lines*
+
+`:g/^$/d`
+
+Count matches in buffer:
+`:%s/PATTERN//ng` Prints `X matches on Y lines`        *count-matches-buffer*
