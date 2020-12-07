@@ -6,5 +6,5 @@ endif
 if !empty($TERM_THEME)
     exe 'colorscheme '.$TERM_THEME
 else
-    colorscheme spaceterm
+    colorscheme gruvbox
 endif

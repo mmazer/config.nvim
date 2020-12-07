@@ -74,6 +74,12 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'mattn/calendar-vim'
 
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+" colorschemes
+Plug 'morhetz/gruvbox'
+
 if has('nvim')
     Plug 'kassio/neoterm'
 endif
