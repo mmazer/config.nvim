@@ -79,6 +79,7 @@ Plug 'junegunn/limelight.vim'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 
 if has('nvim')
     Plug 'kassio/neoterm'
