@@ -78,7 +78,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 " colorschemes
-Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 
 if has('nvim')
