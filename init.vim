@@ -1,28 +1,4 @@
-set nocompatible
-
-" === Environment === {{{
-
-if empty($XDG_CACHE_HOME)
-    let $XDG_CACHE_HOME='$HOME/.cache'
-endif
-
-if empty($XDG_CONFIG_HOME)
-    let $XDG_CONFIG_HOME='$HOME/.config'
-endif
-
-if empty($XDG_DATA_HOME)
-    let $XDG_DATA_HOME='$HOME/.local/share'
-endif
-
-set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
-set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
-set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
-if !has('nvim')
-    " Using $XDG_CACHE_HOME home for viminfo doesn't work in vim 8
-    set viminfo+=n$HOME/.cache/vim/viminfo
-endif
-
-set runtimepath+=$XDG_CONFIG_HOME/nvim,$XDG_CONFIG_HOME/nvim/after,$VIM,$VIMRUNTIME
+runtime init.d/env.vim
 let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
 
 " }}}
@@ -111,15 +87,7 @@ endif
 filetype plugin indent on
 syntax on
 
-" === GUI === {{{
-if has('gui_running')
-    set guifont=Hack:h14
-    set guioptions-=T " remove tool bar
-    set guioptions-=r " remove right-hand scroll bar
-    set guioptions-=L " remove left-hand scroll bar
-    set lines=90
-    set columns=145
-endif
+runtime init.d/gui.vim
 
 " }}}
 set expandtab
@@ -145,6 +113,8 @@ set splitright
 set completeopt=longest,menuone,preview
 set showmatch
 set previewheight=20
+
+let loaded_netrwPlugin = 1
 
 " }}}
 " === Settings ===
