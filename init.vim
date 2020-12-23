@@ -50,21 +50,17 @@ Plug 'junegunn/gv.vim'
 
 Plug 'tpope/vim-unimpaired'
 
-Plug 'tpope/vim-dispatch'
-
 Plug 'tpope/vim-surround'
 
 Plug 'tpope/vim-commentary'
 
 Plug 'SirVer/ultisnips'
 
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 
 Plug 'dense-analysis/ale'
 
 Plug 'scrooloose/nerdtree'
-
-Plug 'airblade/vim-gitgutter'
 
 Plug 'ericpruitt/tmux.vim', { 'rtp': 'vim'}
 
