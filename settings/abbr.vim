@@ -26,7 +26,8 @@ iab hh2 ##
 iab hh3 ###
 iab hh4 ####
 iab hh5 #####
-iab hhj #### <C-r>=datetime#datetime()<CR>
+iab hhd #### <C-r>=datetime#short_date()<CR>
+iab jdt #### <C-r>=datetime#datetime()<CR>
 
 iab chmk ✓
 iab xmk ✗
