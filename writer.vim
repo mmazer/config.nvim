@@ -8,8 +8,13 @@ Plug 'junegunn/limelight.vim'
 Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
+set wrap linebreak textwidth=0
+nnoremap Q :qa!<CR>
+
 set termguicolors
 colorscheme gruvbox-material-ext
+
+runtime settings/abbr.vim
 
 runtime settings/goyo.vim
 autocmd VimEnter * silent!  Goyo 80
