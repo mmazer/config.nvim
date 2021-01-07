@@ -98,7 +98,7 @@ endfunction
 
 function! vlib#browse(...)
     if a:0 < 1
-        let uri = shellescape(matchstr(getline("."), '[a-z]*:\/\/[^ >,;\)\"]*'), 1)
+        let uri = shellescape(matchstr(getline("."), '[a-z]*:\/\/[^ >,;\|\]\)\"]*'), 1)
     else
         let uri = a:1
     endif
