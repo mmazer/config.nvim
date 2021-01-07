@@ -47,6 +47,8 @@ Plug 'mattn/calendar-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+Plug 'vimwiki/vimwiki'
+
 " colorschemes
 Plug 'sainnhe/gruvbox-material'
 
