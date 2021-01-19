@@ -14,8 +14,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'junegunn/fzf.vim'
 
-Plug 'dyng/ctrlsf.vim'
-
 Plug 'mhinz/vim-grepper'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -32,8 +30,6 @@ Plug 'tpope/vim-commentary'
 
 Plug 'SirVer/ultisnips'
 
-Plug 'preservim/tagbar'
-
 Plug 'dense-analysis/ale'
 
 Plug 'scrooloose/nerdtree'
@@ -41,8 +37,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'ericpruitt/tmux.vim', { 'rtp': 'vim'}
 
 Plug 'christoomey/vim-tmux-navigator'
-
-Plug 'mattn/calendar-vim'
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -61,8 +55,6 @@ Plug 'lambdalisue/suda.vim'
 " Languages
 Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go/'
-Plug 'pearofducks/ansible-vim'
-Plug 'avakhov/vim-yaml'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'leafgarland/typescript-vim'
 
