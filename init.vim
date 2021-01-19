@@ -55,7 +55,6 @@ Plug 'lambdalisue/suda.vim'
 " Languages
 Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go/'
-Plug 'psf/black', { 'branch': 'stable' }
 Plug 'leafgarland/typescript-vim'
 
 call plug#end()
