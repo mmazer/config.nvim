@@ -18,6 +18,10 @@ function! vlib#preserve(command)
     call cursor(l, c)
 endfunction
 
+function! vlib#strip()
+    call vlib#preserve("%s/\\s\\+$//e")
+endfunction
+
 " Same as preserve but wraps function ref
 function! vlib#preserve_wrapper(funcref)
     " Preparation: save last search, and cursor position.
