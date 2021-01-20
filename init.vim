@@ -16,8 +16,6 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'mhinz/vim-grepper'
 
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 Plug 'tpope/vim-fugitive'
 
 Plug 'junegunn/gv.vim'
