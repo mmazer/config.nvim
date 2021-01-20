@@ -51,6 +51,7 @@ endif
 Plug 'lambdalisue/suda.vim'
 
 " Languages
+Plug 'pearofducks/ansible-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go/'
 Plug 'leafgarland/typescript-vim'
