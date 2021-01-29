@@ -1,5 +1,6 @@
 let g:fzf_tags_command = 'ctags --extra=+f -R'
 let g:fzf_bookmarks = $XDG_DATA_HOME.'/bookmarks/vim'
+let g:command_snippets = $XDG_DATA_HOME.'/nvim/command_snippets'
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -26,6 +27,16 @@ command! Bookmarks call fzf#run(fzf#wrap({
             \ 'sink':    function('s:bookmarks_sink')
             \ }))
 
+function! s:commands_sink(command)
+    execute ''.a:command
+endfunction
+
+command! ExCommands call fzf#run(fzf#wrap({
+            \ 'source': 'cat '.g:command_snippets,
+            \ 'sink':    function('s:commands_sink')
+            \ }))
+
+
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>),
             \ 1,
             \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'),
@@ -45,6 +56,7 @@ cab rg Rg
 nnoremap <silent> <space>b :Buffers<cr>
 nnoremap <silent> <space>c :BCommits<CR>
 nnoremap <silent> <space>C :Commits<CR>
+nnoremap <silent> <space>e :ExCommands<CR>
 nnoremap <silent> <space>f :Files<CR>
 nnoremap <silent> <space>g :GitFiles<CR>
 nnoremap <silent> <space>G :GitFiles?<CR>
