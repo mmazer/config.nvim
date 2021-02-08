@@ -33,4 +33,4 @@ iab chmk ✓
 iab xmk ✗
 
 "random
-iab kws ¯\_(ツ)_/¯
+iab awl ¯\_(ツ)_/¯
