@@ -1,0 +1,10 @@
+{
+  "name": "nvim-config",
+  "version": "0.0.0",
+  "private": true,
+  "author": "",
+  "license": "",
+  "dependencies" :{
+    "eslint",
+    "tsserver"
+  }
