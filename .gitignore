@@ -4,4 +4,5 @@
 doc/tags
 *.spl
 *.sug
+autoload/plug.vim
 
