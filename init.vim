@@ -10,6 +10,8 @@ let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
 " === Plugins === {{{
 call plug#begin($XDG_DATA_HOME.'/nvim/plugged')
 
+Plug '~/.local/share/nvim/plugged/vim-lib'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'junegunn/fzf.vim'
