@@ -2,13 +2,13 @@ setlocal sw=2
 setlocal sts=2
 setlocal suffixesadd=.txt,.md
 
-if executable("retext")
-    command! Retext :call vlib#start_async("retext", expand("%"))
+if executable("remarkable")
+    command! Marked :call vlib#start_async("remarkable", expand("%"))
+elseif executable("retext")
+    command! Marked :call vlib#start_async("retext", expand("%"))
 else
-    command! Retext :echo "executable retext not found"
+    command! Marked :echo "no markdown viewer found (retext,remarkable)"
 endif
-
-command! Marked :vsplit term://pandoc -f markdown -t html % \| w3m -T text/html
 
 map <buffer> <leader>p :Marked<CR>
 
