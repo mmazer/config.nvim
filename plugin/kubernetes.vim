@@ -1,5 +1,4 @@
 command! -nargs=* Kube :Shell kubectl <args>
-cab kube Kube
 command! -nargs=* Kget :Shell kubectl get <args>
 cab kget Kget
 command! -nargs=* Kdesc :Shell kubectl describe <args>
