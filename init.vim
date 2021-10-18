@@ -32,7 +32,7 @@ Plug 'tpope/vim-commentary'
 
 Plug 'SirVer/ultisnips'
 
-Plug 'dense-analysis/ale'
+Plug 'neovim/nvim-lspconfig'
 
 Plug 'scrooloose/nerdtree'
 
