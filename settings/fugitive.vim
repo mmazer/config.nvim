@@ -1,9 +1,9 @@
-nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gb :Gblame<CR>
-nnoremap <space>gc :Gcommit -v -q <CR>
+nnoremap <space>gs :Git<CR>
+nnoremap <space>gb :Git blame<CR>
+nnoremap <space>gc :Git commit -v -q <CR>
 nnoremap <space>gd :Gdiffsplit<CR>
 nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gl :Glog<CR>
+nnoremap <space>gl :Gclog<CR>
 nnoremap <space>gr :Gread<CR>
 nnoremap <space>gw :Gwrite<CR>
 nnoremap <space>gp :Ggrep<CR>
@@ -15,7 +15,7 @@ cab glog Glog
 " https://gist.github.com/radmen/5048080
 command! Gdoff diffoff | q | Gedit
 
-command! Glast :Glog -n 8 --
+command! Glast :Gclog -n 8 --
 cab glast Glast
 
 augroup Fugitive
