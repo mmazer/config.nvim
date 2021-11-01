@@ -34,20 +34,32 @@ local on_attach = function(client, bufnr)
 
   buf_set_keymap('n', 'dl', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', 'dg', '<cmd>lua PrintLspDiagnostics()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pylsp', 'solargraph' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+--- Python Language Server
+nvim_lsp["pylsp"].setup {
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
+    },
+    settings = {
+        pylsp = {
+          configurationSources = { "flake8" }
+        }
     }
-  }
-end
+}
+
+nvim_lsp["solargraph"].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    },
+    settings = {
+    }
+}
 EOF
