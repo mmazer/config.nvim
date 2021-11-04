@@ -108,6 +108,7 @@ set completeopt=longest,menuone,preview
 set showmatch
 set previewheight=20
 
+let g:loaded_netrw     = 1
 let loaded_netrwPlugin = 1
 
 " }}}
