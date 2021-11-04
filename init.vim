@@ -55,11 +55,11 @@ endif
 Plug 'lambdalisue/suda.vim'
 
 " Languages
-Plug 'preservim/tagbar'
 Plug 'pearofducks/ansible-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'fatih/vim-go/'
 Plug 'leafgarland/typescript-vim'
+Plug 'chr4/nginx.vim'
 
 call plug#end()
 "}}}
