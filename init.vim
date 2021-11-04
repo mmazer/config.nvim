@@ -40,9 +40,6 @@ Plug 'ericpruitt/tmux.vim', { 'rtp': 'vim'}
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
 Plug 'vimwiki/vimwiki'
 
 " colorschemes
