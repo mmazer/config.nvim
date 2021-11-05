@@ -44,6 +44,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'vimwiki/vimwiki'
 
+Plug 'liuchengxu/vista.vim'
+
 " colorschemes
 Plug 'sainnhe/gruvbox-material'
 
