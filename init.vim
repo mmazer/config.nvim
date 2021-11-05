@@ -18,6 +18,8 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+Plug 'deoplete-plugins/deoplete-lsp'
+
 Plug 'mhinz/vim-grepper'
 
 Plug 'tpope/vim-fugitive'
