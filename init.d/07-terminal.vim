@@ -1,7 +1,4 @@
 " general terminal bindings
-if !has('nvim')
-    finish
-endif
 
 tnoremap <C-x> <C-\><C-n>
 tnoremap <C-h> <C-\><C-n><C-w>h
@@ -22,4 +19,5 @@ nnoremap tt :T<space>
 
 command! VTnew :vertical Tnew
 command! HTnew :belowright Tnew
+
 
