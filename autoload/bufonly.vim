@@ -13,6 +13,11 @@
 
 " http://www.vim.org/scripts/script.php?script_id=1071
 
+if exists("g:autoloaded_bufonly")
+    finish
+endif
+
+let g:autoloaded_bufonly = 1
 
 function! bufonly#delete_others(buffer, bang)
 	if a:buffer == ''
