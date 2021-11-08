@@ -1,3 +1,10 @@
+set termguicolors
+if !empty($NVIM_COLORSCHEME)
+    exe 'colorscheme '.$NVIM_COLORSCHEME
+else
+    colorscheme gruvbox-material-ext
+endif
+
 if has('gui_running')
     set guifont=Hack:h14
     set guioptions-=T " remove tool bar

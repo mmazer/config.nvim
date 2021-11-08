@@ -1,124 +1,16 @@
-runtime init.d/env.vim
-let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
-
-" }}}
-
-" === Variables === {{{
-"
-" }}}
-
-" === Plugins === {{{
-call plug#begin($XDG_DATA_HOME.'/nvim/plugged')
-
-Plug '~/.local/share/nvim/plugged/vim-lib'
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-Plug 'junegunn/fzf.vim'
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-Plug 'deoplete-plugins/deoplete-lsp'
-
-Plug 'mhinz/vim-grepper'
-
-Plug 'tpope/vim-fugitive'
-
-Plug 'junegunn/gv.vim'
-
-Plug 'tpope/vim-unimpaired'
-
-Plug 'tpope/vim-surround'
-
-Plug 'tpope/vim-commentary'
-
-Plug 'SirVer/ultisnips'
-
-Plug 'neovim/nvim-lspconfig'
-
-Plug 'scrooloose/nerdtree'
-
-Plug 'ericpruitt/tmux.vim', { 'rtp': 'vim'}
-
-Plug 'christoomey/vim-tmux-navigator'
-
-Plug 'vimwiki/vimwiki'
-
-Plug 'liuchengxu/vista.vim'
-
-" colorschemes
-Plug 'sainnhe/gruvbox-material'
-
-if has('nvim')
-    Plug 'kassio/neoterm'
-endif
-
-Plug 'lambdalisue/suda.vim'
-
-" Languages
-Plug 'pearofducks/ansible-vim'
-Plug 'hashivim/vim-terraform'
-Plug 'fatih/vim-go/'
-Plug 'leafgarland/typescript-vim'
-Plug 'chr4/nginx.vim'
-
-call plug#end()
-"}}}
-
-set list
-set number
-set scrolloff=2
-set wildmenu
-set wildmode=list:longest
-set shortmess=aTIoO
-set laststatus=2
-set encoding=utf-8
-set listchars=tab:┆\ ,trail:·,nbsp:¬,extends:›,precedes:‹
-set wrap linebreak textwidth=0
-set noshowcmd
-set ruler
-
-if exists('&inccommand')
-  set inccommand=split
-endif
-
-filetype plugin indent on
-syntax on
-
-runtime init.d/gui.vim
-
-" }}}
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-
-set autoread
-set ffs=unix,dos,mac "Default file types
-set ff=unix " set initial buffer file format
-set modeline
-
-set noswapfile
-set backup
-
-set cursorline
-
-set title
-
-set hidden
-set splitbelow
-set splitright
-
-set completeopt=longest,menuone,preview
-set showmatch
-set previewheight=20
+let $VIMDATA = stdpath('data')
+let $VIMCACHE = stdpath('cache')
+let $VIMCONFIG = stdpath('config')
+let $VIMPLUGINS = $VIMDATA.'/plugged'
 
 let g:loaded_netrw     = 1
 let loaded_netrwPlugin = 1
 
 " }}}
-" === Settings ===
-runtime! settings/*.vim
+"
+runtime! init.d/*.vim
 
-if filereadable($XDG_DATA_HOME.'/nvim/site.vim')
+if filereadable($VIMDATA.'/site.vim')
     source $XDG_DATA_HOME/nvim/site.vim
 endif
+

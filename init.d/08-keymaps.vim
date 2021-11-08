@@ -126,3 +126,31 @@ nnoremap <space>d :bp \| bd #<CR>
 
 " For quick one line expressions in command mode
 nnoremap <space>x   :<C-R>=
+
+" =clipboard
+" Copy and paste to system clipboard
+vnoremap <C-c> "+y
+vnoremap <C-x> "+c
+vnoremap <C-v> c<ESC>"+p
+inoremap <C-v> <ESC>"+pa
+
+" =folding
+nnoremap <Space>z za
+vnoremap <Space>z za
+
+" refocus fold under cursor - from Steve Losh
+nnoremap ,z zMzvzz
+
+" toggling following vim-unimpaired
+nnoremap [of :setlocal foldcolumn=3<CR>
+nnoremap ]of :setlocal foldcolumn=0<CR>
+
+" =search
+" Use Perl/Ruby style regex patterns
+" See http://briancarper.net/blog/448/
+nnoremap / /\v
+vnoremap / /\v
+
+" =misc
+map  <C-g> :call indent_guide#toggle()<CR>
+nnoremap <leader>b :Bonly<CR>
