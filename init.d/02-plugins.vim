@@ -1,8 +1,6 @@
 " === Plugins === {{{
 call plug#begin($VIMDATA.'/plugged')
 
-Plug '~/.local/share/nvim/plugged/vim-lib'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'junegunn/fzf.vim'

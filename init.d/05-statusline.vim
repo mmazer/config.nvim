@@ -16,7 +16,6 @@ set statusline+=\ %{status#branch()}
 set statusline+=\ %f
 set statusline+=%(\ %R%M%)      "modified flag
 set statusline+=%{&paste?'\ [paste]':''}
-set statusline+=\ %{status#current_tag()}
 set statusline+=\ %{v:lua.lsp_statusline()}
 set statusline+=%=
 set statusline+=\ %{status#whitespace()}
