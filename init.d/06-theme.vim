@@ -2,7 +2,7 @@ set termguicolors
 if !empty($NVIM_COLORSCHEME)
     exe 'colorscheme '.$NVIM_COLORSCHEME
 else
-    colorscheme gruvbox-material-ext
+    colorscheme monokai_pro
 endif
 
 if has('gui_running')

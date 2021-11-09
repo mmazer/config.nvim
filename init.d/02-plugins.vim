@@ -37,6 +37,7 @@ Plug 'liuchengxu/vista.vim'
 
 " colorschemes
 Plug 'sainnhe/gruvbox-material'
+Plug 'tanvirtin/monokai.nvim'
 
 if has('nvim')
     Plug 'kassio/neoterm'
