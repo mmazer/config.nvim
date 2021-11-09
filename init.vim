@@ -4,7 +4,7 @@ let $VIMCONFIG = stdpath('config')
 let $VIMPLUGINS = $VIMDATA.'/plugged'
 
 let g:loaded_netrw     = 1
-let loaded_netrwPlugin = 1
+let g:loaded_netrwPlugin = 1
 
 " }}}
 "
