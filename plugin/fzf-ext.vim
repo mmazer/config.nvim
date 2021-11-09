@@ -1,3 +1,8 @@
+if exists("g:loaded_fzfExt")
+  finish
+endif
+let g:loaded_fzfExt = 1
+
 let g:fzf_tags_command = 'ctags --extra=+f -R'
 let g:fzf_bookmarks = $XDG_DATA_HOME.'/bookmarks/vim'
 let g:command_snippets = $XDG_DATA_HOME.'/nvim/command_snippets'
@@ -37,10 +42,10 @@ command! ExCommands call fzf#run(fzf#wrap({
             \ }))
 
 
-command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>),
-            \ 1,
-            \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'),
-            \ <bang>0)
+" command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>),
+"             \ 1,
+"             \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'),
+"             \ <bang>0)
 
 function! s:git_branch_sink(line)
   let parts = split(a:line, '\s\+')
