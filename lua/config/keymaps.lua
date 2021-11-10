@@ -22,6 +22,8 @@ nmap( '<C-j>', '<C-w>j')
 nmap( '<C-k>', '<C-w>k')
 nmap( '<C-l>', '<C-w>l')
 
+nmap('<space>j', 'J')
+
 -- move to middle of line
 nmap( 'gm', ":call cursor(0, virtcol('$')/2)<cr>") 
 nmap( 'gh', '^')

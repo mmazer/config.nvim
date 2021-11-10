@@ -51,7 +51,6 @@ nmap('<leader>w',  ':Grepper -tool rg -cword -highlight -noprompt -nojump -switc
 user_command('-nargs=* GrepBufDir :Grepper -dir file -tool rg -highlight -nojump -noprompt -query <args>')
 
 -- telescope
--- use default optiuons
 require('telescope').setup {
   extensions = {
     fzf = {
@@ -63,7 +62,9 @@ require('telescope').setup {
     }
   }
 }
+-- load telescope extensions
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('nvim_commands')
 
 nmap('<space>ff', "<cmd>lua require('telescope.builtin').find_files()<cr>")
 nmap('<space>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>")
@@ -72,6 +73,8 @@ nmap('<space>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>")
 nmap('<space>fk', "<cmd>lua require('telescope.builtin').keymaps()<cr>")
 nmap('<space>fm', "<cmd>lua require('telescope.builtin').man_pages()<cr>")
 nmap('<space>fr', "<cmd>lua require('telescope.builtin').oldfiles()<cr>")
+nmap('<space>fx', "<cmd>lua require('telescope').extensions.nvim_commands.commands()<cr>")
+
 
 -- toggleterm
 require("toggleterm").setup{
