@@ -34,7 +34,7 @@ opt.inccommand = 'split'
 opt.listchars  = { tab = '┆ ' , trail = '·', nbsp = '¬',extends = '›', precedes = '‹'}
 opt.splitbelow = true
 opt.splitright = true
-
+opt.foldenable = false
 opt.ffs= {'unix', 'mac'}
 opt.ff='unix'
 
