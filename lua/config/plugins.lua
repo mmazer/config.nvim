@@ -1,54 +1,54 @@
 local g = vim.g
 
 local disabled_plugins = {
-    'netrw',
-    'netrwPlugin',
-    'zipPlugin',
-    'tarPlugin',
-    'gzipPlugin',
-    'fzfExt'
+  'netrw',
+  'netrwPlugin',
+  'zipPlugin',
+  'tarPlugin',
+  'gzipPlugin',
+  'fzfExt'
 }
 
 for _, plug in ipairs(disabled_plugins) do
-    g['loaded_'..plug] = 1
+  g['loaded_'..plug] = 1
 end
-    
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
 
-    use {"wbthomason/packer.nvim", opt = true}
+  use {"wbthomason/packer.nvim", opt = true}
 
-    use 'tpope/vim-fugitive'
+  use 'tpope/vim-fugitive'
 
-    use 'tpope/vim-unimpaired'
+  use 'tpope/vim-unimpaired'
 
-    use 'tpope/vim-surround'
+  use 'tpope/vim-surround'
 
-    use 'tpope/vim-commentary'
+  use 'tpope/vim-commentary'
 
-    use 'mhinz/vim-grepper'
+  use 'mhinz/vim-grepper'
 
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-    use {
-        'kyazdani42/nvim-tree.lua',
-        config = function() require'nvim-tree'.setup {} end
-    }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    config = function() require'nvim-tree'.setup {} end
+  }
 
-    use 'neovim/nvim-lspconfig'
+  use 'neovim/nvim-lspconfig'
 
-    use 'liuchengxu/vista.vim'
+  use 'liuchengxu/vista.vim'
 
-    use 'tanvirtin/monokai.nvim'
+  use 'tanvirtin/monokai.nvim'
 
-    use 'christoomey/vim-tmux-navigator'
+  use 'christoomey/vim-tmux-navigator'
 
-    use 'akinsho/toggleterm.nvim'
+  use 'akinsho/toggleterm.nvim'
 
 end)

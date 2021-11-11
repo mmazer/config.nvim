@@ -13,18 +13,18 @@ g['nvim_tree_show_icons'] = {
   folder_arrows = 1
 }
 g['nvim_tree_icons'] = {
-    default = '.',
-    symlink = 's',
-    folder =  {
-        arrow_open = "",
-        arrow_closed = "",
-        default = "▶",
-        open = "▼",
-        empty = "▶",
-        empty_open = "▼",
-        symlink = "s",
-        symlink_open = "",
-    }
+  default = '.',
+  symlink = 's',
+  folder =  {
+    arrow_open = "",
+    arrow_closed = "",
+    default = "▶",
+    open = "▼",
+    empty = "▶",
+    empty_open = "▼",
+    symlink = "s",
+    symlink_open = "",
+  }
 }
 nmap('-', ":lua require('nvim-tree').toggle()<cr>", {silent = true})
 nmap('<space>nf', ':NvimTreeFindFile<cr>', {silent = true})
@@ -58,7 +58,7 @@ require('telescope').setup {
       override_generic_sorter = true,  -- override the generic sorter
       override_file_sorter = true,     -- override the file sorter
       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
+      -- the default case_mode is "smart_case"
     }
   }
 }

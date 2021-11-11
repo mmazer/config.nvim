@@ -2,12 +2,12 @@
 local M = {}
 
 M.git_branch = function()
-    local branch = ''
-    if vim.fn['fugitive#head'] then
-        branch = vim.call('fugitive#head', 7)
-        branch = '⎇ '..branch
-    end
-    return branch
+  local branch = ''
+  if vim.fn['fugitive#head'] then
+    branch = vim.call('fugitive#head', 7)
+    branch = '⎇ '..branch
+  end
+  return branch
 end
 
 return M

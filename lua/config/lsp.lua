@@ -42,22 +42,22 @@ end
 
 --- Python Language Server
 nvim_lsp["pylsp"].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-    settings = {
-        pylsp = {
-          configurationSources = { "flake8" }
-        }
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+    pylsp = {
+      configurationSources = { "flake8" }
     }
+  }
 }
 
 nvim_lsp["solargraph"].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-    settings = {
-    }
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+  }
 }

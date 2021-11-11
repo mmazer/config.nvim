@@ -8,7 +8,7 @@ M.map = function(mode, keys, mapping, opts)
   -- get the extra options
   local options = {noremap = true}
   if opts then
-      options = vim.tbl_extend('force', options, opts)
+    options = vim.tbl_extend('force', options, opts)
   end
 
   -- basic support for buffer-scoped keybindings
@@ -23,29 +23,29 @@ M.map = function(mode, keys, mapping, opts)
 end
 
 M.nmap = function(keys, mapping, opts)
-    M.map('n', keys, mapping, opts)
+  M.map('n', keys, mapping, opts)
 end
 
 M.xmap = function(keys, mapping, opts)
-    M.map('x', keys, mapping, opts)
+  M.map('x', keys, mapping, opts)
 end
 
 M.vmap = function(keys, mapping, opts)
-    M.map('v', keys, mapping, opts)
+  M.map('v', keys, mapping, opts)
 end
 
 M.imap = function(keys, mapping, opts)
-    M.map('i', keys, mapping, opts)
+  M.map('i', keys, mapping, opts)
 end
 
 M.user_command = function(command)
-    local cmd = 'command!'..command
-    nvim_command(cmd)
+  local cmd = 'command!'..command
+  nvim_command(cmd)
 end
 
 M.source_vim = function(file)
-    local cmd = 'source '..file
-    vim.cmd(cmd)
+  local cmd = 'source '..file
+  vim.cmd(cmd)
 end
 
 M.assert = function(condition, message, ...)
