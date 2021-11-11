@@ -5,5 +5,6 @@ doc/tags
 *.spl
 *.sug
 autoload/plug.vim
+plugin/packer_compiled.lua
 *.log
 
