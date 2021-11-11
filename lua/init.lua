@@ -1,12 +1,3 @@
--- Resources:
--- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
--- https://github.com/nanotee/nvim-lua-guide
--- https://www.imaginaryrobots.net/2021/04/17/converting-vimrc-to-lua
--- https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua
--- https://github.com/VonHeikemen/dotfiles/tree/master/my-configs/neovim
--- https://github.com/jdhao/nvim-config
--- https://github.com/nvim-lua/kickstart.nvim
-
 local configs = {
     'env',
     'settings',
