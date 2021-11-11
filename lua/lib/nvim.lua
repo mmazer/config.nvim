@@ -48,4 +48,11 @@ M.source_vim = function(file)
     vim.cmd(cmd)
 end
 
+M.assert = function(condition, message, ...)
+  if condition then
+    return
+  end
+  error(message, ...)
+end
+
 return M
