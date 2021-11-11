@@ -4,8 +4,8 @@ local nmap = lib.nmap
 local vmap = lib.vmap
 local imap = lib.imap
 
-nmap( 'Q', ':qa<cr>')
-nmap( 'QQ', ':qa!<cr>')
+nmap( '<space>q', ':qa<cr>')
+nmap( 'Q', ':qa!<cr>')
 nmap( 'q:', '<nop>')
 nmap( '<space><space>', ':')
 
@@ -41,7 +41,7 @@ nmap( 'qp', ':pclose<cr>', {silent = true})
 
 -- buffers
 nmap( 'gob', ':ls<cr>')
-nmap( '<space>b', ':b#<cr>')
+nmap( '<space>B', ':b#<cr>')
 nmap( '<leader>d', ':bd<cr>')
 nmap('<space>d', ':bp | bd #<cr>', {silent=true})
 
