@@ -61,4 +61,6 @@ return require('packer').startup(function()
 
   use 'akinsho/toggleterm.nvim'
 
+  use 'chr4/nginx.vim'
+
 end)
