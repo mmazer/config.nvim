@@ -3,6 +3,7 @@ local lib = require('lib.nvim')
 local nmap = lib.nmap
 local xmap = lib.xmap
 local user_command = lib.user_command
+local u = require'u'
 
 -- nvimtree
 -- These will be moved to setup() eventually by plugin developer
@@ -26,6 +27,7 @@ g['nvim_tree_icons'] = {
     symlink_open = "",
   }
 }
+
 nmap('-', ":lua require('nvim-tree').toggle()<cr>", {silent = true})
 nmap('<space>nf', ':NvimTreeFindFile<cr>', {silent = true})
 
@@ -105,3 +107,34 @@ require("toggleterm").setup{
     }
   }
 }
+
+-- cmp
+local cmp = require'cmp'
+u.opt.completion_enabled = true
+
+cmp.setup({
+  -- https://github.com/hrsh7th/nvim-cmp/issues/261#issuecomment-929790943
+  enabled = function()
+    return u.opt.completion_enabled
+  end,
+  mapping = {
+    ["<Tab>"] = cmp.mapping.select_next_item({behavior=cmp.SelectBehavior.Insert}),
+    ["<S-Tab>"] = cmp.mapping.select_prev_item({behavior=cmp.SelectBehavior.Insert}),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'buffer' },
+      { name = 'path' },
+    })
+})
+
+u.fn.toggle_completion = function()
+  if u.opt.completion_enabled then
+      u.opt.completion_enabled = false
+  else
+      u.opt.completion_enabled = true
+  end
+end
+
+nmap('coa', '<cmd>lua require("u").fn.toggle_completion()<cr>')
