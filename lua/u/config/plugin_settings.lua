@@ -1,9 +1,8 @@
 local g = vim.g
-local lib = require('lib.nvim')
-local nmap = lib.nmap
-local xmap = lib.xmap
-local user_command = lib.user_command
 local u = require'u'
+local nmap = u.nvim.nmap
+local xmap = u.nvim.xmap
+local user_command = u.nvim.user_command
 
 -- nvimtree
 -- These will be moved to setup() eventually by plugin developer

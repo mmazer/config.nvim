@@ -1,8 +1,8 @@
-local lib = require('lib.nvim')
-local map = lib.map
-local nmap = lib.nmap
-local vmap = lib.vmap
-local imap = lib.imap
+local u = require'u'
+local map = u.nvim.map
+local nmap = u.nvim.nmap
+local vmap = u.nvim.vmap
+local imap = u.nvim.imap
 
 nmap( '<space>q', ':qa<cr>')
 nmap( 'Q', ':qa!<cr>')

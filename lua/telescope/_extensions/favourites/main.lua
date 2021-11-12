@@ -4,8 +4,7 @@ local config = require("telescope.config").values
 local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
 local entry_display = require "telescope.pickers.entry_display"
-local lib = require('lib.nvim')
-local file = require('lib.file')
+local u = require'u'
 
 local M = {}
 
@@ -41,7 +40,7 @@ end
 M.setup = function(ext_config, config)
   ext_config = ext_config or {}
   favourite_files = ext_config.favourite_files or default_favourite_files()
-  lib.assert(file.is_readable(favourite_files), "favourites file not found or not readable: %s", favourite_files)
+  u.nvim.assert(u.file.is_readable(favourite_files), "favourites file not found or not readable: %s", favourite_files)
 end
 
 M.files = function(opts)
