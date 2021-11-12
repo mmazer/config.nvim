@@ -24,10 +24,14 @@ local function assert_file_readable(path)
   end
 end
 
+local function is_comment(line)
+  return string.find(line, "^#") ~= nil
+end
+
 local function load_commands(path)
   local commands = {}
   for line in io.lines(path) do
-    if line ~= nil and line ~= '' then
+    if line ~= nil and line ~= '' and not is_comment(line) then
       table.insert(commands, line)
     end
   end
