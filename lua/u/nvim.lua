@@ -38,6 +38,10 @@ M.imap = function(keys, mapping, opts)
   M.map('i', keys, mapping, opts)
 end
 
+M.tmap = function(keys, mapping, opts)
+  M.map('t', keys, mapping, opts)
+end
+
 M.user_command = function(command)
   local cmd = 'command!'..command
   nvim_command(cmd)

@@ -3,6 +3,7 @@ local map = u.nvim.map
 local nmap = u.nvim.nmap
 local vmap = u.nvim.vmap
 local imap = u.nvim.imap
+local tmap = u.nvim.tmap
 
 nmap( '<space>q', ':qa<cr>')
 nmap( 'Q', ':qa!<cr>')
@@ -69,3 +70,6 @@ vmap('<C-c>', '"+y')
 vmap('C-x>', '"+c')
 vmap('<c-v>', 'c<esc>"+pa')
 imap('<c-v>', '<esc>"+pa')
+
+-- terminal
+tmap('<m-[>', '<c-\\><c-n>')
