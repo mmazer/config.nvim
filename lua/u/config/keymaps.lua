@@ -62,3 +62,10 @@ nmap('<space>;',  ':call vlib#preserve("s/$/;/")<CR>', {silent = true})
 -- end line with comma
 imap(',]', '<C-\\><C-O>:call vlib#preserve("s/$/,/")<cr>', {silent = true})
 nmap('<space>,',  ':call vlib#preserve("s/$/,/")<CR>', {silent = true})
+
+-- clipboard
+-- copy and paste to system clipboard
+vmap('<C-c>', '"+y')
+vmap('C-x>', '"+c')
+vmap('<c-v>', 'c<esc>"+pa')
+imap('<c-v>', '<esc>"+pa')
