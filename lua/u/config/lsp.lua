@@ -1,4 +1,4 @@
-local nvim_lsp = require'lspconfig'
+local nvim_lsp = require 'lspconfig'
 
 function PrintLspDiagnostics(opts, bufnr, line_nr, client_id)
   local warnings = vim.lsp.diagnostic.get_count(0, "Warning")

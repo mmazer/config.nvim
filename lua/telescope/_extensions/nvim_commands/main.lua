@@ -1,10 +1,10 @@
-local finders = require "telescope.finders"
-local pickers = require "telescope.pickers"
-local config = require("telescope.config").values
-local actions = require "telescope.actions"
-local action_state = require "telescope.actions.state"
-local entry_display = require "telescope.pickers.entry_display"
-local file = require('u.file')
+local finders = require 'telescope.finders'
+local pickers = require 'telescope.pickers'
+local config = require('telescope.config').values
+local actions = require 'telescope.actions'
+local action_state = require 'telescope.actions.state'
+local entry_display = require 'telescope.pickers.entry_display'
+local file = require 'u.file'
 
 local M = {}
 

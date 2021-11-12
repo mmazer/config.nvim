@@ -1,4 +1,4 @@
-local u = require'u'
+local u = require 'u'
 local map = u.nvim.map
 local nmap = u.nvim.nmap
 local vmap = u.nvim.vmap

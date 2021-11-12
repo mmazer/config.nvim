@@ -16,7 +16,7 @@ end
 
 local site_config = vim.env.VIMDATA..'/site/lua/site.lua'
 if vim.fn.filereadable(site_config) then
-  require('site')
+  require 'site'
 end
 
 

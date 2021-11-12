@@ -1,5 +1,5 @@
 local g = vim.g
-local u = require'u'
+local u = require 'u'
 local nmap = u.nvim.nmap
 local xmap = u.nvim.xmap
 local user_command = u.nvim.user_command
