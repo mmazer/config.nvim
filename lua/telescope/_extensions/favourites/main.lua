@@ -64,6 +64,7 @@ M.files = function(opts)
       end
     },
     sorter = config.generic_sorter(opts),
+    previewer = config.file_previewer(opts),
     attach_mappings = function(prompt_bufnr, map)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
