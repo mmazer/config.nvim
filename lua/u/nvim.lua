@@ -52,11 +52,12 @@ M.source_vim = function(file)
   vim.cmd(cmd)
 end
 
-M.assert = function(condition, message, ...)
+M.assert = function(condition, ...)
+  local args = {...}
   if condition then
     return
   end
-  error(message, ...)
+  error(string.format(unpack(args)))
 end
 
 return M

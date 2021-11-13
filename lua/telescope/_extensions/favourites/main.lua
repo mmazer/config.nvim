@@ -28,6 +28,9 @@ end
 
 local function get_favourite_files(path)
   local favourites = {}
+  local is_readable = u.file.is_readable(favourite_files)
+
+  u.nvim.assert(is_readable, "favourites file not found or not readable: %s", favourite_files)
   for line in io.lines(path) do
     if line ~= nil and line ~= '' then
       fav = parse_favourite(line)
@@ -40,7 +43,6 @@ end
 M.setup = function(ext_config, config)
   ext_config = ext_config or {}
   favourite_files = ext_config.favourite_files or default_favourite_files()
-  u.nvim.assert(u.file.is_readable(favourite_files), "favourites file not found or not readable: %s", favourite_files)
 end
 
 M.files = function(opts)
