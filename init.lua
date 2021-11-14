@@ -15,7 +15,7 @@ for _, cfg in ipairs(configs) do
 end
 
 local site_config = vim.env.VIMDATA..'/site/lua/site.lua'
-if vim.fn.filereadable(site_config) then
+if vim.fn.filereadable(site_config) ~= 0 then
   require 'site'
 end
 
