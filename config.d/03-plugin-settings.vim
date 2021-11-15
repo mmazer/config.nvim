@@ -104,3 +104,4 @@ let g:vimwiki_key_mappings = { 'table_mappings': 0, }
 
 " =vista
 nnoremap <silent> cot :Vista<CR>
+

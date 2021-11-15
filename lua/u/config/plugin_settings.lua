@@ -125,7 +125,14 @@ cmp.setup({
       { name = 'nvim_lsp' },
       { name = 'buffer' },
       { name = 'path' },
-    })
+      { name = 'ultisnips' },
+  }),
+  snippet = {
+    -- REQUIRED - you must specify a snippet engine
+    expand = function(args)
+      vim.fn["UltiSnips#Anon"](args.body)
+    end,
+  },
 })
 
 u.fn.toggle_completion = function()

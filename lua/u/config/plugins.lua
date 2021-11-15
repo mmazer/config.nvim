@@ -37,6 +37,19 @@ return require('packer').startup(function()
 
   use 'hrsh7th/nvim-cmp'
 
+  -- use 'hrsh7th/vim-vsnip'
+
+  -- use 'hrsh7th/cmp-vsnip'
+
+  use {
+    "SirVer/ultisnips",
+    config = function()
+      vim.g.UltiSnipsRemoveSelectModeMappings = 0
+    end,
+  }
+
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
+
   use 'mhinz/vim-grepper'
 
   use {
@@ -62,5 +75,6 @@ return require('packer').startup(function()
   use 'akinsho/toggleterm.nvim'
 
   use 'chr4/nginx.vim'
+
 
 end)
