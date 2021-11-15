@@ -137,3 +137,6 @@ u.fn.toggle_completion = function()
 end
 
 nmap('coa', '<cmd>lua require("u").fn.toggle_completion()<cr>')
+
+-- zettelkasten
+vim.g.zettelkasten = vim.env.XDG_DATA_HOME.."/zettelkasten/"
