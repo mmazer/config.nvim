@@ -60,4 +60,8 @@ M.assert = function(condition, ...)
   error(string.format(unpack(args)))
 end
 
+M.iab = function(abbreviation, text)
+  vim.cmd(string.format("iab %s %s", abbreviation, text))
+end
+
 return M

@@ -7,7 +7,8 @@ local configs = {
   'keymaps',
   'commands',
   'statusline',
-  'colors'
+  'colors',
+  'abbreviations'
 }
 
 for _, cfg in ipairs(configs) do
