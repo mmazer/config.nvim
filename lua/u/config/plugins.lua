@@ -30,7 +30,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
 
   use 'hrsh7th/cmp-buffer'
-  
+
   use 'hrsh7th/cmp-path'
 
   use 'hrsh7th/cmp-cmdline'
@@ -55,7 +55,7 @@ return require('packer').startup(function()
 
   use 'liuchengxu/vista.vim'
 
-  use 'tanvirtin/monokai.nvim'
+  use 'rose-pine/neovim'
 
   use 'christoomey/vim-tmux-navigator'
 
