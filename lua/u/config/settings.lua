@@ -38,5 +38,15 @@ opt.foldenable = false
 opt.ffs= {'unix', 'mac'}
 opt.ff='unix'
 
+-- search
+opt.incsearch = true
+opt.hlsearch = true
+opt.ignorecase = true
+opt.smartcase = true  -- case sensitive if search term contains upppecase letter
+
+if vim.fn.executable("rg") == 1 then
+  opt.grepprg = "rg --vimgrep --smart-case"
+ end
+
 -- completion
 opt.completeopt = { 'longest', 'menuone','preview' }
