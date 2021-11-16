@@ -1,1 +1,4 @@
-command! -nargs=1 NewZettel :execute ":e" g:zettelkasten . strftime("%Y%m%d%H%M") . "-<args>.md"
+if !exists('g:zettelkasten_dir')
+  let g:zettel_dir=$VIMDATA."/zettelkasten/"
+endif
+command! -nargs=1 NewZettel :execute ":e" g:zettel_dir . strftime("%Y%m%d%H%M") . "-<args>.md"
