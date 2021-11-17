@@ -1,2 +1,2 @@
-command! -nargs=? Calm :call calendar#month(<f-args>)
-command! -nargs=? Caly :call calendar#year(<f-args>)
+command! -nargs=? Calm :silent call calendar#month(<f-args>)
+command! -nargs=? Caly :silent call calendar#year(<f-args>)
