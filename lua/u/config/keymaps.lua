@@ -72,3 +72,10 @@ imap('<c-v>', '<esc>"+pa')
 
 -- terminal
 tmap('<m-[>', '<c-\\><c-n>')
+
+-- folding
+nmap('<space>z', 'za')
+vmap('<space>z', 'za')
+
+-- refocus fold under cursor - from Steve Losh
+nmap(',z', 'zMzvzz')
