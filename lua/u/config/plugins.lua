@@ -76,5 +76,10 @@ return require('packer').startup(function()
 
   use 'chr4/nginx.vim'
 
+  use {
+    'psf/black',
+     ft = { 'python' }
+   }
+
 
 end)
