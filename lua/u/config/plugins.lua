@@ -66,7 +66,10 @@ return require('packer').startup(function()
 
   use 'neovim/nvim-lspconfig'
 
-  use 'liuchengxu/vista.vim'
+  use  {
+    'liuchengxu/vista.vim',
+    cmd = { 'Vista' }
+  }
 
   use 'rose-pine/neovim'
 
