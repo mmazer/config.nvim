@@ -79,7 +79,13 @@ return require('packer').startup(function()
   use {
     'psf/black',
      ft = { 'python' }
-   }
+  }
+
+  use {
+    'neomake/neomake',
+    cmd = { 'Neomake' }
+  }
+
 
 
 end)
