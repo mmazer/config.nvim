@@ -5,9 +5,8 @@ local vmap = u.nvim.vmap
 local imap = u.nvim.imap
 local tmap = u.nvim.tmap
 
-nmap( '<space>q', ':qa<cr>')
-nmap( 'Q', ':qa!<cr>')
-nmap( 'q:', '<nop>')
+nmap( '<leader>q', ':qa<cr>')
+nmap( 'Q!', ':qa!<cr>')
 nmap( '<space><space>', ':')
 
 map('i', 'kj', '<esc>')
@@ -26,7 +25,7 @@ nmap( '<C-l>', '<C-w>l')
 nmap('<space>j', 'J')
 
 -- move to middle of line
-nmap( 'gm', ":call cursor(0, virtcol('$')/2)<cr>") 
+nmap( 'gm', ":call cursor(0, virtcol('$')/2)<cr>")
 nmap( 'gh', '^')
 nmap( 'gl', '$')
 
