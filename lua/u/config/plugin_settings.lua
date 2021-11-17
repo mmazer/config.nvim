@@ -31,7 +31,7 @@ nmap('-', ":lua require('nvim-tree').toggle()<cr>", {silent = true})
 nmap('<space>nf', ':NvimTreeFindFile<cr>', {silent = true})
 
 -- vista
-nmap('<space>v',  ':Vista!!<CR>', {silent = true})
+nmap('cov',  ':Vista!!<CR>', {silent = true})
 
 -- fugitive
 nmap('<space>gs', ':Git<CR>')
