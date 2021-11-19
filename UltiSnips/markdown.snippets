@@ -1,3 +1,6 @@
+# markdown snippets
+
+# Markdown front matter
 snippet ffm
 ---
 title: ${1}
@@ -10,6 +13,23 @@ tags: [${2}]
 $0
 endsnippet
 
+# Zettel front matter
+snippet zfm
+---
+title: ${1}
+id: ${2}
+created: `!v datetime#timestamp()`
+modified: `!v datetime#timestamp()`
+tags: ${3}
+---
+
+$0
+endsnippet
+
 snippet link
 [${1:title}](${2:link})
+endsnippet
+
+snippet ref
+[${1:anchar}]: ${2:link})
 endsnippet
