@@ -79,3 +79,8 @@ vmap('<space>z', 'za')
 
 -- refocus fold under cursor - from Steve Losh
 nmap(',z', 'zMzvzz')
+
+
+-- source vimscript visual selection or line - from Steve Losh
+vmap('X', "y:execute @@<cr>:echo 'Sourced selection.'<cr>")
+nmap('X', "^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>")
