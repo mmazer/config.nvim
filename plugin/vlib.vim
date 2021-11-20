@@ -5,7 +5,7 @@ endif
 let g:loaded_vlib = 1
 
 if !exists("g:root_dir_markers")
-    let g:root_dir_markers = ['.git/', '.hg/', '.svn/', '.top', '.project']
+    let g:root_dir_markers = ['.git/', '.top', '.project', '.nvimroot']
 endif
 
 command! Syntax    :echo vlib#syntax()
