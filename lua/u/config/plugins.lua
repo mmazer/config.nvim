@@ -89,6 +89,13 @@ return require('packer').startup(function()
     cmd = { 'Neomake' }
   }
 
+  use {
+    'junegunn/goyo.vim',
+    cmd = { 'Goyo' }
+  }
 
-
+  use {
+    'junegunn/limelight.vim',
+    cmd = { 'Limelight' }
+  }
 end)
