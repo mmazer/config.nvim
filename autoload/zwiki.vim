@@ -1,6 +1,7 @@
 if exists("g:loaded_zwiki")
   finish
 endif
+let g:loaded_zwiki = 1
 
 if !exists("g:zwiki_id_regex")
   let g:zwiki_id_regex = "\\d\\{14}"
