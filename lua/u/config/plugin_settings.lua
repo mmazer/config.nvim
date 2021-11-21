@@ -145,3 +145,7 @@ u.fn.toggle_completion = function()
 end
 
 nmap('coa', '<cmd>lua require("u").fn.toggle_completion()<cr>')
+
+-- switch between rose-pine variables: (base|moon|dawn)
+user_command("-nargs=1 RosePine :lua require('rose-pine.functions').select_variant(<f-args>)<cr>")
+
