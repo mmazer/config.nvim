@@ -17,7 +17,7 @@ endsnippet
 snippet zfm
 ---
 title: ${1}
-id: ${2}
+id: `!v zwiki#parse_id(expand('%:t'))`
 created: `!v datetime#timestamp()`
 modified: `!v datetime#timestamp()`
 tags: ${3}
