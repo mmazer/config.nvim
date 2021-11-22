@@ -22,6 +22,12 @@ snippet todo
   created: `!v datetime#short_date()`
 endsnippet
 
+snippet today
+`!v datetime#short_date()`:
+  focus: ${1}
+  todo: ${2}
+  review:
+endsnippet
 snippet month
 - month: ${1}
   cal: |
