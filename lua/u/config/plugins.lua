@@ -98,4 +98,6 @@ return require('packer').startup(function()
     'junegunn/limelight.vim',
     cmd = { 'Limelight' }
   }
+
+  use 'lambdalisue/suda.vim'
 end)
