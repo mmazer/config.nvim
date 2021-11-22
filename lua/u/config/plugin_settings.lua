@@ -142,6 +142,7 @@ u.fn.toggle_completion = function()
   else
       u.opt.completion_enabled = true
   end
+   print(string.format('completion enabled=%s', u.opt.completion_enabled))
 end
 
 nmap('coa', '<cmd>lua require("u").fn.toggle_completion()<cr>')
