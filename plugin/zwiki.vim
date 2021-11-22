@@ -12,6 +12,7 @@ if !exists('g:zwiki_inbox')
 endif
 
 nnoremap <leader>zz :call zwiki#open_zwiki_index()<cr>
+nnoremap gz :call zwiki#edit_link(expand('<cword>'))<cr>
 
 command! -nargs=1 ZettelIn :execute ":e" g:zwiki_inbox . zwiki#uid() . "-<args>.md"
 command! -nargs=1 ZettelNew :execute ":e" g:zwiki_zettel_dir . zwiki#uid() . "-<args>.md"
