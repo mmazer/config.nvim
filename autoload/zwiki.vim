@@ -49,3 +49,11 @@ function zwiki#preview_link(link)
   execute ":vertical rightb pedit ".file
 endfunction
 
+function zwiki#make_link(link, text)
+  let mklink = "[[" . a:link
+  if !empty(a:text)
+    let mklink = mklink . "|" . a:text
+  endif
+  return mklink . "]]"
+endfunction
+
