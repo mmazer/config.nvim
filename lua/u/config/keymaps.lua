@@ -87,3 +87,6 @@ nmap('X', "^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>")
 
 map("", '<C-g>', ':call indent_guide#toggle()<cr>')
 nmap('<leader>b', ':Bonly<cr>')
+
+-- toggle relativenumber
+nmap('<leader>#', ':set relativenumber! number<cr>')
