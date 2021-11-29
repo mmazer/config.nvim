@@ -2,6 +2,10 @@ setlocal sw=2
 setlocal sts=2
 setlocal suffixesadd=.txt,.md
 
+if executable("glow")
+  command! Glow :vsplit term://glow %
+endif
+
 if executable("remarkable")
     command! Marked :call vlib#start_async("remarkable", expand("%"))
 elseif executable("retext")
