@@ -24,6 +24,7 @@ command! -nargs=? Zlink :let @z=zettel#make_link(zettel#parse_id(expand("%:t")),
 augroup zettel
   au!
   autocmd FileType markdown nnoremap <return> :call zettel#edit_link(expand('<cword>'))<cr>
+  autocmd FileType markdown nnoremap <leader>zf <cmd>lua require("telescope").extensions.zettel.find_zettels()<cr>
   autocmd FileType markdown nnoremap <leader>zp :call zettel#preview_link(expand('<cword>'))<cr>
   autocmd FileType markdown inoremap <silent> <leader>zi <C-R>=zettel#parse_id(expand("%:t"))<cr>
   autocmd FileType markdown nnoremap <silent> [z :call search("[\\d\\{14}")<cr>
