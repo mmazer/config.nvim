@@ -23,7 +23,7 @@ endsnippet
 snippet zfm "Zettel front matter"
 ---
 title: ${1}
-id: ${2:`!v zwiki#parse_id(expand('%:t'))`}
+id: ${2:`!v zettel#parse_id(expand('%:t'))`}
 created: `!v datetime#timestamp()`
 modified: `!v datetime#timestamp()`
 tags: ${3}
@@ -38,7 +38,7 @@ snippet zli "zettel link"
 [[${1}]]
 endsnippet
 
-snippet zlt "zettel link with alternate title"
-[[${1:id}|${2:title}]]
+snippet zlt "zettel link with text"
+[[${1:id}]] ${2}
 endsnippet
 
