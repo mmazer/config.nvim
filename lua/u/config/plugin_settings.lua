@@ -67,6 +67,7 @@ require('telescope').setup {
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('nvim_commands')
 require('telescope').load_extension('favourites')
+require('telescope').load_extension('zettel')
 
 nmap('<space>f', "<cmd>lua require('telescope.builtin').find_files()<cr>")
 nmap('<space>g', "<cmd>lua require('telescope.builtin').live_grep()<cr>")
