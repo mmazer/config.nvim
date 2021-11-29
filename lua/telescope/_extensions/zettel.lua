@@ -8,6 +8,6 @@ local zettel = require 'telescope._extensions.zettel.main'
 
 return telescope.register_extension{
   setup = zettel.setup,
-  exports = { find_zettels = zettel.find_zettels }
+  exports = { paste_link = zettel.paste_link }
 }
 

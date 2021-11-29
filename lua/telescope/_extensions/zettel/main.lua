@@ -1,5 +1,5 @@
-local actions = require 'telescope.actions'
-local actions_state = require 'telescope.actions.state'
+local actions = require "telescope.actions"
+local actions_state = require "telescope.actions.state"
 
 local M = {}
 local zettelkasten
@@ -13,7 +13,7 @@ local function get_filename(entry)
   return entry.filename:match("[^/]*.$")
 end
 
-local function normalize_text(text)
+local function normalize_name(text)
   local str = text:gsub("-", " ")
   str = str:gsub("%a", string.upper, 1)
   return str
@@ -23,10 +23,11 @@ local function vim_paste(text)
   vim.api.nvim_paste(text, true, -1)
 end
 
-local function paste_link(entry)
+local function paste_link(entry, opts)
   local filename = get_filename(entry)
-  local id, title = filename:match("^(%d+)-(.+).md$")
-  local link = string.format("[[%s]] %s", id, normalize_text(title))
+  local id, name = filename:match("^(%d+)-(.+).md$")
+  local link = string.format("[[%s]] %s", id, normalize_name(name))
+
   vim_paste(link)
 end
 
@@ -35,7 +36,7 @@ M.setup = function(ext_config, config)
   zettelkasten = ext_config.zettelkasten or default_zettelkasten()
 end
 
-M.find_zettels = function(opts)
+M.paste_link = function(opts)
   if not zettelkasten then
     M.setup()
   end
