@@ -111,12 +111,12 @@ require("toggleterm").setup{
 
 -- cmp
 local cmp = require'cmp'
-u.opt.completion_enabled = true
+vim.g.completion_enabled = true
 
 cmp.setup({
   -- https://github.com/hrsh7th/nvim-cmp/issues/261#issuecomment-929790943
   enabled = function()
-    return u.opt.completion_enabled
+    return vim.g.completion_enabled
   end,
   mapping = {
     ["<Tab>"] = cmp.mapping.select_next_item({behavior=cmp.SelectBehavior.Insert}),
@@ -138,12 +138,12 @@ cmp.setup({
 })
 
 u.fn.toggle_completion = function()
-  if u.opt.completion_enabled then
-      u.opt.completion_enabled = false
+  if vim.g.completion_enabled then
+      vim.g.completion_enabled = false
   else
-      u.opt.completion_enabled = true
-  end
-   print(string.format('completion enabled=%s', u.opt.completion_enabled))
+      vim.g.completion_enabled = true
+   end
+   print(string.format('completion enabled=%s', vim.g.completion_enabled))
 end
 
 nmap('coa', '<cmd>lua require("u").fn.toggle_completion()<cr>')
