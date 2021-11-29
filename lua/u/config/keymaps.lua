@@ -43,6 +43,7 @@ nmap( 'qp', ':pclose<cr>', {silent = true})
 nmap( 'gob', ':ls<cr>')
 nmap( '<space>B', ':b#<cr>')
 nmap( '<leader>d', ':bd<cr>')
+nmap('<leader>D',  ':bd!<cr>')
 nmap('<space>d', ':bp | bd #<cr>', {silent=true})
 
 -- search
