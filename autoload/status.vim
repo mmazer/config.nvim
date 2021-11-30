@@ -4,10 +4,6 @@ endif
 
 let g:autoloaded_status = 1
 
-if !exists("g:status_show_current_tag")
-    let g:status_show_current_tag = 0
-endif
-
 " Adapted from https://github.com/maciakl/vim-neatstatus
 function! status#mode()
     "redraw

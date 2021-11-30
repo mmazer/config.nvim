@@ -26,8 +26,6 @@ set statusline+=\ %{&expandtab?'spaces':'tabs'}
 set statusline+=\ %5.l,%-3.c\    "cursor line/total lines:column
 set statusline+=\ #%n
 
-command! ToggleCurrentTag :call status#toggle_current_tag()
-
 "recalculate the trailing whitespace warning when idle, and after saving
 augroup statusline_whitespace
     autocmd CursorHold,BufWritePost * unlet! b:statusline_whitespace
