@@ -25,12 +25,13 @@ endfunction
 
 function! datetime#update_modified_time()
     let lines = line('$')
-    if lines <  5
-        return
+    if lines >  5
+      let lines = 5
     endif
 
     try
-        :1,5s/\<\%([Mm]odified\|[Ll]ast-modified\)\>\:\s\zs.*/\=datetime#timestamp()/ge
+      execute ':1,'..lines..
+          \ 's/\<\%([Mm]odified\|[Ll]ast-modified\)\>\:\s\zs.*/\=datetime#timestamp()/g'
     catch
     endtry
 endfunction
