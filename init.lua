@@ -13,7 +13,7 @@ local configs = {
 }
 
 for _, cfg in ipairs(configs) do
-  require('u.config.'..cfg)   
+  require('u.config.'..cfg)
 end
 
 local site_config = vim.env.VIMDATA..'/site/lua/site.lua'
