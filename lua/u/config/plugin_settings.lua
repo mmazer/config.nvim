@@ -79,7 +79,7 @@ nmap('<space>m', "<cmd>lua require('telescope.builtin').man_pages()<cr>")
 nmap('<space>q', "<cmd>lua require('telescope.builtin').quickfix()<cr>")
 nmap('<space>r', "<cmd>lua require('telescope.builtin').oldfiles()<cr>")
 nmap('<space>v', "<cmd>lua require('telescope').extensions.favourites.favourite_files()<cr>")
-nmap('<space>x', "<cmd>lua require('telescope').extensions.nvim_commands.commands()<cr>")
+nmap('<space>c', "<cmd>lua require('telescope').extensions.nvim_commands.commands()<cr>")
 
 
 -- toggleterm
