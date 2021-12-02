@@ -64,6 +64,10 @@ nmap('<space>;',  ':call vlib#preserve("s/$/;/")<CR>', {silent = true})
 imap(',]', '<C-\\><C-O>:call vlib#preserve("s/$/,/")<cr>', {silent = true})
 nmap('<space>,',  ':call vlib#preserve("s/$/,/")<CR>', {silent = true})
 
+-- reselect visual block after indent
+vmap("<", "<gv")
+vmap(">", ">gv")
+
 -- clipboard
 -- copy and paste to system clipboard
 vmap('<C-c>', '"+y')
