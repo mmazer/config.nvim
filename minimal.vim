@@ -8,7 +8,8 @@ set laststatus=2
 
 filetype plugin indent on
 syntax on
-colorscheme gruvbox-material-ext
+set background="dark"
+colorscheme rose-pine
 
 " basic mappings
 nnoremap <silent> Q :qa!<CR>
