@@ -20,6 +20,7 @@ command! -nargs=+ ZNew call zettel#new(g:zettelkasten_notes, <f-args>)
 command! ZRefs execute ":GrepperRg \"\\["..expand("<cword>").. "\""
 command! ZBacklinks execute ":GrepperRg \"\\["..zettel#parse_id(expand("%:t")).."\""
 command! -nargs=? Zlink :let @z=zettel#make_link(zettel#parse_id(expand("%:t")), <f-args>)
+command! -nargs=+ Ztags call zettel#find_tags(<f-args>)
 
 augroup zettel
   au!

@@ -68,3 +68,7 @@ function zettel#make_link(link,...)
   return lnk
 endfunction
 
+function zettel#find_tags(...)
+    let search_re = "\'tags:\\s+.*\\#("..join(a:000, "|")..")\'"
+    execute ":GrepperRg "..search_re
+endfunction
