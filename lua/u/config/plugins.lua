@@ -21,6 +21,8 @@ return require('packer').startup(function()
 
   use 'tpope/vim-fugitive'
 
+  use 'junegunn/gv.vim'
+
   use 'tpope/vim-unimpaired'
 
   use 'tpope/vim-surround'
@@ -100,4 +102,9 @@ return require('packer').startup(function()
   }
 
   use 'lambdalisue/suda.vim'
+
+  use 'fatih/vim-go'
+
+  use 'hashivim/vim-terraform'
+
 end)
