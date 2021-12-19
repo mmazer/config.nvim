@@ -15,6 +15,7 @@ colorscheme rose-pine
 nnoremap <silent> Q :qa!<CR>
 nnoremap <space>w :w<CR>
 nnoremap <space>W :w!<CR>
+inoremap kj <esc>
 
 set incsearch
 set hlsearch
