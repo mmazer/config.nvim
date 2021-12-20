@@ -61,11 +61,6 @@ return require('packer').startup(function()
 
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-  use {
-    'kyazdani42/nvim-tree.lua',
-    config = function() require'nvim-tree'.setup {} end
-  }
-
   use 'neovim/nvim-lspconfig'
 
   use  {
@@ -106,5 +101,10 @@ return require('packer').startup(function()
   use 'fatih/vim-go'
 
   use 'hashivim/vim-terraform'
+
+  use {
+    'lambdalisue/fern.vim',
+    cmd = { 'Fern' }
+  }
 
 end)

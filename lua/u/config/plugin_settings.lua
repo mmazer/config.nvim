@@ -4,31 +4,9 @@ local nmap = u.nvim.nmap
 local xmap = u.nvim.xmap
 local user_command = u.nvim.user_command
 
--- nvimtree
--- These will be moved to setup() eventually by plugin developer
-g['nvim_tree_show_icons'] = {
-  git = 0,
-  folders = 1,
-  files = 0,
-  folder_arrows = 1
-}
-g['nvim_tree_icons'] = {
-  default = '.',
-  symlink = 's',
-  folder =  {
-    arrow_open = "",
-    arrow_closed = "",
-    default = "▶",
-    open = "▼",
-    empty = "▶",
-    empty_open = "▼",
-    symlink = "s",
-    symlink_open = "",
-  }
-}
-
-nmap('-', ":lua require('nvim-tree').toggle()<cr>", {silent = true})
-nmap('<space>nf', ':NvimTreeFindFile<cr>', {silent = true})
+-- fern
+nmap('-', ":Fern .<cr>", {silent = true})
+nmap('<space>nf', ':Fern . -reveal=%<cr>', {silent = true})
 
 -- vista
 nmap('cov',  ':Vista!!<CR>', {silent = true})
