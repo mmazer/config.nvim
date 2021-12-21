@@ -64,6 +64,15 @@ nvim_lsp["solargraph"].setup {
   }
 }
 
-nvim_lsp["gopls"].setup {
-  on_attach = on_attach
-}
+-- nvim_lsp["gopls"].setup {
+--   on_attach = on_attach,
+--   cmd = {"gopls", "serve"},
+--     settings = {
+--       gopls = {
+--         analyses = {
+--           unusedparams = true,
+--         },
+--         staticcheck = true,
+--       },
+--     },
+-- }
