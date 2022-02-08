@@ -10,5 +10,7 @@
 
 [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 
+[Testing Neovim plugins with Plenary.nvim](https://jose-elias-alvarez.medium.com/testing-neovim-plugins-with-plenary-nvim-2464fb058448)
+
 
 
