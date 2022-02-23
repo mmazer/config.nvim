@@ -8,12 +8,6 @@ augroup END
 ]]
 
 vim.cmd [[
-augroup StripWhitespace
-    autocmd!  BufWritePre * :call vlib#strip()
-augroup END
-]]
-
-vim.cmd [[
 augroup ModifiedTime
   autocmd BufWritePre * call vlib#preserve_wrapper(function('datetime#update_modified_time'))
 augroup END

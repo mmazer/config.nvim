@@ -3,3 +3,5 @@ setlocal sts=2
 setlocal fdm=indent
 setlocal iskeyword+=-
 setlocal suffixesadd=.ts
+
+autocmd!  BufWritePre * :call vlib#strip()

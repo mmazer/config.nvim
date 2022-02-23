@@ -4,3 +4,6 @@ setlocal fdm=indent
 "setlocal omnifunc=javascriptcomplete#CompleteJS
 setlocal iskeyword+=-
 setlocal suffixesadd=.js,.json
+
+autocmd!  BufWritePre * :call vlib#strip()
+
