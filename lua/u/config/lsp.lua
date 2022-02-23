@@ -1,4 +1,6 @@
 local nvim_lsp = require 'lspconfig'
+local u = require 'u'
+local nmap = u.nvim.nmap
 
 function PrintLspDiagnostics(opts, bufnr, line_nr, client_id)
   local WARN = vim.diagnostic.severity.WARN
@@ -10,7 +12,7 @@ function PrintLspDiagnostics(opts, bufnr, line_nr, client_id)
   vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
 end
 
--- general lspc config
+-- general config
 vim.diagnostic.config({
   virtual_text = false,
   underline = true,
@@ -18,9 +20,7 @@ vim.diagnostic.config({
   update_in_insert = false
 })
 
--- This setting is global and should be set only once
-vim.o.updatetime = 250
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float()]]
+nmap("<space>d", "<cmd>lua vim.diagnostic.open_float()<cr>")
 
 local on_attach = function(client, bufnr)
 

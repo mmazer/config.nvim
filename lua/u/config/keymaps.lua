@@ -44,7 +44,6 @@ nmap( 'gob', ':ls<cr>')
 nmap( '<space>B', ':b#<cr>')
 nmap( '<leader>d', ':bd<cr>')
 nmap('<leader>D',  ':bd!<cr>')
-nmap('<space>d', ':bp | bd #<cr>', {silent=true})
 
 -- search
 -- Use Perl/Ruby style regex patterns
