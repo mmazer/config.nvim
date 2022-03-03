@@ -19,6 +19,10 @@ nmap('<space>gd', ':Gdiffsplit<CR>')
 nmap('<space>gr', ':Gread<CR>')
 nmap('<space>gw', ':Gwrite<CR>')
 
+vim.cmd [[
+  autocmd User FugitiveTree,FugitiveBlob nnoremap <buffer> <bs> :edit %:h<cr>
+]]
+
 -- grepper
 g['grepper'] = { tools = { 'rg', 'git' }}
 
