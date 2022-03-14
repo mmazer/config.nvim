@@ -1,14 +1,12 @@
 local nvim_lsp = require 'lspconfig'
 local u = require 'u'
 local nmap = u.nvim.nmap
+local diagnostic_count = u.lsp.diagnostic_count
 
 function PrintLspDiagnostics(opts, bufnr, line_nr, client_id)
-  local WARN = vim.diagnostic.severity.WARN
-  local ERROR = vim.diagnostic.severity.ERROR
-  local warnings = vim.diagnostic.get(0, {severity=WARN})
-  local errors = vim.diagnostic.get(0, {severity=ERROR})
+  local warn, err = diagnostic_count()
   local diagnostic_message = ""
-  diagnostic_message = diagnostic_message .. string.format("Warning(s): %d Error(s): %d", warnings, errors)
+  diagnostic_message = diagnostic_message .. string.format("Warning(s): %d Error(s): %d", warn, err)
   vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
 end
 
@@ -76,3 +74,9 @@ nvim_lsp["solargraph"].setup {
 --       },
 --     },
 -- }
+
+-- bash-language-server
+nvim_lsp['bashls'].setup {
+  on_attach = on_attach
+}
+

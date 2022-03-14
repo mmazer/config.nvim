@@ -1,16 +1,13 @@
-function _G.lsp_statusline()
-  local WARN = vim.diagnostic.severity.WARN
-  local ERR = vim.diagnostic.severity.ERROR
-  local warnings = vim.diagnostic.get(0, { severity= WARN })
-  local errors = vim.diagnostic.get(0, { severity = ERR })
-  local num_warn = table.getn(warnings)
-  local num_err = table.getn(errors)
+local diagnostic_count = require'u.lsp'.diagnostic_count
 
-  if num_warn == 0 and num_err == 0 then
+function _G.lsp_statusline()
+  local warn, err = diagnostic_count()
+
+  if warn == 0 and err == 0 then
     return "✓"
   end
 
-  return string.format("✗ W:%d E:%d", num_warn, num_err)
+  return string.format("✗ W:%d E:%d", warn, err)
 end
 
 vim.opt.laststatus = 2
