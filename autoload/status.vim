@@ -31,11 +31,11 @@ function! status#mode()
 endfunction
 
 function! status#branch()
-    if !exists('*fugitive#head')
+    if !exists('*FugitiveHead')
         return ''
     endif
 
-    let branch = fugitive#head(7)
+    let branch = FugitiveHead()
     return empty(branch) ? '' : "⎇ ".branch.""
 endfunction
 
