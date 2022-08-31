@@ -8,6 +8,8 @@ local user_command = u.nvim.user_command
 nmap('-', ":Fern .<cr>", {silent = true})
 nmap('<space>nf', ':Fern . -reveal=%<cr>', {silent = true})
 
+g['fern_disable_startup_warnings'] = true
+
 -- vista
 nmap('cov',  ':Vista!!<CR>', {silent = true})
 
