@@ -1,8 +1,6 @@
 local g = vim.g
 
 local disabled_plugins = {
-  'netrw',
-  'netrwPlugin',
   'zipPlugin',
   'tarPlugin',
   'gzipPlugin',
@@ -20,6 +18,8 @@ return require('packer').startup(function()
   use {"wbthomason/packer.nvim", opt = true}
 
   use 'tpope/vim-fugitive'
+
+  use 'tpope/vim-rhubarb'
 
   use 'junegunn/gv.vim'
 
