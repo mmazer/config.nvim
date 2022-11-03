@@ -107,4 +107,6 @@ return require('packer').startup(function()
     cmd = { 'Fern' }
   }
 
+  use 'google/vim-jsonnet'
+
 end)
