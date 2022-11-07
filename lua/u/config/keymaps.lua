@@ -71,8 +71,8 @@ vmap(">", ">gv")
 -- copy and paste to system clipboard
 vmap('<C-c>', '"+y')
 vmap('C-x>', '"+c')
-vmap('<c-v>', 'c<esc>"+pa')
-imap('<c-v>', '<esc>"+pa')
+vmap('<c-p>', 'c<esc>"+pa')
+imap('<c-p>', '<esc>"+pa')
 
 -- terminal
 tmap('<m-[>', '<c-\\><c-n>')
