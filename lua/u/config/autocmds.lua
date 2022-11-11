@@ -19,3 +19,9 @@ augroup Checktime
     autocmd BufWinEnter * checktime
 augroup END
 ]]
+
+vim.cmd [[
+augroup Jinja2
+    autocmd BufNewFile,BufRead *yaml.j2 set ft=yaml
+augroup END
+]]
