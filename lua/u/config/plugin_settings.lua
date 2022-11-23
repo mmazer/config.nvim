@@ -136,3 +136,17 @@ nmap('coa', '<cmd>lua require("u").fn.toggle_completion()<cr>')
 -- switch between rose-pine variables: (base|moon|dawn)
 user_command("-nargs=1 RosePine :lua require('rose-pine.functions').select_variant(<f-args>)<cr>")
 
+-- fern
+function fern_preview_settings()
+  nmap('p', ':call fern_preview#toggle()<cr>', { silent=true, buffer=true })
+  nmap('<down>', ':call fern_preview#half_down()<cr>', { silent=true, buffer=true })
+  nmap('<up>', ':call fern_preview#half_up()<cr>', { silent=true, buffer=true })
+end
+
+local fern_settings_group = vim.api.nvim_create_augroup("FernSettings", { clear=true})
+vim.api.nvim_create_autocmd("FileType", {
+  group = fern_settings_group,
+  pattern = "fern",
+  callback = fern_preview_settings,
+  desc = "auto install fern_preview settings",
+})

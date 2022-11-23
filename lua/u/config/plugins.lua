@@ -107,6 +107,11 @@ return require('packer').startup(function()
     cmd = { 'Fern' }
   }
 
+  use {
+    'yuki-yano/fern-preview.vim',
+    ft = { 'fern' }
+  }
+
   use 'google/vim-jsonnet'
 
 end)
