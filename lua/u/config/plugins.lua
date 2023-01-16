@@ -114,4 +114,6 @@ return require('packer').startup(function()
 
   use 'google/vim-jsonnet'
 
+  use 'ellisonleao/glow.nvim'
+
 end)
