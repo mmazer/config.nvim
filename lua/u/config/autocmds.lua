@@ -1,27 +1,31 @@
-vim.cmd [[
-augroup Cursorline
-    autocmd WinEnter    * set cursorline
-    autocmd WinLeave    * set nocursorline
-    autocmd InsertEnter * set nocursorline
-    autocmd InsertLeave * set cursorline
-augroup END
-]]
+local api = vim.api
 
-vim.cmd [[
-augroup ModifiedTime
-  autocmd BufWritePre * call vlib#preserve_wrapper(function('datetime#update_modified_time'))
-augroup END
-]]
+cursor_line_augroup = api.nvim_create_augroup('CursorLine', {clear = true})
+api.nvim_create_autocmd({'WinEnter', 'InsertLeave' }, {
+  command = 'set cursorline',
+  group = cursor_line_augroup
+})
 
-vim.cmd [[
-augroup Checktime
-    autocmd CursorHold * checktime
-    autocmd BufWinEnter * checktime
-augroup END
-]]
+api.nvim_create_autocmd({'WinLeave', 'InsertEnter'}, {
+  command = 'set nocursorline',
+  group = cursor_line_augroup
+})
 
-vim.cmd [[
-augroup Jinja2
-    autocmd BufNewFile,BufRead *yaml.j2 set ft=yaml
-augroup END
-]]
+modified_augroup = api.nvim_create_augroup('ModifiedTime', {clear = true})
+api.nvim_create_autocmd('BufWritePre', {
+  command = "call vlib#preserve_wrapper(function('datetime#update_modified_time'))",
+  group = modified_augroup
+})
+
+checktime_augroup = api.nvim_create_augroup('Checktime', {clear = true})
+api.nvim_create_autocmd({'CursorHold', 'BufWinEnter'}, {
+  command = "checktime",
+  group = checktime_augroup
+})
+
+jinja2_augroup = api.nvim_create_augroup('Jinja2', {clear = true})
+api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  pattern = "*yaml.j2",
+  command = "set ft=yaml",
+  group = jinja2_augroup
+})

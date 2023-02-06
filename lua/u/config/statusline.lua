@@ -1,4 +1,5 @@
 local diagnostic_count = require'u.lsp'.diagnostic_count
+local api = vim.api
 
 function _G.lsp_statusline()
   local warn, err = diagnostic_count()
@@ -28,8 +29,9 @@ statusline = statusline.." %5.l,%-3.c "
 statusline = statusline.." #%n"
 
 vim.opt.statusline = statusline
-vim.cmd [[
-augroup statusline_whitespace
-    autocmd CursorHold,BufWritePost * unlet! b:statusline_whitespace
-augroup END
-]]
+
+statusline_augroup = api.nvim_create_augroup('Statusline', {clear = true})
+api.nvim_create_autocmd({'CursorHold', 'BufWritePost' }, {
+  command = 'unlet! b:statusline_whitespace',
+  group = statusline_augroup
+})
