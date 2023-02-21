@@ -3,6 +3,7 @@ command! -nargs=* Kget :Shell kubectl get <args>
 cab kget Kget
 command! -nargs=* Kdesc :Shell kubectl describe <args>
 cab kdesc Kdesc
+command! -nargs=1 Kpod :Shell kubectl get -o yaml pod/<args>
 command! -nargs=* Kpods :Shell kubectl get po --show-labels <args>
 command  -nargs=* KSvc :Shell kubectl get svc --show-labels <args>
 command  -nargs=* Knodes :Shell kubectl get nodes --show-labels <args>
