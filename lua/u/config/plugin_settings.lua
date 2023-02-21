@@ -21,6 +21,7 @@ nmap('<space>gd', ':Gdiffsplit<CR>')
 nmap('<space>gr', ':Gread<CR>')
 nmap('<space>gw', ':Gwrite<CR>')
 
+-- Not converted to Lua since the Fugitive events seem to raise an error: 'unexpected event`
 vim.cmd [[
   autocmd User FugitiveTree,FugitiveBlob nnoremap <buffer> <bs> :edit %:h<cr>
 ]]
@@ -150,3 +151,7 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = fern_preview_settings,
   desc = "auto install fern_preview settings",
 })
+
+-- glow
+require('glow').setup()
+
