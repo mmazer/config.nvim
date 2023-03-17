@@ -116,4 +116,8 @@ return require('packer').startup(function()
 
   use 'ellisonleao/glow.nvim'
 
+  use 'nvim-treesitter/nvim-treesitter'
+
+  use 'stevearc/aerial.nvim'
+
 end)

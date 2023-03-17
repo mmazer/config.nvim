@@ -155,3 +155,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- glow
 require('glow').setup()
 
+-- aerial
+require('aerial').setup()
+require('telescope').load_extension('aerial')
+nmap('<space>a', "<cmd>lua require('telescope').extensions.aerial.aerial()<cr>")
