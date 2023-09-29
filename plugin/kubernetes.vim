@@ -11,4 +11,5 @@ command  -nargs=1 Knodepods :Shell kubectl get pods -o wide --field-selector spe
 command  -nargs=* Krons :Shell kubectl get cronjobs --show-labels <args>
 command  -nargs=* Kjobs :Shell kubectl get jobs --show-labels <args>
 command  -nargs=* Kexpl :Shell kubectl explain <args>
+command  -nargs=* KubeApi :Shell kubectl api-resources <args>
 cab kexpl Kexpl
