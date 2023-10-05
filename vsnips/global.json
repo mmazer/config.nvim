@@ -1,6 +1,0 @@
-{
-  "fname": {
-    "prefix": "fname",
-    "body": "$TM_FILENAME_BASE"
-   }
-}

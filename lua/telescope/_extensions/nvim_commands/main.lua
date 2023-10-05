@@ -1,21 +1,21 @@
-local finders = require 'telescope.finders'
-local pickers = require 'telescope.pickers'
-local config = require('telescope.config').values
-local actions = require 'telescope.actions'
-local action_state = require 'telescope.actions.state'
-local entry_display = require 'telescope.pickers.entry_display'
-local file = require 'u.file'
+local finders = require "telescope.finders"
+local pickers = require "telescope.pickers"
+local config = require("telescope.config").values
+local actions = require "telescope.actions"
+local action_state = require "telescope.actions.state"
+local entry_display = require "telescope.pickers.entry_display"
+local file = require "u.file"
 
 local M = {}
 
 local commands_file
 
 local function default_file()
-  xdg_data_home = os.getenv('XDG_DATA_HOME') 
+  xdg_data_home = os.getenv("XDG_DATA_HOME")
   if not xdg_data_home then
-    error('XDG_DATA_HOME environment variable must be set')
+    error("XDG_DATA_HOME environment variable must be set")
   end
-  return xdg_data_home..'/nvim/nvim_commands'
+  return xdg_data_home.."/nvim/nvim_commands"
 end
 
 local function assert_file_readable(path)
@@ -31,7 +31,7 @@ end
 local function load_commands(path)
   local commands = {}
   for line in io.lines(path) do
-    if line ~= nil and line ~= '' and not is_comment(line) then
+    if line ~= nil and line ~= "" and not is_comment(line) then
       table.insert(commands, line)
     end
   end
@@ -55,7 +55,7 @@ M.commands = function(opts)
     results_tile = "Commands",
     finder =  finders.new_table {
       results = cmds,
-      entry_maker = function(entry) 
+      entry_maker = function(entry)
         return {
           value = entry,
           display = entry,

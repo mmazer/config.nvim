@@ -30,8 +30,8 @@ statusline = statusline.." #%n"
 
 vim.opt.statusline = statusline
 
-statusline_augroup = api.nvim_create_augroup('Statusline', {clear = true})
-api.nvim_create_autocmd({'CursorHold', 'BufWritePost' }, {
-  command = 'unlet! b:statusline_whitespace',
+statusline_augroup = api.nvim_create_augroup("Statusline", {clear = true})
+api.nvim_create_autocmd({"CursorHold", "BufWritePost" }, {
+  command = "unlet! b:statusline_whitespace",
   group = statusline_augroup
 })

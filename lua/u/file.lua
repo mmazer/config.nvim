@@ -1,7 +1,7 @@
 local M = {}
 
 M.is_readable = function(path)
-  local f = io.open(path, 'r')
+  local f = io.open(path, "r")
   if f then
     io.close(f)
     return true
@@ -11,7 +11,7 @@ M.is_readable = function(path)
 end
 
 M.is_writable = function(path)
-  local f = io.open(path, 'w')
+  local f = io.open(path, "w")
   if f then
     io.close(f)
     return true
