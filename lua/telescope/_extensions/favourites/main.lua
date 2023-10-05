@@ -1,21 +1,21 @@
-local finders = require 'telescope.finders'
-local pickers = require 'telescope.pickers'
-local config = require('telescope.config').values
-local actions = require 'telescope.actions'
-local action_state = require 'telescope.actions.state'
-local entry_display = require 'telescope.pickers.entry_display'
-local u = require 'u'
+local finders = require "telescope.finders"
+local pickers = require "telescope.pickers"
+local config = require("telescope.config").values
+local actions = require "telescope.actions"
+local action_state = require "telescope.actions.state"
+local entry_display = require "telescope.pickers.entry_display"
+local u = require "u"
 
 local M = {}
 
 local favourite_files
 
 local function default_favourite_files()
-  xdg_data_home = os.getenv('XDG_DATA_HOME') 
+  xdg_data_home = os.getenv("XDG_DATA_HOME")
   if not xdg_data_home then
-    error('XDG_DATA_HOME environment variable must be set')
+    error("XDG_DATA_HOME environment variable must be set")
   end
-  return xdg_data_home..'/nvim/favourite_files'
+  return xdg_data_home.."/nvim/favourite_files"
 end
 
 local function parse_favourite(line)
@@ -32,7 +32,7 @@ local function get_favourite_files(path)
 
   u.nvim.assert(is_readable, "favourites file not found or not readable: %s", favourite_files)
   for line in io.lines(path) do
-    if line ~= nil and line ~= '' then
+    if line ~= nil and line ~= "" then
       fav = parse_favourite(line)
       table.insert(favourites, fav)
     end
@@ -56,7 +56,7 @@ M.files = function(opts)
     results_tile = "Files",
     finder =  finders.new_table {
       results = files,
-      entry_maker = function(entry) 
+      entry_maker = function(entry)
         return {
           value = entry.path,
           display = entry.title,
@@ -71,7 +71,7 @@ M.files = function(opts)
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
         local file = selection.value
-        vim.cmd('silent e '..file)
+        vim.cmd("silent e "..file)
       end)
       return true
     end
