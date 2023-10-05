@@ -6,6 +6,7 @@ return {
   build = "make install_jsregexp",
   config = function()
     require("luasnip.loaders.from_snipmate").lazy_load()
+    require("luasnip.loaders.from_lua").load({paths = "./snippets"})
     local ls = require("luasnip")
     local keymap = vim.keymap
     keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
