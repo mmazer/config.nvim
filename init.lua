@@ -6,7 +6,8 @@ local configs = {
   "plugin",
   "abbreviations",
   "colors",
-  "commands"
+  "commands",
+  "autocmds"
 }
 
 for _, cfg in ipairs(configs) do

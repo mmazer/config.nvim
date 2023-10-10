@@ -13,7 +13,7 @@ api.nvim_create_autocmd({"WinLeave", "InsertEnter"}, {
 
 modified_augroup = api.nvim_create_augroup("ModifiedTime", {clear = true})
 api.nvim_create_autocmd("BufWritePre", {
-  command = "call vlib#preserve_wrapper(function("datetime#update_modified_time"))",
+  command = "call vlib#preserve_wrapper(function('datetime#update_modified_time'))",
   group = modified_augroup
 })
 
@@ -28,4 +28,11 @@ api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   pattern = "*yaml.j2",
   command = "set ft=yaml",
   group = jinja2_augroup
+})
+
+helm_augroup = api.nvim_create_augroup("Helm", {clear = true})
+api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = "*.tpl",
+  command = "set ft=gohtmltmpl",
+  group = helm_augroup
 })
