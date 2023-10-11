@@ -75,3 +75,12 @@ nmap( "<space>x", ":<c-r>=")
 nmap("<leader>b", ":update <bar> %bd <bar> e# <bar> '\"<CR>", { silent = true })
 
 map("", "<C-g>", ":call indent_guide#toggle()<cr>")
+
+
+-- end line with semicolon
+imap(";]", "<C-\\><C-O>:call vlib#preserve('s/$/;/')<CR>", {silent = true})
+nmap("<space>;",  ":call vlib#preserve('s/$/;/')<CR>", {silent = true})
+
+-- end line with comma
+imap(",]", "<C-\\><C-O>:call vlib#preserve('s/$/,/')<cr>", {silent = true})
+nmap("<space>,",  ":call vlib#preserve('s/$/,/')<CR>", {silent = true})
