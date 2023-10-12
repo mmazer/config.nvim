@@ -1,5 +1,6 @@
 command! -nargs=* Kube :Shell kubectl <args>
 command! -nargs=* Kget :Shell kubectl get <args>
+command! -nargs=* Kgety :Shell kubectl get -o yaml <args>
 cab kget Kget
 command! -nargs=* Kdesc :Shell kubectl describe <args>
 cab kdesc Kdesc
@@ -11,5 +12,6 @@ command  -nargs=1 Knodepods :Shell kubectl get pods -o wide --field-selector spe
 command  -nargs=* Krons :Shell kubectl get cronjobs --show-labels <args>
 command  -nargs=* Kjobs :Shell kubectl get jobs --show-labels <args>
 command  -nargs=* Kexpl :Shell kubectl explain <args>
-command  -nargs=* KubeApi :Shell kubectl api-resources <args>
 cab kexpl Kexpl
+command  -nargs=* KubeApi :Shell kubectl api-resources <args>
+command Kver :Shell kubectl version -o yaml
