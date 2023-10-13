@@ -31,7 +31,7 @@ return {
          print(string.format("completion enabled=%s", vim.g.u_completion_enabled))
       end
 
-      nmap("coa", "<cmd>lua require('u').fn.toggle_completion()<cr>")
+      nmap("coc", "<cmd>lua require('u').fn.toggle_completion()<cr>")
     end
   },
   { "hrsh7th/cmp-path" },

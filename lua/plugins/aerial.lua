@@ -9,5 +9,6 @@ return {
     require("aerial").setup()
     require("telescope").load_extension("aerial")
     nmap("<space>a", "<cmd>lua require('telescope').extensions.aerial.aerial()<cr>")
+    nmap("coa", ":AerialToggle<CR>")
   end
 }
