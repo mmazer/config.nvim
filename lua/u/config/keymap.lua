@@ -42,7 +42,8 @@ nmap( "qp", ":pclose<cr>", {silent = true})
 -- buffers
 nmap( "gob", ":ls<cr>")
 nmap( "<space>B", ":b#<cr>")
-nmap( "<leader>d", ":bd<cr>")
+-- close the current buffer but preserve split
+nmap( "<leader>d", ":bp <bar> bd #<CR>")
 nmap("<leader>D",  ":bd!<cr>")
 
 -- clipboard
