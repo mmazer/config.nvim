@@ -1,4 +1,5 @@
 command! -nargs=* Kube :Shell kubectl <args>
+command! -nargs=* Kdel :Shell kubectl delete <args>
 command! -nargs=* Kget :Shell kubectl get <args>
 command! -nargs=* Kgety :Shell kubectl get -o yaml <args>
 cab kget Kget
@@ -15,3 +16,4 @@ command  -nargs=* Kexpl :Shell kubectl explain <args>
 cab kexpl Kexpl
 command  -nargs=* KubeApi :Shell kubectl api-resources <args>
 command Kver :Shell kubectl version -o yaml
+command -nargs=* Kapply exec ':Shell kubectl apply -f '. expand("%:p")
