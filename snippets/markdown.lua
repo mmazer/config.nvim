@@ -29,9 +29,9 @@ return {
       { f(date.date), i(0) }
     )
   ),
-  s("hli",
+  s("hl",
     fmt("[{1}]({2})", { i(1, "text"), i(2, "url") })
   ),
   s("todo", fmt("- [] {1}", { i(0) })),
-  s("nli", fmt("[[{1}]]", { i(1,"note") }))
+  s("nl", fmt("[[{1}]]", { i(1,"note") }))
 }
