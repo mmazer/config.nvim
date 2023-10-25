@@ -11,4 +11,12 @@ return {
   s("bp", f(function(...)
     return vim.fn.expand("%:p")
   end)),
+  s("vml",
+    fmt(
+      [[
+        # vim: {1} :
+        {2}
+      ]],
+      { i(1, "modeline"), i(0) })
+  )
 }
