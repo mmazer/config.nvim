@@ -25,5 +25,14 @@ return {
     ]],
     { i(1, "cmd"), i(0) }
     )
+  ),
+  s("param?",
+    fmt(
+    [[
+    local {1}=${{{2}:?"{3}"}}
+    {4}
+    ]],
+    { i(1, "param_name"), i(2, "positional_arg"), i(3, "errmsg"), i(0) }
+    )
   )
 }
