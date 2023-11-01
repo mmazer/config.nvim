@@ -1,25 +1,8 @@
 return {
-  s("zps",
-    fmt(
-      [[
-      {1}_plugin_status="not loaded"
-
-      {2}-plugin-status() {{
-          print "${3}_plugin_status"
-      }}
-      {4}
-      ]],
-      {
-        i(1, "plugin_name"),
-        rep(1),
-        rep(1),
-        i(0)
-      })
-  ),
   s("zcmd?",
     fmt(
     [[
-    if ! zp-cmd-exists {1}; then
+    if ! zn-cmd-exists {1}; then
         {2}
     fi
     ]],
@@ -34,5 +17,23 @@ return {
     ]],
     { i(1, "param_name"), i(2, "positional_arg"), i(3, "errmsg"), i(0) }
     )
-  )
+  ),
+  s("0",
+    fmt(
+    [[
+    0="${{${{ZERO:-${{0:#$ZSH_ARGZERO}}}}:-${{(%):-%N}}}}"
+    0="${{${{(M)0:#/*}}:-$PWD/$0}}"
+    {1}
+    ]],
+    { i(0) }
+    )
+  ),
+   s("plugs",
+    fmt(
+    [[
+    zn-plugin-status $(zn-plugin-name "$0") "{1}"
+    ]],
+    { i(1, "status") }
+    )
+  ),
 }
