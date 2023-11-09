@@ -8,6 +8,9 @@ return {
     require("luasnip.loaders.from_snipmate").lazy_load()
     require("luasnip.loaders.from_lua").load({paths = "./snippets"})
     local ls = require("luasnip")
+    ls.setup({
+      update_events = "TextChanged,TextChangedI",
+    })
     local keymap = vim.keymap
     keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
     keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
