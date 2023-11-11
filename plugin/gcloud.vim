@@ -7,3 +7,4 @@ command! -nargs=* GkeClusters :Shell gcloud container clusters list <args>
 command! -nargs=1 GcrImages :Shell gcloud container images list --repository gcr.io/<args>
 command! -nargs=1 GcrTags :Shell gcloud container images list-tags gcr.io/<args>
 command! -nargs=* Gsql :Shell gcloud sql <args>
+command! -nargs=* Gsm :Shell gcloud secrets <args>
