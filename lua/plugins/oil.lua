@@ -6,9 +6,10 @@ return {
             ["<BS>"] = "actions.parent",
             ["<C-h>"] = false,
             ["<C-l>"] = false,
+            ["<C-f>"] = "actions.refresh",
+            ["<C-t>"] = false,
           }
         })
-        local nmap = require("u.nvim").nmap
-        nmap("-", ":Oil<CR>")
+        vim.keymap.set({"n"}, "-", "<CMD>Oil<CR>", {silent = true})
     end
 }
