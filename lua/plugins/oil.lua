@@ -4,6 +4,8 @@ return {
         require("oil").setup({
           keymaps = {
             ["<BS>"] = "actions.parent",
+            ["<C-h>"] = false,
+            ["<C-l>"] = false,
           }
         })
         local nmap = require("u.nvim").nmap
