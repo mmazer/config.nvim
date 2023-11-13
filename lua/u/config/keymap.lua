@@ -86,4 +86,9 @@ nmap("<space>;",  ":call vlib#preserve('s/$/;/')<CR>", {silent = true})
 imap(",]", "<C-\\><C-O>:call vlib#preserve('s/$/,/')<cr>", {silent = true})
 nmap("<space>,",  ":call vlib#preserve('s/$/,/')<CR>", {silent = true})
 
-nmap("<leader>f", ":echom expand('%:p').':'.line(',')<CR>",  {silent=false})
+local function print_buffer_path()
+  local path, linenum = require("u.buffer").get_file_line()
+  print(path..":"..linenum)
+end
+
+vim.keymap.set({"n"}, "<leader>f", print_buffer_path, {silent=false})
