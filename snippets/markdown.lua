@@ -3,10 +3,11 @@ return {
   s("ffm",
     fmt(
       [[
+      ---
       title: {1}
       id: {2}
       created: {3}
-
+      ---
       # {4}
 
       {5}
