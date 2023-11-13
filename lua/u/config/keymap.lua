@@ -85,3 +85,5 @@ nmap("<space>;",  ":call vlib#preserve('s/$/;/')<CR>", {silent = true})
 -- end line with comma
 imap(",]", "<C-\\><C-O>:call vlib#preserve('s/$/,/')<cr>", {silent = true})
 nmap("<space>,",  ":call vlib#preserve('s/$/,/')<CR>", {silent = true})
+
+nmap("<leader>f", ":echom expand('%:p').':'.line(',')<CR>",  {silent=false})
