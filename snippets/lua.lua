@@ -5,6 +5,12 @@ return {
     ]],
     { i(1, "mod"), i(2, "keys"), i(3, "rhs") }
   )),
+  s("vks",fmt(
+    [[
+    vim.keymap.set({1}
+    ]],
+    { i(0)}
+  )),
   s("kms",fmt(
     [[
     vim.keymap.set({{"{1}"}}, "{2}", {3}, {{silent=true}})
