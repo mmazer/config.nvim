@@ -1,94 +1,74 @@
-local u = require "u"
-local map = u.nvim.map
-local nmap = u.nvim.nmap
-local vmap = u.nvim.vmap
-local imap = u.nvim.imap
-local tmap = u.nvim.tmap
-
-nmap( "<leader>q", ":qa<cr>")
-nmap( "Q!", ":qa!<cr>")
-nmap( "<space><space>", ":")
-
-map("i", "kj", "<esc>")
-
-nmap("<space>w", ":w<cr>")
+vim.keymap.set({"n"}, "<leader>q", ":qa<cr>")
+vim.keymap.set({"n"}, "Q!", ":qa!<cr>")
+vim.keymap.set({"n"}, "<space><space>", ":")
+vim.keymap.set({"i"}, "kj", "<esc>")
+vim.keymap.set({"n"}, "<space>w", ":w<cr>")
 
 -- manage windows and tabs
-nmap( "W", "<c-w>")
+vim.keymap.set({"n"}, "W", "<C-W>")
 
 -- window navigation consistent with term mode mappings
-nmap( "<C-h>", "<C-w>h")
-nmap( "<C-j>", "<C-w>j")
-nmap( "<C-k>", "<C-w>k")
-nmap( "<C-l>", "<C-w>l")
+vim.keymap.set({"n"}, "<C-h>", "<C-w>h")
+vim.keymap.set({"n"}, "<C-j>", "<C-w>j")
+vim.keymap.set({"n"}, "<C-k>", "<C-w>k")
+vim.keymap.set({"n"}, "<C-l>", "<C-w>l")
 
-nmap("<space>j", "J")
+vim.keymap.set({"n"}, "<space>j", "J")
 
 -- move to middle of line
-nmap( "gm", ":call cursor(0, virtcol('$')/2)<cr>")
-nmap( "gh", "^")
-nmap( "gl", "$")
+vim.keymap.set({"n"}, "gm", ":call cursor(0, virtcol('$')/2)<cr>")
+vim.keymap.set({"n"}, "gh", "^")
+vim.keymap.set({"n"}, "gl", "$")
 
-nmap( "Y", "y$")
+vim.keymap.set({"n"}, "Y", "y$")
 
 -- quick one line expressions
-nmap( "<space>x", ":<c-r>=")
-
--- close quickfix, location list and preview
-nmap( "qq", ":cclose<cr>", {silent = true})
-nmap( "ql", ":lclose<cr>", {silent = true})
-nmap( "qp", ":pclose<cr>", {silent = true})
+vim.keymap.set({"n"}, "<space>x", ":<C-r>=")
 
 -- buffers
-nmap( "gob", ":ls<cr>")
-nmap( "<space>B", ":b#<cr>")
+vim.keymap.set({"n"}, "gob", ":ls<cr>")
+vim.keymap.set({"n"}, "<space>B", ":b#<cr>")
+
 -- close the current buffer but preserve split
-nmap( "<leader>d", ":bp <bar> bd #<CR>")
-nmap("<leader>D",  ":bd!<cr>")
+
+vim.keymap.set({"n"}, "<leader>d", ":bp <bar> bd #<cr>")
+vim.keymap.set({"n"}, "<leader>D",  ":bd!<cr>")
 
 -- clipboard
 -- copy and paste to system clipboard
-vmap("<C-c>", "\"+y")
-vmap("C-x>", "\"+c")
-vmap("<c-p>", "c<esc>\"+pa")
-imap("<c-p>", "<esc>\"+pa")
+vim.keymap.set({"v"}, "<C-c>", "\"+y")
+vim.keymap.set({"v"}, "C-x>", "\"+c")
+vim.keymap.set({"v"}, "<c-p>", "c<esc>\"+pa")
+vim.keymap.set({"i"}, "<c-p>", "<esc>\"+pa")
 
 -- reselect visual block after indent
-vmap("<", "<gv")
-vmap(">", ">gv")
+vim.keymap.set({"v"}, "<", "<gv")
+vim.keymap.set({"v"}, ">", ">gv")
 
 -- toggle case of words
-nmap( "[w", "gUiw")
-nmap( "]w", "guiw")
+vim.keymap.set({"n"}, "[w", "gUiw")
+vim.keymap.set({"n"}, "]w", "guiw")
 
 -- close quickfix, location list and preview
-nmap( "qq", ":cclose<cr>", {silent = true})
-nmap( "ql", ":lclose<cr>", {silent = true})
-nmap( "qp", ":pclose<cr>", {silent = true})
+vim.keymap.set({"n"}, "qq", ":cclose<cr>", {silent=true})
+vim.keymap.set({"n"}, "ql", ":lclose<cr>", {silent=true})
+vim.keymap.set({"n"}, "qp", ":pclose<cr>", {silent=true})
 
 -- terminal
-tmap("<m-[>", "<c-\\><c-n>")
-
--- quick one line expressions
-nmap( "<space>x", ":<c-r>=")
+vim.keymap.set({"t"}, "<M-[>", "<C-\\><C-n>")
 
 --- delete all buffers and reopen current
-nmap("<leader>b", ":update <bar> %bd <bar> e# <bar> '\"<CR>", { silent = true })
+vim.keymap.set({"n"}, "<leader>b", ":update <bar> %bd <bar> e# <bar> '\"<cr>", { silent = true })
 
-map("", "<C-g>", ":call indent_guide#toggle()<cr>")
+vim.keymap.set({""}, "<C-g>", ":call indent_guide#toggle()<cr>", {silent=true})
 
 -- end line with semicolon
-imap(";]", "<C-\\><C-O>:call vlib#preserve('s/$/;/')<CR>", {silent = true})
-nmap("<space>;",  ":call vlib#preserve('s/$/;/')<CR>", {silent = true})
+vim.keymap.set({"i"}, ";]", "<C-\\><C-O>:call vlib#preserve('s/$/;/')<cr>", {silent = true})
+vim.keymap.set({"n"}, "<space>;",  ":call vlib#preserve('s/$/;/')<cr>", {silent = true})
 
 -- end line with comma
-imap(",]", "<C-\\><C-O>:call vlib#preserve('s/$/,/')<cr>", {silent = true})
-nmap("<space>,",  ":call vlib#preserve('s/$/,/')<CR>", {silent = true})
+vim.keymap.set({"i"}, ",]", "<C-\\><C-O>:call vlib#preserve('s/$/,/')<cr>", {silent = true})
+vim.keymap.set({"n"}, "<space>,",  ":call vlib#preserve('s/$/,/')<cr>", {silent = true})
 
-local function print_buffer_path()
-  local path, linenum = require("u.buffer").get_file_line()
-  print(path..":"..linenum)
-end
-
-vim.keymap.set({"n"}, "<leader>f", print_buffer_path, {silent=false})
-vim.keymap.set({"n"}, "<leader>y", ":let @+=expand('%:p').':'.line('.')<CR>", {silent=true})
+vim.keymap.set({"n"}, "<leader>f", ":echom expand('%:p').':'.line('.')<cr>", {silent=true})
+vim.keymap.set({"n"}, "<leader>y", ":let @+=expand('%:p').':'.line('.')<cr>", {silent=true})
