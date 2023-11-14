@@ -89,15 +89,15 @@ function! vlib#run_shell_command(cmdline)
     let bufnum = bufnr(bufname)
     if bufnum == -1
         enew
-        setlocal buftype=nofile noswapfile nowrap
+        setlocal ro buftype=nofile noswapfile nowrap
         " Add mapping to re-run shell command using existing buffer
-        exec 'map <buffer> <silent> <C-r> :%!'.expanded_cmdline.'<CR>'
+        exec 'map <buffer> <silent> <C-x> :%!'.expanded_cmdline.'<CR>'
         exec 'map <buffer> <silent> <C-d> :bw<CR>'
         silent exec 'file '.bufname
     else
         exec ':buffer '.bufnum
     endif
-    silent execute '%! '. expanded_cmdline
+    silent execute '%!'. expanded_cmdline
     1
 endfunction
 
@@ -147,5 +147,4 @@ function! vlib#start_async(...)
     let cmd = join(a:000)
     call jobstart(cmd,  { 'on_exit': { j,d,e ->execute('echom "command '.cmd.' finished with exit status '.d.'"', '')}})
 endfunction
-
 
