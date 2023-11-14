@@ -77,7 +77,6 @@ nmap("<leader>b", ":update <bar> %bd <bar> e# <bar> '\"<CR>", { silent = true })
 
 map("", "<C-g>", ":call indent_guide#toggle()<cr>")
 
-
 -- end line with semicolon
 imap(";]", "<C-\\><C-O>:call vlib#preserve('s/$/;/')<CR>", {silent = true})
 nmap("<space>;",  ":call vlib#preserve('s/$/;/')<CR>", {silent = true})
@@ -92,3 +91,4 @@ local function print_buffer_path()
 end
 
 vim.keymap.set({"n"}, "<leader>f", print_buffer_path, {silent=false})
+vim.keymap.set({"n"}, "<leader>y", ":let @+=expand('%:p').':'.line('.')<CR>", {silent=true})
