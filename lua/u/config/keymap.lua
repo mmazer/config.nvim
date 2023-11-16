@@ -2,7 +2,7 @@ vim.keymap.set({"n"}, "<leader>q", ":qa<cr>")
 vim.keymap.set({"n"}, "Q!", ":qa!<cr>")
 vim.keymap.set({"n"}, "<space><space>", ":")
 vim.keymap.set({"i"}, "kj", "<esc>")
-vim.keymap.set({"n"}, "<space>w", ":w<cr>")
+vim.keymap.set({"n"}, "zz", ":update<cr>")
 
 -- manage windows and tabs
 vim.keymap.set({"n"}, "W", "<C-W>")
