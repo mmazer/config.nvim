@@ -15,6 +15,5 @@ nnoremap gto       :Cdr<CR>:pwd<CR>
 nnoremap coe       :call vlib#toggle_et()<CR>
 
 command! -complete=shellcmd -nargs=+ Shell call vlib#run_shell_command(<q-args>)
-nnoremap <space>s :Shell<space>
 
 noremap gou :call vlib#browse()<CR>
