@@ -15,6 +15,7 @@ return {
       local create_user_command = require("u.nvim").create_user_command
       create_user_command("Gworking", "Git diff -w", {})
       create_user_command("GDiffBuf", "Git diff -w %", {})
+      vim.cmd("cab git Git")
     end
   },
   { "tpope/vim-rhubarb" },
