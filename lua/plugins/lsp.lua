@@ -39,7 +39,7 @@ return {
       },
       settings = {
         pylsp = {
-          configurationSources = ["flake8"]
+          configurationSources = { "flake8" },
           plugins = {
             flake8 = { enabled=true }, -- configured by .flake8 in project directory
             pylint = { enabled=false },
