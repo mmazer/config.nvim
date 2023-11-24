@@ -31,7 +31,7 @@ vim.keymap.set({"n"}, "<space>B", ":b#<cr>")
 
 -- close the current buffer but preserve split
 
-vim.keymap.set({"n"}, "<leader>d", ":bp <bar> bd #<cr>")
+vim.keymap.set({"n"}, "<leader>d", ":bp <bar> bd! #<cr>")
 vim.keymap.set({"n"}, "<leader>D",  ":bd!<cr>")
 
 -- clipboard
