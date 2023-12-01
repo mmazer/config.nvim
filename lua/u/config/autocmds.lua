@@ -6,6 +6,12 @@ api.nvim_create_autocmd({"WinEnter", "InsertLeave" }, {
   group = cursor_line_augroup
 })
 
+strip_trailing_whitespace = api.nvim_create_augroup("StripTrailingWhiteSpace", {clear=true})
+api.nvim_create_autocmd({"BufWritePre"}, {
+  command = ":call vlib#strip()",
+  group = strip_trailing_whitespace
+})
+
 api.nvim_create_autocmd({"WinLeave", "InsertEnter"}, {
   command = "set nocursorline",
   group = cursor_line_augroup
