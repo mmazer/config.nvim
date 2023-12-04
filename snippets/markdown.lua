@@ -7,15 +7,17 @@ return {
       title: {1}
       id: {2}
       created: {3}
+      modified: {4}
       ---
 
-      # {4}
+      # {5}
 
-      {5}
+      {6}
       ]],
       {
         i(1, "title"),
         f(date.timestamp_id),
+        f(date.timestamp),
         f(date.timestamp),
         rep(1),
         i(0)
