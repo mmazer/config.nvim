@@ -4,7 +4,7 @@ endif
 let g:autoloaded_datetime = 1
 
 if !exists('g:timestamp_format')
-    let g:timestamp_format = '%Y-%m-%dT%H:%M:%S %Z'
+    let g:timestamp_format = '%Y-%m-%dT%H:%M:%S %z'
 endif
 
 function! datetime#timestamp()
