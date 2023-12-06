@@ -87,5 +87,14 @@ return {
         vim.lsp.buf.format({async = false})
       end
     })
+
+    -- yaml-language-server https://github.com/redhat-developer/yaml-language-server
+    lspconfig["yamlls"].setup {
+      on_attach = on_attach,
+      settings = {
+        yaml = { keyOrdering = false },
+      }
+    }
+
   end
 }
