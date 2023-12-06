@@ -49,7 +49,7 @@ end
 
 M.paste_link = function(opts)
   opts = opts or {}
-  opts.prompt_title = "Zettel - Files"
+  opts.prompt_title = "Obsidian - Files"
   opts.cwd = get_obsidian_vault()
   opts.attach_mappings = function(prompt_bufnr, map)
     local paste = function()
