@@ -20,7 +20,7 @@ return {
       telescope.load_extension("nvim_commands")
 
       local nmap = require("u.nvim").nmap
-      nmap("<space>f", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+      nmap("<space>f", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>")
       nmap("<space>b", "<cmd>lua require('telescope.builtin').buffers()<cr>")
       nmap("<space>h", "<cmd>lua require('telescope.builtin').command_history()<cr>")
       nmap("<space>H", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
