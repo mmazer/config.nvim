@@ -17,9 +17,7 @@ local function get_obsidian_vault()
 end
 
 local function normalize_name(text)
-  local str = text:gsub("-", " ")
-  str = str:gsub("%a", string.upper, 1)
-  return str
+  return text
 end
 
 local function vim_paste(text)
