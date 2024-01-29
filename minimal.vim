@@ -4,12 +4,12 @@ set scrolloff=999
 set wildmenu
 set wildmode=list:longest
 set shortmess=aTIoO
-set laststatus=2
+set laststatus=0
+set noshowmode
 
 filetype plugin indent on
 syntax on
 set background="dark"
-colorscheme rose-pine
 
 " basic mappings
 nnoremap <silent> Q :qa!<CR>
@@ -64,14 +64,3 @@ nnoremap <C-l> <C-w>l
 " toggle case of words
 nnoremap [w gUiw
 nnoremap ]w guiw
-
-set laststatus=2
-set statusline+=\ %f
-set statusline+=%(\ %R%M%)      "modified flag
-set statusline+=%{&paste?'\ [paste]':''}
-set statusline+=%=
-set statusline+=\ %y      "filetype
-set statusline+=\ %{&ff}  "file format
-set statusline+=\ %{&expandtab?'spaces':'tabs'}
-set statusline+=\ %5.l/%L\:%-3.c\    "cursor line/total lines:column
-set statusline+=\ #%n
