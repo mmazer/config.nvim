@@ -23,3 +23,5 @@ cab kapi KubeApi
 command Kver :Shell kubectl version -o yaml
 command -nargs=* Kapply exec ':Shell kubectl apply -f '. expand("%:p")
 cab kapply Kapply
+command Klogs -nargs=* :Shell kubectl logs <args>
+cab klogs Klogs
