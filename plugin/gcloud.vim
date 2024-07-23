@@ -1,5 +1,6 @@
 command! -nargs=* Gcloud :Shell gcloud <args>
 command! -nargs=* Gce :Shell gcloud compute <args>
+command! -nargs=* Gnw :Shell gcloud compute networks <args>
 command! -nargs=* GceInstances :Shell gcloud compute instances list <args>
 command! -nargs=* GceDescInstance :Shell gcloud compute instances describe <args>
 command! -nargs=* Gke :Shell gcloud container <args>
