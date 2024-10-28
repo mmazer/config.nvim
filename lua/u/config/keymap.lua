@@ -37,7 +37,7 @@ vim.keymap.set({"n"}, "<leader>D",  ":bd!<cr>")
 -- clipboard
 -- copy and paste to system clipboard
 vim.keymap.set({"v"}, "<C-c>", "\"+y")
-vim.keymap.set({"v"}, "C-x>", "\"+c")
+vim.keymap.set({"v"}, "<C-x>", "\"+c")
 vim.keymap.set({"v"}, "<c-p>", "c<esc>\"+pa")
 vim.keymap.set({"i"}, "<c-p>", "<esc>\"+pa")
 
