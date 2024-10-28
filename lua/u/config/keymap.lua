@@ -55,7 +55,7 @@ vim.keymap.set({"n"}, "ql", ":lclose<cr>", {silent=true})
 vim.keymap.set({"n"}, "qp", ":pclose<cr>", {silent=true})
 
 -- terminal
-vim.keymap.set({"t"}, "<M-[>", "<C-\\><C-n>")
+vim.keymap.set({"t"}, "<C-]>", "<C-\\><C-n>")
 
 --- delete all buffers and reopen current
 vim.keymap.set({"n"}, "<leader>b", ":update <bar> %bd <bar> e# <bar> '\"<cr>", { silent = true })
