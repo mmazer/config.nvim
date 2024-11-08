@@ -95,6 +95,11 @@ return {
         yaml = { keyOrdering = false },
       }
     }
+    -- bash language server
+    lspconfig["bashls"].setup {
+      filetypes = { "sh", "zsh" }
+    }
+
 
   end
 }
