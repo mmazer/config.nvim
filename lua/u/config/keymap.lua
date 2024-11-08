@@ -72,3 +72,9 @@ vim.keymap.set({"n"}, "<space>,",  ":call vlib#preserve('s/$/,/')<cr>", {silent 
 
 vim.keymap.set({"n"}, "<leader>f", ":echom expand('%:p').':'.line('.')<cr>", {silent=true})
 vim.keymap.set({"n"}, "<leader>y", ":let @+=expand('%:p').':'.line('.')<cr>", {silent=true})
+
+-- tab navigation
+vim.keymap.set({"n"}, "th", ":tabfirst<CR>")
+vim.keymap.set({"n"}, "tk", ":tabnext<CR>")
+vim.keymap.set({"n"}, "tj", ":tabprev<CR>")
+vim.keymap.set({"n"}, "tl", ":tablast<CR>")
