@@ -25,3 +25,4 @@ command -nargs=* Kapply exec ':Shell kubectl apply -f '. expand("%:p")
 cab kapply Kapply
 command Klogs -nargs=* :Shell kubectl logs <args>
 cab klogs Klogs
+command -nargs=1 Kns :Shell kubectl config set-context --current --namespace=<args>
