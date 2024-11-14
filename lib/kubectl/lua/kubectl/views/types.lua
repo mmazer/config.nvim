@@ -5,6 +5,7 @@ M.short_names = {
   crd     = "customresourcedefinitions",
   deploy  = "deployments",
   ds      = "daemonsets",
+  ks      = "kustomizations",
   no      = "nodes",
   ns      = "namespaces",
   po      = "pods",
