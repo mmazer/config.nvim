@@ -2,7 +2,6 @@ local M = {}
 local options = {}
 
 M.setup = function(opts)
-  -- TODO fallback to user command for unsupported resources
   vim.api.nvim_create_user_command("Kubectl", function(opts)
     if #opts.fargs == 0 then
       require("kubectl.views.pods").view()
