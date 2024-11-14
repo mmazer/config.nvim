@@ -14,7 +14,7 @@ M.view = function()
   if ns ~= nil and ns ~= '' then
     vim.list_extend(view_name, {"namespace="..ns})
   end
-  view(view_name, cmd, { keymap = keymap })
+  view(view_name, cmd)
 end
 
 return M

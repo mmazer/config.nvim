@@ -4,7 +4,7 @@ local ResourceView = require("kubectl.views.resource")
 local namespace = views.view_namespace
 
 local M = {
-  resource = "pod"
+  resource = "secret"
 }
 
 M.view = function()

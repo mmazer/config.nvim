@@ -17,13 +17,21 @@ end
 M.buffer_view = function(name, cmd, opts)
   local data = cmd.exec()
   local opts = opts or {}
+  if opts.namespace then
+    M.set_view_namespace(opts.namespace)
+  end
   vim.api.nvim_cmd({cmd="enew"}, {})
+  if opts.namespace then
+    M.set_view_namespace(opts.namespace)
+  end
   local buf = vim.api.nvim_get_current_buf()
   vim.api.nvim_set_option_value("buftype", "nofile", { buf = buf })
   vim.api.nvim_set_option_value("swapfile", false, { buf = buf })
   vim.api.nvim_buf_set_name(buf, "Kubectl:"..table.concat(name, ' '))
   vim.api.nvim_buf_set_lines(buf, 0, -1, 1, vim.split(data, "\n", {plain=true}))
   vim.opt_local.iskeyword:append("-")
+  vim.opt_local.iskeyword:append(".")
+  vim.opt_local.iskeyword:append(":")
 
   if opts.filetype ~= nil then
     vim.api.nvim_set_option_value("filetype", opts.filetype, { buf = buf })
