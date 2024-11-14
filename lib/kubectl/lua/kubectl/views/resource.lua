@@ -32,6 +32,16 @@ function ResourceView:create(kind, cmd)
       local cmd = kubectl.json(kind, name, namespace())
       views.buffer_view({kind, name}, cmd, {filetype="json"})
     end,
+    gl=function()
+      local name = lib.current_word()
+      local ns = namespace()
+      local args = {"logs", kind.."/"..name, "--all-containers=true"}
+      if ns ~= nil and ns ~= '' then
+        vim.list_extend(args, {"--namespace", ns})
+      end
+      local cmd = kubectl.kubectl(args)
+      views.buffer_view({"logs", kind.."/"..name}, cmd, {filetype="json"})
+    end,
     gy=function()
       local name = lib.current_word()
       local cmd = kubectl.yaml(kind, name, namespace())
@@ -64,6 +74,10 @@ function ResourceView:view()
       ge=function()
        set_current_namespace()
        self.keymap["ge"]()
+      end,
+      gl=function()
+        set_current_namespace()
+        self.keymap["gl"]()
       end,
       gy=function()
        set_current_namespace()
