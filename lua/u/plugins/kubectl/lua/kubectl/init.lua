@@ -3,6 +3,7 @@ local options = {}
 
 M.setup = function(opts)
   vim.api.nvim_create_user_command("Kubectl", function(opts)
+    local short_names = require("kubectl.views.types").short_names
     if #opts.fargs == 0 then
       require("kubectl.views.pods").view()
       return
@@ -34,6 +35,11 @@ M.setup = function(opts)
     if action == "get" then
       if #opts.fargs >= 2 then
         local resource_type = opts.fargs[2]
+        local rname = short_names[resource_type]
+        if rname ~= nil then
+          resource_type = rname
+        end
+
         local ok, view = pcall(require, "kubectl.views." .. resource_type)
         if ok then
           view.view()
