@@ -16,6 +16,9 @@ end
 
 M.buffer_view = function(name, cmd, opts)
   local data = cmd.exec()
+  if data == nil or data == '' then
+    data = "No resources found"
+  end
   local opts = opts or {}
   if opts.namespace then
     M.set_view_namespace(opts.namespace)
