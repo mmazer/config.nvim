@@ -9,6 +9,7 @@ M.short_names = {
   ns      = "namespaces",
   po      = "pods",
   pv      = "persistentvolumes",
+  pvc     = "persistentvolumeclaims",
   sa      = "serviceaccounts",
   svc     = "services"
 }
