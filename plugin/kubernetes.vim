@@ -1,5 +1,4 @@
 command! -nargs=* Kube :Shell kubectl <args>
-cab kube Kube
 command! -nargs=* Kdel :Shell kubectl delete <args>
 cab kdel Kdel
 command! -nargs=* Kget :Shell kubectl get <args>
