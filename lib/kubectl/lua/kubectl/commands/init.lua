@@ -1,6 +1,6 @@
 local M = {}
 
-M.kubectl = function(args, opts)
+M.cmd = function(args, opts)
   local opts = opts or {}
   local cmd = {
     command = {"kubectl"},
@@ -29,7 +29,7 @@ M.get = function(resource, name, ns, opts)
     vim.list_extend(args, opts)
   end
 
-  return M.kubectl(args)
+  return M.cmd(args)
 end
 
 M.describe = function(resource, name, ns, opts)
@@ -43,7 +43,7 @@ M.describe = function(resource, name, ns, opts)
     vim.list_extend(args, opts)
   end
 
-  return M.kubectl(args)
+  return M.cmd(args)
 end
 
 M.yaml = function(resource, name, ns)

@@ -39,7 +39,7 @@ function ResourceView:create(kind, cmd)
       if ns ~= nil and ns ~= '' then
         vim.list_extend(args, {"--namespace", ns})
       end
-      local cmd = kubectl.kubectl(args)
+      local cmd = kubectl.cmd(args)
       views.buffer_view({"logs", kind.."/"..name}, cmd, {filetype="json"})
     end,
     gy=function()

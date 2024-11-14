@@ -1,4 +1,4 @@
-local kubectl = require("kubectl.commands").kubectl
+local kubectl = require("kubectl.commands").cmd
 
 local M = {
   resource = "event"

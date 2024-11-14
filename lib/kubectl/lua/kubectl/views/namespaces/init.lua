@@ -12,9 +12,9 @@ M.view = function()
   view(view_name, cmd, {
     keymap = {
       gd = function()
-        local namespace = lib.current__word()
+        local namespace = lib.current_word()
         local cmd = kubectl.describe(M.resource, namespace)
-        view({"namespace", namespace}, _cmd)
+        view({"namespace", namespace}, cmd)
       end,
       gy = function()
         local namespace = lib.current_word()

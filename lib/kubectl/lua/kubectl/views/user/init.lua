@@ -1,4 +1,4 @@
-local kubectl = require("kubectl.commands").kubectl
+local kubectl = require("kubectl.commands").cmd
 local views= require("kubectl.views")
 local view = views.buffer_view
 local namespace = views.view_namespace
