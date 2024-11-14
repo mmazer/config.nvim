@@ -9,12 +9,13 @@ local ResourceView = {}
 
 ResourceView.__index = ResourceView
 
-function ResourceView:create(kind, cmd)
+function ResourceView:create(kind, cmd, opts)
   local instance = {}
   setmetatable(instance, ResourceView)
 
   instance.kind = kind
   instance.cmd = cmd
+  instance.opts = opts or {}
   instance.namespace = namespace
   instance.keymap = {
     gd=function()
@@ -58,7 +59,7 @@ function ResourceView:view()
   local cmd = self.cmd
   local scope = self.scope
   local keymap = self.keymap
-  local opts = {}
+  local opts = self.opts
   if ns == nil or ns == '' then
     keymap = {
       gn=function()
@@ -88,6 +89,9 @@ function ResourceView:view()
        self.keymap["gj"]()
       end
     }
+    if opts.keymap then
+      lib.table_extend(keymap, opts.keymap)
+    end
   end
 
   local view_name = {kind}
