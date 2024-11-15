@@ -22,6 +22,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
+  dev =  {
+    path = "~/workspace",
+    patterns = {"mmazer"},
+    fallback = false
+  },
   change_detection = {
     enabled = true,
     notify = false
