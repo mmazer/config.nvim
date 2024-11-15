@@ -1,5 +1,5 @@
 return {
-  dir = "~/.config/nvim/lib/kubectl",
+  dir = "~/workspace/k8s.nvim",
   config = function()
     require("kubectl").setup()
   end
