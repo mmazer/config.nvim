@@ -1,7 +1,10 @@
 return {
   {"nvim-telescope/telescope.nvim",
     dependencies = {
-      "nvim-lua/plenary.nvim"
+      "nvim-lua/plenary.nvim",
+      config = function()
+        vim.keymap.set({"n"}, "<leader>t", "<Plug>PlenaryTestFile")
+      end
     },
     config = function()
       local telescope = require("telescope")
