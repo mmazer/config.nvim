@@ -3,12 +3,15 @@ return {
   config = function()
     require("kubectl").setup({
       resource_specs = {
+        backendconfigs={shortnames={"becfg"}},
+        frontendconfigs={shortnames={"fecfg"}},
         sealedsecrets={},
-        datadogmetrics={shortnames={"ddmetrics"}},
+        datadogmetrics={shortnames={"ddm"}},
         helmcharts={},
         helmreleases={shortnames={"hr"}},
         helmrepositories={shortnames={"helmrepo"}},
-        kustomizations={shortnames={"ks"}}
+        kustomizations={shortnames={"ks"}},
+        managedcertificates={shortnames={"mc"}},
       }
     })
     vim.keymap.set({"n"}, "<leader>k", ":Kubectl<CR>", {silent=true})
