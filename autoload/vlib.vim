@@ -101,30 +101,6 @@ function! vlib#run_shell_command(cmdline)
     1
 endfunction
 
-function! vlib#browse(...)
-    if a:0 < 1
-        let uri = shellescape(matchstr(getline("."), '[a-z]*:\/\/[^ >,;\|\]\)\"]*'), 1)
-    else
-        let uri = a:1
-    endif
-    if uri != ""
-        echo uri
-
-        if has('win32')
-            silent exec "!cmd /C start /min ".uri
-        elseif has('mac')
-            silent exec "!open ".uri
-        elseif has('unix')
-            silent exec "!xdg-open ".uri
-        else
-            echo "OpenURI not supported on this system"
-        endif
-        exec ":redraw!"
-    else
-        echo "No URI found in line."
-    endif
-endfunction
-
 function vlib#trim_trailing_lines()
   let last_line = line('$')
   let last_nonblank = prevnonblank(last_line)
