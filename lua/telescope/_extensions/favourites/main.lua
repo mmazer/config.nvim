@@ -15,11 +15,11 @@ local function default_favourite_files()
   if not xdg_data_home then
     error("XDG_DATA_HOME environment variable must be set")
   end
-  return xdg_data_home.."/nvim/favourite_files"
+  return xdg_data_home.."/bookmarks/files"
 end
 
 local function parse_favourite(line)
-  local title, path = line:match("^(.+)%s+(.+)$")
+  local path, title = line:match("^(.+)|(.+)$")
   return {
     title = title,
     path = path,
