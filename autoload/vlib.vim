@@ -108,8 +108,3 @@ function vlib#trim_trailing_lines()
     silent! execute last_nonblank + 1 . ',$delete _'
   endif
 endfunction
-
-function! vlib#start_async(...)
-    let cmd = join(a:000)
-    call jobstart(cmd,  { 'on_exit': { j,d,e ->execute('echom "command '.cmd.' finished with exit status '.d.'"', '')}})
-endfunction
