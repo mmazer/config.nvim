@@ -2,7 +2,7 @@ vim.keymap.set({"n"}, "<leader>q", ":qa<cr>")
 vim.keymap.set({"n"}, "Q!", ":qa!<cr>")
 vim.keymap.set({"n"}, "<space><space>", ":")
 vim.keymap.set({"i"}, "kj", "<esc>")
-vim.keymap.set({"n"}, "<space>s", ":update<cr>")
+vim.keymap.set({"n"}, "<C-s>", ":update<cr>")
 
 -- manage windows and tabs
 vim.keymap.set({"n"}, "W", "<C-W>")
@@ -53,9 +53,6 @@ vim.keymap.set({"n"}, "]w", "guiw")
 vim.keymap.set({"n"}, "qq", ":cclose<cr>", {silent=true})
 vim.keymap.set({"n"}, "ql", ":lclose<cr>", {silent=true})
 vim.keymap.set({"n"}, "qp", ":pclose<cr>", {silent=true})
-
--- terminal
-vim.keymap.set({"t"}, "<C-]>", "<C-\\><C-n>")
 
 --- delete all buffers and reopen current
 vim.keymap.set({"n"}, "<leader>b", ":update <bar> %bd <bar> e# <bar> '\"<cr>", { silent = true })
