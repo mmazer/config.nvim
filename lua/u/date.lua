@@ -16,6 +16,10 @@ M.datetime = function()
   return os.date("%Y-%m-%d %H:%M")
 end
 
+M.time = function()
+  return os.date("%H:%M")
+end
+
 M.date = function()
   return os.date("%Y-%m-%d")
 end
