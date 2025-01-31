@@ -36,7 +36,7 @@ function! status#branch()
     endif
 
     let branch = FugitiveHead()
-    return empty(branch) ? '' : "⎇ ".branch.""
+    return empty(branch) ? '' : branch
 endfunction
 
 function! status#fenc()
@@ -100,4 +100,3 @@ function! status#whitespace()
 
     return b:statusline_whitespace
 endfunction
-
