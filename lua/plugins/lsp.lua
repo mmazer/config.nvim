@@ -10,12 +10,11 @@ return {
       update_in_insert = false
     })
 
-    local on_attach = function(client, bufnr)
+    local on_attach = function(_, bufnr)
       local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-      local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
       -- Enable completion triggered by <c-x><c-o>
-      buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+      vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', {buf=bufnr})
 
       -- Mappings.
       local opts = { noremap=true, silent=true }
@@ -95,11 +94,21 @@ return {
         yaml = { keyOrdering = false },
       }
     }
+
     -- bash language server
     lspconfig["bashls"].setup {
       filetypes = { "sh", "zsh" }
     }
 
-
+    -- terraform language server
+    lspconfig['terraformls'].setup{
+      on_attach = on_attach
+    }
+    vim.api.nvim_create_autocmd({"BufWritePre"}, {
+      pattern = {"*.tf", "*.tfvars"},
+      callback = function()
+        vim.lsp.buf.format()
+      end,
+    })
   end
 }
