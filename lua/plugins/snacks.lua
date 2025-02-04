@@ -75,6 +75,7 @@ return {
   keys = function()
     local snacks = require("snacks")
     local indent_guides = false
+    local dimmed = false
 
     local toggle_indent_guides = function()
       if indent_guides == true then
@@ -86,11 +87,21 @@ return {
       end
     end
 
+    local toggle_dim = function()
+      if dimmed == true then
+        snacks.dim.disable()
+        dimmed = false
+      else
+        snacks.dim.enable()
+        dimmed = true
+      end
+    end
+
     return {
       {"<leader>b", function() snacks.picker.buffers({hidden=true,nofile=true, unloaded=false}) end },
       {"<leader>db", function() snacks.bufdelete() end },
       {"<leader>do", function() snacks.bufdelete.other() end },
-      {"<leader>di", function() snacks.dim() end },
+      {"<leader>D", function() toggle_dim() end },
       {"<leader>i", function() toggle_indent_guides() end },
       {"<leader>e", function() snacks.picker.explorer() end },
       {"<leader>f", function() snacks.picker.files() end },
