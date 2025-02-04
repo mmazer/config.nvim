@@ -7,7 +7,7 @@ return {
 
     g["grepper"] = { tools = { "rg", "git" }}
 
-    nmap("<leader>g", ":GrepperRg<space>")
+    nmap("<leader>G", ":GrepperRg<space>")
     nmap("gs",  "<plug>(GrepperOperator)")
     xmap("gs",  "<plug>(GrepperOperator)")
     nmap("<leader>w",  ":Grepper -tool rg -cword -highlight -noprompt -nojump -switch<cr>")

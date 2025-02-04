@@ -29,9 +29,6 @@ vim.keymap.set({"n"}, "<space>x", ":<C-r>=")
 vim.keymap.set({"n"}, "gob", ":ls<cr>")
 vim.keymap.set({"n"}, "<space>B", ":b#<cr>")
 
--- close the current buffer but preserve split
-
-vim.keymap.set({"n"}, "<leader>d", ":bp <bar> bd! #<cr>")
 vim.keymap.set({"n"}, "<leader>D",  ":bd!<cr>")
 
 -- clipboard
@@ -54,9 +51,6 @@ vim.keymap.set({"n"}, "qq", ":cclose<cr>", {silent=true})
 vim.keymap.set({"n"}, "ql", ":lclose<cr>", {silent=true})
 vim.keymap.set({"n"}, "qp", ":pclose<cr>", {silent=true})
 
---- delete all buffers and reopen current
-vim.keymap.set({"n"}, "<leader>b", ":update <bar> %bd <bar> e# <bar> '\"<cr>", { silent = true })
-
 vim.keymap.set({""}, "<C-g>", ":call indent_guide#toggle()<cr>", {silent=true})
 
 -- end line with semicolon
@@ -67,8 +61,8 @@ vim.keymap.set({"n"}, "<space>;",  ":call vlib#preserve('s/$/;/')<cr>", {silent 
 vim.keymap.set({"i"}, ",]", "<C-\\><C-O>:call vlib#preserve('s/$/,/')<cr>", {silent = true})
 vim.keymap.set({"n"}, "<space>,",  ":call vlib#preserve('s/$/,/')<cr>", {silent = true})
 
-vim.keymap.set({"n"}, "<leader>f", ":echom expand('%:p').':'.line('.')<cr>", {silent=true})
-vim.keymap.set({"n"}, "<leader>y", ":let @+=expand('%:p').':'.line('.')<cr>", {silent=true})
+vim.keymap.set({"n"}, "<leader>p", ":echom expand('%:p').':'.line('.')<cr>", {silent=true})
+vim.keymap.set({"n"}, "<leader>py", ":let @+=expand('%:p').':'.line('.')<cr>", {silent=true})
 
 -- tab navigation
 vim.keymap.set({"n"}, "th", ":tabfirst<CR>")
