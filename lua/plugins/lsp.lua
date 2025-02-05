@@ -87,6 +87,14 @@ return {
       end
     })
 
+    --- lua
+    vim.api.nvim_create_autocmd({"BufWritePre"}, {
+      pattern = {"*.lua"},
+      callback = function()
+        vim.lsp.buf.format()
+      end,
+    })
+
     -- yaml-language-server https://github.com/redhat-developer/yaml-language-server
     lspconfig["yamlls"].setup {
       on_attach = on_attach,
