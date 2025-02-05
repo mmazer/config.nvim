@@ -9,7 +9,8 @@ local configs = {
   "commands",
   "autocmds",
   "lsp",
-  "terminal"
+  "terminal",
+  "filetypes"
 }
 
 for _, cfg in ipairs(configs) do
