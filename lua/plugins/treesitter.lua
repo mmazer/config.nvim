@@ -10,7 +10,11 @@ return {
       "luadoc",
       "vim",
       "lua",
-      "markdown"
+      "markdown",
+      "xml",
+      "yaml",
+      "just",
+      "terraform"
     },
   },
 }
