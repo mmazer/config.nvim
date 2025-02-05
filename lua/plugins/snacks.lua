@@ -15,7 +15,7 @@ return {
     dashboard = {
       sections = {
         { section = "header" },
-        { section = "keys"},
+        { section = "keys" },
         function()
           local snacks = require("snacks")
           local in_git = snacks.git.get_root() ~= nil
@@ -33,6 +33,16 @@ return {
               icon = " ",
               title = "Log",
               cmd = "git log --pretty=format:'%cd %h %s (%an)' --date=short -3",
+              height = 7,
+            },
+            {
+              title = "Open Issues",
+              cmd = "gh issue list -L 3",
+              key = "i",
+              action = function()
+                vim.fn.jobstart("gh issue list --web", { detach = true })
+              end,
+              icon = " ",
               height = 7,
             },
             {
@@ -98,20 +108,20 @@ return {
     end
 
     return {
-      {"<leader>b", function() snacks.picker.buffers({hidden=true,nofile=true, unloaded=false}) end },
-      {"<leader>db", function() snacks.bufdelete() end },
-      {"<leader>do", function() snacks.bufdelete.other() end },
-      {"<leader>di", function() toggle_dim() end },
-      {"<leader>D", function() snacks.dashboard() end },
-      {"<leader>i", function() toggle_indent_guides() end },
-      {"<leader>e", function() snacks.picker.explorer() end },
-      {"<leader>f", function() snacks.picker.files() end },
-      {"<leader>gl", function() snacks.picker.git_log() end, desc = "Git Log" },
-      {"<leader>lg", function() snacks.lazygit() end, desc = "Lazygit" },
-      {"<leader>r", function() snacks.picker.recent() end },
-      {"<leader>t", function() snacks.terminal() end },
-      {"<leader>/", function() snacks.picker.grep() end },
-      { "<leader><space>", function() snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "<leader>b",       function() snacks.picker.buffers({ hidden = true, nofile = true, unloaded = false }) end },
+      { "<leader>db",      function() snacks.bufdelete() end },
+      { "<leader>do",      function() snacks.bufdelete.other() end },
+      { "<leader>di",      function() toggle_dim() end },
+      { "<leader>D",       function() snacks.dashboard() end },
+      { "<leader>i",       function() toggle_indent_guides() end },
+      { "<leader>e",       function() snacks.picker.explorer() end },
+      { "<leader>f",       function() snacks.picker.files() end },
+      { "<leader>gl",      function() snacks.picker.git_log() end,                                         desc = "Git Log" },
+      { "<leader>lg",      function() snacks.lazygit() end,                                                desc = "Lazygit" },
+      { "<leader>r",       function() snacks.picker.recent() end },
+      { "<leader>t",       function() snacks.terminal() end },
+      { "<leader>/",       function() snacks.picker.grep() end },
+      { "<leader><space>", function() snacks.picker.smart() end,                                           desc = "Smart Find Files" },
     }
   end
 }
