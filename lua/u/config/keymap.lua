@@ -7,6 +7,9 @@ vim.keymap.set({ "n" }, "<space>s", ":update<cr>")
 -- manage windows and tabs
 vim.keymap.set({ "n" }, "W", "<C-W>")
 
+-- preserve digraph <C-K>
+vim.keymap.set({ "i" }, "<C-y>", "<C-k>")
+
 -- window navigation consistent with term mode mappings
 vim.keymap.set({ "n" }, "<C-h>", "<C-w>h")
 vim.keymap.set({ "n" }, "<C-j>", "<C-w>j")
