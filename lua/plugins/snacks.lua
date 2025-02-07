@@ -116,12 +116,12 @@ return {
       { "<leader>i",       function() toggle_indent_guides() end },
       { "<leader>e",       function() snacks.picker.explorer() end },
       { "<leader>f",       function() snacks.picker.files() end },
-      { "<leader>gl",      function() snacks.picker.git_log() end,                                         desc = "Git Log" },
-      { "<leader>lg",      function() snacks.lazygit() end,                                                desc = "Lazygit" },
+      { "<leader>gl",      function() snacks.picker.git_log() end, },
+      { "<leader>lg",      function() snacks.lazygit() end, },
       { "<leader>r",       function() snacks.picker.recent() end },
       { "<leader>t",       function() snacks.terminal() end },
       { "<leader>/",       function() snacks.picker.grep() end },
-      { "<leader><space>", function() snacks.picker.smart() end,                                           desc = "Smart Find Files" },
+      { "<leader><space>", function() snacks.picker.smart() end, },
     }
   end
 }
