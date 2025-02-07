@@ -1,19 +1,9 @@
 local u = require "u"
+local libplug = require("u.libplug")
 local snacks = require("snacks")
 local layouts = require("snacks.picker.config.layouts")
 
 local M = {}
-
-local function get_default_file(path)
-  local xdg_data_home = os.getenv("XDG_DATA_HOME")
-  if not xdg_data_home then
-    error("XDG_DATA_HOME environment variable must be set")
-  end
-  local file = xdg_data_home .. "/" .. path
-  local is_readable = u.file.is_readable(file)
-  u.nvim.assert(is_readable, "default file not found or not readable: %s", file)
-  return file
-end
 
 local function get_favourite_files(path)
   local favourites = {}
@@ -46,7 +36,7 @@ end
 M.favourites = function(opts)
   opts = opts or {}
   local items = {}
-  local file = opts.favourites_file or get_default_file("bookmarks/files")
+  local file = opts.favourites_file or libplug.datafile("bookmarks/files")
   local favourites = get_favourite_files(file)
   local longest_name = 0
   for i, favourite in ipairs(favourites) do
@@ -78,7 +68,7 @@ end
 M.commands = function(opts)
   opts = opts or {}
   local items = {}
-  local file = opts.saved_commands or get_default_file("nvim/saved_commands")
+  local file = opts.saved_commands or libplug.datafile("nvim/saved_commands")
   local commands = get_saved_commands(file)
   for i, command in ipairs(commands) do
     table.insert(items, {
@@ -106,9 +96,7 @@ end
 M.setup = function(opts)
   opts = opts or {}
   local keys = opts.keys or {}
-  for _, keymap in ipairs(keys) do
-    vim.keymap.set({ "n" }, keymap[1], keymap[2])
-  end
+  libplug.setkeymap({ "n" }, keys)
 end
 
 return M
