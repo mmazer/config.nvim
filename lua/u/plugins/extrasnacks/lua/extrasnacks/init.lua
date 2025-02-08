@@ -25,6 +25,9 @@ end
 
 local function get_saved_commands(path)
   local commands = {}
+  local is_readable = u.file.is_readable(path)
+  u.nvim.assert(is_readable, "saved commands file not found or not readable: %s", path)
+
   for line in io.lines(path) do
     if line ~= nil and line ~= "" and not is_comment(line) then
       table.insert(commands, line)
