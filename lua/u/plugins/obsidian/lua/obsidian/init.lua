@@ -1,4 +1,5 @@
 local snacks = require("snacks")
+local date = require("u.date")
 local libplug = require("u.libplug")
 
 local M = {}
@@ -27,6 +28,17 @@ M.goto = function()
   vim.cmd(":normal vi]gf<CR>")
 end
 
+M.daily = function(opts)
+  opts = opts or options
+  local vault = get_obsidian_vault(opts)
+  local daily_dir = opts.daily
+  if not daily_dir then
+    daily_dir = vim.g.obsidian_daily or vim.env.OBSIDIAN_DAILY or "daily"
+  end
+  local daily_note = string.format("%s/%s/%s.md", vault, daily_dir, date.date())
+  vim.cmd(":edit "..daily_note)
+
+end
 M.setup = function(opts)
   options = opts or {}
   local keys = options.keys or {}
