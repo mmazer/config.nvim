@@ -17,10 +17,15 @@ local function vim_paste(text)
   vim.api.nvim_paste(text, true, -1)
 end
 
-local function paste_link(file)
-  local name = file:match("^(.+).md$")
-  local link = string.format("[[%s]]", name)
+local function get_filename(path)
+  return path:match("[^/]*.$")
+end
 
+local function paste_link(file)
+  local filename = get_filename(file)
+  local name = filename:match("^(.+).md$")
+  local link = string.format("[[%s]]", name)
+  print(string.format("file=%s name=%s", file, name))
   vim_paste(link)
 end
 
