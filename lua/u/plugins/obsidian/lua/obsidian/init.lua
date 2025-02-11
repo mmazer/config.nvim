@@ -13,20 +13,11 @@ local function get_obsidian_vault(opts)
   return vault
 end
 
-local function vim_paste(text)
-  vim.api.nvim_paste(text, true, -1)
-end
-
-local function get_filename(path)
-  return path:match("[^/]*.$")
-end
-
 local function paste_link(file)
-  local filename = get_filename(file)
+  local filename = vim.fs.basename(file)
   local name = filename:match("^(.+).md$")
   local link = string.format("[[%s]]", name)
-  print(string.format("file=%s name=%s", file, name))
-  vim_paste(link)
+  vim.api.nvim_paste(link, true, -1)
 end
 
 M.goto = function()
