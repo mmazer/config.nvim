@@ -51,7 +51,7 @@ M.favourites = function(opts)
     })
     longest_name = math.max(longest_name, #favourite.text)
   end
-  local padding = longest_name + 10
+  local padding = longest_name + 5
   snacks.picker.pick({
     items = items,
     format = function(item)
