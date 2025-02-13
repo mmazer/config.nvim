@@ -117,6 +117,7 @@ return {
       { "<leader>e",       function() snacks.picker.explorer() end },
       { "<leader>f",       function() snacks.picker.files() end },
       { "<leader>gl",      function() snacks.picker.git_log() end, },
+      { "<leader>ll",      function() snacks.picker.lines() end, },
       { "<leader>lg",      function() snacks.lazygit() end, },
       { "<leader>r",       function() snacks.picker.recent() end },
       { "<leader>t",       function() snacks.terminal() end },
