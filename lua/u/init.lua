@@ -1,6 +1,6 @@
 local M = {}
 
-M.fn = {}
+M.fn = require("u.fn")
 M.nvim = require "u.nvim"
 M.file = require "u.file"
 M.lsp = require "u.lsp"
