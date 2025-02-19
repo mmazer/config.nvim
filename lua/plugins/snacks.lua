@@ -121,6 +121,7 @@ return {
       { "<leader>lg",      function() snacks.lazygit() end, },
       { "<leader>r",       function() snacks.picker.recent() end },
       { "<leader>t",       function() snacks.terminal() end },
+      { "<leader>tb",      function() snacks.terminal("/bin/zsh", { cwd = vim.fn.expand("%:p:h") }) end },
       { "<leader>/",       function() snacks.picker.grep() end },
       { "<leader><space>", function() snacks.picker.smart() end, },
     }
