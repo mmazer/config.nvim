@@ -14,6 +14,7 @@ return {
       "xml",
       "yaml",
       "just",
+      "make",
       "terraform"
     },
   },
