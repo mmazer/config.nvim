@@ -5,7 +5,8 @@ local M = {}
 
 M.setkeymap = function(mode, map)
   for _, keymap in ipairs(map) do
-    vim.keymap.set(mode, keymap[1], keymap[2])
+    local keymode = keymap.mode or mode
+    vim.keymap.set(keymode, keymap[1], keymap[2])
   end
 end
 
