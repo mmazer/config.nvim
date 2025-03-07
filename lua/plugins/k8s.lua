@@ -18,8 +18,8 @@ return {
         helmrepositories = { shortnames = { "helmrepo" } },
         kustomizations = { shortnames = { "ks" } },
         managedcertificates = { shortnames = { "mc" } },
-        iampolicy = { shortnames = { "iap" } },
-        iampolicymember = { shortnames = { "ipm" } }
+        iampolicies = { shortnames = { "iamp" } },
+        iampolicymembers = { shortnames = { "iampm" } }
       }
     })
     vim.keymap.set({ "n" }, "<leader>k", ":Kubectl<CR>", { silent = true })
