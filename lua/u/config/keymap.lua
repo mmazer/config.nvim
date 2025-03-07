@@ -70,3 +70,7 @@ vim.keymap.set({ "n" }, "th", ":tabfirst<CR>")
 vim.keymap.set({ "n" }, "tk", ":tabnext<CR>")
 vim.keymap.set({ "n" }, "tj", ":tabprev<CR>")
 vim.keymap.set({ "n" }, "tl", ":tablast<CR>")
+
+-- set common filetypes for command output
+vim.keymap.set({ "n" }, "fy", ":set ft=yaml<cr>", { silent = true })
+vim.keymap.set({ "n" }, "fj", ":set ft=json<cr>", { silent = true })
