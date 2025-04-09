@@ -18,6 +18,7 @@ return {
         helmrepositories = { shortnames = { "helmrepo" } },
         kustomizations = { shortnames = { "ks" } },
         managedcertificates = { shortnames = { "mc" } },
+        iamserviceaccounts = { shortnames = { "isa" } },
         iampolicies = { shortnames = { "iamp" } },
         iampolicymembers = { shortnames = { "iampm" } }
       }
