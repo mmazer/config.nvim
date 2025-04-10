@@ -20,6 +20,7 @@ return {
         managedcertificates = { shortnames = { "mc" } },
         iamserviceaccounts = { shortnames = { "isa" } },
         iampolicies = { shortnames = { "iamp" } },
+        iampartialpolicies = { shortnames = { "ipp" } },
         iampolicymembers = { shortnames = { "iampm" } }
       }
     })
