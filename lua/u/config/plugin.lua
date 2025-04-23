@@ -25,7 +25,7 @@ require("lazy").setup("plugins", {
   dev =  {
     path = "~/workspace",
     patterns = {"mmazer"},
-    fallback = false
+    fallback = true
   },
   change_detection = {
     enabled = true,
