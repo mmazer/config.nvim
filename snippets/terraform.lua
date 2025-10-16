@@ -14,5 +14,18 @@ return {
         i(3, "description"),
         i(4, "default"),
       })
+  ),
+  s("tfm",
+    fmt(
+      [[
+      moved {{
+        from = {1}
+        to   = {2}
+      }}
+      ]],
+      {
+        i(1, "from"),
+        i(2, "to")
+      })
   )
 }
