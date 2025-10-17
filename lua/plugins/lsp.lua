@@ -1,8 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    local lspconfig = require("lspconfig")
-    -- general config
+    local fn = require("u.fn")
+    local diagnostic_count = require("u.lsp").diagnostic_count
+
     vim.diagnostic.config({
       virtual_text = false,
       underline = true,
@@ -10,29 +11,37 @@ return {
       update_in_insert = false
     })
 
-    local on_attach = function(_, bufnr)
-      local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
-      -- Enable completion triggered by <c-x><c-o>
-      vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', {buf=bufnr})
-
-      -- Mappings.
-      local opts = { noremap=true, silent=true }
-
-      buf_set_keymap('n', 'dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-      buf_set_keymap('n', 'df', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-      buf_set_keymap('n', 'dg', '<cmd>lua PrintLspDiagnostics()<CR>', opts)
-      buf_set_keymap('n', 'F', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
-      buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-      buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-      buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-      buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-      buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    local print_lsp_diagnostics = function()
+      local warn, err = diagnostic_count()
+      local diagnostic_message = ""
+      diagnostic_message = diagnostic_message .. string.format("Warning(s): %d Error(s): %d", warn, err)
+      vim.api.nvim_echo({ { diagnostic_message, "Normal" } }, false, {})
     end
 
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function(ev)
+        local bufnr = ev.buf
+        local keymap = vim.keymap.set
+        local lsp = vim.lsp
+        local opts = { silent = true }
+        local function opt(desc, others)
+          return vim.tbl_extend("force", opts, { desc = desc }, others or {})
+        end
+
+        vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', { buf = bufnr })
+
+        keymap('n', 'dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+        keymap('n', 'df', vim.diagnostic.open_float, opt("Open Dignostics Float"))
+        keymap('n', 'dg', print_lsp_diagnostics, opt("Print LSP Diagnostics"))
+        keymap('n', 'gd', lsp.buf.definition, opt("Go to Definition"))
+        keymap('n', 'K', lsp.buf.hover, opt("Show LSP Hover"))
+        keymap('n', 'gr', lsp.buf.references, opt("Show References"))
+        keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+        keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+      end,
+    })
     --- Python Language Server
-    lspconfig["pylsp"].setup {
-      on_attach = on_attach,
+    vim.lsp.config("pylsp", {
       flags = {
         debounce_text_changes = 150,
       },
@@ -40,35 +49,38 @@ return {
         pylsp = {
           configurationSources = { "flake8" },
           plugins = {
-            flake8 = { enabled=true }, -- configured by .flake8 in project directory
-            pylint = { enabled=false },
-            pycodestyle = { enabled=false },
-            pyflakes = { enabled=false },
-            mccabe = { enabled=false }
+            flake8 = { enabled = true }, -- configured by .flake8 in project directory
+            pylint = { enabled = false },
+            pycodestyle = { enabled = false },
+            pyflakes = { enabled = false },
+            mccabe = { enabled = false }
           }
         }
       }
-    }
+    })
+    vim.lsp.enable({ "pylsp" })
+
     --- Go
-    lspconfig["gopls"].setup {
-      on_attach = on_attach,
+    vim.lsp.config("gopls", {
       settings = {
-          gopls = {
-            analyses = {
-              unusedparams = true,
-            },
-            staticcheck = true,
-            gofumpt = true,
+        gopls = {
+          analyses = {
+            unusedparams = true,
           },
+          staticcheck = true,
+          gofumpt = true,
         },
-    }
+      },
+    })
+    vim.lsp.enable("gopls")
+
     -- see https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install
     local autocmd = vim.api.nvim_create_autocmd
     autocmd("BufWritePre", {
       pattern = "*.go",
       callback = function()
         local params = vim.lsp.util.make_range_params()
-        params.context = {only = {"source.organizeImports"}}
+        params.context = { only = { "source.organizeImports" } }
         -- buf_request_sync defaults to a 1000ms timeout. Depending on your
         -- machine and codebase, you may want longer. Add an additional
         -- argument after params if you find that you have to write the file
@@ -83,37 +95,36 @@ return {
             end
           end
         end
-        vim.lsp.buf.format({async = false})
+        vim.lsp.buf.format({ async = false })
       end
     })
 
     --- lua
-    vim.api.nvim_create_autocmd({"BufWritePre"}, {
-      pattern = {"*.lua"},
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+      pattern = { "*.lua" },
       callback = function()
         vim.lsp.buf.format()
       end,
     })
 
     -- yaml-language-server https://github.com/redhat-developer/yaml-language-server
-    lspconfig["yamlls"].setup {
-      on_attach = on_attach,
+    vim.lsp.config("yamlls", {
       settings = {
         yaml = { keyOrdering = false },
       }
-    }
+    })
+    vim.lsp.enable({ "yamlls" })
 
     -- bash language server
-    lspconfig["bashls"].setup {
+    vim.lsp.config("bashls", {
       filetypes = { "sh", "zsh" }
-    }
+    })
+    vim.lsp.enable("bashls")
 
-    -- terraform language server
-    lspconfig['terraformls'].setup{
-      on_attach = on_attach
-    }
-    vim.api.nvim_create_autocmd({"BufWritePre"}, {
-      pattern = {"*.tf", "*.tfvars"},
+    vim.lsp.enable({ "terraformls" })
+
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+      pattern = { "*.tf", "*.tfvars" },
       callback = function()
         vim.lsp.buf.format()
       end,

@@ -8,7 +8,6 @@ local configs = {
   "colors",
   "commands",
   "autocmds",
-  "lsp",
   "terminal",
   "filetypes"
 }
