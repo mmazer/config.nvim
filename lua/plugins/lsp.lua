@@ -41,24 +41,10 @@ return {
       end,
     })
     --- Python Language Server
-    vim.lsp.config("pylsp", {
-      flags = {
-        debounce_text_changes = 150,
-      },
-      settings = {
-        pylsp = {
-          configurationSources = { "flake8" },
-          plugins = {
-            flake8 = { enabled = true }, -- configured by .flake8 in project directory
-            pylint = { enabled = false },
-            pycodestyle = { enabled = false },
-            pyflakes = { enabled = false },
-            mccabe = { enabled = false }
-          }
-        }
-      }
-    })
-    vim.lsp.enable({ "pylsp" })
+    vim.lsp.config("ruff", {})
+    vim.lsp.enable("ruff")
+    vim.lsp.config("basedpyright", {})
+    vim.lsp.enable("basedpyright")
 
     --- Go
     vim.lsp.config("gopls", {
