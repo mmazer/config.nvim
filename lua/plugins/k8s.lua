@@ -6,7 +6,14 @@ return {
         failedsched = { "get", "events", "--all-namespaces", "--field-selector", "reason=FailedScheduling" },
         kustomizevents = { "get", "events", "--all-namespaces", "--field-selector", "involvedObject.kind=Kustomization" },
         podowner = { "get", "pod", "--all-namespaces", "-o", "custom-columns=NAME:.metadata.name,CONTROLLER:.metadata.ownerReferences[].kind,NAMESPACE:.metadata.namespace" },
-        unhealthy = { "get", "events", "--field-selector", "reason=Unhealthy" }
+        unhealthy = { "get", "events", "--field-selector", "reason=Unhealthy" },
+        restarts = function()
+          local kubectl = require("kubectl.commands")
+          local ResourceView = require("kubectl.views.resourceview")
+          local opts = {"-A", "--sort-by", ".status.containerStatuses[0].restartCount"}
+          local cmd = kubectl.get("pods", nil, nil, opts)
+          ResourceView:new("pods", cmd, {view_name = {"pod restarts"}}):view()
+        end
       },
       resource_specs = {
         backendconfigs = { shortnames = { "becfg" } },
