@@ -117,6 +117,7 @@ return {
       { "<space>e",       function() snacks.picker.explorer() end },
       { "<space>f",       function() snacks.picker.files() end },
       { "<space>gl",      function() snacks.picker.git_log() end, },
+      { "<space>k",       function() snacks.picker.keymaps() end, },
       { "<space>ll",      function() snacks.picker.lines() end, },
       { "<space>lg",      function() snacks.lazygit() end, },
       { "<space>ls",      function() snacks.picker.lsp_symbols() end, },
