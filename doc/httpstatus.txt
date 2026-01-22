@@ -2,7 +2,7 @@
 
 Reference: <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>
 
-CONTENTS 
+CONTENTS
                                             *httpstatus-contents*
 ==============================================================================
 1. Informational 1xx                        |http-info|
@@ -42,6 +42,7 @@ REDIRECTION 3xx                             *http-redirect*
 305 Use Proxy
 306 Switch Proxy
 307 Temporary Redirect
+308 Permanent Redirect
 
 CLIENT ERROR 4xx                            *http-error*
 
@@ -90,7 +91,3 @@ SERVER ERROR 5xx                        *http-server*
 507 Insufficient Storage
 509 Bandwidth Limit Exceeded
 510 Not Extended
-
-
-
-
