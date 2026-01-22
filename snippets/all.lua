@@ -10,6 +10,9 @@ return {
   s("dt", f(function(...)
     return os.date("%Y-%m-%d")
   end)),
+  s("ts", f(function(...)
+    return os.date("%H:%M")
+  end)),
   s("dtt", f(function(...)
     return os.date("%Y-%m-%d %H:%M")
   end)),
