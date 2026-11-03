@@ -28,7 +28,8 @@ return {
         iamserviceaccounts = { shortnames = { "isa" } },
         iampolicies = { shortnames = { "iamp" } },
         iampartialpolicies = { shortnames = { "ipp" } },
-        iampolicymembers = { shortnames = { "iampm" } }
+        iampolicymembers = { shortnames = { "iampm" } },
+        certificates = { shortnames = {"certs"}}
       }
     })
     vim.keymap.set({ "n" }, "<leader>k", ":Kubectl<CR>", { silent = true })

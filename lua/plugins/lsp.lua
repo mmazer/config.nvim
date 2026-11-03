@@ -96,7 +96,7 @@ return {
     -- yaml-language-server https://github.com/redhat-developer/yaml-language-server
     vim.lsp.config("yamlls", {
       settings = {
-        yaml = { keyOrdering = false },
+        yaml = { keyOrdering = false, format = { enabled = true}, editor = { tabSize = 2} },
       }
     })
     vim.lsp.enable({ "yamlls" })
