@@ -23,6 +23,35 @@ return {
         i(0)
       })
   ),
+  s("okf",
+    fmt(
+      [[
+      ---
+      title: {1}
+      type: {2}
+      description: {3}
+      status: {4}
+      tags: {5}
+      created: {6}
+      modified: {7}
+      ---
+
+      # {8}
+
+      {9}
+      ]],
+      {
+        i(1, "title"),
+        i(2, "type"),
+        i(3, "description"),
+        i(4, "draft"),
+        i(5, "[]"),
+        f(date.timestamp),
+        f(date.timestamp),
+        rep(1),
+        i(0)
+      })
+  ),
   s("jth",
     fmt(
       [[
