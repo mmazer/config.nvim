@@ -5,6 +5,11 @@ vim.opt_local.wrap = true
 vim.opt_local.suffixesadd = ".txt,.md"
 vim.opt_local.spell = false
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  command = "call vlib#preserve_wrapper(function('datetime#update_modified_time'))",
+})
+
 if vim.fn.executable('mk') == 1 then
   vim.api.nvim_create_user_command("Marked", function()
     vim.system({ "mk", vim.fn.expand("%") }, {}, function(obj)

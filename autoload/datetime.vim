@@ -25,8 +25,8 @@ endfunction
 
 function! datetime#update_modified_time()
     let lines = line('$')
-    if lines >  5
-      let lines = 5
+    if lines >  10
+      let lines = 10
     endif
 
     try
